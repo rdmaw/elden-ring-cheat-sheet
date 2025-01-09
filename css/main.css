@@ -3,12 +3,20 @@
   --nav-bg-color: #c6c1af;
   --text-color: #333333;
   --title-color: #4e342e;
+  --in-progress: #a14a4a;
+  --done: #6c8462;
+}
+
+::selection {
+  background-color: var(--title-color);
+  color: var(--main-bg-color);
 }
 
 * {
   margin: 0;
   padding: 0;
   border-spacing: border-box;
+  list-style-type: none;
 }
 
 body {
@@ -17,6 +25,14 @@ body {
   font-style: normal;
   color: var(--text-color);
   background-color: var(--main-bg-color);
+}
+
+.in_progress {
+  color: var(--in-progress);
+}
+
+.done {
+  color: var(--done);
 }
 
 .navbar {
@@ -53,13 +69,13 @@ p {
 }
 
 a {
-  color: #5a8aa0;
+  color: var(--title-color);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 a:hover {
-  color: #477a85;
+  text-decoration: underline;
 }
 
 .container {
