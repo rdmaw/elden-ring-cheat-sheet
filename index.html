@@ -23,28 +23,65 @@
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a href="#" class="nav-link active">Walkthrough</a>
-            <a href="#" class="nav-link">Achievements</a>
-            <a href="#" class="nav-link">Armaments</a>
-            <a href="#" class="nav-link">Armor</a>
-            <a href="#" class="nav-link">Ashes</a>
-            <a href="#" class="nav-link">Sorceries</a>
-            <a href="#" class="nav-link">Incantations</a>
-            <a href="#" class="nav-link">Talismans</a>
-            <a href="#" class="nav-link">F.A.Q</a>
-          </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Walkthrough</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tabAchievements">Achievements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tabArmaments">Armaments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tabArmor">Armor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tabAshes">Ashes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tabSpells">Spells</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tabTalismans">Talismans</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tabHelp">Help</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
 
     <!-- CONTENTS -->
-    <div class="container">
-      <h2>PROGRESS TRACKER</h2>
-      <!-- WALKTHROUGH -->
+    <div class="container text-center">
+      <h1>Glintstone Guide</h1>
+      <p class="lead">An Elden Ring Cheat Sheet for Completionists</p>
+      🚧 This project is currently under development 🚧.
     </div>
+
+    <div class="tab-content"></div>
+    <!-- WALKTHROUGH -->
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
 </html>
