@@ -8,7 +8,7 @@
 }
 
 ::selection {
-  background-color: var(--title-color);
+  background-color: #938f81;
   color: var(--main-bg-color);
 }
 
@@ -69,6 +69,12 @@ ul {
 
 ul li ul {
   padding-top: 0;
+}
+
+.em {
+  color: var(--title-color);
+  font-size: 18px;
+  font-style: italic;
 }
 
 .navbar {
@@ -132,12 +138,12 @@ ul li ul {
 }
 
 .btn-primary {
-  background-color: var(--title-color);
+  background-color: #938f81;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: var(--title-color);
+  background-color: #5f5d54;
 }
 
 .btn-primary:active {
