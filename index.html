@@ -44,7 +44,7 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav text-center">
+          <ul class="text-center navbar-nav">
             <li class="nav-item">
               <a
                 class="nav-link active"
@@ -144,7 +144,7 @@
           </ul>
 
           <div class="profile ms-auto">
-            <div class="input-append text-center">
+            <div class="text-center input-append">
               <select id="profiles"></select>
               <button class="btn" type="button" id="profileAdd">Add</button>
               <button class="btn" type="button" id="profileEdit">Edit</button>
@@ -220,13 +220,47 @@
               <li data-id="playthrough_1_1">
                 Pick any class and keepsake you like. If you're unsure,
                 <a href="https://eldenring.wiki.gg/wiki/Vagabond">Vagabond</a>
-                is a great beginner class and
+                is a great beginner class and choosing
                 <a href="https://eldenring.wiki.gg/wiki/Stonesword_Key"
                   >2x Stonesword Key</a
                 >
-                allows you to open Imp Seals forgivingly in the beginning.
+                allows you to open Imp Seals forgivingly.
               </li>
-              <li data-id="playthrough_1_2">Testing sentence</li>
+              <li data-id="playthrough_1_2">
+                Start your playthrough and grab
+                <a
+                  href="https://eldenring.wiki.gg/wiki/Tarnished%27s_Wizened_Finger"
+                  >Tarnished's Wizened Finger</a
+                >
+                from the chapel.
+              </li>
+              <li data-id="playthrough_1_3">
+                <a href="https://eldenring.wiki.gg/wiki/The_Ring">The Ring</a>
+                gesture is aqcuired if you pre-ordered the base game.
+              </li>
+              <li data-id="playthrough_1_4">
+                Similarly, the
+                <a href="https://eldenring.wiki.gg/wiki/Ring_of_Miquella"
+                  >Ring of Miquella</a
+                >
+                gesture is aqcuired if you pre-ordered the DLC.
+              </li>
+              <li data-id="playthrough_1_5">
+                Continue towards the boss and either beat or die to the
+                <a href="https://eldenring.wiki.gg/wiki/Grafted_Scion"
+                  >Grafted Scion</a
+                >.
+                <ul>
+                  <li>
+                    If you beat the boss, continue ahead and inspect the Nascent
+                    Butterfly at the edge of the cliff.
+                  </li>
+                  <li>
+                    If you didn't beat the boss, don't worry we'll come back
+                    here later.
+                  </li>
+                </ul>
+              </li>
             </ul>
 
             <h3 id="Stranded_Graveyard">
@@ -388,19 +422,20 @@
       </div>
       <!-- container -->
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstorage/0.4.12/jstorage.min.js"></script>
+    <script>
+      var profilesKey = "er_profiles";
+    </script>
+    <script src="js/main.js"></script>
   </body>
-  <script
-    src="https://code.jquery.com/jquery-3.7.1.js"
-    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
-  <script>
-    var profilesKey = "er_profiles";
-  </script>
-  <script src="js/main.js"></script>
 </html>
