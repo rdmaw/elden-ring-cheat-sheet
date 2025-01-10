@@ -12,6 +12,10 @@
   color: var(--main-bg-color);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto", serif;
   font-optical-sizing: auto;
@@ -34,7 +38,8 @@ h1 {
 }
 
 h3 {
-  margin-bottom: 0;
+  /*TODO: remove margin*/
+  margin-bottom: 10px;
   font-size: 1.5rem;
 }
 
@@ -151,6 +156,10 @@ ul li ul {
 .btn-collapse.collapsed:after {
   content: "\f64d";
 }
+
+/* .collapse {
+  margin: 0;
+} */
 
 .checkbox label,
 .radio label {

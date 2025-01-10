@@ -18,19 +18,14 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="ms-auto">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav text-center">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"
                 >Playthrough</a
@@ -100,7 +95,7 @@
                 id="playthrough_totals_1"
               ></span>
             </h3>
-            <ul id="Preparations_col" class="collapse in">
+            <ul id="Preparations_col" class="collapse show">
               <li data-id="playthrough_1_1">
                 Pick any class and starting gift you like. If you're unsure,
                 <a href="https://eldenring.wiki.gg/wiki/Vagabond"
@@ -121,12 +116,23 @@
               id="playthrough_totals_2"
             ></span>
           </h3>
-          <ul id="Limgrave_col" class="collapse in">
+          <ul id="Limgrave_col" class="collapse show">
             <li data-id="playthrough_2_1">
               Testing sentenec
             </li>
             <li data-id="playthrough_2_2">Testing sentence 2</li>
           </ul>
+
+          <h3 id="#Weeping_Peninsula"><a href="#Weeping_Peninsula_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="https://eldenring.wiki.gg/wiki/Weeping_Peninsula">Weeping Peninsula</a> (Level 10-20)<span
+            id="playthrough_totals_3"
+          ></span>
+        </h3>
+        <ul id="Weeping_Peninsula_col" class="collapse show">
+          <li data-id="playthrough_3_1">
+            Testing sentenec
+          </li>
+          <li data-id="playthrough_3_2">Testing sentence 2</li>
+        </ul>
 
             <!-- playthrough-list -->
           </div>
