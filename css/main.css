@@ -1,22 +1,164 @@
 /*
-TODO: Add dark mode styling and light mode styling? Make website use notebook styling as default. User selected mode needs to be stored.
-TODO: fix rename default profile cant delete
-TODO: are you sure you want to delete $profilename ?
+TODO: light and dark mode colors.
 */
 
 /* DEFAULTS */
 :root {
-  --main-bg-color: #faf3dd;
-  --nav-bg-color: #c6c1af;
-  --nav-bg-darker: #938f81;
-  --nav-a-hover: #262626;
-  --text-color: #333333;
-  --title-color: #4e342e;
-  --in-progress: #af504c;
-  --done: #4caf82;
-  --done-darker: #40946e;
-  --box-color: #f8f5ee;
-  --btn-hover: #5f5d54;
+  --notebook-main-bg: #faf3dd;
+  --notebook-nav-bg: #c6c1af;
+  --notebook-nav-darker: #938f81;
+  --notebook-nav-hover: #262626;
+  --notebook-text: #333333;
+  --notebook-title: #4e342e;
+  --notebook-in-progress: #af504c;
+  --notebook-done: #4caf82;
+  --notebook-done-darker: #40946e;
+  --notebook-box: #f8f5ee;
+  --notebook-box-text: #f8f5ee;
+  --notebook-btn-hover: #5f5d54;
+  --notebook-btn-hover-click: #333333;
+  --notebook-a-active: #000000;
+  --notebook-nav-a-active: #000000;
+  --notebook-nav-icon-color: #4e342e;
+  --notebook-link-color: #4e342e;
+  --notebook-link-color-active: #000000;
+  --notebook-nav-text: #4e342e;
+  --notebook-theme-btn-hover: #938f81;
+  --notebook-theme-icon-hover: #f8f5ee;
+  --notebook-collapse-btn: #938f81;
+  --notebook-to-top-icon-hover: #f8f5ee;
+  --notebook-checkbox-border: #4e342e;
+  --notebook-checkmark: #f8f5ee;
+
+  --light-main-bg: #ffffff;
+  --light-nav-bg: #cccccc;
+  --light-nav-darker: #cccccc;
+  --light-nav-hover: #262626;
+  --light-text: #000000;
+  --light-title: #1a1a1a;
+  --light-in-progress: #cc6600;
+  --light-done: #0090f2;
+  --light-done-darker: #009933;
+  --light-box: #ffffff;
+  --light-box-text: #000000;
+  --light-btn-hover: #999999;
+  --light-btn-hover-click: #656565;
+  --light-a-active: #000000;
+  --light-nav-a-active: #000000;
+  --light-nav-icon-color: #ffb74d;
+  --light-link-color: #007acc;
+  --light-link-color-active: #004a70;
+  --light-nav-text: #4c4c4c;
+  --light-theme-btn-hover: #999999;
+  --light-theme-icon-hover: #ffffff;
+  --light-collapse-btn: #cccccc;
+  --light-to-top-icon-hover: #ffffff;
+  --light-checkbox-border: #000000;
+  --light-checkmark: #ffffff;
+
+  --dark-main-bg: #1a1a1a;
+  --dark-nav-bg: #2d2d2d;
+  --dark-nav-darker: #404040;
+  --dark-nav-hover: #ffffff;
+  --dark-text: #ffffff;
+  --dark-title: #e5e5e5;
+  --dark-in-progress: #ff4c3b;
+  --dark-done: #55c759;
+  --dark-done-darker: #6dfb72;
+  --dark-box: #1a1a1a;
+  --dark-box-text: #ffffff;
+  --dark-btn-hover: #2d2d2d;
+  --dark-a-active: #ffffff;
+  --dark-nav-a-active: #ffffff;
+  --dark-nav-icon-color: #ffc500;
+  --dark-link-color: #007acc;
+  --dark-link-color-active: #004a70;
+  --dark-theme-btn-hover: #1a1a1a;
+  --dark-theme-icon-hover: #ffffff;
+  --dark-collapse-btn: #404040;
+  --dark-checkbox-border: #ffffff;
+  --dark-checkmark: #ffffff;
+}
+
+[data-theme="notebook"] {
+  --main-bg-color: var(--notebook-main-bg);
+  --nav-bg-color: var(--notebook-nav-bg);
+  --nav-bg-darker: var(--notebook-nav-darker);
+  --nav-a-hover: var(--notebook-nav-hover);
+  --text-color: var(--notebook-text);
+  --title-color: var(--notebook-title);
+  --in-progress: var(--notebook-in-progress);
+  --done: var(--notebook-done);
+  --done-darker: var(--notebook-done-darker);
+  --box-color: var(--notebook-box);
+  --box-color-text: var(--notebook-box-text);
+  --btn-hover: var(--notebook-btn-hover);
+  --btn-hover-click: var(--notebook-btn-hover-click);
+  --a-active: var(--notebook-a-active);
+  --nav-a-active: var(--notebook-nav-a-active);
+  --nav-icon-color: var(--notebook-nav-icon-color);
+  --link-color: var(--notebook-link-color);
+  --link-color-active: var(--notebook-link-color-active);
+  --nav-text: var(--notebook-nav-text);
+  --theme-btn-hover: var(--notebook-theme-btn-hover);
+  --theme-icon-hover: var(--notebook-theme-icon-hover);
+  --collapse-btn: var(--notebook-collapse-btn);
+  --to-top-icon-hover: var(--notebook-to-top-icon-hover);
+  --checkbox-border: var(--notebook-checkbox-border);
+  --checkmark: var(--notebook-checkmark);
+}
+
+[data-theme="light"] {
+  --main-bg-color: var(--light-main-bg);
+  --nav-bg-color: var(--light-nav-bg);
+  --nav-bg-darker: var(--light-nav-darker);
+  --nav-a-hover: var(--light-nav-hover);
+  --text-color: var(--light-text);
+  --title-color: var(--light-title);
+  --in-progress: var(--light-in-progress);
+  --done: var(--light-done);
+  --done-darker: var(--light-done-darker);
+  --box-color: var(--light-box);
+  --box-color-text: var(--light-box-text);
+  --btn-hover: var(--light-btn-hover);
+  --a-active: var(--light-a-active);
+  --nav-a-active: var(--light-nav-a-active);
+  --nav-icon-color: var(--light-nav-icon-color);
+  --btn-hover-click: var(--light-btn-hover-click);
+  --link-color: var(--light-link-color);
+  --link-color-active: var(--light-link-color-active);
+  --nav-text: var(--light-nav-text);
+  --theme-btn-hover: var(--light-theme-btn-hover);
+  --theme-icon-hover: var(--light-theme-icon-hover);
+  --collapse-btn: var(--light-collapse-btn);
+  --to-top-icon-hover: var(--light-to-top-icon-hover);
+  --checkbox-border: var(--light-checkbox-border);
+  --checkmark: var(--light-checkmark);
+}
+
+[data-theme="dark"] {
+  --main-bg-color: var(--dark-main-bg);
+  --nav-bg-color: var(--dark-nav-bg);
+  --nav-bg-darker: var(--dark-nav-darker);
+  --nav-a-hover: var(--dark-nav-hover);
+  --text-color: var(--dark-text);
+  --title-color: var(--dark-title);
+  --in-progress: var(--dark-in-progress);
+  --done: var(--dark-done);
+  --done-darker: var(--dark-done-darker);
+  --box-color: var(--dark-box);
+  --box-color-text: var(--dark-box-text);
+  --btn-hover: var(--dark-btn-hover);
+  --a-active: var(--dark-a-active);
+  --nav-a-active: var(--dark-nav-a-active);
+  --nav-icon-color: var(--dark-nav-icon-color);
+  --link-color: var(--dark-link-color);
+  --link-color-active: var(--dark-link-color-active);
+  --theme-btn-hover: var(--dark-theme-btn-hover);
+  --theme-icon-hover: var(--dark-theme-icon-hover);
+  --collapse-btn: var(--dark-collapse-btn);
+  --checkbox-border: var(--dark-checkbox-border);
+  --checkmark: var(--dark-checkmark);
 }
 
 ::selection {
@@ -26,6 +168,7 @@ TODO: are you sure you want to delete $profilename ?
 
 * {
   box-sizing: border-box;
+  transition: background-color 0.1s ease;
 }
 
 html {
@@ -78,6 +221,12 @@ h1 {
   margin-bottom: 1rem;
 }
 
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 h3 {
   font-size: 1.5rem;
 }
@@ -97,7 +246,7 @@ a:hover {
 }
 
 a:active {
-  color: black;
+  color: var(--a-active);
 }
 
 a,
@@ -118,25 +267,49 @@ ul {
   border-bottom: 2px solid var(--title-color);
 }
 
-.navbar .nav-link {
-  color: var(--title-color);
+.navbar .nav-link,
+.navbar .btn {
+  color: var(--nav-text);
   font-weight: 500;
   transition: color 0.1s ease-in-out;
+  /* remove default bootstrap border */
+  border: 0;
 }
 
-.navbar .nav-link:hover {
+.navbar .nav-link:hover,
+.navbar .btn:hover {
   color: var(--nav-a-hover);
   text-decoration: none;
 }
 
-.navbar .nav-link.active {
-  color: black;
-  font-weight: 600;
+.navbar .nav-link.active,
+.navbar .btn:active {
+  color: var(--nav-a-active);
+}
+
+.navbar-toggler {
+  background-color: var(--box-color);
+  border: 2px solid var(--title-color);
+  transition: all 0.15s ease-in-out;
+}
+
+.navbar-toggler:hover {
+  background-color: var(--nav-bg-darker);
+  color: var(--box-color-text);
+}
+
+.navbar-toggler-icon {
+  filter: invert(23%) sepia(8%) saturate(2109%) hue-rotate(333deg) brightness(92%) contrast(89%);
+  transition: filter 0.15s ease-in-out;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 .navbar-toggler:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(78, 52, 46, 0.5);
+  box-shadow: 0 0 0 2px rgba(78, 52, 46, 0.8);
 }
 
 .navbar-collapse {
@@ -146,24 +319,6 @@ ul {
 .profile {
   display: flex;
   align-items: center;
-}
-
-@media (max-width: 1199.98px) {
-  .navbar-collapse {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .profile.ms-auto {
-    margin: 0.5rem 0 !important;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .input-append {
-    justify-content: center;
-    width: 100%;
-  }
 }
 
 .input-append {
@@ -187,6 +342,49 @@ ul {
 #profiles option {
   text-align: left;
   background-color: var(--box-color);
+}
+
+.theme-btn {
+  background: var(--box-color);
+  color: var(--nav-icon-color);
+  border: 2px solid var(--title-color);
+  border-radius: 0.375rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.theme-btn:hover {
+  opacity: 1;
+  background: var(--theme-btn-hover);
+  color: var(--theme-icon-hover);
+}
+
+@media (max-width: 1199.98px) {
+  .navbar-collapse {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .profile.ms-auto {
+    margin: 0.5rem 0 !important;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .input-append {
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .theme-btn {
+    margin-left: 0;
+  }
 }
 
 /* LEAD */
@@ -216,6 +414,14 @@ ul {
 ul li ul {
   padding-top: 0.1rem;
   padding-left: 1.75rem;
+}
+
+.playthrough-wrapper ul li a {
+  color: var(--link-color);
+}
+
+.playthrough-wrapper ul li a:active {
+  color: var(--link-color-active);
 }
 
 .em {
@@ -251,8 +457,6 @@ ul li ul {
   border: 1px solid;
 }
 
-
-
 .done {
   color: var(--done-darker);
 }
@@ -277,8 +481,8 @@ ul li ul {
 }
 
 .btn-primary {
-  background-color: var(--nav-bg-darker);
-  color: var(--box-color);
+  background-color: var(--collapse-btn);
+  color: var(--box-color-text);
   border: 2px solid var(--title-color);
 }
 
@@ -289,8 +493,8 @@ ul li ul {
 
 .btn-primary:active {
   /* override bootstrap styles */
-  background-color: var(--text-color) !important;
-  border: 2px solid var(--text-color) !important;
+  background-color: var(--btn-hover-click) !important;
+  border: 2px solid var(--title-color) !important;
 }
 
 .btn-collapse {
@@ -299,7 +503,7 @@ ul li ul {
   vertical-align: middle;
   position: relative;
   top: -2px;
-  color: var(--box-color);
+  color: var(--box-color-text);
 }
 
 .btn-collapse:after {
@@ -342,7 +546,7 @@ li ul li .checkbox {
   height: 17px;
   width: 17px;
   background-color: var(--box-color);
-  border: 2px solid var(--title-color);
+  border: 2px solid var(--checkbox-border);
   border-radius: 3px;
   cursor: pointer;
 }
@@ -371,7 +575,7 @@ li ul li .checkbox input[type="checkbox"] {
 .checkbox input[type="checkbox"]:checked~label .checkbox-custom,
 li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom {
   background-color: var(--done);
-  border-color: var(--title-color);
+  border-color: var(--checkbox-border);
 }
 
 .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after,
@@ -382,7 +586,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   top: 1px;
   width: 5px;
   height: 10px;
-  border: solid var(--box-color);
+  border: solid var(--checkmark);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -400,4 +604,43 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   li ul li .checkbox-custom {
     transform: none;
   }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--nav-bg-darker);
+  color: var(--box-color-text);
+  border: 2px solid var(--title-color);
+  border-radius: 0.375rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.5s ease-in-out;
+  font-size: 1.8rem;
+
+}
+
+.back-to-top.show {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.back-to-top.show:hover {
+  background-color: var(--btn-hover);
+  color: var(--to-top-icon-hover);
+  opacity: 1;
+  transition: all 0.15s ease-in-out;
+}
+
+.back-to-top.show:active {
+  background-color: var(--btn-hover-click);
+  color: var(--to-top-icon-hover);
 }

@@ -12,6 +12,13 @@
     },
   };
 
+  const themes = ['notebook', 'light', 'dark'];
+  const icons = {
+    'notebook': 'bi-journal-text',
+    'light': 'bi-sun-fill',
+    'dark': 'bi-moon-stars-fill'
+  };
+
   var profiles = $.jStorage.get(profilesKey, defaultProfiles);
 
   if (!profiles[profilesKey]["Default"]) {
@@ -74,9 +81,27 @@
     }
   }
 
+  function setTheme(themeName) {
+    document.documentElement.setAttribute('data-theme', themeName);
+    localStorage.setItem('theme', themeName);
+
+    const icon = icons[themeName];
+    $('#themeToggleCollapsed i, #themeToggleExpanded i').attr('class', `bi ${icon}`);
+  }
+
   $(document).ready(function () {
     restoreState(profiles.current);
     calculateTotals();
+
+    const savedTheme = localStorage.getItem('theme') || 'notebook';
+    setTheme(savedTheme);
+
+    // Update click handlers for both buttons
+    $('#themeToggleCollapsed, #themeToggleExpanded').click(function () {
+      const currentTheme = localStorage.getItem('theme') || 'notebook';
+      const nextThemeIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
+      setTheme(themes[nextThemeIndex]);
+    });
 
     $("a[href^='http']").attr("target", "_blank");
 
@@ -87,6 +112,12 @@
       $(this).addClass("active");
       const targetTab = $(this).attr("href");
       $(targetTab).addClass("show active");
+
+      if ($(this).data('show-buttons')) {
+        $('#collapseButtons').show();
+      } else {
+        $('#collapseButtons').hide();
+      }
     });
 
     $('input[type="checkbox"]').click(function () {
@@ -243,6 +274,22 @@
         profiles[profilesKey][profiles.current].collapsed = collapseStates;
         $.jStorage.set(profilesKey, profiles);
       }, 350);
+    });
+
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 300) {
+        $('#backToTop').addClass('show');
+      } else {
+        $('#backToTop').removeClass('show');
+      }
+    });
+
+    $('#backToTop').click(function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'auto'
+      });
+      return false;
     });
 
     $(document).on("change", "input[type='checkbox']", function () {

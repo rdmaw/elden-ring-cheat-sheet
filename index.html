@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6QL0J2BBZE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-6QL0J2BBZE');
+  </script>
   <meta charset="utf-8" />
   <meta name="author" content="rdmaw" />
   <meta name="description" content="Comprehensive Elden Ring Cheat Sheet that tracks your progress. Including Shadow of the Erdtree DLC" />
@@ -21,6 +29,9 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-xl">
     <div class="container-fluid">
+      <button id="themeToggleCollapsed" class="theme-btn d-xl-none" aria-label="Toggle theme">
+        <i class="bi bi-journal-text"></i>
+      </button>
       <div class="ms-auto">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -30,25 +41,25 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="text-center navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" id="playthrough-tab" href="#tabPlaythrough" role="tab" aria-controls="tabPlaythrough" aria-selected="true">Playthrough</a>
+            <a class="nav-link active" id="playthrough-tab" href="#tabPlaythrough" role="tab" aria-controls="tabPlaythrough" aria-selected="true" data-show-buttons="true">Playthrough</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="achievements-tab" href="#tabAchievements" role="tab" aria-controls="tabAchievements" aria-selected="false">Achievements</a>
+            <a class="nav-link" id="achievements-tab" href="#tabAchievements" role="tab" aria-controls="tabAchievements" aria-selected="false" data-show-buttons="true">Achievements</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="armaments-tab" href="#tabArmaments" role="tab" aria-controls="tabArmaments" aria-selected="false">Armaments</a>
+            <a class="nav-link" id="armaments-tab" href="#tabArmaments" role="tab" aria-controls="tabArmaments" aria-selected="false" data-show-buttons="true">Armaments</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="armor-tab" href="#tabArmor" role="tab" aria-controls="tabArmor" aria-selected="false">Armor</a>
+            <a class="nav-link" id="armor-tab" href="#tabArmor" role="tab" aria-controls="tabArmor" aria-selected="false" data-show-buttons="true">Armor</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="ashes-tab" href="#tabAshes" role="tab" aria-controls="tabAshes" aria-selected="false">Ashes</a>
+            <a class="nav-link" id="ashes-tab" href="#tabAshes" role="tab" aria-controls="tabAshes" aria-selected="false" data-show-buttons="true">Ashes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="spells-tab" href="#tabSpells" role="tab" aria-controls="tabSpells" aria-selected="false">Spells</a>
+            <a class="nav-link" id="spells-tab" href="#tabSpells" role="tab" aria-controls="tabSpells" aria-selected="false" data-show-buttons="true">Spells</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="talismans-tab" href="#tabTalismans" role="tab" aria-controls="tabTalismans" aria-selected="false">Talismans</a>
+            <a class="nav-link" id="talismans-tab" href="#tabTalismans" role="tab" aria-controls="tabTalismans" aria-selected="false" data-show-buttons="true">Talismans</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="help-tab" href="#tabHelp" role="tab" aria-controls="tabHelp" aria-selected="false">Help</a>
@@ -61,6 +72,9 @@
             <button class="btn" type="button" id="addProfile">Add</button>
             <button class="btn" type="button" id="editProfile">Edit</button>
             <button class="btn" type="button" id="deleteProfile">Delete</button>
+            <button id="themeToggleExpanded" class="theme-btn d-none d-xl-flex" aria-label="Toggle theme">
+              <i class="bi bi-journal-text"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -76,7 +90,7 @@
     </div>
 
     <div class="tab-content">
-      <div class="btn-group" role="group" aria-label="Collapse controls">
+      <div class="btn-group" role="group" aria-label="Collapse controls" id="collapseButtons">
         <button class="btn btn-primary" type="button" id="expandAll">Expand All</button>
         <button class="btn btn-primary" type="button" id="collapseAll">Collapse All</button>
       </div>
@@ -233,6 +247,9 @@
     </div>
     <!-- container -->
   </div>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short"></i>
+  </button>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jstorage/0.4.12/jstorage.min.js"></script> -->
