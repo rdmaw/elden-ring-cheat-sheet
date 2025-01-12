@@ -179,7 +179,7 @@
         return;
       }
 
-      if (confirm('Are you sure you want to delete this profile?')) {
+      if (confirm(`Are you sure you want to delete "${currentProfile}"?`)) {
         if (deleteProfile(currentProfile)) {
           switchProfile(profiles.current);
           restoreState(profiles.current);
@@ -207,6 +207,42 @@
 
       profiles[profilesKey][profiles.current].collapsed[collapseId] = isCollapsed;
       $.jStorage.set(profilesKey, profiles);
+    });
+
+    $('#collapseAll').on('click', function () {
+      var $collapseElements = $('.playthrough-wrapper .collapse');
+
+      $collapseElements.each(function () {
+        $(this).collapse('hide');
+        $(this).prev().find('.btn-collapse').addClass('collapsed');
+      });
+
+      setTimeout(function () {
+        var collapseStates = {};
+        $collapseElements.each(function () {
+          collapseStates[$(this).attr('id')] = true;
+        });
+        profiles[profilesKey][profiles.current].collapsed = collapseStates;
+        $.jStorage.set(profilesKey, profiles);
+      }, 350);
+    });
+
+    $('#expandAll').on('click', function () {
+      var $collapseElements = $('.playthrough-wrapper .collapse');
+
+      $collapseElements.each(function () {
+        $(this).collapse('show');
+        $(this).prev().find('.btn-collapse').removeClass('collapsed');
+      });
+
+      setTimeout(function () {
+        var collapseStates = {};
+        $collapseElements.each(function () {
+          collapseStates[$(this).attr('id')] = false;
+        });
+        profiles[profilesKey][profiles.current].collapsed = collapseStates;
+        $.jStorage.set(profilesKey, profiles);
+      }, 350);
     });
 
     $(document).on("change", "input[type='checkbox']", function () {
