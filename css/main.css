@@ -35,6 +35,7 @@
   --notebook-key-item-active: #6e3581;
   --notebook-npc: #1c857a;
   --notebook-npc-active: #156d5a;
+  --notebook-box-color-active-text: #f8f5ee;
 
   --light-main-bg: #ffffff;
   --light-nav-bg: #cccccc;
@@ -71,6 +72,7 @@
   --light-key-item-active: #742f9e;
   --light-npc: #188b76;
   --light-npc-active: #2e7463;
+  --light-box-color-active-text: #ffffff;
 
   --dark-main-bg: #1a1a1a;
   --dark-nav-bg: #2d2d2d;
@@ -94,7 +96,7 @@
   --dark-theme-icon-hover: #ffffff;
   --dark-collapse-btn: #404040;
   --dark-checkbox-border: #808080;
-  --dark-checkbox-border-checked: #89bd6b;
+  --dark-checkbox-border-checked: #6f9a4e;
   --dark-checkmark: #2d2d2d;
   --dark-nav-border: #808080;
   --dark-selection: #808080;
@@ -105,6 +107,7 @@
   --dark-key-item-active: #803f8e;
   --dark-npc: #149c82;
   --dark-npc-active: #127a66;
+  --dark-box-color-active-text: #ffffff;
 }
 
 [data-theme="notebook"] {
@@ -143,6 +146,7 @@
   --key-item-active: var(--notebook-key-item-active);
   --npc: var(--notebook-npc);
   --npc-active: var(--notebook-npc-active);
+  --box-color--active-text: var(--notebook-box-color-active-text);
   --toggler-icon: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
   --toggler-icon-hover: invert(100%) sepia(13%) saturate(356%) hue-rotate(307deg) brightness(116%) contrast(92%);
 }
@@ -183,6 +187,7 @@
   --key-item-active: var(--light-key-item-active);
   --npc: var(--light-npc);
   --npc-active: var(--light-npc-active);
+  --box-color--active-text: var(--light-box-color-active-text);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(1%) hue-rotate(58deg) brightness(107%) contrast(101%);
 }
 
@@ -220,6 +225,7 @@
   --key-item-active: var(--dark-key-item-active);
   --npc: var(--dark-npc);
   --npc-active: var(--dark-npc-active);
+  --box-color--active-text: var(--dark-box-color-active-text);
   --toggler-icon: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
@@ -288,6 +294,10 @@ h2 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+h2.filters {
+  margin-bottom: 0.8rem;
 }
 
 h3 {
@@ -468,7 +478,7 @@ ul {
 }
 
 .btn-group {
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .btn-group .btn:not(:last-child) {
@@ -548,6 +558,32 @@ ul li ul {
 
 .done {
   color: var(--done-darker);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  background: var(--box-color);
+  color: var(--text-color);
+  border: 2px solid var(--title-color);
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.filter-btn:hover {
+  background: var(--nav-bg-darker);
+  color: var(--box-color);
+}
+
+.filter-btn.active {
+  background: var(--nav-bg-darker);
+  color: var(--box-color);
 }
 
 .color-legend {
@@ -637,9 +673,15 @@ ul li ul {
 }
 
 .btn-primary:active {
-  /* override bootstrap styles */
-  background-color: var(--btn-hover-click) !important;
-  border: 2px solid var(--nav-border) !important;
+  background-color: var(--btn-hover-click);
+  border: 2px solid var(--nav-border);
+}
+
+.btn-primary:not(:disabled):not(:disabled):active,
+.btn-primary:not(:disabled):not(:disabled).active {
+  background-color: var(--btn-hover);
+  color: var(--box-color--active-text);
+  border-color: var(--nav-border);
 }
 
 .btn-collapse {
@@ -807,7 +849,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   transition: none;
 }
 
-.back-to-top.show:active {
+/* .back-to-top.show:active {
   background-color: var(--btn-hover-click);
   color: var(--to-top-icon-hover);
-}
+} */

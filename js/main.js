@@ -10,6 +10,7 @@
       collapsed: {},
       isDefault: true,
       lastActiveTab: '#tabPlaythrough',
+      activeFilter: 'all',
     },
   };
 
@@ -46,6 +47,8 @@
     }
 
     const lastTab = profiles[profilesKey][profiles.current].lastActiveTab || '#tabPlaythrough';
+    const activeFilter = profiles[profilesKey][profiles.current].activeFilter || 'all';
+
     $('.nav-link').removeClass('active');
     $('.tab-pane').removeClass('show active');
     $(`a[href="${lastTab}"]`).addClass('active');
@@ -56,6 +59,10 @@
     } else {
       $('#collapseButtons').hide();
     }
+
+    $('.btn-primary').removeClass('active');
+    $(`.btn-primary[data-filter="${activeFilter}"]`).addClass('active');
+    applyFilter(activeFilter);
 
     populateChecklists();
 
@@ -324,6 +331,18 @@
       return false;
     });
 
+    $('.btn-primary[data-filter]').click(function () {
+      const filter = $(this).data('filter');
+
+      $('.btn-primary[data-filter]').removeClass('active');
+      $(this).addClass('active');
+
+      profiles[profilesKey][profiles.current].activeFilter = filter;
+      $.jStorage.set(profilesKey, profiles);
+
+      applyFilter(filter);
+    });
+
     $(document).on("change", "input[type='checkbox']", function () {
       var id = $(this).attr('id');
       var isChecked = $(this).prop('checked');
@@ -365,28 +384,6 @@
       }
     );
     calculateTotals();
-  }
-
-  function calculateTotals() {
-    var overallCount = 0;
-    var overallChecked = 0;
-
-    $("input[type='checkbox']").each(function () {
-      overallCount++;
-      if ($(this).is(":checked")) {
-        overallChecked++;
-      }
-    });
-
-    $(".totals").each(function () {
-      if (overallChecked === overallCount) {
-        this.innerHTML = "DONE";
-        $(this).removeClass("in_progress").addClass("done");
-      } else {
-        this.innerHTML = overallChecked + "/" + overallCount;
-        $(this).removeClass("done").addClass("in_progress");
-      }
-    });
   }
 
   function calculateTotals() {
@@ -454,6 +451,16 @@
     $('.checkbox label').removeClass('completed');
     $('.collapse').addClass('show');
     $('.btn-collapse').removeClass('collapsed');
+  }
+
+  function applyFilter(filter) {
+    if (filter === 'all') {
+      $('.playthrough-wrapper li').show();
+    } else {
+      $('.playthrough-wrapper li').hide();
+      $(`.playthrough-wrapper li a.${filter}`).closest('li').show();
+    }
+    $('.playthrough-wrapper h3').show();
   }
 
   function addProfile(profileName) {
