@@ -3,19 +3,19 @@
   "short_name": "Cheat Sheet",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "/elden-ring-cheat-sheet/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "/elden-ring-cheat-sheet/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#faf3dd",
-  "background_color": "#faf3dd",
+  "theme_color": "#faf3dc",
+  "background_color": "#faf3dc",
   "display": "standalone"
 }
