@@ -8,13 +8,14 @@
     "Default": {
       checklistData: {},
       collapsed: {},
-      isDefault: true
+      isDefault: true,
+      lastActiveTab: '#tabPlaythrough',
     },
   };
 
   const themes = ['notebook', 'light', 'dark'];
   const icons = {
-    'notebook': 'bi-journal-text',
+    'notebook': 'bi-journal-bookmark-fill',
     'light': 'bi-sun-fill',
     'dark': 'bi-moon-stars-fill'
   };
@@ -43,6 +44,12 @@
     if (profiles.current && profiles[profilesKey][profiles.current]) {
       restoreState(profiles.current);
     }
+
+    const lastTab = profiles[profilesKey][profiles.current].lastActiveTab || '#tabPlaythrough';
+    $('.nav-link').removeClass('active');
+    $('.tab-pane').removeClass('show active');
+    $(`a[href="${lastTab}"]`).addClass('active');
+    $(lastTab).addClass('show active');
 
     populateChecklists();
 
@@ -106,10 +113,15 @@
 
     $(".nav-link").on("click", function (e) {
       e.preventDefault();
+
       $(".nav-link").removeClass("active");
       $(".tab-pane").removeClass("show active");
       $(this).addClass("active");
       const targetTab = $(this).attr("href");
+
+      profiles[profilesKey][profiles.current].lastActiveTab = targetTab;
+      $.jStorage.set(profilesKey, profiles);
+
       $(targetTab).addClass("show active");
 
       if ($(this).data('show-buttons')) {
