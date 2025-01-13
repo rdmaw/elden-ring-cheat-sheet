@@ -16,8 +16,8 @@
   --notebook-a-active: #000000;
   --notebook-nav-a-active: #000000;
   --notebook-nav-icon-color: #4e342e;
-  --notebook-link-color: #4e342e;
-  --notebook-link-color-active: #000000;
+  --notebook-link-color: #517dc7;
+  --notebook-link-color-active: #4367A2;
   --notebook-nav-text: #4e342e;
   --notebook-theme-btn-hover: #938f81;
   --notebook-theme-icon-hover: #f8f5ee;
@@ -29,6 +29,12 @@
   --notebook-nav-border: #4e342e;
   --notebook-selection: #938f81;
   --notebook-label-arrow: #4e342e;
+  --notebook-boss: #d72638;
+  --notebook-boss-active: #a71e2c;
+  --notebook-key-item: #8f46a7;
+  --notebook-key-item-active: #6e3581;
+  --notebook-npc: #1c857a;
+  --notebook-npc-active: #156d5a;
 
   --light-main-bg: #ffffff;
   --light-nav-bg: #cccccc;
@@ -59,6 +65,12 @@
   --light-nav-border: #1a1a1a;
   --light-selection: #999999;
   --light-label-arrow: #1a1a1a;
+  --light-boss: #ff3f34;
+  --light-boss-active: #cc332a;
+  --light-key-item: #8c3ebe;
+  --light-key-item-active: #742f9e;
+  --light-npc: #188b76;
+  --light-npc-active: #2e7463;
 
   --dark-main-bg: #1a1a1a;
   --dark-nav-bg: #2d2d2d;
@@ -75,8 +87,8 @@
   --dark-a-active: #ffffff;
   --dark-nav-a-active: #ffffff;
   --dark-nav-icon-color: #ffc500;
-  --dark-link-color: #5A99D4;
-  --dark-link-color-active: #3B658D;
+  --dark-link-color: #5a99d4;
+  --dark-link-color-active: #3b658d;
   --dark-nav-text: #999999;
   --dark-theme-btn-hover: #1a1a1a;
   --dark-theme-icon-hover: #ffffff;
@@ -87,6 +99,12 @@
   --dark-nav-border: #808080;
   --dark-selection: #808080;
   --dark-label-arrow: #e5e5e5;
+  --dark-boss: #d1495b;
+  --dark-boss-active: #a33b49;
+  --dark-key-item: #9d51b6;
+  --dark-key-item-active: #803f8e;
+  --dark-npc: #149c82;
+  --dark-npc-active: #127a66;
 }
 
 [data-theme="notebook"] {
@@ -119,6 +137,12 @@
   --nav-border: var(--notebook-nav-border);
   --selection: var(--notebook-selection);
   --label-arrow: var(--notebook-label-arrow);
+  --boss: var(--notebook-boss);
+  --boss-active: var(--notebook-boss-active);
+  --key-item: var(--notebook-key-item);
+  --key-item-active: var(--notebook-key-item-active);
+  --npc: var(--notebook-npc);
+  --npc-active: var(--notebook-npc-active);
   --toggler-icon: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
   --toggler-icon-hover: invert(100%) sepia(13%) saturate(356%) hue-rotate(307deg) brightness(116%) contrast(92%);
 }
@@ -153,6 +177,12 @@
   --nav-border: var(--light-nav-border);
   --selection: var(--light-selection);
   --label-arrow: var(--light-label-arrow);
+  --boss: var(--light-boss);
+  --boss-active: var(--light-boss-active);
+  --key-item: var(--light-key-item);
+  --key-item-active: var(--light-key-item-active);
+  --npc: var(--light-npc);
+  --npc-active: var(--light-npc-active);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(1%) hue-rotate(58deg) brightness(107%) contrast(101%);
 }
 
@@ -184,6 +214,12 @@
   --nav-border: var(--dark-nav-border);
   --selection: var(--dark-selection);
   --label-arrow: var(--dark-label-arrow);
+  --boss: var(--dark-boss);
+  --boss-active: var(--dark-boss-active);
+  --key-item: var(--dark-key-item);
+  --key-item-active: var(--dark-key-item-active);
+  --npc: var(--dark-npc);
+  --npc-active: var(--dark-npc-active);
   --toggler-icon: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
@@ -453,6 +489,30 @@ ul li ul {
   color: var(--link-color-active);
 }
 
+.playthrough-wrapper ul li a.boss {
+  color: var(--boss);
+}
+
+.playthrough-wrapper ul li a.boss:active {
+  color: var(--boss-active);
+}
+
+.playthrough-wrapper ul li a.key-item {
+  color: var(--key-item);
+}
+
+.playthrough-wrapper ul li a.key-item:active {
+  color: var(--key-item-active);
+}
+
+.playthrough-wrapper ul li a.npc {
+  color: var(--npc);
+}
+
+.playthrough-wrapper ul li a.npc:active {
+  color: var(--npc-active);
+}
+
 .em {
   color: var(--title-color);
   font-size: 1.125rem;
@@ -488,6 +548,61 @@ ul li ul {
 
 .done {
   color: var(--done-darker);
+}
+
+.color-legend {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.color-box {
+  width: 17px;
+  height: 17px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.color-box.boss {
+  border: 2px solid var(--boss-active);
+}
+
+.color-box.npc {
+  border: 2px solid var(--npc-active);
+}
+
+.color-box.key-item {
+  border: 2px solid var(--key-item-active);
+}
+
+.color-box.other {
+  border: 2px solid var(--link-color-active);
+}
+
+.legend-item span:not(.color-box) {
+  line-height: 17px;
+}
+
+.color-box.boss {
+  background-color: var(--boss);
+}
+
+.color-box.npc {
+  background-color: var(--npc);
+}
+
+.color-box.key-item {
+  background-color: var(--key-item);
+}
+
+.color-box.other {
+  background-color: var(--link-color);
 }
 
 .playthrough-wrapper h3 {

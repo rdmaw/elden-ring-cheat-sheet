@@ -223,16 +223,31 @@
       var currentProfile = profiles.current;
 
       if (profiles[profilesKey][currentProfile].isDefault) {
-        alert("Can't delete the default profile.");
-        return;
-      }
+        if (confirm("Reset all progress for the default profile?")) {
+          profiles[profilesKey][currentProfile] = {
+            checklistData: {},
+            collapsed: {},
+            isDefault: true,
+            lastActiveTab: '#tabPlaythrough'
+          };
+          $.jStorage.set(profilesKey, profiles);
 
-      if (confirm(`Are you sure you want to delete "${currentProfile}"?`)) {
-        if (deleteProfile(currentProfile)) {
-          switchProfile(profiles.current);
-          restoreState(profiles.current);
-          populateProfiles();
+          $('.collapse').each(function () {
+            $(this).collapse('show');
+          });
+
+          restoreState(currentProfile);
+          populateChecklists();
           calculateTotals();
+        }
+      } else {
+        if (confirm(`Are you sure you want to delete "${currentProfile}"?`)) {
+          if (deleteProfile(currentProfile)) {
+            switchProfile(profiles.current);
+            restoreState(profiles.current);
+            populateProfiles();
+            calculateTotals();
+          }
         }
       }
     });
@@ -521,7 +536,6 @@
   }
 
   function restoreState(profile_name) {
-    console.log("Restoring state for profile:", profile_name);
 
     $.each(profiles[profilesKey][profile_name].checklistData, function (id, isChecked) {
       const checkbox = $("#" + id);
