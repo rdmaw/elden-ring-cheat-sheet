@@ -96,7 +96,6 @@
     const savedTheme = localStorage.getItem('theme') || 'notebook';
     setTheme(savedTheme);
 
-    // Update click handlers for both buttons
     $('#themeToggleCollapsed, #themeToggleExpanded').click(function () {
       const currentTheme = localStorage.getItem('theme') || 'notebook';
       const nextThemeIndex = (themes.indexOf(currentTheme) + 1) % themes.length;

@@ -1,5 +1,6 @@
 /*
-TODO: light and dark mode colors.
+TODO: SEO.
+TODO: Flere funksjoner?
 */
 
 /* DEFAULTS */
@@ -28,7 +29,11 @@ TODO: light and dark mode colors.
   --notebook-collapse-btn: #938f81;
   --notebook-to-top-icon-hover: #f8f5ee;
   --notebook-checkbox-border: #4e342e;
+  --notebook-checkbox-border-checked: #4e342e;
   --notebook-checkmark: #f8f5ee;
+  --notebook-nav-border: #4e342e;
+  --notebook-selection: #938f81;
+  --notebook-label-arrow: #4e342e;
 
   --light-main-bg: #ffffff;
   --light-nav-bg: #cccccc;
@@ -54,30 +59,39 @@ TODO: light and dark mode colors.
   --light-collapse-btn: #cccccc;
   --light-to-top-icon-hover: #ffffff;
   --light-checkbox-border: #000000;
+  --light-checkbox-border-checked: #000000;
   --light-checkmark: #ffffff;
+  --light-nav-border: #1a1a1a;
+  --light-selection: #999999;
+  --light-label-arrow: #1a1a1a;
 
   --dark-main-bg: #1a1a1a;
   --dark-nav-bg: #2d2d2d;
   --dark-nav-darker: #404040;
-  --dark-nav-hover: #ffffff;
+  --dark-nav-hover: #cccccc;
   --dark-text: #ffffff;
   --dark-title: #e5e5e5;
-  --dark-in-progress: #ff4c3b;
-  --dark-done: #55c759;
-  --dark-done-darker: #6dfb72;
-  --dark-box: #1a1a1a;
+  --dark-in-progress: #d84b53;
+  --dark-done: #89bd6b;
+  --dark-done-darker: #89bd6b;
+  --dark-box: #3a3a3a;
   --dark-box-text: #ffffff;
   --dark-btn-hover: #2d2d2d;
   --dark-a-active: #ffffff;
   --dark-nav-a-active: #ffffff;
   --dark-nav-icon-color: #ffc500;
-  --dark-link-color: #007acc;
-  --dark-link-color-active: #004a70;
+  --dark-link-color: #5A99D4;
+  --dark-link-color-active: #3B658D;
+  --dark-nav-text: #999999;
   --dark-theme-btn-hover: #1a1a1a;
   --dark-theme-icon-hover: #ffffff;
   --dark-collapse-btn: #404040;
-  --dark-checkbox-border: #ffffff;
-  --dark-checkmark: #ffffff;
+  --dark-checkbox-border: #808080;
+  --dark-checkbox-border-checked: #89bd6b;
+  --dark-checkmark: #2d2d2d;
+  --dark-nav-border: #808080;
+  --dark-selection: #808080;
+  --dark-label-arrow: #e5e5e5;
 }
 
 [data-theme="notebook"] {
@@ -105,7 +119,13 @@ TODO: light and dark mode colors.
   --collapse-btn: var(--notebook-collapse-btn);
   --to-top-icon-hover: var(--notebook-to-top-icon-hover);
   --checkbox-border: var(--notebook-checkbox-border);
+  --checkbox-border-checked: var(--notebook-checkbox-border-checked);
   --checkmark: var(--notebook-checkmark);
+  --nav-border: var(--notebook-nav-border);
+  --selection: var(--notebook-selection);
+  --label-arrow: var(--notebook-label-arrow);
+  --toggler-icon: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
+  --toggler-icon-hover: invert(100%) sepia(13%) saturate(356%) hue-rotate(307deg) brightness(116%) contrast(92%);
 }
 
 [data-theme="light"] {
@@ -133,7 +153,12 @@ TODO: light and dark mode colors.
   --collapse-btn: var(--light-collapse-btn);
   --to-top-icon-hover: var(--light-to-top-icon-hover);
   --checkbox-border: var(--light-checkbox-border);
+  --checkbox-border-checked: var(--light-checkbox-border-checked);
   --checkmark: var(--light-checkmark);
+  --nav-border: var(--light-nav-border);
+  --selection: var(--light-selection);
+  --label-arrow: var(--light-label-arrow);
+  --toggler-icon-hover: invert(100%) sepia(0%) saturate(1%) hue-rotate(58deg) brightness(107%) contrast(101%);
 }
 
 [data-theme="dark"] {
@@ -154,21 +179,27 @@ TODO: light and dark mode colors.
   --nav-icon-color: var(--dark-nav-icon-color);
   --link-color: var(--dark-link-color);
   --link-color-active: var(--dark-link-color-active);
+  --nav-text: var(--dark-nav-text);
   --theme-btn-hover: var(--dark-theme-btn-hover);
   --theme-icon-hover: var(--dark-theme-icon-hover);
   --collapse-btn: var(--dark-collapse-btn);
   --checkbox-border: var(--dark-checkbox-border);
+  --checkbox-border-checked: var(--dark-checkbox-border-checked);
   --checkmark: var(--dark-checkmark);
+  --nav-border: var(--dark-nav-border);
+  --selection: var(--dark-selection);
+  --label-arrow: var(--dark-label-arrow);
+  --toggler-icon: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  --toggler-icon-hover: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 ::selection {
-  background-color: var(--nav-bg-darker);
+  background-color: var(--selection);
   color: var(--main-bg-color);
 }
 
 * {
   box-sizing: border-box;
-  transition: background-color 0.1s ease;
 }
 
 html {
@@ -218,6 +249,7 @@ h6 {
 }
 
 h1 {
+  padding-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -264,16 +296,15 @@ ul {
 /* NAVBAR */
 .navbar {
   background-color: var(--nav-bg-color);
-  border-bottom: 2px solid var(--title-color);
+  border-bottom: 2px solid var(--nav-border);
 }
 
 .navbar .nav-link,
 .navbar .btn {
   color: var(--nav-text);
   font-weight: 500;
-  transition: color 0.1s ease-in-out;
-  /* remove default bootstrap border */
   border: 0;
+  transition: none;
 }
 
 .navbar .nav-link:hover,
@@ -289,8 +320,7 @@ ul {
 
 .navbar-toggler {
   background-color: var(--box-color);
-  border: 2px solid var(--title-color);
-  transition: all 0.15s ease-in-out;
+  border: 2px solid var(--nav-border);
 }
 
 .navbar-toggler:hover {
@@ -299,17 +329,17 @@ ul {
 }
 
 .navbar-toggler-icon {
-  filter: invert(23%) sepia(8%) saturate(2109%) hue-rotate(333deg) brightness(92%) contrast(89%);
-  transition: filter 0.15s ease-in-out;
+  filter: var(--toggler-icon);
 }
 
 .navbar-toggler:hover .navbar-toggler-icon {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  filter: var(--toggler-icon-hover);
 }
 
 .navbar-toggler:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(78, 52, 46, 0.8);
+  outline: none !important;
+  box-shadow: none !important;
+  border: 2px solid var(--nav-border) !important;
 }
 
 .navbar-collapse {
@@ -324,7 +354,10 @@ ul {
 .input-append {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+}
+
+#addProfile {
+  margin-left: 0.5rem;
 }
 
 #profiles {
@@ -332,7 +365,7 @@ ul {
   text-align-last: center;
   padding: 0.3rem 0.3rem 0.3rem 0.2rem;
   font-weight: 500;
-  border: 2px solid var(--title-color);
+  border: 2px solid var(--nav-border);
   border-radius: 4px;
   background-color: var(--box-color);
   color: var(--title-color);
@@ -344,10 +377,14 @@ ul {
   background-color: var(--box-color);
 }
 
+.input-append .theme-btn {
+  margin-left: 0.5rem;
+}
+
 .theme-btn {
   background: var(--box-color);
   color: var(--nav-icon-color);
-  border: 2px solid var(--title-color);
+  border: 2px solid var(--nav-border);
   border-radius: 0.375rem;
   width: 40px;
   height: 40px;
@@ -355,7 +392,6 @@ ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.15s ease-in-out;
 }
 
 .theme-btn:hover {
@@ -379,7 +415,6 @@ ul {
   .input-append {
     justify-content: center;
     width: 100%;
-    gap: 0.5rem;
   }
 
   .theme-btn {
@@ -397,9 +432,8 @@ ul {
 }
 
 /* ALL TABS */
-/* TODO: might remove */
 .tab-content {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .btn-group {
@@ -483,18 +517,19 @@ ul li ul {
 .btn-primary {
   background-color: var(--collapse-btn);
   color: var(--box-color-text);
-  border: 2px solid var(--title-color);
+  border: 2px solid var(--nav-border);
+  transition: none;
 }
 
 .btn-primary:hover {
   background-color: var(--btn-hover);
-  border: 2px solid var(--title-color);
+  border: 2px solid var(--nav-border);
 }
 
 .btn-primary:active {
   /* override bootstrap styles */
   background-color: var(--btn-hover-click) !important;
-  border: 2px solid var(--title-color) !important;
+  border: 2px solid var(--nav-border) !important;
 }
 
 .btn-collapse {
@@ -551,12 +586,33 @@ li ul li .checkbox {
   cursor: pointer;
 }
 
+label {
+  position: relative;
+}
+
+label:before {
+  font-family: "Bootstrap-icons";
+  content: "\f231";
+  position: absolute;
+  left: -1.5rem;
+  opacity: 0;
+  color: var(--label-arrow);
+}
+
+label:hover:before {
+  opacity: 1;
+}
+
 li ul li .checkbox-custom {
   left: 0;
 }
 
 li ul li .checkbox label {
   padding-left: 1.8rem;
+}
+
+li ul li label:before {
+  left: -1.2rem;
 }
 
 .checkbox input[type="checkbox"],
@@ -575,7 +631,7 @@ li ul li .checkbox input[type="checkbox"] {
 .checkbox input[type="checkbox"]:checked~label .checkbox-custom,
 li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom {
   background-color: var(--done);
-  border-color: var(--checkbox-border);
+  border-color: var(--checkbox-border-checked);
 }
 
 .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after,
@@ -612,7 +668,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   right: 20px;
   background-color: var(--nav-bg-darker);
   color: var(--box-color-text);
-  border: 2px solid var(--title-color);
+  border: 2px solid var(--nav-border);
   border-radius: 0.375rem;
   width: 40px;
   height: 40px;
@@ -623,21 +679,21 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   justify-content: center;
   cursor: pointer;
   z-index: 1000;
-  transition: all 0.5s ease-in-out;
   font-size: 1.8rem;
-
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .back-to-top.show {
   opacity: 0.8;
   visibility: visible;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .back-to-top.show:hover {
   background-color: var(--btn-hover);
   color: var(--to-top-icon-hover);
   opacity: 1;
-  transition: all 0.15s ease-in-out;
+  transition: none;
 }
 
 .back-to-top.show:active {
