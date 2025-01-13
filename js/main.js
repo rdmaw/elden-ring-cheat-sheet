@@ -51,6 +51,12 @@
     $(`a[href="${lastTab}"]`).addClass('active');
     $(lastTab).addClass('show active');
 
+    if ($(`a[href="${lastTab}"]`).data('show-buttons')) {
+      $('#collapseButtons').show();
+    } else {
+      $('#collapseButtons').hide();
+    }
+
     populateChecklists();
 
     $("ul li[data-id]").each(function () {
