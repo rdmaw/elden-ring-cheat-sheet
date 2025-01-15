@@ -1,3 +1,5 @@
+/* TODO: Function: Store user scroll position. Do: when list gets longer */
+
 /* DEFAULTS */
 :root {
   --notebook-main-bg: #faf3dd;
@@ -31,10 +33,12 @@
   --notebook-label-arrow: #4e342e;
   --notebook-boss: #d72638;
   --notebook-boss-active: #a71e2c;
-  --notebook-key-item: #8f46a7;
-  --notebook-key-item-active: #6e3581;
   --notebook-npc: #1c857a;
   --notebook-npc-active: #156d5a;
+  --notebook-key-item: #8f46a7;
+  --notebook-key-item-active: #6e3581;
+  --notebook-achievement: #ff9248;
+  --notebook-achievement-active: #e67f3d;
   --notebook-box-color-active-text: #f8f5ee;
 
   --light-main-bg: #ffffff;
@@ -68,10 +72,12 @@
   --light-label-arrow: #1a1a1a;
   --light-boss: #ff3f34;
   --light-boss-active: #cc332a;
-  --light-key-item: #8c3ebe;
-  --light-key-item-active: #742f9e;
   --light-npc: #188b76;
   --light-npc-active: #2e7463;
+  --light-key-item: #8c3ebe;
+  --light-key-item-active: #742f9e;
+  --light-achievement: #ff8533;
+  --light-achievement-active: #e56717;
   --light-box-color-active-text: #ffffff;
 
   --dark-main-bg: #1a1a1a;
@@ -103,10 +109,12 @@
   --dark-label-arrow: #e5e5e5;
   --dark-boss: #d1495b;
   --dark-boss-active: #a33b49;
-  --dark-key-item: #9d51b6;
-  --dark-key-item-active: #803f8e;
   --dark-npc: #149c82;
   --dark-npc-active: #127a66;
+  --dark-key-item: #9d51b6;
+  --dark-key-item-active: #803f8e;
+  --dark-achievement: #ff7f2a;
+  --dark-achievement-active: #cc5500;
   --dark-box-color-active-text: #ffffff;
 }
 
@@ -142,10 +150,12 @@
   --label-arrow: var(--notebook-label-arrow);
   --boss: var(--notebook-boss);
   --boss-active: var(--notebook-boss-active);
-  --key-item: var(--notebook-key-item);
-  --key-item-active: var(--notebook-key-item-active);
   --npc: var(--notebook-npc);
   --npc-active: var(--notebook-npc-active);
+  --key-item: var(--notebook-key-item);
+  --key-item-active: var(--notebook-key-item-active);
+  --achievement: var(--notebook-achievement);
+  --achievement-active: var(--notebook-achievement-active);
   --box-color--active-text: var(--notebook-box-color-active-text);
   --toggler-icon: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
   --toggler-icon-hover: invert(100%) sepia(13%) saturate(356%) hue-rotate(307deg) brightness(116%) contrast(92%);
@@ -183,10 +193,12 @@
   --label-arrow: var(--light-label-arrow);
   --boss: var(--light-boss);
   --boss-active: var(--light-boss-active);
-  --key-item: var(--light-key-item);
-  --key-item-active: var(--light-key-item-active);
   --npc: var(--light-npc);
   --npc-active: var(--light-npc-active);
+  --key-item: var(--light-key-item);
+  --key-item-active: var(--light-key-item-active);
+  --achievement: var(--light-achievement);
+  --achievement-active: var(--light-achievement-active);
   --box-color--active-text: var(--light-box-color-active-text);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(1%) hue-rotate(58deg) brightness(107%) contrast(101%);
 }
@@ -221,10 +233,12 @@
   --label-arrow: var(--dark-label-arrow);
   --boss: var(--dark-boss);
   --boss-active: var(--dark-boss-active);
-  --key-item: var(--dark-key-item);
-  --key-item-active: var(--dark-key-item-active);
   --npc: var(--dark-npc);
   --npc-active: var(--dark-npc-active);
+  --key-item: var(--dark-key-item);
+  --key-item-active: var(--dark-key-item-active);
+  --achievement: var(--dark-achievement);
+  --achievement-active: var(--dark-achievement-active);
   --box-color--active-text: var(--dark-box-color-active-text);
   --toggler-icon: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
@@ -427,8 +441,8 @@ ul {
   color: var(--nav-icon-color);
   border: 2px solid var(--nav-border);
   border-radius: 0.375rem;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -507,6 +521,14 @@ ul li ul {
   color: var(--boss-active);
 }
 
+.playthrough-wrapper ul li a.npc {
+  color: var(--npc);
+}
+
+.playthrough-wrapper ul li a.npc:active {
+  color: var(--npc-active);
+}
+
 .playthrough-wrapper ul li a.key-item {
   color: var(--key-item);
 }
@@ -515,12 +537,12 @@ ul li ul {
   color: var(--key-item-active);
 }
 
-.playthrough-wrapper ul li a.npc {
-  color: var(--npc);
+.playthrough-wrapper ul li a.achievement {
+  color: var(--achievement);
 }
 
-.playthrough-wrapper ul li a.npc:active {
-  color: var(--npc-active);
+.playthrough-wrapper ul li a.achievement:active {
+  color: var(--achievement-active);
 }
 
 .em {
@@ -562,32 +584,23 @@ ul li ul {
 
 .filter-buttons {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin-bottom: 1rem;
 }
 
-.filter-btn {
-  background: var(--box-color);
-  color: var(--text-color);
-  border: 2px solid var(--title-color);
-  border-radius: 0.375rem;
-  padding: 0.375rem 0.75rem;
-  cursor: pointer;
-  transition: all 0.15s ease-in-out;
+.filter-buttons .show-all {
+  margin-right: 0.3rem;
 }
 
-.filter-btn:hover {
-  background: var(--nav-bg-darker);
-  color: var(--box-color);
-}
-
-.filter-btn.active {
-  background: var(--nav-bg-darker);
-  color: var(--box-color);
+.filter-buttons .category-filters {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
 .color-legend {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.7rem;
   margin-bottom: 1rem;
 }
@@ -596,49 +609,43 @@ ul li ul {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  min-width: fit-content;
 }
 
 .color-box {
-  width: 17px;
-  height: 17px;
+  width: 1.063rem;
+  height: 1.063rem;
   border-radius: 4px;
   flex-shrink: 0;
 }
 
 .color-box.boss {
+  background-color: var(--boss);
   border: 2px solid var(--boss-active);
 }
 
 .color-box.npc {
+  background-color: var(--npc);
   border: 2px solid var(--npc-active);
 }
 
 .color-box.key-item {
+  background-color: var(--key-item);
   border: 2px solid var(--key-item-active);
 }
 
-.color-box.other {
-  border: 2px solid var(--link-color-active);
-}
-
-.legend-item span:not(.color-box) {
-  line-height: 17px;
-}
-
-.color-box.boss {
-  background-color: var(--boss);
-}
-
-.color-box.npc {
-  background-color: var(--npc);
-}
-
-.color-box.key-item {
-  background-color: var(--key-item);
+.color-box.achievement {
+  background-color: var(--achievement);
+  border: 2px solid var(--achievement-active);
 }
 
 .color-box.other {
   background-color: var(--link-color);
+  border: 2px solid var(--link-color-active);
+}
+
+.legend-item span:not(.color-box) {
+  line-height: 1.063rem;
 }
 
 .playthrough-wrapper h3 {
@@ -719,8 +726,8 @@ li ul li .checkbox {
   display: flex;
   align-items: flex-start;
   margin: 0;
-  min-height: 20px;
-  line-height: 20px;
+  min-height: 1.25rem;
+  line-height: 1.25rem;
   width: 100%;
   cursor: pointer;
   margin-right: 0.5rem;
@@ -729,9 +736,9 @@ li ul li .checkbox {
 .checkbox-custom {
   position: absolute;
   left: -0.1rem;
-  top: 2px;
-  height: 17px;
-  width: 17px;
+  top: 0.125rem;
+  height: 1.063rem;
+  width: 1.063rem;
   background-color: var(--box-color);
   border: 2px solid var(--checkbox-border);
   border-radius: 3px;
@@ -816,15 +823,14 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 
 .back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.25rem;
+  right: 1.25rem;
   background-color: var(--nav-bg-darker);
   color: var(--box-color-text);
   border: 2px solid var(--nav-border);
-  /* 0.375rem for square */
   border-radius: 1.2rem;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   opacity: 0;
   visibility: hidden;
@@ -848,8 +854,3 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   opacity: 1;
   transition: none;
 }
-
-/* .back-to-top.show:active {
-  background-color: var(--btn-hover-click);
-  color: var(--to-top-icon-hover);
-} */

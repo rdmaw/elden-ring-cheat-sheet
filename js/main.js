@@ -1,7 +1,8 @@
+var profilesKey = "er_profiles";
+
 (function ($) {
   var defaultProfiles = {
     current: "Default",
-    defaultProfileName: "Default",
   };
 
   defaultProfiles[profilesKey] = {
@@ -32,22 +33,34 @@
     $.jStorage.set(profilesKey, profiles);
   }
 
-  window.onload = function () {
-    restoreState(profiles.current);
-    initializeUI();
-  };
-
   function initializeUI() {
     if ($("ul li[data-id]").length === 0) {
       return;
     }
 
-    if (profiles.current && profiles[profilesKey][profiles.current]) {
-      restoreState(profiles.current);
-    }
-
     const lastTab = profiles[profilesKey][profiles.current].lastActiveTab || '#tabPlaythrough';
     const activeFilter = profiles[profilesKey][profiles.current].activeFilter || 'all';
+
+    if (!profiles[profilesKey][profiles.current].collapsed) {
+      profiles[profilesKey][profiles.current].collapsed = {};
+    }
+
+    $('.collapse').each(function () {
+      const collapseId = $(this).attr('id');
+      const isCollapsed = profiles[profilesKey][profiles.current].collapsed[collapseId];
+
+      if (isCollapsed) {
+        $(this).removeClass('show');
+        $(this).prev().find('.btn-collapse').addClass('collapsed');
+      } else {
+        $(this).addClass('show');
+        $(this).prev().find('.btn-collapse').removeClass('collapsed');
+      }
+    });
+
+    $('.btn-primary').removeClass('active');
+    $(`.btn-primary[data-filter="${activeFilter}"]`).addClass('active');
+    applyFilter(activeFilter);
 
     $('.nav-link').removeClass('active');
     $('.tab-pane').removeClass('show active');
@@ -60,45 +73,11 @@
       $('#collapseButtons').hide();
     }
 
-    $('.btn-primary').removeClass('active');
-    $(`.btn-primary[data-filter="${activeFilter}"]`).addClass('active');
-    applyFilter(activeFilter);
-
-    populateChecklists();
-
     $("ul li[data-id]").each(function () {
       addCheckbox(this);
     });
-
     populateProfiles();
     calculateTotals();
-  }
-
-  function addCheckbox(el) {
-    var $el = $(el);
-    var content = $el.contents().not($el.children('ul')).detach();
-    var sublists = $el.children('ul').detach();
-    var checkboxId = $el.attr('data-id');
-
-    var template = `
-      <div class="checkbox">
-        <input type="checkbox" id="${checkboxId}">
-        <label for="${checkboxId}">
-          <span class="checkbox-custom"></span>
-          <span class="item_content"></span>
-        </label>
-      </div>
-    `;
-
-    $el.html(template);
-    $el.find('.item_content').append(content);
-    $el.append(sublists);
-
-    var storedState = profiles[profilesKey][profiles.current].checklistData[checkboxId];
-    if (storedState) {
-      $("#" + checkboxId).prop("checked", true);
-      $el.find('label').addClass("completed");
-    }
   }
 
   function setTheme(themeName) {
@@ -110,7 +89,7 @@
   }
 
   $(document).ready(function () {
-    restoreState(profiles.current);
+    initializeUI();
     calculateTotals();
 
     const savedTheme = localStorage.getItem('theme') || 'notebook';
@@ -144,48 +123,20 @@
       }
     });
 
-    $('input[type="checkbox"]').click(function () {
-      var id = $(this).attr("id");
-      var isChecked = (profiles[profilesKey][profiles.current].checklistData[
-        id
-      ] = $(this).prop("checked"));
-      if (isChecked === true) {
-        $('[data-id="' + id + '"] label').addClass("completed");
-      } else {
-        $('[data-id="' + id + '"] label').removeClass("completed");
-      }
-      $(this)
-        .parent()
-        .parent()
-        .find('li > label > input[type="checkbox"]')
-        .each(function () {
-          var id = $(this).attr("id");
-          profiles[profilesKey][profiles.current].checklistData[id] = isChecked;
-          $(this).prop("checked", isChecked);
-        });
-      $.jStorage.set(profilesKey, profiles);
-      calculateTotals();
-    });
-
-    $('.checkbox input[type="checkbox"]').click(function () {
+    $(document).on('click', 'input[type="checkbox"]', function () {
       var id = $(this).attr('id');
-      var isChecked = profiles[profilesKey][profiles.current].checklistData[id] = $(this).prop('checked');
+      var isChecked = $(this).prop('checked');
 
-      if (isChecked === true) {
-        $(this).closest('.checkbox').find('label').addClass('completed');
+      profiles[profilesKey][profiles.current].checklistData[id] = isChecked;
+
+      var $label = $(this).closest('.checkbox').find('label');
+      if (isChecked) {
+        $label.addClass('completed');
       } else {
-        $(this).closest('.checkbox').find('label').removeClass('completed');
+        $label.removeClass('completed');
       }
-
       $.jStorage.set(profilesKey, profiles);
       calculateTotals();
-    });
-
-    $("#profiles").change(function (event) {
-      profiles.current = $(this).val();
-      $.jStorage.set(profilesKey, profiles);
-
-      populateChecklists();
     });
 
     $('#profiles').on('change', function () {
@@ -193,14 +144,42 @@
     });
 
     $('#addProfile').on('click', function () {
-      var profileName = prompt("Enter new profile name:");
-
-      if (profileName && !profiles[profilesKey][profileName]) {
-        if (addProfile(profileName)) {
-          switchProfile(profileName);
-          populateProfiles();
-          calculateTotals();
+      var profile_name = prompt("Enter new profile name:");
+      if (profile_name) {
+        if (profiles[profilesKey][profile_name]) {
+          alert("Profile " + profile_name + " already exists!");
+          return;
         }
+
+        clearUI();
+
+        profiles[profilesKey][profile_name] = {
+          checklistData: {},
+          collapsed: {},
+          isDefault: false,
+          lastActiveTab: '#tabPlaythrough',
+          activeFilter: 'all'
+        };
+
+        profiles.current = profile_name;
+        $.jStorage.set(profilesKey, profiles);
+
+        $('.btn-primary[data-filter]').removeClass('active');
+        $('.btn-primary[data-filter="all"]').addClass('active');
+
+        $('[id^="playthrough_totals_"], [id^="playthrough_nav_totals_"]').each(function () {
+          $(this).removeClass('done in_progress');
+          $(this).html('0/0');
+        });
+
+        $('.collapse').each(function () {
+          $(this).collapse('show');
+          $(this).prev().find('.btn-collapse').removeClass('collapsed');
+        });
+        populateProfiles();
+        restoreState(profile_name);
+        applyFilter('all');
+        calculateTotals();
       }
     });
 
@@ -231,11 +210,14 @@
 
       if (profiles[profilesKey][currentProfile].isDefault) {
         if (confirm("Reset all progress for the default profile?")) {
+          const activeFilter = profiles[profilesKey][currentProfile].activeFilter;
+
           profiles[profilesKey][currentProfile] = {
             checklistData: {},
             collapsed: {},
             isDefault: true,
-            lastActiveTab: '#tabPlaythrough'
+            lastActiveTab: '#tabPlaythrough',
+            activeFilter: activeFilter
           };
           $.jStorage.set(profilesKey, profiles);
 
@@ -243,8 +225,18 @@
             $(this).collapse('show');
           });
 
+          $('[id^="playthrough_totals_"]').each(function () {
+            $(this).removeClass('done in_progress');
+            $(this).html('0/0');
+          });
+
+          $('[id^="playthrough_nav_totals_"]').each(function () {
+            $(this).removeClass('done in_progress');
+            $(this).html('0/0');
+          });
           restoreState(currentProfile);
           populateChecklists();
+          applyFilter(activeFilter);
           calculateTotals();
         }
       } else {
@@ -272,8 +264,8 @@
     });
 
     $('.collapse').on('shown.bs.collapse hidden.bs.collapse', function () {
-      var collapseId = $(this).attr('id');
-      var isCollapsed = !$(this).hasClass('show');
+      const collapseId = $(this).attr('id');
+      const isCollapsed = !$(this).hasClass('show');
 
       profiles[profilesKey][profiles.current].collapsed[collapseId] = isCollapsed;
       $.jStorage.set(profilesKey, profiles);
@@ -292,6 +284,7 @@
         $collapseElements.each(function () {
           collapseStates[$(this).attr('id')] = true;
         });
+
         profiles[profilesKey][profiles.current].collapsed = collapseStates;
         $.jStorage.set(profilesKey, profiles);
       }, 350);
@@ -310,6 +303,7 @@
         $collapseElements.each(function () {
           collapseStates[$(this).attr('id')] = false;
         });
+
         profiles[profilesKey][profiles.current].collapsed = collapseStates;
         $.jStorage.set(profilesKey, profiles);
       }, 350);
@@ -341,25 +335,37 @@
       $.jStorage.set(profilesKey, profiles);
 
       applyFilter(filter);
-    });
-
-    $(document).on("change", "input[type='checkbox']", function () {
-      var id = $(this).attr('id');
-      var isChecked = $(this).prop('checked');
-
-      profiles[profilesKey][profiles.current].checklistData[id] = isChecked;
-
-      if (isChecked) {
-        $(this).closest('.checkbox').find('label').addClass('completed');
-      } else {
-        $(this).closest('.checkbox').find('label').removeClass('completed');
-      }
-      $.jStorage.set(profilesKey, profiles);
-
       calculateTotals();
     });
     calculateTotals();
   });
+
+  function addCheckbox(el) {
+    var $el = $(el);
+    var content = $el.contents().not($el.children('ul')).detach();
+    var sublists = $el.children('ul').detach();
+    var checkboxId = $el.attr('data-id');
+
+    var template = `
+      <div class="checkbox">
+        <input type="checkbox" id="${checkboxId}">
+        <label for="${checkboxId}">
+          <span class="checkbox-custom"></span>
+          <span class="item_content"></span>
+        </label>
+      </div>
+    `;
+
+    $el.html(template);
+    $el.find('.item_content').append(content);
+    $el.append(sublists);
+
+    var storedState = profiles[profilesKey][profiles.current].checklistData[checkboxId];
+    if (storedState) {
+      $("#" + checkboxId).prop("checked", true);
+      $el.find('label').addClass("completed");
+    }
+  }
 
   function populateProfiles() {
     var profileSelect = $('#profiles');
@@ -387,35 +393,47 @@
   }
 
   function calculateTotals() {
-    $('[id$="_overall_total"]').each(function (index) {
+    $('[id$="_overall_total"]').each(function () {
       var type = this.id.match(/(.*)_overall_total/)[1];
       var overallCount = 0,
         overallChecked = 0;
 
-      $('[id^="' + type + '_totals_"]').each(function (index) {
+      $('[id^="' + type + '_totals_"]').each(function () {
         var regex = new RegExp(type + "_totals_(.*)");
-        var regexFilter = new RegExp("^playthrough_(.*)");
         var i = parseInt(this.id.match(regex)[1]);
         var count = 0,
           checked = 0;
+        var activeFilter = profiles[profilesKey][profiles.current].activeFilter;
 
         for (var j = 1; ; j++) {
           var checkbox = $("#" + type + "_" + i + "_" + j);
-          if (checkbox.length == 0) {
-            break;
+          if (checkbox.length == 0) break;
+
+          var checkboxLi = checkbox.closest('li');
+          if (activeFilter !== 'all') {
+            if (!checkboxLi.find('a').hasClass(activeFilter)) {
+              continue;
+            }
           }
-          if (
-            checkbox.is(":hidden") &&
-            checkbox.prop("id").match(regexFilter) &&
-            canFilter(checkbox.closest("li"))
-          ) {
-            continue;
-          }
+
           count++;
           overallCount++;
           if (checkbox.prop("checked")) {
             checked++;
             overallChecked++;
+          }
+        }
+
+        if (count > 0) {
+          var span = $("#" + type + "_totals_" + i);
+          span.html(checked + "/" + count);
+
+          if (checked === count) {
+            span.removeClass('in_progress').addClass('done');
+          } else if (checked > 0) {
+            span.removeClass('done').addClass('in_progress');
+          } else {
+            span.removeClass('done in_progress');
           }
         }
 
@@ -451,9 +469,14 @@
     $('.checkbox label').removeClass('completed');
     $('.collapse').addClass('show');
     $('.btn-collapse').removeClass('collapsed');
+
+    $('[id^="playthrough_totals_"], [id^="playthrough_nav_totals_"]')
+      .removeClass('done in_progress')
+      .html('0/0');
   }
 
   function applyFilter(filter) {
+
     if (filter === 'all') {
       $('.playthrough-wrapper li').show();
     } else {
@@ -461,39 +484,78 @@
       $(`.playthrough-wrapper li a.${filter}`).closest('li').show();
     }
     $('.playthrough-wrapper h3').show();
+
+    profiles[profilesKey][profiles.current].activeFilter = filter;
+    $.jStorage.set(profilesKey, profiles);
+    calculateTotals();
   }
 
-  function addProfile(profileName) {
-    if (!profiles[profilesKey][profileName]) {
-      clearUI();
-      profiles[profilesKey][profileName] = {
+  function switchProfile(profile_name) {
+    clearUI();
+
+    profiles.current = profile_name;
+
+    if (!profiles[profilesKey][profile_name]) {
+      profiles[profilesKey][profile_name] = {
         checklistData: {},
         collapsed: {},
-        isDefault: false
+        isDefault: false,
+        lastActiveTab: '#tabPlaythrough',
+        activeFilter: 'all'
       };
-      $.jStorage.set(profilesKey, profiles);
-      return true;
     }
-    return false;
-  }
+    $.jStorage.set(profilesKey, profiles);
 
-  function switchProfile(profileName) {
-    if (profiles[profilesKey][profileName]) {
-      clearUI();
-      profiles.current = profileName;
-      $.jStorage.set(profilesKey, profiles);
-      restoreState(profileName);
-      calculateTotals();
-    }
+    $('.collapse').each(function () {
+      const collapseId = $(this).attr('id');
+      const isCollapsed = profiles[profilesKey][profile_name].collapsed[collapseId];
+
+      if (isCollapsed) {
+        $(this).removeClass('show');
+        $(this).prev().find('.btn-collapse').addClass('collapsed');
+      } else {
+        $(this).addClass('show');
+        $(this).prev().find('.btn-collapse').removeClass('collapsed');
+      }
+    });
+
+    const lastTab = profiles[profilesKey][profile_name].lastActiveTab || '#tabPlaythrough';
+    const activeFilter = profiles[profilesKey][profile_name].activeFilter || 'all';
+
+    $('.nav-link').removeClass('active');
+    $('.tab-pane').removeClass('show active');
+    $(`a[href="${lastTab}"]`).addClass('active');
+    $(lastTab).addClass('show active');
+
+    $('.btn-primary').removeClass('active');
+    $(`.btn-primary[data-filter="${activeFilter}"]`).addClass('active');
+
+    restoreState(profile_name);
+    applyFilter(activeFilter);
+    calculateTotals();
   }
 
   function deleteProfile(profileName) {
-    if (!profiles[profilesKey][profileName] ||
-      profiles[profilesKey][profileName].isDefault) {
-      return false;
+    if (profiles[profilesKey][profileName].isDefault) {
+      const defaultProfile = {
+        checklistData: {},
+        collapsed: {},
+        isDefault: true,
+        lastActiveTab: '#tabPlaythrough',
+        activeFilter: profiles[profilesKey][profileName].activeFilter || 'all'
+      };
+
+      profiles[profilesKey][profileName] = defaultProfile;
+      $.jStorage.set(profilesKey, profiles);
+
+      clearUI();
+      restoreState(profileName);
+      calculateTotals();
+      return true;
     }
 
-    if (Object.keys(profiles[profilesKey]).length <= 1) {
+    if (!profiles[profilesKey][profileName] ||
+      Object.keys(profiles[profilesKey]).length <= 1) {
       return false;
     }
 
@@ -508,41 +570,12 @@
     return true;
   }
 
-  function canFilter(entry) {
-    if (!entry.attr("class")) {
-      return false;
-    }
-
-    var classList = entry.attr("class").split(/\s+/);
-    var foundMatch = 0;
-
-    for (var i = 0; i < classList.length; i++) {
-      if (!classList[i].match(/^f_(.*)/)) {
-        continue;
-      }
-
-      if (
-        classList[i] in
-        profiles[profilesKey][profiles.current].hidden_categories
-      ) {
-        if (
-          !profiles[profilesKey][profiles.current].hidden_categories[
-          classList[i]
-          ]
-        ) {
-          return false;
-        }
-        foundMatch = 1;
-      }
-    }
-
-    if (foundMatch === 0) {
-      return false;
-    }
-    return true;
-  }
-
   function restoreState(profile_name) {
+
+    const activeFilter = profiles[profilesKey][profile_name].activeFilter || 'all';
+    $('.btn-primary[data-filter]').removeClass('active');
+    $(`.btn-primary[data-filter="${activeFilter}"]`).addClass('active');
+    applyFilter(activeFilter);
 
     $.each(profiles[profilesKey][profile_name].checklistData, function (id, isChecked) {
       const checkbox = $("#" + id);

@@ -139,7 +139,7 @@
           try {
             // IE
             return xmlNode.xml;
-          } catch (E2) {}
+          } catch (E2) { }
         }
         return false;
       },
@@ -150,14 +150,14 @@
        */
       decode: function (xmlString) {
         var dom_parser =
-            ("DOMParser" in window && new DOMParser().parseFromString) ||
-            (window.ActiveXObject &&
-              function (_xmlString) {
-                var xml_doc = new ActiveXObject("Microsoft.XMLDOM");
-                xml_doc.async = "false";
-                xml_doc.loadXML(_xmlString);
-                return xml_doc;
-              }),
+          ("DOMParser" in window && new DOMParser().parseFromString) ||
+          (window.ActiveXObject &&
+            function (_xmlString) {
+              var xml_doc = new ActiveXObject("Microsoft.XMLDOM");
+              xml_doc.async = "false";
+              xml_doc.loadXML(_xmlString);
+              return xml_doc;
+            }),
           resultXML;
         if (!dom_parser) {
           return false;
@@ -170,7 +170,7 @@
         return this.isXML(resultXML) ? resultXML : false;
       },
     },
-    _localStoragePolyfillSetKey = function () {};
+    _localStoragePolyfillSetKey = function () { };
 
   ////////////////////////// PRIVATE METHODS ////////////////////////
 
@@ -235,11 +235,11 @@
         var data = "{}";
         try {
           data = _storage_elm.getAttribute("jStorage");
-        } catch (E5) {}
+        } catch (E5) { }
 
         try {
           _observer_update = _storage_elm.getAttribute("jStorage_update");
-        } catch (E6) {}
+        } catch (E6) { }
 
         _storage_service.jStorage = data;
         _backend = "userDataBehavior";
@@ -528,11 +528,11 @@
 
       try {
         data = _storage_elm.getAttribute("jStorage");
-      } catch (E5) {}
+      } catch (E5) { }
 
       try {
         _observer_update = _storage_elm.getAttribute("jStorage_update");
-      } catch (E6) {}
+      } catch (E6) { }
 
       _storage_service.jStorage = data;
     }
@@ -575,7 +575,7 @@
         _storage_elm.load("jStorage");
         try {
           updateTime = _storage_elm.getAttribute("jStorage_update");
-        } catch (E5) {}
+        } catch (E5) { }
       }
 
       if (updateTime && updateTime != _observer_update) {
@@ -590,8 +590,8 @@
    */
   function _checkUpdatedKeys() {
     var oldCrc32List = JSON.parse(
-        JSON.stringify(_storage.__jstorage_meta.CRC32)
-      ),
+      JSON.stringify(_storage.__jstorage_meta.CRC32)
+    ),
       newCrc32List;
 
     _reloadData();
@@ -1071,7 +1071,7 @@
      * @return {Object} Read-only copy of _storage
      */
     storageObj: function () {
-      function F() {}
+      function F() { }
       F.prototype = _storage;
       return new F();
     },

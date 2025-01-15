@@ -9,19 +9,41 @@
     gtag('js', new Date());
     gtag('config', 'G-6QL0J2BBZE');
   </script>
-  <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+  <meta http-equiv="Content-Security-Policy" content="object-src 'none'; frame-src 'none'; base-uri 'self' https://rdmaw.github.io; form-action 'self'; upgrade-insecure-requests; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <meta name="author" content="redmaw" />
-  <meta name="description" content="An Elden Ring Cheat Sheet and Guide to track your progress. Checklist for all NPCs, Quests, Bosses, and Items, including for the Shadow of the Erdtree DLC." />
-  <meta property="og:title" content="Elden Ring Cheat Sheet - Checklist and Guide" />
-  <meta property="og:description" content="An Elden Ring Cheat Sheet and Guide to track your progress. Checklist for all NPCs, Quests, Bosses, and Items, including for the Shadow of the Erdtree DLC." />
+  <meta name="description" content="An Elden Ring Cheat Sheet and Guide to track your progress, including for the Shadow of the Erdtree DLC. Checklist for all NPCs, Quests, Bosses, and Items." />
+  <meta property="og:title" content="Elden Ring Cheat Sheet - Checklist, Guide and Tracker" />
+  <meta property="og:description" content="An Elden Ring Cheat Sheet and Guide to track your progress, including for the Shadow of the Erdtree DLC. Checklist for all NPCs, Quests, Bosses, and Items." />
   <meta property="og:url" content="https://rdmaw.github.io/elden-ring-cheat-sheet" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Elden Ring Cheat Sheet - Checklist and Guide" />
-  <meta name="twitter:description" content="An Elden Ring Cheat Sheet and Guide to track your progress. Checklist for all NPCs, Quests, Bosses, and Items, including for the Shadow of the Erdtree DLC." />
+  <meta name="twitter:title" content="Elden Ring Cheat Sheet - Checklist, Guide and Tracker" />
+  <meta name="twitter:description" content="An Elden Ring Cheat Sheet and Guide to track your progress, including for the Shadow of the Erdtree DLC. Checklist for all NPCs, Quests, Bosses, and Items." />
   <meta name="twitter:url" content="https://rdmaw.github.io/elden-ring-cheat-sheet" />
+  <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Elden Ring Cheat Sheet - Checklist, Guide and Tracker",
+          "description": "An Elden Ring Cheat Sheet and Guide to track your progress, including for the Shadow of the Erdtree DLC. Checklist for all NPCs, Quests, Bosses, and Items.",
+          "url": "https://rdmaw.github.io/elden-ring-cheat-sheet/",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://rdmaw.github.io/elden-ring-cheat-sheet/"
+          },
+          "publisher": {
+            "@type": "Person",
+            "name": "redmaw",
+            "url": "https://github.com/rdmaw"
+          },
+          "image": "https://rdmaw.github.io/elden-ring-cheat-sheet/web-app-manifest-512x512.png"
+        }
+      </script>
   <link rel="icon" type="image/png" href="/elden-ring-cheat-sheet/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/elden-ring-cheat-sheet/favicon.svg" />
   <link rel="shortcut icon" href="/elden-ring-cheat-sheet/favicon.ico" />
@@ -34,6 +56,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://rdmaw.github.io/elden-ring-cheat-sheet" />
   <title>Elden Ring Cheat Sheet - Checklist, Guide and Tracker</title>
 </head>
 
@@ -49,7 +72,6 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="text-center navbar-nav" role="tablist">
           <li class="nav-item">
@@ -77,7 +99,6 @@
             <a class="nav-link" id="help-tab" href="#tabHelp" role="tab" aria-controls="tabHelp" aria-selected="false">Help</a>
           </li>
         </ul>
-
         <div class="profile ms-auto">
           <div class="input-append text-center">
             <select id="profiles"></select>
@@ -92,6 +113,7 @@
       </div>
     </div>
   </nav>
+
   <!-- CONTENTS -->
   <div class="container">
     <div class="text-center">
@@ -108,6 +130,7 @@
       </div>
       <!-- PLAYTHROUGH -->
       <div class="tab-pane show active" id="tabPlaythrough" role="tabpanel" aria-labelledby="playthrough-tab">
+
         <h2>Progress Checklist
           <span id="playthrough_overall_total"></span>
         </h2>
@@ -139,14 +162,18 @@
         </ul>
 
         <hr>
-        <h2 class="filters">Filters:</h2>
+        <h2 class="filters">Filter your playthrough:</h2>
         <div class="filter-buttons">
-          <button class="btn btn-primary" data-filter="all">Show All</button>
-          <button class="btn btn-primary" data-filter="boss">Bosses</button>
-          <button class="btn btn-primary" data-filter="npc">NPCs</button>
-          <button class="btn btn-primary" data-filter="key-item">Key Items</button>
+          <div class="show-all">
+            <button class="btn btn-primary" data-filter="all">Show All</button>
+          </div>
+          <div class="category-filters">
+            <button class="btn btn-primary" data-filter="boss">Bosses</button>
+            <button class="btn btn-primary" data-filter="npc">NPCs</button>
+            <button class="btn btn-primary" data-filter="key-item">Key Items</button>
+            <button class="btn btn-primary" data-filter="achievement">Achievements</button>
+          </div>
         </div>
-
         <div class="color-legend">
           <div class="legend-item">
             <span class="color-box boss"></span>
@@ -161,14 +188,18 @@
             <span>Key Item</span>
           </div>
           <div class="legend-item">
+            <span class="color-box achievement"></span>
+            <span>Achievement</span>
+          </div>
+          <div class="legend-item">
             <span class="color-box other"></span>
             <span>Other</span>
           </div>
         </div>
-
         <hr>
 
         <div class="playthrough-wrapper" id="playthrough_list">
+          <!-- Start of Chapel of Anticipation -->
           <h3 id="Chapel_Of_Anticipation">
             <a href="#Chapel_Of_Anticipation_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
             <a href="https://eldenring.wiki.gg/wiki/Chapel_of_Anticipation">Chapel of Anticipation</a>
@@ -186,14 +217,12 @@
               </ul>
             </li>
           </ul>
-
-
+          <!-- Start of Stranded Graveyard -->
           <h3 id="Stranded_Graveyard">
             <a href="#Stranded_Graveyard_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
             <a href="https://eldenring.wiki.gg/wiki/Stranded_Graveyard">Stranded Graveyard</a>
             <span id="playthrough_totals_2"></span>
           </h3>
-
           <ul id="Stranded_Graveyard_col" class="collapse show">
             <li data-id="playthrough_2_1">After respawning in the cave, talk to the <a href="https://eldenring.wiki.gg/wiki/Stranded_Souls">Stranded Soul</a> (optional) and take the plunge down to the <a href="https://eldenring.wiki.gg/wiki/Cave_of_Knowledge"> Cave of Knowledge</a>.</li>
             <li data-id="playthrough_2_2">Rest at the <a href="https://eldenring.wiki.gg/wiki/Sites_of_Grace#/media/File:ER_Site_of_Grace_Cave_of_Knowledge.png">grace</a> and allocate your flask charges if you want.</li>
@@ -203,7 +232,7 @@
             <li data-id="playthrough_2_6">Pick up <a href="https://eldenring.wiki.gg/wiki/Finger_Severer">Finger Severer</a> and <a href="https://eldenring.wiki.gg/wiki/Tarnished%27s_Furled_Finger">Tarnished's Furled Finger</a> near the exit lift.</li>
             <li data-id="playthrough_2_7">Take the lift up and enter the Lands Between!</li>
           </ul>
-
+          <!-- Start of Preparations -->
           <h3 id="Preparations">
             <a href="#Preparations_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
             <a href="#Preparations">Preparations</a>
@@ -213,7 +242,7 @@
             <li data-id="playthrough_3_1">Head out the doors and talk to <a href="https://eldenring.wiki.gg/wiki/White_Mask_Varr%C3%A9" class="npc">Varré</a></li>
             <li data-id="playthrough_3_2">Testing sentence 2</li>
           </ul>
-
+          <!-- Start of Limgrave -->
           <h3 id="Limgrave">
             <a href="#Limgrave_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
             <a href="https://eldenring.wiki.gg/wiki/Limgrave">Limgrave</a>
@@ -223,7 +252,7 @@
             <li data-id="playthrough_4_1">Testing sentence 1</li>
             <li data-id="playthrough_4_2">Testing sentence 2</li>
           </ul>
-
+          <!-- Start of Weeping Peninsula -->
           <h3 id="Weeping_Peninsula">
             <a href="#Weeping_Peninsula_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
             <a href="https://eldenring.wiki.gg/wiki/Weeping_Peninsula">Weeping Peninsula</a>
@@ -233,7 +262,7 @@
             <li data-id="playthrough_5_1">Testing sentence 1</li>
             <li data-id="playthrough_5_2">Testing sentence 2</li>
           </ul>
-
+          <!-- Start of Stormveil Castle -->
           <h3 id="Stormveil_Castle">
             <a href="#Stormveil_Castle_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
             <a href="https://eldenring.wiki.gg/wiki/Stormveil_Castle">Stormveil Castle</a>
@@ -243,10 +272,10 @@
             <li data-id="playthrough_6_1">Testing sentence 1</li>
             <li data-id="playthrough_6_2">Testing sentence 2</li>
           </ul>
-          <!-- playthrough-list -->
         </div>
-        <!-- tab-playthrough -->
+        <!-- playthrough-list -->
       </div>
+      <!-- tab-playthrough -->
       <!-- ACHIEVEMENTS section -->
       <div class="tab-pane" id="tabAchievements" role="tabpanel" aria-labelledby="achievements-tab">
         <h2>Achievements</h2>
@@ -282,20 +311,19 @@
         <h2>FAQ</h2>
         <p>Help section</p>
 
+        <!-- Workaround for #1. Might be related to how DOM is being handled by browser. -->
+        <form style="display: none;">
+          <textarea></textarea>
+        </form>
       </div>
-      <!-- tab-content -->
     </div>
-    <!-- container -->
+    <!-- tab-content -->
   </div>
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">
-    <i class="bi bi-arrow-up-short"></i>
-  </button>
+  <!-- container -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></button>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="js/jstorage.js"></script>
-  <script>
-    var profilesKey = "er_profiles";
-  </script>
   <script src="js/main.js"></script>
 </body>
 
