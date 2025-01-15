@@ -272,7 +272,8 @@ var profilesKey = "er_profiles";
     });
 
     $('#collapseAll').on('click', function () {
-      var $collapseElements = $('.playthrough-wrapper .collapse');
+      const activeTab = $('.tab-pane.active');
+      var $collapseElements = activeTab.find('.collapse');
 
       $collapseElements.each(function () {
         $(this).collapse('hide');
@@ -285,13 +286,17 @@ var profilesKey = "er_profiles";
           collapseStates[$(this).attr('id')] = true;
         });
 
-        profiles[profilesKey][profiles.current].collapsed = collapseStates;
+        profiles[profilesKey][profiles.current].collapsed = {
+          ...profiles[profilesKey][profiles.current].collapsed,
+          ...collapseStates
+        };
         $.jStorage.set(profilesKey, profiles);
       }, 350);
     });
 
     $('#expandAll').on('click', function () {
-      var $collapseElements = $('.playthrough-wrapper .collapse');
+      const activeTab = $('.tab-pane.active');
+      var $collapseElements = activeTab.find('.collapse');
 
       $collapseElements.each(function () {
         $(this).collapse('show');
@@ -304,7 +309,10 @@ var profilesKey = "er_profiles";
           collapseStates[$(this).attr('id')] = false;
         });
 
-        profiles[profilesKey][profiles.current].collapsed = collapseStates;
+        profiles[profilesKey][profiles.current].collapsed = {
+          ...profiles[profilesKey][profiles.current].collapsed,
+          ...collapseStates
+        };
         $.jStorage.set(profilesKey, profiles);
       }, 350);
     });

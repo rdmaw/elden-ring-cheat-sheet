@@ -316,6 +316,12 @@ h2.filters {
 
 h3 {
   font-size: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0.2rem;
+}
+
+h3 a:not(.btn) {
+  margin-left: 0.2rem;
 }
 
 p {
@@ -648,18 +654,11 @@ ul li ul {
   line-height: 1.063rem;
 }
 
-.playthrough-wrapper h3 {
-  padding-top: 1rem;
-  padding-bottom: 0.2rem;
-}
-
 .playthrough-wrapper>ul:last-of-type>li:last-child {
   padding-bottom: 0.8rem;
 }
 
-.playthrough-wrapper h3 a:not(.btn) {
-  margin-left: 0.2rem;
-}
+
 
 .btn:focus,
 .btn.active:focus {
@@ -819,6 +818,37 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   li ul li .checkbox-custom {
     transform: none;
   }
+}
+
+.table {
+  --bs-table-striped-bg: var(--nav-bg-color);
+  --bs-table-striped-color: var(--text-color);
+}
+
+.table thead th {
+  color: var(--title-color);
+}
+
+.table tbody td,
+.table tbody th {
+  color: var(--text-color);
+}
+
+.table> :not(caption)>*>* {
+  background-color: var(--main-bg-color);
+  border-bottom-color: var(--nav-border);
+}
+
+.table a {
+  color: var(--text-color);
+}
+
+.table a:active {
+  color: var(--a-active);
+}
+
+.rune {
+  font-weight: 600;
 }
 
 .back-to-top {
