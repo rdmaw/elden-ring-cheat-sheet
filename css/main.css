@@ -1,4 +1,6 @@
 /* TODO: Function: Store user scroll position. Do: when list gets longer */
+/* TODO: Make filter buttons work multiple at time, unless Show All is selected. */
+/* TODO: Add table of contents to Resources? */
 
 /* DEFAULTS */
 :root {
@@ -46,7 +48,7 @@
   --light-nav-darker: #cccccc;
   --light-nav-hover: #262626;
   --light-text: #000000;
-  --light-title: #1a1a1a;
+  --light-title: #373737;
   --light-in-progress: #cc6600;
   --light-done: #0090f2;
   --light-done-darker: #009933;
@@ -85,7 +87,7 @@
   --dark-nav-darker: #404040;
   --dark-nav-hover: #cccccc;
   --dark-text: #ffffff;
-  --dark-title: #e5e5e5;
+  --dark-title: #e3dede;
   --dark-in-progress: #d84b53;
   --dark-done: #89bd6b;
   --dark-done-darker: #89bd6b;
@@ -331,7 +333,7 @@ p {
 a {
   color: var(--title-color);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 a:hover {
@@ -352,6 +354,15 @@ ul {
   padding-left: 1.375rem;
   /* Remove weird bootstrap animation jump */
   margin: 0;
+}
+
+.disc {
+  list-style-type: disc;
+}
+
+.strong {
+  color: var(--title-color);
+  font-weight: 500;
 }
 
 /* NAVBAR */
@@ -848,7 +859,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 }
 
 .rune {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .back-to-top {

@@ -84,19 +84,13 @@
             <a class="nav-link" id="armor-tab" href="#tabArmor" role="tab" aria-controls="tabArmor" aria-selected="false" data-show-buttons="true">Armor</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="ashes-tab" href="#tabAshes" role="tab" aria-controls="tabAshes" aria-selected="false" data-show-buttons="true">Ashes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="spells-tab" href="#tabSpells" role="tab" aria-controls="tabSpells" aria-selected="false" data-show-buttons="true">Spells</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="talismans-tab" href="#tabTalismans" role="tab" aria-controls="tabTalismans" aria-selected="false" data-show-buttons="true">Talismans</a>
+            <a class="nav-link" id="misc-tab" href="#tabMisc" role="tab" aria-controls="tabMisc" aria-selected="false" data-show-buttons="true">Misc</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="resources-tab" href="#tabResources" role="tab" aria-controls="tabResources" aria-selected="false" data-show-buttons="true">Resources</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="help-tab" href="#tabHelp" role="tab" aria-controls="tabHelp" aria-selected="false">Help</a>
+            <a class="nav-link" id="help-tab" href="#tabHelp" role="tab" aria-controls="tabHelp" aria-selected="false"><i class="bi bi-question-circle-fill"></i> Help</a>
           </li>
         </ul>
         <div class="profile ms-auto">
@@ -291,27 +285,22 @@
         <h2>Armor</h2>
         <p>Coming soon...</p>
       </div>
-      <!-- ASHES section -->
-      <div class="tab-pane" id="tabAshes" role="tabpanel" aria-labelledby="ashes-tab">
-        <h2>Ashes</h2>
-        <p>Coming soon...</p>
-      </div>
-      <!-- SPELLS section -->
-      <div class="tab-pane" id="tabSpells" role="tabpanel" aria-labelledby="spells-tab">
-        <h2>Spells</h2>
-        <p>Coming soon...</p>
-      </div>
-      <!-- TALISMANS section -->
-      <div class="tab-pane" id="tabTalismans" role="tabpanel" aria-labelledby="talismans-tab">
+      <!-- MISC section -->
+      <div class="tab-pane" id="tabMisc" role="tabpanel" aria-labelledby="misc-tab">
+        <h2>Gestures</h2>
         <h2>Talismans</h2>
+        <h2>Ashes of War</h2>
+        <h2>Spirit Ashes</h2>
+        <h2>Sorcery</h2>
+        <h2>Incantations</h2>
         <p>Coming soon...</p>
       </div>
       <!-- RESOURCES section -->
       <div class="tab-pane" id="tabResources" role="tabpanel" aria-labelledby="resources-tab">
-
+        <!-- START OF RUNE TYPES -->
         <h3 id="Rune_Types">
           <a href="#Rune_Types_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
-          <a href="https://eldenring.wiki.fextralife.com/Runes">Rune Types</a>
+          <a href="https://eldenring.wiki.fextralife.com/Runes">Rune Items</a>
         </h3>
         <div id="Rune_Types_col" class="collapse show">
           <table class="table table-striped">
@@ -409,10 +398,10 @@
             </tbody>
           </table>
         </div>
-
+        <!-- START OF RUNE TYPES DLC -->
         <h3 id="Rune_Types_DLC">
           <a href="#Rune_Types_DLC_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
-          <a href="https://eldenring.wiki.fextralife.com/Runes">Rune Types DLC</a>
+          <a href="https://eldenring.wiki.fextralife.com/Runes">Rune Items DLC</a>
         </h3>
         <div id="Rune_Types_DLC_col" class="collapse show">
           <table class="table table-striped">
@@ -474,10 +463,33 @@
       <!-- HELP section -->
       <div class="tab-pane" id="tabHelp" role="tabpanel" aria-labelledby="help-tab">
         <h2>FAQ</h2>
-        <p>Help section</p>
-
-        The guide is currently using information from the fextra life wiki and eldenpedia. Most links are from fextralife, which seems to be the most complete one. I'd be happy to change to Eldenpedia, but it seems quite unfinished at this moment.
-
+        <h3>How do I use this website?</h3>
+        <p>This project is intended to be a walkthrough guide of the entire game, containing every item, questline, boss and achievement in Elden Ring.</p>
+        <p>In the main <span class="strong">Playthrough</span> tab, you have a step by step checklist guide through the entire game.<br>You can filter the checklist to only show you the steps for bosses, questlines, achievements or key-items (especially useful for item randomizer).</p>
+        <p>The <span class="strong">Achievements</span>, <span class="strong">Armaments</span>, <span class="strong">Armor</span> and <span class="strong">Misc</span> tabs can be used as separate checklists to see what weapons/ashes/spells etc. you are missing.</p>
+        <p>In the <span class="strong">Resources</span> tab, you can find tables containing information about stat caps, upgrade materials and rune items.</p>
+        <h3>Do I have to follow everything in this exact order?</h3>
+        <p>Nope, this project was primarily intended for me and my cousin. Since I am a completionist I like to make sure I don't miss a single thing the game has to offer.<br>Elden Ring is a big open world game, so if you want to play at your own pace, but still don't wanna miss any important questlines or achievements, give some of the filters a try.</p>
+        <h3>Can I use this for multiple characters?</h3>
+        <p>Yes! You can create, edit and delete profiles using the buttons in the navigation bar.</p>
+        <h3>How does the checklist get saved?</h3>
+        <p>The checklists are saved to your browser's local storage. This means that clearing your browser's cache, will destroy any saved progress.</p>
+        <h3>What wiki should I use?</h3>
+        <p>This project is currently using information from <a href="https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki">Fextralife</a> and <a href="https://eldenring.wiki.gg/wiki/Eldenpedia">Eldenpedia</a>. Fextralife is referenced the most in this cheat sheet, since it is the most complete one. I'd be happy to change more references to Eldenpedia later, but it still seems quite unfinished at this moment. For consistency, I recommend you use Fextra's wiki for your own playthrough.</p>
+        <h3>I noticed an error in the cheat sheet! How can I suggest changes?</h3>
+        <p>Visit the project's <a href="https://github.com/rdmaw/elden-ring-cheat-sheet">repository</a> on Github. Check if someone has already reported the same issue, and if not, open a new issue detailing the error.<br>If you want to contribute to the project directly, I recommend you fork the project, make your changes and open a pull request.</p>
+        <h3>Similar projects</h3>
+        <p>Here are some similar projects if this one isn't for you:</p>
+        <ul class="disc">
+          <li><a href="https://roundtablehold.net/">Roundtable Guides</a></li>
+          <li><a href="https://zkjellberg.github.io/dark-souls-3-cheat-sheet/">Dark Souls 3 Cheat Sheet</a></li>
+          <li><a href="https://jontheapple.github.io/dark-souls-2-sotfs-cheat-sheet/">Dark Souls 2 SotFS Cheat Sheet</a></li>
+          <li><a href="https://smcnabb.github.io/dark-souls-2-cheat-sheet/">Dark Souls 2 Cheat Sheet</a></li>
+          <li><a href="https://smcnabb.github.io/dark-souls-cheat-sheet/">Dark Souls Cheat Sheet</a></li>
+          <li><a href="https://iforgottosave.github.io/demons-souls-cheat-sheet/">Demon's Souls Cheat Sheet</a></li>
+          <li><a href="https://iforgottosave.github.io/bloodborne-cheat-sheet-complete-edition/">Bloodborne Cheat Sheet Complete Edition</a></li>
+        </ul>
+        <h3></h3>
         <!-- Workaround for #1. Might be related to how DOM is being handled by browser. -->
         <form style="display: none;">
           <textarea></textarea>
