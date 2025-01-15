@@ -92,6 +92,12 @@ var profilesKey = "er_profiles";
     initializeUI();
     calculateTotals();
 
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted) {
+        restoreState(profiles.current);
+      }
+    });
+
     const savedTheme = localStorage.getItem('theme') || 'notebook';
     setTheme(savedTheme);
 
