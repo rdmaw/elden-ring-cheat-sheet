@@ -97,6 +97,10 @@ var profilesKey = "er_profiles";
       $('input[type="checkbox"]').prop('checked', false);
     });
 
+    window.addEventListener('beforeunload', function () {
+      $.jStorage.set(profilesKey, profiles);
+    });
+
     window.addEventListener('pageshow', function (event) {
       if (event.persisted) {
         $('input[type="checkbox"]').prop('checked', false);
