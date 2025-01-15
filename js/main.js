@@ -89,11 +89,17 @@ var profilesKey = "er_profiles";
   }
 
   $(document).ready(function () {
+    $('input[type="checkbox"]').prop('checked', false);
     initializeUI();
     calculateTotals();
 
+    window.addEventListener('unload', function () {
+      $('input[type="checkbox"]').prop('checked', false);
+    });
+
     window.addEventListener('pageshow', function (event) {
       if (event.persisted) {
+        $('input[type="checkbox"]').prop('checked', false);
         restoreState(profiles.current);
       }
     });
