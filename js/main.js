@@ -15,42 +15,6 @@ var profilesKey = "er_profiles";
     },
   };
 
-  class CheckboxStateManager {
-    constructor() {
-      this.observer = null;
-      this.initObserver();
-    }
-
-    initObserver() {
-      this.observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          if (mutation.type === 'attributes' && mutation.attributeName === 'checked') {
-            const checkbox = mutation.target;
-            const id = checkbox.id;
-            const storedState = profiles[profilesKey][profiles.current].checklistData[id];
-            if (checkbox.checked !== storedState) {
-              checkbox.checked = storedState || false;
-            }
-          }
-        });
-      });
-    }
-
-    startTracking() {
-      document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        this.observer.observe(checkbox, {
-          attributes: true,
-          attributeFilter: ['checked']
-        });
-      });
-    }
-
-    stopTracking() {
-      this.observer.disconnect();
-    }
-  }
-
-  const stateManager = new CheckboxStateManager();
   const themes = ['notebook', 'light', 'dark'];
   const icons = {
     'notebook': 'bi-journal-bookmark-fill',
@@ -125,33 +89,8 @@ var profilesKey = "er_profiles";
   }
 
   $(document).ready(function () {
-    $('input[type="checkbox"]').prop('checked', false);
     initializeUI();
     calculateTotals();
-
-    stateManager.startTracking();
-    document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'visible') {
-        stateManager.stopTracking();
-        restoreState(profiles.current);
-        stateManager.startTracking();
-      }
-    });
-
-    window.addEventListener('unload', function () {
-      $('input[type="checkbox"]').prop('checked', false);
-    });
-
-    window.addEventListener('beforeunload', function () {
-      $.jStorage.set(profilesKey, profiles);
-    });
-
-    window.addEventListener('pageshow', function (event) {
-      if (event.persisted) {
-        $('input[type="checkbox"]').prop('checked', false);
-        restoreState(profiles.current);
-      }
-    });
 
     const savedTheme = localStorage.getItem('theme') || 'notebook';
     setTheme(savedTheme);
@@ -184,9 +123,7 @@ var profilesKey = "er_profiles";
       }
     });
 
-    $(document).on('click', 'input[type="checkbox"]', function (e) {
-      stateManager.stopTracking();
-
+    $(document).on('click', 'input[type="checkbox"]', function () {
       var id = $(this).attr('id');
       var isChecked = $(this).prop('checked');
 
@@ -198,11 +135,8 @@ var profilesKey = "er_profiles";
       } else {
         $label.removeClass('completed');
       }
-
       $.jStorage.set(profilesKey, profiles);
       calculateTotals();
-
-      stateManager.startTracking();
     });
 
     $('#profiles').on('change', function () {
@@ -413,28 +347,24 @@ var profilesKey = "er_profiles";
     var checkboxId = $el.attr('data-id');
 
     var template = `
-        <div class="checkbox">
-          <input type="checkbox" id="${checkboxId}" data-persist="false">
-          <label for="${checkboxId}">
-            <span class="checkbox-custom"></span>
-            <span class="item_content"></span>
-          </label>
-        </div>
-      `;
+      <div class="checkbox">
+        <input type="checkbox" id="${checkboxId}">
+        <label for="${checkboxId}">
+          <span class="checkbox-custom"></span>
+          <span class="item_content"></span>
+        </label>
+      </div>
+    `;
 
     $el.html(template);
     $el.find('.item_content').append(content);
     $el.append(sublists);
 
-    const checkbox = document.getElementById(checkboxId);
-    const storedState = profiles[profilesKey][profiles.current].checklistData[checkboxId];
-
-    stateManager.stopTracking();
-    checkbox.checked = storedState || false;
+    var storedState = profiles[profilesKey][profiles.current].checklistData[checkboxId];
     if (storedState) {
+      $("#" + checkboxId).prop("checked", true);
       $el.find('label').addClass("completed");
     }
-    stateManager.startTracking();
   }
 
   function populateProfiles() {
