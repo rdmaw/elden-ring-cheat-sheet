@@ -240,25 +240,9 @@
             <li data-id="playthrough_3_4">Run past the scouting Tree Sentinel and head north for the Church of Elleh. Just outside church entrance, pick up <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=164442">Golden Rune [2]</a></li>
             <li data-id="playthrough_3_5">Activate the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=163934">Church of Elleh</a> grace. And grab the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=164447">Smithing Stone [1]</a> from the anvil.</li>
             <li data-id="playthrough_3_6">Talk to <a href="https://eldenring.wiki.fextralife.com/Merchant+Kale">Kalé</a> and buy the <a href="https://eldenring.wiki.fextralife.com/Crafting+Kit" class="key-item">Crafting Kit</a> from him for 300 Runes.</li>
-            <li data-id="playthrough_3_7">Buy anything else you want from him:
+            <li data-id="playthrough_3_7">Buy anything else you want from him as well:
               <ul>
-                <li data-id="playthrough_3_7_1"><a href="https://eldenring.wiki.fextralife.com/Throwing+Dagger">Throwing dagger:</a> 40 runes</li>
-                <li data-id="playthrough_3_7_2"><a href="https://eldenring.wiki.fextralife.com/Telescope">Telescope</a>: 500 runes</li>
-                <li data-id="playthrough_3_7_3"><a href="https://eldenring.wiki.fextralife.com/Furlcalling+Finger+Remedy">Furlcalling Finger Remedy</a>: 1,000 runes</li>
-                <li data-id="playthrough_3_8"><a href="https://eldenring.wiki.fextralife.com/Cracked+Pot" class="key-item">Cracked Pot</a>: 300 runes each</li>
-                <li data-id="playthrough_3_9"><a href="https://eldenring.wiki.fextralife.com/Nomadic+Warrior's+Cookbook+(1)" class="key-item">Nomadic Warrior's Cookbook [1]</a>: 500 runes</li>
-                <li data-id="playthrough_3_10"><a href="https://eldenring.wiki.fextralife.com/Nomadic+Warrior's+Cookbook+(2)" class="key-item">Nomadic Warrior's Cookbook [2]</a>: 500 runes</li>
-                <li data-id="playthrough_3_11"><a href="https://eldenring.wiki.fextralife.com/Missionary's+Cookbook+(1)" class="key-item">Missionary's Cookbook [1]</a>: 1000 runes</li>
-                <li data-id="playthrough_3_7_4"><a href="https://eldenring.wiki.fextralife.com/Arrows+and+Bolts">Arrow</a>: 20 runes</li>
-                <li data-id="playthrough_3_7_5"><a href="https://eldenring.wiki.fextralife.com/Arrows+and+Bolts">Bolt</a>: 40 runes</li>
-                <li data-id="playthrough_3_7_6"><a href="https://eldenring.wiki.fextralife.com/Torch">Torch</a>: 200 runes</li>
-                <li data-id="playthrough_3_7_7"><a href="https://eldenring.wiki.fextralife.com/Large+Leather+Shield">Large Leather Shield</a>: 600 runes</li>
-                <li data-id="playthrough_3_7_8"><a href="https://eldenring.wiki.fextralife.com/Chain+Coif">Chain Coif</a>: 1000 runes</li>
-                <li data-id="playthrough_3_7_9"><a href="https://eldenring.wiki.fextralife.com/Chain+Armor">Chain Armor</a>: 1500 runes</li>
-                <li data-id="playthrough_3_7_10"><a href="https://eldenring.wiki.fextralife.com/Chain+Gauntlets">Gauntlets</a>: 1000 runes</li>
-                <li data-id="playthrough_3_7_11"><a href="https://eldenring.wiki.fextralife.com/Chain+Leggings">Chain Leggings</a>: 1000 runes</li>
-                <li data-id="playthrough_3_7_12"><a href="https://eldenring.wiki.fextralife.com/Note:+Flask+of+Wondrous+Physick">Note: Flask of Wondrous Physick</a>: 200 runes</li>
-                <li data-id="playthrough_3_7_13"><a href="https://eldenring.wiki.fextralife.com/Note:+Waypoint+Ruins">Note: Waypoint Ruins</a>: 200 runes</li>
+                <li data-id="playthrough_3_7_1"></li>
               </ul>
             </li>
           </ul>
