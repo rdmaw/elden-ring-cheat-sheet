@@ -733,10 +733,12 @@ ul li ul {
 .btn-collapse:after {
   font-family: "bootstrap-icons";
   content: "\f63b";
+  color: var(--box-color-text);
 }
 
 .btn-collapse.collapsed:after {
   content: "\f64d";
+  color: var(--box-color-text);
 }
 
 /* CHECKBOXES */
