@@ -62,7 +62,7 @@
   <nav class="navbar navbar-expand-xl" role="navigation" aria-label="Main navigation">
     <div class="container-fluid">
       <button id="themeToggleCollapsed" class="theme-btn d-xl-none" aria-label="Toggle color theme" aria-pressed="false">
-        <i class="bi bi-journal-text"></i>
+        <i class="bi bi-journal-bookmark-fill" aria-hidden="false" role="presentation"></i>
       </button>
       <div class="ms-auto">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +72,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="text-center navbar-nav" role="tablist" aria-label="Main sections">
           <li class="nav-item">
-            <a class="nav-link active" id="playthrough-tab" href="#tabPlaythrough" role="tab" aria-controls="tabPlaythrough" aria-selected="true" data-show-buttons="true">Playthrough</a>
+            <a class="nav-link active" id="playthrough-tab" href="#tabPlaythrough" role="tab" aria-controls="tabPlaythrough" aria-selected="true" data-show-buttons="true" aria-current="page">Playthrough</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="achievements-tab" href="#tabAchievements" role="tab" aria-controls="tabAchievements" aria-selected="false" data-show-buttons="true">Achievements</a>
@@ -117,37 +117,37 @@
       🚧 The project is currently under early stages of development 🚧.
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content" aria-live="polite">
       <!-- PLAYTHROUGH -->
       <div class="tab-pane show active" id="tabPlaythrough" role="tabpanel" aria-labelledby="playthrough-tab" aria-expanded="true">
 
         <h2>Progress Checklist
-          <span id="playthrough_overall_total"></span>
+          <span id="playthrough_overall_total" aria-label="Overall completion status"></span>
         </h2>
-        <ul class="table_of_contents">
+        <ul class="table_of_contents" role="navigation" aria-label="Page sections">
           <li>
             <a href="#Chapel_Of_Anticipation">Chapel of Anticipation</a>
-            <span id="playthrough_nav_totals_1"></span>
+            <span id="playthrough_nav_totals_1" aria-label="Section 1 completion status"></span>
           </li>
           <li>
             <a href="#Stranded_Graveyard">Stranded Graveyard</a>
-            <span id="playthrough_nav_totals_2"></span>
+            <span id="playthrough_nav_totals_2" aria-label="Section 2 completion status"></span>
           </li>
           <li>
             <a href="#Preparations">Preparations</a>
-            <span id="playthrough_nav_totals_3"></span>
+            <span id="playthrough_nav_totals_3" aria-label="Section 3 completion status"></span>
           </li>
           <li>
             <a href="#Limgrave">Limgrave</a>
-            <span id="playthrough_nav_totals_4"></span>
+            <span id="playthrough_nav_totals_4" aria-label="Section 4 completion status"></span>
           </li>
           <li>
             <a href="#Weeping_Peninsula">Weeping Peninsula</a>
-            <span id="playthrough_nav_totals_5"></span>
+            <span id="playthrough_nav_totals_5" aria-label="Section 5 completion status"></span>
           </li>
           <li>
             <a href="#Stormveil_Castle">Stormveil Castle</a>
-            <span id="playthrough_nav_totals_6"></span>
+            <span id="playthrough_nav_totals_6" aria-label="Section 6 completion status"></span>
           </li>
         </ul>
 
@@ -158,13 +158,13 @@
             <button class="btn btn-primary" data-filter="all" aria-pressed="true" aria-label="Show all content">Show All</button>
           </div>
           <div class="category-filters">
-            <button class="btn btn-primary" data-filter="boss">Bosses</button>
-            <button class="btn btn-primary" data-filter="npc">NPCs</button>
-            <button class="btn btn-primary" data-filter="key-item">Key Items</button>
-            <button class="btn btn-primary" data-filter="achievement">Achievements</button>
+            <button class="btn btn-primary" data-filter="boss" aria-pressed="false" aria-label="Show only bosses content">Bosses</button>
+            <button class="btn btn-primary" data-filter="npc" aria-pressed="false" aria-label="Show only NPCs content">NPCs</button>
+            <button class="btn btn-primary" data-filter="key-item" aria-pressed="false" aria-label="Show only key items content">Key Items</button>
+            <button class="btn btn-primary" data-filter="achievement" aria-pressed="false" aria-label="Show only achievements content">Achievements</button>
           </div>
         </div>
-        <div class="color-legend">
+        <div class="color-legend" role="region" aria-label="Filter color legend">
           <div class="legend-item">
             <span class="color-box boss"></span>
             <span>Boss</span>
@@ -189,18 +189,18 @@
         <hr>
 
         <div class="btn-group" role="group" aria-label="Collapse controls"">
-          <button class=" btn btn-primary btn-expand-all" type="button">Expand All</button>
-          <button class="btn btn-primary btn-collapse-all" type="button">Collapse All</button>
+          <button class=" btn btn-primary btn-expand-all" type="button" aria-label="Expand all sections">Expand All</button>
+          <button class="btn btn-primary btn-collapse-all" type="button" aria-label="Collapse all sections">Collapse All</button>
         </div>
 
-        <div class="playthrough-wrapper" id="playthrough_list">
+        <div class="playthrough-wrapper" id="playthrough_list" role="region" aria-label="Playthrough checklist">
           <!-- Start of Chapel of Anticipation -->
           <h3 id="Chapel_Of_Anticipation">
             <a href="#Chapel_Of_Anticipation_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm" aria-expanded="true" aria-controls="Chapel_Of_Anticipation_col"></a>
             <a href="https://eldenring.wiki.fextralife.com/Chapel+of+Anticipation">Chapel of Anticipation</a>
             <span id="playthrough_totals_1"></span>
           </h3>
-          <ul id="Chapel_Of_Anticipation_col" class="collapse show">
+          <ul id="Chapel_Of_Anticipation_col" class="collapse show" role="group" aria-label="Chapel of Anticipation tasks">
             <li data-id="playthrough_1_1">Pick any class and keepsake you like. If you're unsure, <a href="https://eldenring.wiki.fextralife.com/Vagabond">Vagabond</a> is a great beginner class, and choosing <a href="https://eldenring.wiki.fextralife.com/Stonesword+Key" class="key-item">2x Stonesword Key</a> allows you to open Imp Seals carelessly.</li>
             <li data-id="playthrough_1_2">Start your playthrough, and grab <a href="https://eldenring.wiki.fextralife.com/Tarnished's+Wizened+Finger">Tarnished's Wizened Finger</a> from the chapel.</li>
             <li data-id="playthrough_1_3"><a href="https://eldenring.wiki.gg/wiki/The_Ring">The Ring</a> gesture is aqcuired if you pre-ordered the game.</li>
@@ -218,7 +218,7 @@
             <a href="https://eldenring.wiki.fextralife.com/stranded+graveyard">Stranded Graveyard</a>
             <span id="playthrough_totals_2"></span>
           </h3>
-          <ul id="Stranded_Graveyard_col" class="collapse show">
+          <ul id="Stranded_Graveyard_col" class="collapse show" role="group" aria-label="Stranded Graveyard tasks">
             <li data-id="playthrough_2_1">After respawning in the cave, talk to the <a href="https://eldenring.wiki.gg/wiki/Stranded_Souls">Stranded Soul</a> if you want, and take the plunge down to the <a href="https://eldenring.wiki.gg/wiki/Cave_of_Knowledge"> Cave of Knowledge</a>.</li>
             <li data-id="playthrough_2_2">Rest at the <a href="https://eldenring.wiki.gg/wiki/Cave_of_Knowledge#/media/File:ER_Site_of_Grace_Cave_of_Knowledge.png">grace</a>, and allocate your flask charges if you want.</li>
             <li data-id="playthrough_2_3">There are no items in this cave, so once you are done, kill <a href="https://eldenring.wiki.fextralife.com/Soldier+of+Godrick" class="boss">Soldier of Godrick</a> for 400 runes.</li>
@@ -233,7 +233,7 @@
             <a href="#Preparations">Preparations</a>
             <span id="playthrough_totals_3"></span>
           </h3>
-          <ul id="Preparations_col" class="collapse show">
+          <ul id="Preparations_col" class="collapse show" role="group" aria-label="Preparations tasks">
             <li data-id="playthrough_3_1">Head out the doors and talk to <a href="https://eldenring.wiki.fextralife.com/White+Mask+Varre" class="npc">Varré</a> (optional).</li>
             <li data-id="playthrough_3_2">Testing sentence 2</li>
           </ul>
@@ -243,7 +243,7 @@
             <a href="https://eldenring.wiki.fextralife.com/Limgrave">Limgrave</a>
             <span id="playthrough_totals_4"></span>
           </h3>
-          <ul id="Limgrave_col" class="collapse show">
+          <ul id="Limgrave_col" class="collapse show" role="group" aria-label="Limgrave tasks">
             <li data-id="playthrough_4_1">Testing sentence 1</li>
             <li data-id="playthrough_4_2">Testing sentence 2</li>
           </ul>
@@ -253,7 +253,7 @@
             <a href="https://eldenring.wiki.fextralife.com/Weeping+Peninsula">Weeping Peninsula</a>
             <span id="playthrough_totals_5"></span>
           </h3>
-          <ul id="Weeping_Peninsula_col" class="collapse show">
+          <ul id="Weeping_Peninsula_col" class="collapse show" role="group" aria-label="Weeping Peninsula tasks">
             <li data-id="playthrough_5_1">Testing sentence 1</li>
             <li data-id="playthrough_5_2">Testing sentence 2</li>
           </ul>
@@ -263,7 +263,7 @@
             <a href="https://eldenring.wiki.fextralife.com/Stormveil+Castle">Stormveil Castle</a>
             <span id="playthrough_totals_6"></span>
           </h3>
-          <ul id="Stormveil_Castle_col" class="collapse show">
+          <ul id="Stormveil_Castle_col" class="collapse show" role="group" aria-label="Stormveil Castle tasks">
             <li data-id="playthrough_6_1">Testing sentence 1</li>
             <li data-id="playthrough_6_2">Testing sentence 2</li>
           </ul>
@@ -272,22 +272,22 @@
       </div>
       <!-- tab-playthrough -->
       <!-- ACHIEVEMENTS section -->
-      <div class="tab-pane" id="tabAchievements" role="tabpanel" aria-labelledby="achievements-tab">
+      <div class="tab-pane" id="tabAchievements" role="tabpanel" aria-labelledby="achievements-tab" aria-label="Achievements">
         <h2>Achievements</h2>
         <p>Coming soon...</p>
       </div>
       <!-- ARMAMENTS section -->
-      <div class="tab-pane" id="tabArmaments" role="tabpanel" aria-labelledby="armaments-tab">
+      <div class="tab-pane" id="tabArmaments" role="tabpanel" aria-labelledby="armaments-tab" aria-label="Armaments">
         <h2>Armaments</h2>
         <p>Coming soon...</p>
       </div>
       <!-- ARMOR section -->
-      <div class="tab-pane" id="tabArmor" role="tabpanel" aria-labelledby="armor-tab">
+      <div class="tab-pane" id="tabArmor" role="tabpanel" aria-labelledby="armor-tab" aria-label="Armor">
         <h2>Armor</h2>
         <p>Coming soon...</p>
       </div>
       <!-- MISC section -->
-      <div class="tab-pane" id="tabMisc" role="tabpanel" aria-labelledby="misc-tab">
+      <div class="tab-pane" id="tabMisc" role="tabpanel" aria-labelledby="misc-tab" aria-label="Miscellaneous items">
         <h2>Gestures</h2>
         <h2>Talismans</h2>
         <h2>Ashes of War</h2>
@@ -297,9 +297,9 @@
         <p>Coming soon...</p>
       </div>
       <!-- RESOURCES section -->
-      <div class="tab-pane" id="tabResources" role="tabpanel" aria-labelledby="resources-tab">
+      <div class="tab-pane" id="tabResources" role="tabpanel" aria-labelledby="resources-tab" aria-label="Resources">
         <h2>Resources</h2>
-        <ul class="table_of_contents">
+        <ul class="table_of_contents" role="navigation" aria-label="Page sections">
           <li><a href="#Soft_Caps">Soft Caps</a></li>
           <li><a href="#Smithing_Upgrades">Smithing Upgrades</a>
           <li><a href="#Glovewort_Upgrades">Glovewort Upgrades</a>
@@ -308,8 +308,8 @@
         <hr>
 
         <div class="btn-group" role="group" aria-label="Collapse controls" id="collapseButtons">
-          <button class="btn btn-primary btn-expand-all" type="button" id="expandAll">Expand All</button>
-          <button class="btn btn-primary btn-collapse-all" type="button" id="collapseAll">Collapse All</button>
+          <button class=" btn btn-primary btn-expand-all" type="button" aria-label="Expand all sections">Expand All</button>
+          <button class="btn btn-primary btn-collapse-all" type="button" aria-label="Collapse all sections">Collapse All</button>
         </div>
 
         <!-- START OF SOFT CAPS -->
@@ -318,7 +318,7 @@
           <a href="https://eldenring.wiki.fextralife.com/Stats">Soft Caps</a>
         </h3>
         <div id="Soft_Caps_col" class="collapse show">
-          <table class="table table-striped">
+          <table class="table table-striped" aria-label="Soft caps table">
             <thead>
               <tr>
                 <th scope="col">Stat</th>
@@ -437,7 +437,7 @@
           <a href="https://eldenring.wiki.fextralife.com/Runes">Smithing Upgrades</a>
         </h3>
         <div id="Smithing_Upgrades_col" class="collapse show">
-          <table class="table table-striped">
+          <table class="table table-striped" aria-label="Smithing stone upgrade table">
             <thead>
               <tr>
                 <th scope="col">Material</th>
@@ -514,7 +514,7 @@
             </tbody>
           </table>
           <br>
-          <table class="table table-striped">
+          <table class="table table-striped" aria-label="Somber smithing stone upgrade table">
             <thead>
               <tr>
                 <th scope="col">Material</th>
@@ -593,7 +593,7 @@
           <a href="https://eldenring.wiki.fextralife.com/Runes">Rune Items</a>
         </h3>
         <div id="Rune_Items_col" class="collapse show">
-          <table class="table table-striped">
+          <table class="table table-striped" aria-label="Base game rune items">
             <thead>
               <tr>
                 <th scope="col">Item</th>
@@ -688,7 +688,7 @@
             </tbody>
           </table>
           <br>
-          <table class="table table-striped">
+          <table class="table table-striped" aria-label="DLC rune items">
             <thead>
               <tr>
                 <th scope="col">DLC Item</th>
@@ -746,7 +746,6 @@
       </div>
       <!-- HELP section -->
       <div class="tab-pane" id="tabHelp" role="tabpanel" aria-labelledby="help-tab" aria-label="Help and documentation">
-        <!-- TODO: Add credits to Help page. Also mention that multiple item pickups are not the same, (e.g. 2x keys is one pickup). Mention checkbox issue on browser load. Others have the same. Add that guide includes 100% of pickups as stated in readme. -->
         <h2>Credits</h2>
         <p>I'd like to thank <a href="https://github.com/zkjellberg">ZKjellberg</a> and <a href="https://github.com/smcnabb">smcnabb</a>, the creators of the previous cheat sheets that inspired this project. As someone who has used the <a href="https://zkjellberg.github.io/dark-souls-3-cheat-sheet/">DS3 Cheat Sheet</a> countless times to make sure I didn't miss anything, I noticed no one had made something similar for Elden Ring—probably because of its open-world design and much less linear progression path. Most of the information in this guide comes from <a href="https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki">Fextralife</a> and <a href="https://eldenring.wiki.gg/wiki/Eldenpedia">Eldenpedia</a>. The guide loosely follows <a href="https://www.youtube.com/@FightinCowboy">Cowboy</a>'s progression route from his <a href="https://www.youtube.com/playlist?list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh">walkthrough</a>, and uses Map Genie's <a href="https://mapgenie.io/elden-ring/maps/the-lands-between">Elden Ring Map</a> along with Fextralife's <a href="https://eldenring.wiki.fextralife.com/Interactive+Map">Interactive Map</a> to ensure everything is included.</p>
         <h2>FAQ</h2>
@@ -756,7 +755,7 @@
         <p>The <span class="strong">Achievements</span>, <span class="strong">Armaments</span>, <span class="strong">Armor</span>, and <span class="strong">Misc</span> tabs can be used as separate checklists to see what weapons/ashes/spells etc., you are missing. Nothing should be missable as long as you're following the main playthrough step-by-step.</p>
         <p>In the <span class="strong">Resources</span> tab, you can find tables containing useful information about the game's stat caps, upgrade materials, and rune items.</p>
         <p>If you don't like the default color mode, you can switch to light or dark mode, by pressing the button with a notebook/sun/moon icon in the navigation bar.</p>
-        <h3>What do you mean with 2x Item?</h3>
+        <h3>What do you mean with "2x Item"?</h3>
         <p>In this guide, each item pickup is listed individually. For example, if an item like <span class="purple">Stonesword Key</span> has "<span class="purple">2x</span>" in front of it, this indicates that a single item pickup provides you with two <span class="purple">Stonesword Keys</span> at once. If there are multiple pickups of the same item, each pickup will be mentioned separately. For instance, you might see: "Pick up <span class="blue">2x Golden Rune [2]</span> here," followed by, "Pick up another <span class="blue">Golden Rune [2]</span> in the middle of the arena."</p>
         <h3>Do I have to follow everything in this exact order?</h3>
         <p>Nope, this project was primarily intended for me and my cousin. Since I am a completionist, I like to make sure I don't miss a single thing the game has to offer. Elden Ring is a big open world game, so if you want to play at your own pace, but still don't wanna miss any important questlines or achievements, give some of the filters a try.</p>
@@ -770,7 +769,7 @@
         <p>Visit the project's <a href="https://github.com/rdmaw/elden-ring-cheat-sheet">repository</a> on Github. Check if someone has already reported the same issue, and if not, open a new issue detailing the error. If you want to contribute to the project directly, I recommend you fork the project, make your changes, and open a pull request.</p>
         <h3>Similar projects</h3>
         <p>Here are some similar projects if this one isn't for you:</p>
-        <ul class="disc">
+        <ul class="disc" role="list">
           <li><a href="https://roundtablehold.net/">Roundtable Guides</a></li>
           <li><a href="https://scripterswar.com/EldenRing/completion">Elden Ring 100% Checklist Tracker</a></li>
           <li><a href="https://zkjellberg.github.io/dark-souls-3-cheat-sheet/">Dark Souls 3 Cheat Sheet</a></li>
