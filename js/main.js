@@ -21,6 +21,7 @@ var profilesKey = "er_profiles";
     'light': 'bi-sun-fill',
     'dark': 'bi-moon-stars-fill'
   };
+  const SCROLL_POSITION_KEY = "er_scroll_position";
 
   var profiles = $.jStorage.get(profilesKey, defaultProfiles);
 
@@ -99,6 +100,23 @@ var profilesKey = "er_profiles";
       const currentTheme = localStorage.getItem('theme') || 'notebook';
       const nextThemeIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
       setTheme(themes[nextThemeIndex]);
+    });
+
+    const savedScrollPos = localStorage.getItem(SCROLL_POSITION_KEY) || 0;
+    setTimeout(() => {
+      window.scrollTo({
+        top: parseInt(savedScrollPos),
+        behavior: 'auto'
+      });
+    }, 100);
+
+    let scrollTimeout;
+    $(window).scroll(function () {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () {
+        const scrollPos = $(window).scrollTop();
+        localStorage.setItem(SCROLL_POSITION_KEY, scrollPos.toString());
+      }, 100);
     });
 
     $("a[href^='http']").attr("target", "_blank");
