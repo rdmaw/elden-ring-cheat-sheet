@@ -3,6 +3,7 @@
 /* TODO: Add table of contents to Resources? */
 /* TODO: Add credits to Help page. */
 /* TODO: Entire Achievements tab */
+/* TODO: Add ghost/glovewort upgrade table to resources. (If even needed) */
 
 /* DEFAULTS */
 :root {
@@ -836,6 +837,8 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 .table {
   --bs-table-striped-bg: var(--nav-bg-color);
   --bs-table-striped-color: var(--text-color);
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
 }
 
 .table thead th {
