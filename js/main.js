@@ -185,7 +185,7 @@ var profilesKey = "er_profiles";
         $('.btn-primary[data-filter]').removeClass('active');
         $('.btn-primary[data-filter="all"]').addClass('active');
 
-        $('[id^="playthrough_totals_"], [id^="playthrough_nav_totals_"]').each(function () {
+        $('[id^="_totals_"], [id^="_nav_totals_"]').each(function () {
           $(this).removeClass('done in_progress');
           $(this).html('0/0');
         });
@@ -243,12 +243,12 @@ var profilesKey = "er_profiles";
             $(this).collapse('show');
           });
 
-          $('[id^="playthrough_totals_"]').each(function () {
+          $('[id^="_totals_"]').each(function () {
             $(this).removeClass('done in_progress');
             $(this).html('0/0');
           });
 
-          $('[id^="playthrough_nav_totals_"]').each(function () {
+          $('[id^="_nav_totals_"]').each(function () {
             $(this).removeClass('done in_progress');
             $(this).html('0/0');
           });
@@ -496,7 +496,7 @@ var profilesKey = "er_profiles";
     $('.collapse').addClass('show');
     $('.btn-collapse').removeClass('collapsed');
 
-    $('[id^="playthrough_totals_"], [id^="playthrough_nav_totals_"]')
+    $('[id^="_totals_"], [id^="_nav_totals_"]')
       .removeClass('done in_progress')
       .html('0/0');
   }
