@@ -271,9 +271,9 @@ var profilesKey = "er_profiles";
       $.jStorage.set(profilesKey, profiles);
     });
 
-    $('#collapseAll').on('click', function () {
-      const activeTab = $('.tab-pane.active');
-      var $collapseElements = activeTab.find('.collapse');
+    $('.btn-collapse-all').on('click', function () {
+      const $section = $(this).closest('.tab-pane');
+      var $collapseElements = $section.find('.collapse');
 
       $collapseElements.each(function () {
         $(this).collapse('hide');
@@ -294,9 +294,9 @@ var profilesKey = "er_profiles";
       }, 350);
     });
 
-    $('#expandAll').on('click', function () {
-      const activeTab = $('.tab-pane.active');
-      var $collapseElements = activeTab.find('.collapse');
+    $('.btn-expand-all').on('click', function () {
+      const $section = $(this).closest('.tab-pane');
+      var $collapseElements = $section.find('.collapse');
 
       $collapseElements.each(function () {
         $(this).collapse('show');

@@ -118,10 +118,6 @@
     </div>
 
     <div class="tab-content">
-      <div class="btn-group" role="group" aria-label="Collapse controls" id="collapseButtons">
-        <button class="btn btn-primary" type="button" id="expandAll">Expand All</button>
-        <button class="btn btn-primary" type="button" id="collapseAll">Collapse All</button>
-      </div>
       <!-- PLAYTHROUGH -->
       <div class="tab-pane show active" id="tabPlaythrough" role="tabpanel" aria-labelledby="playthrough-tab">
 
@@ -191,6 +187,11 @@
           </div>
         </div>
         <hr>
+
+        <div class="btn-group" role="group" aria-label="Collapse controls"">
+          <button class=" btn btn-primary btn-expand-all" type="button">Expand All</button>
+          <button class="btn btn-primary btn-collapse-all" type="button">Collapse All</button>
+        </div>
 
         <div class="playthrough-wrapper" id="playthrough_list">
           <!-- Start of Chapel of Anticipation -->
@@ -297,6 +298,20 @@
       </div>
       <!-- RESOURCES section -->
       <div class="tab-pane" id="tabResources" role="tabpanel" aria-labelledby="resources-tab">
+        <h2>Resources</h2>
+        <ul class="table_of_contents">
+          <li><a href="#Soft_Caps">Soft Caps</a></li>
+          <li><a href="#Smithing_Upgrades">Smithing Upgrades</a>
+          <li><a href="#Glovewort_Upgrades">Glovewort Upgrades</a>
+          <li><a href="#Rune_Items">Rune Items</a>
+        </ul>
+        <hr>
+
+        <div class="btn-group" role="group" aria-label="Collapse controls" id="collapseButtons">
+          <button class="btn btn-primary btn-expand-all" type="button" id="expandAll">Expand All</button>
+          <button class="btn btn-primary btn-collapse-all" type="button" id="collapseAll">Collapse All</button>
+        </div>
+
         <!-- START OF SOFT CAPS -->
         <h3 id="Soft_Caps">
           <a href="#Soft_Caps_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
@@ -572,12 +587,12 @@
             </tbody>
           </table>
         </div>
-        <!-- START OF RUNE TYPES -->
-        <h3 id="Rune_Types">
-          <a href="#Rune_Types_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
+        <!-- START OF RUNE ITEMS -->
+        <h3 id="Rune_Items">
+          <a href="#Rune_Items_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
           <a href="https://eldenring.wiki.fextralife.com/Runes">Rune Items</a>
         </h3>
-        <div id="Rune_Types_col" class="collapse show">
+        <div id="Rune_Items_col" class="collapse show">
           <table class="table table-striped">
             <thead>
               <tr>
@@ -771,6 +786,7 @@
   <!-- container -->
   <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></button>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="js/jstorage.js"></script>
   <script src="js/main.js"></script>
