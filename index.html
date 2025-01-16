@@ -59,9 +59,9 @@
 
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-xl">
+  <nav class="navbar navbar-expand-xl" role="navigation" aria-label="Main navigation">
     <div class="container-fluid">
-      <button id="themeToggleCollapsed" class="theme-btn d-xl-none" aria-label="Toggle color theme">
+      <button id="themeToggleCollapsed" class="theme-btn d-xl-none" aria-label="Toggle color theme" aria-pressed="false">
         <i class="bi bi-journal-text"></i>
       </button>
       <div class="ms-auto">
@@ -70,7 +70,7 @@
         </button>
       </div>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="text-center navbar-nav" role="tablist">
+        <ul class="text-center navbar-nav" role="tablist" aria-label="Main sections">
           <li class="nav-item">
             <a class="nav-link active" id="playthrough-tab" href="#tabPlaythrough" role="tab" aria-controls="tabPlaythrough" aria-selected="true" data-show-buttons="true">Playthrough</a>
           </li>
@@ -93,12 +93,12 @@
             <a class="nav-link" id="help-tab" href="#tabHelp" role="tab" aria-controls="tabHelp" aria-selected="false"><i class="bi bi-question-circle-fill"></i> Help</a>
           </li>
         </ul>
-        <div class="profile ms-auto">
+        <div class="profile ms-auto" role="group" aria-label="Profile management">
           <div class="input-append text-center">
-            <select id="profiles"></select>
-            <button class="btn" type="button" id="addProfile">Add</button>
-            <button class="btn" type="button" id="editProfile">Edit</button>
-            <button class="btn" type="button" id="deleteProfile">Delete</button>
+            <select id="profiles" aria-label="Select profile"></select>
+            <button class="btn" type="button" id="addProfile" aria-label="Add new profile">Add</button>
+            <button class="btn" type="button" id="editProfile" aria-label="Edit current profile">Edit</button>
+            <button class="btn" type="button" id="deleteProfile" aria-label="Delete current profile">Delete</button>
             <button id="themeToggleExpanded" class="theme-btn d-none d-xl-flex" aria-label="Toggle theme">
               <i class="bi bi-journal-text"></i>
             </button>
@@ -109,7 +109,7 @@
   </nav>
 
   <!-- CONTENTS -->
-  <div class="container">
+  <div class="container" role="main">
     <div class="text-center">
       <h1>Elden Ring Cheat Sheet</h1>
       <p class="lead">A comprehensive cheat sheet for Elden Ring, including Shadow of the Erdtree DLC.</p>
@@ -119,7 +119,7 @@
 
     <div class="tab-content">
       <!-- PLAYTHROUGH -->
-      <div class="tab-pane show active" id="tabPlaythrough" role="tabpanel" aria-labelledby="playthrough-tab">
+      <div class="tab-pane show active" id="tabPlaythrough" role="tabpanel" aria-labelledby="playthrough-tab" aria-expanded="true">
 
         <h2>Progress Checklist
           <span id="playthrough_overall_total"></span>
@@ -153,9 +153,9 @@
 
         <hr>
         <h2 class="filters">Filter your playthrough:</h2>
-        <div class="filter-buttons">
+        <div class="filter-buttons" role="group" aria-label="Content filters">
           <div class="show-all">
-            <button class="btn btn-primary" data-filter="all">Show All</button>
+            <button class="btn btn-primary" data-filter="all" aria-pressed="true" aria-label="Show all content">Show All</button>
           </div>
           <div class="category-filters">
             <button class="btn btn-primary" data-filter="boss">Bosses</button>
@@ -196,7 +196,7 @@
         <div class="playthrough-wrapper" id="playthrough_list">
           <!-- Start of Chapel of Anticipation -->
           <h3 id="Chapel_Of_Anticipation">
-            <a href="#Chapel_Of_Anticipation_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a>
+            <a href="#Chapel_Of_Anticipation_col" data-bs-toggle="collapse" class="btn btn-primary btn-collapse btn-sm" aria-expanded="true" aria-controls="Chapel_Of_Anticipation_col"></a>
             <a href="https://eldenring.wiki.fextralife.com/Chapel+of+Anticipation">Chapel of Anticipation</a>
             <span id="playthrough_totals_1"></span>
           </h3>
@@ -745,7 +745,7 @@
         </div>
       </div>
       <!-- HELP section -->
-      <div class="tab-pane" id="tabHelp" role="tabpanel" aria-labelledby="help-tab">
+      <div class="tab-pane" id="tabHelp" role="tabpanel" aria-labelledby="help-tab" aria-label="Help and documentation">
         <!-- TODO: Add credits to Help page. Also mention that multiple item pickups are not the same, (e.g. 2x keys is one pickup). Mention checkbox issue on browser load. Others have the same. Add that guide includes 100% of pickups as stated in readme. -->
         <h2>Credits</h2>
         <p>I'd like to thank <a href="https://github.com/zkjellberg">ZKjellberg</a> and <a href="https://github.com/smcnabb">smcnabb</a>, the creators of the previous cheat sheets that inspired this project. As someone who has used the <a href="https://zkjellberg.github.io/dark-souls-3-cheat-sheet/">DS3 Cheat Sheet</a> countless times to make sure I didn't miss anything, I noticed no one had made something similar for Elden Ring—probably because of its open-world design and much less linear progression path. Most of the information in this guide comes from <a href="https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki">Fextralife</a> and <a href="https://eldenring.wiki.gg/wiki/Eldenpedia">Eldenpedia</a>. The guide loosely follows <a href="https://www.youtube.com/@FightinCowboy">Cowboy</a>'s progression route from his <a href="https://www.youtube.com/playlist?list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh">walkthrough</a>, and uses Map Genie's <a href="https://mapgenie.io/elden-ring/maps/the-lands-between">Elden Ring Map</a> along with Fextralife's <a href="https://eldenring.wiki.fextralife.com/Interactive+Map">Interactive Map</a> to ensure everything is included.</p>
@@ -756,14 +756,16 @@
         <p>The <span class="strong">Achievements</span>, <span class="strong">Armaments</span>, <span class="strong">Armor</span>, and <span class="strong">Misc</span> tabs can be used as separate checklists to see what weapons/ashes/spells etc., you are missing. Nothing should be missable as long as you're following the main playthrough step-by-step.</p>
         <p>In the <span class="strong">Resources</span> tab, you can find tables containing useful information about the game's stat caps, upgrade materials, and rune items.</p>
         <p>If you don't like the default color mode, you can switch to light or dark mode, by pressing the button with a notebook/sun/moon icon in the navigation bar.</p>
+        <h3>What do you mean with 2x Item?</h3>
+        <p>In this guide, each item pickup is listed individually. For example, if an item like <span class="purple">Stonesword Key</span> has "<span class="purple">2x</span>" in front of it, this indicates that a single item pickup provides you with two <span class="purple">Stonesword Keys</span> at once. If there are multiple pickups of the same item, each pickup will be mentioned separately. For instance, you might see: "Pick up <span class="blue">2x Golden Rune [2]</span> here," followed by, "Pick up another <span class="blue">Golden Rune [2]</span> in the middle of the arena."</p>
         <h3>Do I have to follow everything in this exact order?</h3>
         <p>Nope, this project was primarily intended for me and my cousin. Since I am a completionist, I like to make sure I don't miss a single thing the game has to offer. Elden Ring is a big open world game, so if you want to play at your own pace, but still don't wanna miss any important questlines or achievements, give some of the filters a try.</p>
         <h3>Can I use this for multiple characters?</h3>
-        <p>Yes! You can create, edit, and delete profiles using the buttons in the navigation bar.</p>
+        <p>Yes! You can <span class="strong">create</span>, <span class="strong">edit</span>, and <span class="strong">delete</span> profiles using the buttons in the navigation bar.</p>
         <h3>How does the checklist get saved?</h3>
-        <p>The checklists are saved to your browser's local storage. This means that clearing your browser's cache, will destroy any saved progress.</p>
+        <p>The checklists are saved to your browser's local storage. This means that <span class="red">clearing your browser's cache, will destroy any saved progress</span>.</p>
         <h3>What wiki should I use?</h3>
-        <p>This project is currently using information from <a href="https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki">Fextralife</a> and <a href="https://eldenring.wiki.gg/wiki/Eldenpedia">Eldenpedia</a>. Fextralife is referenced the most in this cheat sheet, since it is the most complete one. I'd be happy to make the transfer to Eldenpedia in the future, but it seems quite unfinished at this moment. For consistency, I recommend you use Fextra's wiki for your own playthrough.</p>
+        <p>This project is currently using information from <a href="https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki">Fextralife</a> and <a href="https://eldenring.wiki.gg/wiki/Eldenpedia">Eldenpedia</a>. Fextralife is referenced the most in this cheat sheet, since it is the most complete one. I'd be happy to make the transfer to Eldenpedia in the future, but it seems quite unfinished at this state. For consistency, I recommend you use Fextra's wiki for your own playthrough.</p>
         <h3>I noticed an error in the cheat sheet! How can I suggest changes?</h3>
         <p>Visit the project's <a href="https://github.com/rdmaw/elden-ring-cheat-sheet">repository</a> on Github. Check if someone has already reported the same issue, and if not, open a new issue detailing the error. If you want to contribute to the project directly, I recommend you fork the project, make your changes, and open a pull request.</p>
         <h3>Similar projects</h3>
@@ -788,7 +790,7 @@
     <!-- tab-content -->
   </div>
   <!-- container -->
-  <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></button>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" aria-hidden="true"><i class="bi bi-arrow-up-short"></i></button>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
