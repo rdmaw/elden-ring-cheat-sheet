@@ -431,12 +431,14 @@ var profilesKey = "er_profiles";
           checked = 0;
         var activeFilter = profiles[profilesKey][profiles.current].activeFilter;
 
+        var isPlaythrough = type === 'playthrough';
+
         for (var j = 1; ; j++) {
           var checkbox = $("#" + type + "_" + i + "_" + j);
           if (checkbox.length == 0) break;
 
           var checkboxLi = checkbox.closest('li');
-          if (activeFilter !== 'all') {
+          if (isPlaythrough && activeFilter !== 'all') {
             if (!checkboxLi.find('a').hasClass(activeFilter)) {
               continue;
             }
