@@ -368,6 +368,10 @@ ul {
   font-weight: 500;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .blue {
   color: var(--link-color);
   font-weight: 500;
