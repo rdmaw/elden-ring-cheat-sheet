@@ -508,13 +508,12 @@ var profilesKey = "er_profiles";
       $('.playthrough-wrapper li').show();
     } else {
       $('.playthrough-wrapper li').hide();
-
-      $(`.playthrough-wrapper a.${filter}`).each(function () {
-        $(this).closest('li').show();
-        $(this).parents('.playthrough-wrapper li').show();
-      });
+      $(`.playthrough-wrapper li a.${filter}`).closest('li').show();
+      $(`.playthrough-wrapper li a.${filter}`).parents('li').show();
+      $(`.playthrough-wrapper li a.${filter}`).closest('li').find('ul').show();
+      $(`.playthrough-wrapper li a.${filter}`).parents('ul').show();
+      $('.playthrough-wrapper h3').show();
     }
-    $('.playthrough-wrapper h3').show();
 
     profiles[profilesKey][profiles.current].activeFilter = filter;
     $.jStorage.set(profilesKey, profiles);
