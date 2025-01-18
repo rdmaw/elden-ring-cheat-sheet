@@ -1,6 +1,7 @@
 /* TODO: When making any page e.g. weapons/armor -> list items from order of inventory unsorted */
 /* TODO: When making list for ashes of war, make sure ashes of war included with weapons is noted to remove the ash from the weapon. */
 /* TODO: Add level recommendations for each area (https://eldenring.wiki.fextralife.com/Recommended+Level+by+Location. find more references.) */
+/* TODO: Add new game plus prep tabs at the bottom of playthrough when done. Kill Alexander */
 
 /* DEFAULTS */
 :root {
@@ -386,8 +387,23 @@ ul {
   font-weight: 500;
 }
 
+.green {
+  color: var(--npc);
+  font-weight: 500;
+}
+
+#husks {
+  color: var(--npc);
+  font-weight: 500;
+}
+
 .purple {
   color: var(--key-item);
+  font-weight: 500;
+}
+
+.merchant.green {
+  color: var(--npc);
   font-weight: 500;
 }
 
