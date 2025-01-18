@@ -378,32 +378,22 @@ ul {
 }
 
 .blue {
-  color: var(--link-color);
+  color: var(--link-color) !important;
   font-weight: 500;
 }
 
 .red {
-  color: var(--boss);
+  color: var(--boss) !important;
   font-weight: 500;
 }
 
 .green {
-  color: var(--npc);
-  font-weight: 500;
-}
-
-#husks {
-  color: var(--npc);
+  color: var(--npc) !important;
   font-weight: 500;
 }
 
 .purple {
-  color: var(--key-item);
-  font-weight: 500;
-}
-
-.merchant.green {
-  color: var(--npc);
+  color: var(--key-item) !important;
   font-weight: 500;
 }
 
