@@ -504,12 +504,15 @@ var profilesKey = "er_profiles";
   }
 
   function applyFilter(filter) {
-
     if (filter === 'all') {
       $('.playthrough-wrapper li').show();
     } else {
       $('.playthrough-wrapper li').hide();
-      $(`.playthrough-wrapper li a.${filter}`).closest('li').show();
+
+      $(`.playthrough-wrapper a.${filter}`).each(function () {
+        $(this).closest('li').show();
+        $(this).parents('.playthrough-wrapper li').show();
+      });
     }
     $('.playthrough-wrapper h3').show();
 
