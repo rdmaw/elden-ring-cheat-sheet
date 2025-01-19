@@ -371,6 +371,11 @@ ul {
   font-weight: 500;
 }
 
+.title {
+  color: var(--title-color) !important;
+  font-weight: 500;
+}
+
 .italic {
   font-style: italic;
   color: var(--title-color);
