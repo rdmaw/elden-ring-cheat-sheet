@@ -387,6 +387,11 @@ ul {
   font-weight: 500;
 }
 
+.done-color {
+  color: var(--done) !important;
+  font-weight: 500;
+}
+
 .red {
   color: var(--boss) !important;
   font-weight: 500;
@@ -901,6 +906,15 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 
 .rune {
   font-weight: 500;
+}
+
+.bi-check2-circle {
+  color: var(--done);
+}
+
+.bi-x-lg {
+  color: var(--boss);
+  font-size: 13px;
 }
 
 .back-to-top {
