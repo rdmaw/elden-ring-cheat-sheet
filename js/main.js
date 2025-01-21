@@ -504,12 +504,21 @@ var profilesKey = "er_profiles";
   }
 
   function applyFilter(filter) {
-
     if (filter === 'all') {
       $('.playthrough-wrapper li').show();
     } else {
       $('.playthrough-wrapper li').hide();
-      $(`.playthrough-wrapper li a.${filter}`).closest('li').show();
+      $(`.playthrough-wrapper li a.${filter}`).each(function () {
+        const $link = $(this);
+        const $li = $link.closest('li');
+        const $parentLi = $li.parents('li');
+
+        $li.show();
+
+        if ($parentLi.length) {
+          $parentLi.show();
+        }
+      });
     }
     $('.playthrough-wrapper h3').show();
 
