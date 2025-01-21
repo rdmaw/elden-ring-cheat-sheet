@@ -564,11 +564,13 @@ ul li ul {
   padding-left: 1.75rem;
 }
 
-.playthrough-wrapper ul li a {
+.playthrough-wrapper ul li a,
+.achievements-wrapper ul li a {
   color: var(--link-color);
 }
 
-.playthrough-wrapper ul li a:active {
+.playthrough-wrapper ul li a:active,
+.achievements-wrapper ul li a:active {
   color: var(--link-color-active);
 }
 
@@ -710,8 +712,6 @@ ul li ul {
 .playthrough-wrapper>ul:last-of-type>li:last-child {
   padding-bottom: 0.8rem;
 }
-
-
 
 .btn:focus,
 .btn.active:focus {
