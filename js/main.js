@@ -504,36 +504,14 @@ var profilesKey = "er_profiles";
   }
 
   function applyFilter(filter) {
-    if (filter === 'all') {
-      $('.playthrough-wrapper li').each(function () {
-        const $li = $(this);
-        const $parentCollapse = $li.closest('.collapse');
 
-        if ($parentCollapse.length === 0 || $parentCollapse.hasClass('show')) {
-          $li.show();
-        } else {
-          $li.hide();
-        }
-      });
+    if (filter === 'all') {
+      $('.playthrough-wrapper li').show();
     } else {
       $('.playthrough-wrapper li').hide();
-      $(`.playthrough-wrapper li a.${filter}`).each(function () {
-        const $link = $(this);
-        const $li = $link.closest('li');
-        const $ul = $li.closest('ul');
-        const $parentCollapse = $ul.closest('.collapse');
-
-        if ($parentCollapse.length === 0 || $parentCollapse.hasClass('show')) {
-          $li.show();
-          $li.parents('li').show();
-
-          if ($li.parent('ul').parent('li').length > 0) {
-            $li.siblings('li').show();
-          }
-        }
-      });
-      $('.playthrough-wrapper h3').show();
+      $(`.playthrough-wrapper li a.${filter}`).closest('li').show();
     }
+    $('.playthrough-wrapper h3').show();
 
     profiles[profilesKey][profiles.current].activeFilter = filter;
     $.jStorage.set(profilesKey, profiles);
