@@ -1,8 +1,3 @@
-/* TODO: When making any page e.g. weapons/armor -> list items from order of inventory unsorted */
-/* TODO: When making list for ashes of war, make sure ashes of war included with weapons is noted to remove the ash from the weapon. */
-/* TODO: Add level recommendations for each area (https://eldenring.wiki.fextralife.com/Recommended+Level+by+Location. find more references.) */
-/* TODO: Add new game plus prep tabs at the bottom of playthrough when done. Kill Alexander */
-
 /* DEFAULTS */
 :root {
   --notebook-main-bg: #fff5e1;
@@ -20,7 +15,7 @@
   --notebook-btn-hover: #6c5c49;
   --notebook-btn-hover-click: #6c5c49;
   --notebook-a-active: #000000;
-  --notebook-nav-a-active: #fff9f0;
+  --notebook-nav-a-active: #fff5e1;
   --notebook-nav-icon-color: #4a3728;
   --notebook-link-color: #4a72bf;
   --notebook-link-color-active: #385799;
@@ -34,6 +29,7 @@
   --notebook-checkmark: #fff9f0;
   --notebook-nav-border: #4a3728;
   --notebook-selection: #a39073;
+  --notebook-selection-color: #fff5e1;
   --notebook-label-arrow: #4a3728;
   --notebook-boss: #cc3d3d;
   --notebook-boss-active: #a32f2f;
@@ -45,23 +41,24 @@
   --notebook-achievement-active: #bf6f31;
   --notebook-box-color-active-text: #fff9f0;
   --notebook-calculate-color: #fff9f0;
+  --notebook-striped-bg: #ccc4b4;
 
   --light-main-bg: #ffffff;
   --light-nav-bg: #e0e0e0;
   --light-nav-darker: #c0c0c0;
   --light-nav-hover: #1a1a1a;
-  --light-text: #1a1a1a;
-  --light-title: #2c3e50;
-  --light-title-active: #1a2634;
-  --light-in-progress: #e67e22;
-  --light-done: #2980b9;
+  --light-text: #333333;
+  --light-title: #1a1a1a;
+  --light-title-active: #000000;
+  --light-in-progress: #cc6600;
+  --light-done: #27ae60;
   --light-done-darker: #009933;
   --light-box: #ffffff;
   --light-box-text: #1a1a1a;
   --light-btn-hover: #999999;
   --light-btn-hover-click: #1a1a1a;
-  --light-a-active: #1a1a1a;
-  --light-nav-a-active: #1a1a1a;
+  --light-a-active: #000000;
+  --light-nav-a-active: #000000;
   --light-nav-icon-color: #f39c12;
   --light-link-color: #2980b9;
   --light-link-color-active: #206592;
@@ -70,12 +67,13 @@
   --light-theme-icon-hover: #ffffff;
   --light-collapse-btn: #e0e0e0;
   --light-to-top-icon-hover: #ffffff;
-  --light-checkbox-border: #2c3e50;
-  --light-checkbox-border-checked: #2c3e50;
+  --light-checkbox-border: #4d4d4d;
+  --light-checkbox-border-checked: #4d4d4d;
   --light-checkmark: #ffffff;
-  --light-nav-border: #2c3e50;
+  --light-nav-border: #4d4d4d;
   --light-selection: #999999;
-  --light-label-arrow: #2c3e50;
+  --light-selection-color: #ffffff;
+  --light-label-arrow: #4d4d4d;
   --light-boss: #e74c3c;
   --light-boss-active: #c0392b;
   --light-npc: #27ae60;
@@ -86,35 +84,38 @@
   --light-achievement-active: #d68910;
   --light-box-color-active-text: #ffffff;
   --light-calculate-color: #ffffff;
+  --light-striped-bg: #f2f2f2;
 
-  --dark-main-bg: #1a1a1a;
-  --dark-nav-bg: #2d2d2d;
-  --dark-nav-darker: #404040;
-  --dark-nav-hover: #cccccc;
-  --dark-text: #ffffff;
-  --dark-title: #e3dede;
-  --dark-title-active: #33251a;
-  --dark-in-progress: #d84b53;
-  --dark-done: #89bd6b;
-  --dark-done-darker: #89bd6b;
-  --dark-box: #3a3a3a;
-  --dark-box-text: #ffffff;
-  --dark-btn-hover: #2d2d2d;
+  --dark-main-bg: #1a1f25;
+  --dark-nav-bg: #272d36;
+  --dark-nav-darker: #323a47;
+  --dark-nav-hover: #e0e0e0;
+  --dark-text: #e0e0e0;
+  --dark-title: #ffffff;
+  --dark-in-progress: #d1495b;
+  --dark-done: #127a66;
+  --dark-done-darker: #149c82;
+  --dark-box: #1a1f25;
+  --dark-box-text: #e0e0e0;
+  --dark-btn-hover: #262d37;
+  --dark-a-active: #e3dede;
   --dark-a-active: #ffffff;
   --dark-nav-a-active: #ffffff;
-  --dark-nav-icon-color: #ffc500;
+  --dark-nav-icon-color: #ffd700;
   --dark-link-color: #5a99d4;
   --dark-link-color-active: #3b658d;
   --dark-nav-text: #999999;
-  --dark-theme-btn-hover: #1a1a1a;
-  --dark-theme-icon-hover: #ffffff;
-  --dark-collapse-btn: #404040;
+  --dark-theme-btn-hover: #323a47;
+  --dark-theme-icon-hover: #e0e0e0;
+  --dark-collapse-btn: #323a47;
+  --dark-to-top-icon-hover: #e0e0e0;
   --dark-checkbox-border: #808080;
-  --dark-checkbox-border-checked: #6f9a4e;
-  --dark-checkmark: #2d2d2d;
+  --dark-checkbox-border-checked: #127a66;
+  --dark-checkmark: #1a1f25;
   --dark-nav-border: #808080;
-  --dark-selection: #808080;
-  --dark-label-arrow: #e5e5e5;
+  --dark-selection: #5a6b83;
+  --dark-selection-color: #e0e0e0;
+  --dark-label-arrow: #e0e0e0;
   --dark-boss: #d1495b;
   --dark-boss-active: #a33b49;
   --dark-npc: #149c82;
@@ -123,8 +124,9 @@
   --dark-key-item-active: #803f8e;
   --dark-achievement: #ff7f2a;
   --dark-achievement-active: #cc5500;
-  --dark-box-color-active-text: #ffffff;
-  --dark-calculate-color: #fff9f0;
+  --dark-box-color-active-text: #e0e0e0;
+  --dark-calculate-color: #2d3440;
+  --dark-striped-bg: #272d36;
 }
 
 [data-theme="notebook"] {
@@ -157,6 +159,7 @@
   --checkmark: var(--notebook-checkmark);
   --nav-border: var(--notebook-nav-border);
   --selection: var(--notebook-selection);
+  --selection-color: var(--notebook-selection-color);
   --label-arrow: var(--notebook-label-arrow);
   --boss: var(--notebook-boss);
   --boss-active: var(--notebook-boss-active);
@@ -168,6 +171,7 @@
   --achievement-active: var(--notebook-achievement-active);
   --box-color--active-text: var(--notebook-box-color-active-text);
   --calculate-color: var(--notebook-calculate-color);
+  --striped-bg: var(--notebook-striped-bg);
   --toggler-icon: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
   --toggler-icon-hover: invert(100%) sepia(13%) saturate(356%) hue-rotate(307deg) brightness(116%) contrast(92%);
 }
@@ -202,6 +206,7 @@
   --checkmark: var(--light-checkmark);
   --nav-border: var(--light-nav-border);
   --selection: var(--light-selection);
+  --selection-color: var(--light-selection-color);
   --label-arrow: var(--light-label-arrow);
   --boss: var(--light-boss);
   --boss-active: var(--light-boss-active);
@@ -213,6 +218,7 @@
   --achievement-active: var(--light-achievement-active);
   --box-color--active-text: var(--light-box-color-active-text);
   --calculate-color: var(--light-calculate-color);
+  --striped-bg: var(--light-striped-bg);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(1%) hue-rotate(58deg) brightness(107%) contrast(101%);
 }
 
@@ -244,6 +250,7 @@
   --checkmark: var(--dark-checkmark);
   --nav-border: var(--dark-nav-border);
   --selection: var(--dark-selection);
+  --selection-color: var(--dark-selection-color);
   --label-arrow: var(--dark-label-arrow);
   --boss: var(--dark-boss);
   --boss-active: var(--dark-boss-active);
@@ -255,13 +262,19 @@
   --achievement-active: var(--dark-achievement-active);
   --box-color--active-text: var(--dark-box-color-active-text);
   --calculate-color: var(--dark-calculate-color);
+  --striped-bg: var(--dark-striped-bg);
   --toggler-icon: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 ::selection {
   background-color: var(--selection);
-  color: var(--main-bg-color);
+  color: var(--selection-color);
+}
+
+::-moz-selection {
+  background-color: var(--selection);
+  color: var(--selection-color);
 }
 
 * {
@@ -785,7 +798,7 @@ ul li ul {
   vertical-align: middle;
   position: relative;
   top: -2px;
-  color: var(--box-color-text);
+  /* color: var(--box-color-text); */
 }
 
 .btn-collapse:after {
@@ -912,7 +925,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 }
 
 .table {
-  /* --bs-table-striped-bg: var(--nav-bg-color); */
+  --bs-table-striped-bg: var(--striped-bg);
   --bs-table-striped-color: var(--text-color);
   font-family: "JetBrains Mono", monospace;
   font-optical-sizing: auto;
