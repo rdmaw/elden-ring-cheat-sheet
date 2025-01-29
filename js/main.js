@@ -93,11 +93,11 @@ var profilesKey = "er_profiles";
     initializeUI();
     calculateTotals();
 
-    const savedTheme = localStorage.getItem('theme') || 'notebook';
+    const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
 
     $('#themeToggleCollapsed, #themeToggleExpanded').click(function () {
-      const currentTheme = localStorage.getItem('theme') || 'notebook';
+      const currentTheme = localStorage.getItem('theme') || 'light';
       const nextThemeIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
       setTheme(themes[nextThemeIndex]);
     });
