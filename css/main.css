@@ -314,6 +314,7 @@ body::-webkit-scrollbar-thumb:hover {
 body {
   font-family: "Roboto", serif;
   font-optical-sizing: auto;
+  font-weight: 400;
   color: var(--text-color);
   background-color: var(--main-bg-color);
 }
@@ -398,7 +399,7 @@ ul {
 
 .strong {
   color: var(--title-color);
-  font-weight: 500;
+  font-weight: 600 !important;
 }
 
 .title {
