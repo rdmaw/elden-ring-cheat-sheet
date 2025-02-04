@@ -319,6 +319,15 @@ body {
   background-color: var(--main-bg-color);
 }
 
+/* error page */
+.center {
+  text-align: center;
+}
+
+.error {
+  font-size: 2rem;
+}
+
 h1,
 h2,
 h3,
