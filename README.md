@@ -4,6 +4,6 @@ A comprehensive cheat sheet for completionists who want to 100% complete everyth
 
 The guide will not include common plants and crafting materials picked directly off the ground. However, materials on the walls, such as Smithing Stones will be included.
 
-[Link to page](https://rdmaw.github.io/elden-ring-cheat-sheet/)
+[Link to page](https://eldenring.redmaw.dev)
 
 NOTE: The guide is unfinished and currently in development.
