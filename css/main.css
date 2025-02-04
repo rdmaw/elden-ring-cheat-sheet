@@ -319,11 +319,6 @@ body {
   background-color: var(--main-bg-color);
 }
 
-/* error page */
-.center {
-  text-align: center;
-}
-
 h1,
 h2,
 h3,
