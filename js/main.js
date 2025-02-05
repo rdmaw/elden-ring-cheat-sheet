@@ -291,48 +291,35 @@ var profilesKey = "er_profiles";
 
     $('.btn-collapse-all').on('click', function () {
       const $section = $(this).closest('.tab-pane');
-      var $collapseElements = $section.find('.collapse');
+      const $collapseElements = $section.find('.collapse');
 
+      $collapseElements.removeClass('show');
+      $collapseElements.prev().find('.btn-collapse').addClass('collapsed');
+
+      const collapseStates = {};
       $collapseElements.each(function () {
-        $(this).collapse('hide');
-        $(this).prev().find('.btn-collapse').addClass('collapsed');
+        collapseStates[$(this).attr('id')] = true;
       });
 
-      setTimeout(function () {
-        var collapseStates = {};
-        $collapseElements.each(function () {
-          collapseStates[$(this).attr('id')] = true;
-        });
-
-        profiles[profilesKey][profiles.current].collapsed = {
-          ...profiles[profilesKey][profiles.current].collapsed,
-          ...collapseStates
-        };
-        $.jStorage.set(profilesKey, profiles);
-      }, 350);
+      Object.assign(profiles[profilesKey][profiles.current].collapsed, collapseStates);
+      $.jStorage.set(profilesKey, profiles);
     });
+
 
     $('.btn-expand-all').on('click', function () {
       const $section = $(this).closest('.tab-pane');
-      var $collapseElements = $section.find('.collapse');
+      const $collapseElements = $section.find('.collapse');
 
+      $collapseElements.addClass('show');
+      $collapseElements.prev().find('.btn-collapse').removeClass('collapsed');
+
+      const collapseStates = {};
       $collapseElements.each(function () {
-        $(this).collapse('show');
-        $(this).prev().find('.btn-collapse').removeClass('collapsed');
+        collapseStates[$(this).attr('id')] = false;
       });
 
-      setTimeout(function () {
-        var collapseStates = {};
-        $collapseElements.each(function () {
-          collapseStates[$(this).attr('id')] = false;
-        });
-
-        profiles[profilesKey][profiles.current].collapsed = {
-          ...profiles[profilesKey][profiles.current].collapsed,
-          ...collapseStates
-        };
-        $.jStorage.set(profilesKey, profiles);
-      }, 350);
+      Object.assign(profiles[profilesKey][profiles.current].collapsed, collapseStates);
+      $.jStorage.set(profilesKey, profiles);
     });
 
     $(window).scroll(function () {
