@@ -3,7 +3,7 @@
   --notebook-main-bg: #fff5e1;
   --notebook-nav-bg: #a39073;
   --notebook-nav-darker: #a39073;
-  --notebook-nav-hover: #d4c3b0;
+  --notebook-nav-hover: #201717;
   --notebook-text: #2c1810;
   --notebook-title: #4a3728;
   --notebook-title-active: #33251a;
@@ -15,7 +15,7 @@
   --notebook-btn-hover: #6c5c49;
   --notebook-btn-hover-click: #6c5c49;
   --notebook-a-active: #000000;
-  --notebook-nav-a-active: #fff5e1;
+  --notebook-nav-a-active: #201717;
   --notebook-nav-icon-color: #4a3728;
   --notebook-link-color: #4a72bf;
   --notebook-link-color-active: #385799;
@@ -928,8 +928,6 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 .table {
   --bs-table-striped-bg: var(--striped-bg);
   --bs-table-striped-color: var(--text-color);
-  font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
 }
 
 .table thead th {
@@ -937,21 +935,19 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 }
 
 .table tbody td,
-.table tbody th {
-  color: var(--text-color);
+.table tbody th,
+.table a {
+  color: var(--title-color);
+  font-weight: 400;
+}
+
+.table a:active {
+  color: var(--a-active);
 }
 
 .table> :not(caption)>*>* {
   background-color: var(--main-bg-color);
   border-bottom-color: var(--nav-border);
-}
-
-.table a {
-  color: var(--text-color);
-}
-
-.table a:active {
-  color: var(--a-active);
 }
 
 .rune {
@@ -999,4 +995,13 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   color: var(--to-top-icon-hover);
   opacity: 1;
   transition: none;
+}
+
+/* Error page */
+h1 {
+  font-size: 2em;
+}
+
+.center {
+  text-align: center;
 }
