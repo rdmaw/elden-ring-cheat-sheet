@@ -709,6 +709,30 @@ ul li ul {
   flex-wrap: wrap;
 }
 
+.search-container {
+  margin-bottom: 1rem;
+}
+
+.searchBar {
+  background-color: var(--calculate-color);
+  color: var(--text-color);
+  border: 2px solid var(--nav-border);
+  max-width: 22.5rem;
+}
+
+.searchBar::placeholder {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.searchBar:focus {
+  background-color: var(--calculate-color);
+  color: var(--text-color);
+  outline: none;
+  box-shadow: none;
+  border-color: var(--nav-border);
+}
+
 .color-legend {
   display: flex;
   flex-wrap: wrap;
@@ -998,10 +1022,6 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 }
 
 /* Error page */
-h1 {
-  font-size: 2em;
-}
-
-.center {
+.error {
   text-align: center;
 }

@@ -209,6 +209,9 @@
             <button class="btn btn-primary" data-filter="merchant" aria-pressed="false" aria-label="Show only merchant content">Merchants</button>
           </div>
         </div>
+        <div class="search-container">
+          <input type="text" id="searchBar-playthrough" class="form-control searchBar" placeholder="Search playthrough..." aria-label="Search checklist items">
+        </div>
         <div class="color-legend" role="region" aria-label="Filter color legend">
           <div class="legend-item">
             <span class="color-box boss"></span>
@@ -2228,11 +2231,14 @@
           </li>
           <hr>
 
+          <div class="search-container">
+            <input type="text" id="searchBar-achievements" class="form-control searchBar" placeholder="Search achievements..." aria-label="Search checklist items">
+          </div>
+
           <div class="btn-group" role="group" aria-label="Collapse controls" id="collapseButtons">
             <button class=" btn btn-primary btn-expand-all" type="button" aria-label="Expand all sections">Expand All</button>
             <button class="btn btn-primary btn-collapse-all" type="button" aria-label="Collapse all sections">Collapse All</button>
           </div>
-
 
           <div class="achievements-wrapper" id="achievements_list" role="region" aria-label="Achievements checklist">
             <!-- Start of Misc Achievements-->

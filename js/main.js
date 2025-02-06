@@ -126,6 +126,8 @@ var profilesKey = "er_profiles";
 
       $(".nav-link").removeClass("active");
       $(".tab-pane").removeClass("show active");
+      $('.searchBar').val('');
+      $('.checkbox').closest('li').show();
       $(this).addClass("active");
       const targetTab = $(this).attr("href");
 
@@ -170,6 +172,7 @@ var profilesKey = "er_profiles";
         }
 
         clearUI();
+        $('.searchBar').val('');
 
         profiles[profilesKey][profile_name] = {
           checklistData: {},
@@ -242,6 +245,8 @@ var profilesKey = "er_profiles";
           $('.collapse').each(function () {
             $(this).collapse('show');
           });
+
+          $('.searchBar').val('');
 
           $('[id^="_totals_"]').each(function () {
             $(this).removeClass('done in_progress');
@@ -338,8 +343,32 @@ var profilesKey = "er_profiles";
       return false;
     });
 
+    $('.searchBar').on('input', function () {
+      const searchText = $(this).val().toLowerCase();
+      const activeFilter = profiles[profilesKey][profiles.current].activeFilter;
+      const activeTab = $('.tab-pane.active');
+
+      activeTab.find('.checkbox').each(function () {
+        const $listItem = $(this).closest('li');
+        const itemText = $(this).find('.item_content').text().toLowerCase();
+
+        $listItem.hide();
+
+        const matchesFilter = activeFilter === 'all' ||
+          $listItem.find(`a.${activeFilter}`).length > 0;
+
+        if (matchesFilter && itemText.includes(searchText)) {
+          $listItem.show();
+          $listItem.parents('li').show();
+        }
+      });
+      activeTab.find('h3').show();
+    });
+
     $('.btn-primary[data-filter]').click(function () {
       const filter = $(this).data('filter');
+      const activeTab = $('.tab-pane.active');
+      const searchText = activeTab.find('.searchBar').val()?.toLowerCase() || '';
 
       $('.btn-primary[data-filter]').removeClass('active');
       $(this).addClass('active');
@@ -347,10 +376,24 @@ var profilesKey = "er_profiles";
       profiles[profilesKey][profiles.current].activeFilter = filter;
       $.jStorage.set(profilesKey, profiles);
 
-      applyFilter(filter);
+      $('.checkbox').each(function () {
+        const $listItem = $(this).closest('li');
+        const itemText = $(this).find('.item_content').text().toLowerCase();
+
+        $listItem.hide();
+
+        const matchesFilter = filter === 'all' ||
+          $listItem.find(`a.${filter}`).length > 0;
+
+        if (matchesFilter && itemText.includes(searchText)) {
+          $listItem.show();
+          $listItem.parents('li').show();
+        }
+      });
+
+      $('.playthrough-wrapper h3').show();
       calculateTotals();
     });
-    calculateTotals();
   });
 
   function addCheckbox(el) {
@@ -516,6 +559,7 @@ var profilesKey = "er_profiles";
 
   function switchProfile(profile_name) {
     clearUI();
+    $('.searchBar').val('');
 
     profiles.current = profile_name;
 
@@ -573,6 +617,7 @@ var profilesKey = "er_profiles";
       $.jStorage.set(profilesKey, profiles);
 
       clearUI();
+      $('.searchBar').val('');
       restoreState(profileName);
       calculateTotals();
       return true;
