@@ -292,11 +292,14 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   background: var(--nav-bg-darker);
-  border-radius: 0.7rem;
 }
 
 body::-webkit-scrollbar-track {
   background: var(--main-bg-color);
+}
+
+body::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-track {
   border-radius: 0.7rem;
 }
 
@@ -508,6 +511,11 @@ ul {
 
 .navbar-collapse {
   justify-content: flex-end;
+}
+
+.highlight {
+  background-color: yellow;
+  color: black;
 }
 
 .profile {
@@ -797,7 +805,6 @@ ul li ul {
   background-color: var(--collapse-btn);
   color: var(--box-color-text);
   border: 2px solid var(--nav-border);
-  transition: none;
 }
 
 .btn-primary:hover {
@@ -823,7 +830,6 @@ ul li ul {
   vertical-align: middle;
   position: relative;
   top: -2px;
-  /* color: var(--box-color-text); */
 }
 
 .btn-collapse:after {
@@ -915,8 +921,7 @@ li ul li .checkbox input[type="checkbox"] {
   text-decoration: line-through;
 }
 
-.checkbox input[type="checkbox"]:checked~label .checkbox-custom,
-li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom {
+.checkbox input[type="checkbox"]:checked~label .checkbox-custom {
   background-color: var(--done);
   border-color: var(--checkbox-border-checked);
 }
