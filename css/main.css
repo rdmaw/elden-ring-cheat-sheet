@@ -805,6 +805,7 @@ ul li ul {
   background-color: var(--collapse-btn);
   color: var(--box-color-text);
   border: 2px solid var(--nav-border);
+  transition: none;
 }
 
 .btn-primary:hover {
