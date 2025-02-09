@@ -106,7 +106,7 @@
   --dark-link-color-active: #3b658d;
   --dark-nav-text: #999999;
   --dark-theme-btn-hover: #323a47;
-  --dark-theme-icon-hover: #e0e0e0;
+  --dark-theme-icon-hover: #50c7fc;
   --dark-collapse-btn: #323a47;
   --dark-to-top-icon-hover: #e0e0e0;
   --dark-checkbox-border: #808080;
@@ -410,7 +410,7 @@ ul {
   font-weight: 500;
 }
 
-.title:active {
+a.title:active {
   color: var(--title-color-active) !important;
   font-weight: 500;
 }
@@ -435,7 +435,7 @@ ul {
   font-weight: 500;
 }
 
-.red:active {
+a.red:active {
   color: var(--boss-active) !important;
   font-weight: 500;
 }
@@ -445,7 +445,7 @@ ul {
   font-weight: 500;
 }
 
-.green:active {
+a.green:active {
   color: var(--npc-active) !important;
   font-weight: 500;
 }
@@ -455,8 +455,18 @@ ul {
   font-weight: 500;
 }
 
-.purple:active {
+a.purple:active {
   color: var(--key-item-active) !important;
+  font-weight: 500;
+}
+
+.orange {
+  color: var(--achievement) !important;
+  font-weight: 500;
+}
+
+a.orange:active {
+  color: var(--achievement-active) !important;
   font-weight: 500;
 }
 
@@ -597,6 +607,14 @@ ul {
 /* LEAD */
 .container {
   margin-top: 1.25rem;
+  padding: 0;
+}
+
+@media (max-width: 575px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 
 .lead {
@@ -789,10 +807,6 @@ ul li ul {
 
 .legend-item span:not(.color-box) {
   line-height: 1.063rem;
-}
-
-.playthrough-wrapper>ul:last-of-type>li:last-child {
-  padding-bottom: 0.8rem;
 }
 
 .btn:focus,
@@ -993,7 +1007,31 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   font-size: 13px;
 }
 
+.compass {
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.compass>li {
+  color: var(--title-color);
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+
+.compass ul {
+  margin-top: 0.3rem;
+}
+
+.compass ul li {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
 .back-to-top {
+  -webkit-appearance: none;
+  appearance: none;
   position: fixed;
   bottom: 1.25rem;
   right: 1.25rem;
@@ -1025,6 +1063,18 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   color: var(--to-top-icon-hover);
   opacity: 1;
   transition: none;
+}
+
+footer {
+  text-align: center;
+  margin: 1rem 0 0.5rem 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.bi-suit-heart-fill {
+  color: var(--boss);
+  margin: 0 0.1rem;
 }
 
 /* Error page */
