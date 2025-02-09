@@ -1067,7 +1067,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 
 footer {
   text-align: center;
-  margin: 1rem 0 0.5rem 0;
+  margin: 1rem 0 1rem 0;
   font-size: 0.9rem;
   opacity: 0.85;
 }

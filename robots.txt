@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://eldenring.redmaw.dev/sitemap.xml
