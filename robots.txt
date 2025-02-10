@@ -1,4 +1,5 @@
 User-Agent: *
-Allow: /
+Disallow: /cdn-cgi/
+Disallow: /xmlrpc.php
 
 Sitemap: https://eldenring.redmaw.dev/sitemap.xml
