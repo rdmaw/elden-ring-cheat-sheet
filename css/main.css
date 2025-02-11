@@ -286,21 +286,12 @@ html {
   scrollbar-color: var(--nav-bg-darker) var(--main-bg-color);
 }
 
-body::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
 body::-webkit-scrollbar-thumb {
   background: var(--nav-bg-darker);
 }
 
 body::-webkit-scrollbar-track {
   background: var(--main-bg-color);
-}
-
-body::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-track {
-  border-radius: 0.7rem;
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -517,10 +508,6 @@ a.orange:active {
   outline: none !important;
   box-shadow: none !important;
   border: 2px solid var(--nav-border) !important;
-}
-
-.navbar-collapse {
-  justify-content: flex-end;
 }
 
 .highlight {
@@ -994,6 +981,16 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   border-bottom-color: var(--nav-border);
 }
 
+@media screen and (max-width: 768px) {
+  .table {
+    font-size: 0.875rem;
+  }
+
+  .table .wrap-text {
+    white-space: normal;
+  }
+}
+
 .rune {
   font-weight: 500;
 }
@@ -1067,7 +1064,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 
 footer {
   text-align: center;
-  margin: 1rem 0 1rem 0;
+  margin: 0.75rem 0 0.6rem 0;
   font-size: 0.9rem;
   opacity: 0.85;
 }
@@ -1075,6 +1072,10 @@ footer {
 .bi-suit-heart-fill {
   color: var(--boss);
   margin: 0 0.1rem;
+}
+
+textarea {
+  display: none;
 }
 
 /* Error page */
