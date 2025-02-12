@@ -461,6 +461,69 @@ a.orange:active {
   font-weight: 500;
 }
 
+kbd {
+  color: var(--text-color);
+  background-color: var(--main-bg-color);
+}
+
+kbd:not(:has(kbd, samp)) {
+  color: #1a1f25;
+  background: aliceblue;
+  border-radius: 4px;
+  padding-inline: 6px;
+  box-shadow: 2px 2px 0 2px lightsteelblue;
+  margin-inline-end: .25ch;
+  display: inline-block;
+  line-height: 1.4;
+  margin-bottom: 0.2rem;
+}
+
+samp {
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  color: hsl(from var(--text-color) h s l / 0.95);
+  background: hsl(from var(--nav-border) h s l / 0.2);
+  padding: 0.16rem 0.25rem;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1.2;
+  margin: 0.1rem 0;
+}
+
+.profiles {
+  color: var(--nav-a-hover);
+  border: 1px solid var(--nav-border);
+  background: var(--nav-bg-color);
+}
+
+kbd>samp {
+  border-radius: 4px;
+  padding: 0.35rem 0.35rem;
+  line-height: inherit;
+  margin: 0;
+}
+
+a:has(samp:hover),
+a:has(kbd:hover) {
+  text-decoration: none;
+}
+
+.merchantsamp {
+  color: var(--box-color-text);
+  background-color: var(--collapse-btn);
+}
+
+.issue {
+  color: #ffffff;
+  background-color: var(--done-darker);
+  border: none;
+  border-radius: 4px;
+}
+
+.bi-mouse2-fill {
+  font-style: normal;
+}
+
 /* NAVBAR */
 .navbar {
   background-color: var(--nav-bg-color);
