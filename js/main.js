@@ -8,7 +8,9 @@ var profilesKey = "er_profiles";
   defaultProfiles[profilesKey] = {
     "Default": {
       checklistData: {},
-      collapsed: {},
+      collapsed: {
+        "navbarNavDropdown": true,
+      },
       isDefault: true,
       lastActiveTab: '#tabPlaythrough',
       activeFilter: 'all',
