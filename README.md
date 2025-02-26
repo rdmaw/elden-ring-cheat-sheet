@@ -5,6 +5,6 @@ Inspired by the previous cheat sheets made by [Zachary Kjellberg](https://github
 
 The guide does not include common plants and crafting materials picked directly off the ground. However, upgrade materials, such as Smithing Stones and Gloveworts are included.
 
-[Click to view the Cheat Sheet](https://eldenring.redmaw.dev)
+[Click here to view the Cheat Sheet](https://eldenring.redmaw.dev)
 
 NOTE: The project is still in development.
