@@ -489,24 +489,18 @@ kbd>samp {
   border-radius: 4px;
   padding: 0.35rem 0.35rem;
   line-height: inherit;
-}
-
-.profiles {
-  color: var(--nav-a-hover);
-  border: 1px solid var(--nav-border);
-  background: var(--nav-bg-color);
-}
-
-kbd>samp {
-  border-radius: 4px;
-  padding: 0.35rem 0.35rem;
-  line-height: inherit;
   margin: 0;
 }
 
 a:has(samp:hover),
 a:has(kbd:hover) {
   text-decoration: none;
+}
+
+.profiles {
+  color: var(--nav-a-hover);
+  border: 1px solid var(--nav-border);
+  background: var(--nav-bg-color);
 }
 
 .merchantsamp {
