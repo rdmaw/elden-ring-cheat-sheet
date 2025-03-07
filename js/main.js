@@ -369,18 +369,22 @@ var profilesKey = "er_profiles";
     var checkboxId = $el.attr('data-id');
 
     var template = `
-      <div class="checkbox">
-        <input type="checkbox" id="${checkboxId}">
-        <label for="${checkboxId}">
-          <span class="checkbox-custom"></span>
-          <span class="item_content"></span>
-        </label>
+      <div class="checkbox-wrapper">
+        <div class="checkbox">
+          <input type="checkbox" id="${checkboxId}">
+          <label for="${checkboxId}">
+            <span class="checkbox-custom"></span>
+            <span class="item_content"></span>
+          </label>
+        </div>
       </div>
     `;
 
     $el.html(template);
     $el.find('.item_content').append(content);
-    $el.append(sublists);
+    if (sublists.length) {
+      $el.append(sublists);
+    }
 
     var storedState = profiles[profilesKey][profiles.current].checklistData[checkboxId];
     if (storedState) {
