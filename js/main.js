@@ -364,32 +364,25 @@ var profilesKey = "er_profiles";
 
   function addCheckbox(el) {
     var $el = $(el);
-    var content = $el.contents().not($el.children('ul')).detach();
-    var sublists = $el.children('ul').detach();
+    var content = $el.html().split('\n')[0];
+    var sublists = $el.children('ul');
     var checkboxId = $el.attr('data-id');
 
-    var template = `
-      <div class="checkbox-wrapper">
-        <div class="checkbox">
-          <input type="checkbox" id="${checkboxId}">
-          <label for="${checkboxId}">
-            <span class="checkbox-custom"></span>
-            <span class="item_content"></span>
-          </label>
-        </div>
-      </div>
-    `;
+    var template =
+      '<div class="checkbox">' +
+      '<input type="checkbox" id="' + checkboxId + '">' +
+      '<label for="' + checkboxId + '">' +
+      '<span class="checkbox-custom"></span>' +
+      '<span class="item_content">' + content + '</span>' +
+      '</label>' +
+      '</div>';
 
-    $el.html(template);
-    $el.find('.item_content').append(content);
-    if (sublists.length) {
-      $el.append(sublists);
-    }
+    $el.html(template).append(sublists);
 
     var storedState = profiles[profilesKey][profiles.current].checklistData[checkboxId];
     if (storedState) {
-      $("#" + checkboxId).prop("checked", true);
-      $el.find('label').addClass("completed");
+      $('#' + checkboxId).prop('checked', true);
+      $('label', $el).addClass('completed');
     }
   }
 
