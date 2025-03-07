@@ -653,6 +653,7 @@ a:has(kbd:hover) {
 .container {
   margin-top: 1.25rem;
   padding: 0;
+  min-height: 100vh;
 }
 
 @media (max-width: 575px) {
@@ -660,6 +661,14 @@ a:has(kbd:hover) {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
+}
+
+.playthrough-wrapper {
+  min-height: 200px;
+}
+
+.nav {
+  height: 60px;
 }
 
 .lead {
