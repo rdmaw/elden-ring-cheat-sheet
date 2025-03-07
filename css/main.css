@@ -306,7 +306,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 body {
-  font-family: "Roboto", serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   color: var(--text-color);
@@ -477,7 +477,7 @@ kbd:not(:has(kbd, samp)) {
 }
 
 samp {
-  font-family: "Roboto", serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   color: hsl(from var(--text-color) h s l / 0.95);
   background: hsl(from var(--nav-border) h s l / 0.2);
