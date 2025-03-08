@@ -19,9 +19,9 @@ var profilesKey = "er_profiles";
 
   const themes = ['notebook', 'light', 'dark'];
   const icons = {
-    'notebook': 'bi-journal-bookmark-fill',
-    'light': 'bi-sun-fill',
-    'dark': 'bi-moon-stars-fill'
+    'notebook': '<svg class="theme-icon" role="img" aria-label="Notebook theme"><use href="assets/icons/notebook.svg#icon"/></svg>',
+    'light': '<svg class="theme-icon" role="img" aria-label="Light theme"><use href="assets/icons/sun.svg#icon"/></svg>',
+    'dark': '<svg class="theme-icon" role="img" aria-label="Dark theme"><use href="assets/icons/moon.svg#icon"/></svg>'
   };
   const SCROLL_POSITION_KEY = "er_scroll_position";
 
@@ -88,7 +88,8 @@ var profilesKey = "er_profiles";
     localStorage.setItem('theme', themeName);
 
     const icon = icons[themeName];
-    $('#themeToggleCollapsed i, #themeToggleExpanded i').attr('class', `bi ${icon}`);
+    $('#themeToggleCollapsed, #themeToggleExpanded').html(icon);
+    $('#themeToggleCollapsed, #themeToggleExpanded').attr('aria-label', `Switch theme, currently ${themeName}`);
   }
 
   $(document).ready(function () {

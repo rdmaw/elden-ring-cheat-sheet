@@ -282,7 +282,6 @@
 }
 
 html {
-  scrollbar-width: normal;
   scrollbar-color: var(--nav-bg-darker) var(--main-bg-color);
 }
 
@@ -506,9 +505,9 @@ a:has(kbd:hover) {
 }
 
 /* NAVBAR */
-nav {
+/* nav {
   height: 60px;
-}
+} */
 
 .navbar {
   background-color: var(--nav-bg-color);
@@ -596,6 +595,11 @@ nav {
 
 .input-append .theme-btn {
   margin-left: 0.5rem;
+}
+
+.theme-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .theme-btn {
@@ -796,7 +800,7 @@ ul li ul {
   color: var(--text-color);
   outline: none;
   box-shadow: none;
-  border-color: var(--nav-border);
+  border: 2px solid var(--nav-border);
 }
 
 .color-legend {
