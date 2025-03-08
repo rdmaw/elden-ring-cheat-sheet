@@ -30,7 +30,6 @@
   --notebook-nav-border: #4a3728;
   --notebook-selection: #a39073;
   --notebook-selection-color: #fff5e1;
-  --notebook-label-arrow: #4a3728;
   --notebook-boss: #cc3d3d;
   --notebook-boss-active: #a32f2f;
   --notebook-npc: #368f77;
@@ -73,7 +72,6 @@
   --light-nav-border: #4d4d4d;
   --light-selection: #999999;
   --light-selection-color: #ffffff;
-  --light-label-arrow: #4d4d4d;
   --light-boss: #e74c3c;
   --light-boss-active: #c0392b;
   --light-npc: #27ae60;
@@ -115,7 +113,6 @@
   --dark-nav-border: #808080;
   --dark-selection: #5a6b83;
   --dark-selection-color: #e0e0e0;
-  --dark-label-arrow: #e0e0e0;
   --dark-boss: #d1495b;
   --dark-boss-active: #a33b49;
   --dark-npc: #149c82;
@@ -160,7 +157,6 @@
   --nav-border: var(--notebook-nav-border);
   --selection: var(--notebook-selection);
   --selection-color: var(--notebook-selection-color);
-  --label-arrow: var(--notebook-label-arrow);
   --boss: var(--notebook-boss);
   --boss-active: var(--notebook-boss-active);
   --npc: var(--notebook-npc);
@@ -174,6 +170,8 @@
   --striped-bg: var(--notebook-striped-bg);
   --toggler-icon: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
   --toggler-icon-hover: invert(100%) sepia(13%) saturate(356%) hue-rotate(307deg) brightness(116%) contrast(92%);
+  --label-arrow-filter: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
+  --icon-filter: invert(100%) sepia(13%) saturate(356%) hue-rotate(307deg) brightness(116%) contrast(92%);
 }
 
 [data-theme="light"] {
@@ -207,7 +205,6 @@
   --nav-border: var(--light-nav-border);
   --selection: var(--light-selection);
   --selection-color: var(--light-selection-color);
-  --label-arrow: var(--light-label-arrow);
   --boss: var(--light-boss);
   --boss-active: var(--light-boss-active);
   --npc: var(--light-npc);
@@ -220,6 +217,8 @@
   --calculate-color: var(--light-calculate-color);
   --striped-bg: var(--light-striped-bg);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(1%) hue-rotate(58deg) brightness(107%) contrast(101%);
+  --label-arrow-filter: invert(20%) sepia(0%) saturate(0%) hue-rotate(155deg) brightness(98%) contrast(94%);
+  --icon-filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(100%) contrast(104%);
 }
 
 [data-theme="dark"] {
@@ -251,7 +250,6 @@
   --nav-border: var(--dark-nav-border);
   --selection: var(--dark-selection);
   --selection-color: var(--dark-selection-color);
-  --label-arrow: var(--dark-label-arrow);
   --boss: var(--dark-boss);
   --boss-active: var(--dark-boss-active);
   --npc: var(--dark-npc);
@@ -265,6 +263,8 @@
   --striped-bg: var(--dark-striped-bg);
   --toggler-icon: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  --label-arrow-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  --icon-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 ::selection {
@@ -500,14 +500,10 @@ a:has(kbd:hover) {
   border-radius: 4px;
 }
 
-.bi-mouse2-fill {
-  font-style: normal;
-}
-
 /* NAVBAR */
-/* nav {
-  height: 60px;
-} */
+nav {
+  min-height: 60px;
+}
 
 .navbar {
   background-color: var(--nav-bg-color);
@@ -658,7 +654,7 @@ a:has(kbd:hover) {
 }
 
 .playthrough-wrapper {
-  min-height: 200px;
+  min-height: 6.25rem;
 }
 
 .lead {
@@ -869,22 +865,27 @@ ul li ul {
 }
 
 .btn-collapse {
-  padding: 4px 10px 1px;
-  margin-right: 0.07rem;
-  vertical-align: middle;
+  padding: 5px 8px;
+  margin-right: 0.15rem;
   position: relative;
   top: -2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-collapse:after {
-  font-family: "bootstrap-icons";
-  content: "\f63b";
-  color: var(--box-color-text);
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url('../assets/icons/minus.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: var(--icon-filter);
 }
 
 .btn-collapse.collapsed:after {
-  content: "\f64d";
-  color: var(--box-color-text);
+  background-image: url('../assets/icons/plus.svg');
 }
 
 /* CHECKBOXES */
@@ -928,13 +929,17 @@ label {
 }
 
 label:before {
-  font-family: "Bootstrap-icons";
-  content: "\f231";
+  content: '';
   position: absolute;
   left: -1.5rem;
   opacity: 0;
-  color: var(--label-arrow);
+  width: 20px;
+  height: 20px;
+  background-image: url('../assets/icons/hover.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
   pointer-events: none;
+  filter: var(--label-arrow-filter);
 }
 
 label:hover:before {
@@ -1039,15 +1044,6 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   font-weight: 600;
 }
 
-.bi-check2-circle {
-  color: var(--done);
-}
-
-.bi-x-lg {
-  color: var(--boss);
-  font-size: 13px;
-}
-
 .compass {
   font-size: 0.9rem;
   margin-left: 0.5rem;
@@ -1070,6 +1066,12 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   line-height: 1.4;
 }
 
+.up-icon {
+  width: 24px;
+  height: 24px;
+  color: currentColor;
+}
+
 .back-to-top {
   -webkit-appearance: none;
   appearance: none;
@@ -1090,13 +1092,16 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   cursor: pointer;
   z-index: 1000;
   font-size: 1.8rem;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transform: translateY(100px);
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .back-to-top.show {
   opacity: 0.8;
   visibility: visible;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .back-to-top.show:hover {
@@ -1111,11 +1116,6 @@ footer {
   margin: 0.75rem 0 0.6rem 0;
   font-size: 0.9rem;
   opacity: 0.85;
-}
-
-.bi-suit-heart-fill {
-  color: var(--boss);
-  margin: 0 0.1rem;
 }
 
 textarea {
