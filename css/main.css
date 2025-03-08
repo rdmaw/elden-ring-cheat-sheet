@@ -332,10 +332,6 @@ h3 {
   padding-bottom: 0.2rem;
 }
 
-h3 a:not(.btn) {
-  margin-left: 0.2rem;
-}
-
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -866,7 +862,7 @@ ul li ul {
 
 .btn-collapse {
   padding: 5px 8px;
-  margin-right: 0.15rem;
+  margin-right: 0.35rem;
   position: relative;
   top: -2px;
   display: inline-flex;
@@ -913,8 +909,8 @@ li ul li .checkbox {
 
 .checkbox-custom {
   position: absolute;
-  left: -0.1rem;
-  top: 0.125rem;
+  left: 0rem;
+  top: 0.2rem;
   height: 1.063rem;
   width: 1.063rem;
   background-color: var(--calculate-color);
@@ -932,9 +928,10 @@ label:before {
   content: '';
   position: absolute;
   left: -1.5rem;
+  /* top: 0.1rem; */
   opacity: 0;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background-image: url('../assets/icons/hover.svg');
   background-size: contain;
   background-repeat: no-repeat;
@@ -948,15 +945,11 @@ label:hover:before {
 
 /* Align nested li's with parent */
 li ul li .checkbox-custom {
-  left: 0;
+  left: 0.1rem;
 }
 
 li ul li .checkbox label {
-  padding-left: 1.8rem;
-}
-
-li ul li label:before {
-  left: -1.2rem;
+  padding-left: 1.7rem;
 }
 
 .checkbox input[type="checkbox"],
