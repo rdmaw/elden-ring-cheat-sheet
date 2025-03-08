@@ -294,20 +294,10 @@ body::-webkit-scrollbar-track {
   background: var(--main-bg-color);
 }
 
-body::-webkit-scrollbar-thumb:hover {
-  background: var(--text-color);
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  html {
-    scrollbar-width: normal;
-    scrollbar-color: var(--nav-bg-darker) var(--main-bg-color);
-  }
-}
-
 body {
-  font-family: "Roboto", Arial, sans-serif;
-  font-optical-sizing: auto;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 400;
   color: var(--text-color);
   background-color: var(--main-bg-color);
@@ -347,14 +337,10 @@ h3 a:not(.btn) {
   margin-left: 0.2rem;
 }
 
-p {
-  color: var(--text-color);
-}
-
 a {
   color: var(--link-color);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a:hover {
@@ -398,67 +384,67 @@ ul {
 
 .title {
   color: var(--title-color) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a.title:active {
   color: var(--title-color-active) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .blue {
   color: var(--link-color) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .blue:active {
   color: var(--link-color-active) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .done-color {
   color: var(--done) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .red {
   color: var(--boss) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a.red:active {
   color: var(--boss-active) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .green {
   color: var(--npc) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a.green:active {
   color: var(--npc-active) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .purple {
   color: var(--key-item) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a.purple:active {
   color: var(--key-item-active) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .orange {
   color: var(--achievement) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a.orange:active {
   color: var(--achievement-active) !important;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 kbd {
@@ -477,8 +463,8 @@ kbd:not(:has(kbd, samp)) {
 }
 
 samp {
-  font-family: "Roboto", Arial, sans-serif;
-  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+  font-weight: 600;
   color: hsl(from var(--text-color) h s l / 0.95);
   background: hsl(from var(--nav-border) h s l / 0.2);
   padding: 0.1rem 0.2rem;
@@ -520,6 +506,10 @@ a:has(kbd:hover) {
 }
 
 /* NAVBAR */
+nav {
+  height: 60px;
+}
+
 .navbar {
   background-color: var(--nav-bg-color);
   border-bottom: 2px solid var(--nav-border);
@@ -528,7 +518,7 @@ a:has(kbd:hover) {
 .navbar .nav-link,
 .navbar .btn {
   color: var(--nav-text);
-  font-weight: 500;
+  font-weight: 600;
   border: 0;
   transition: none;
 }
@@ -591,7 +581,7 @@ a:has(kbd:hover) {
   text-align: center;
   text-align-last: center;
   padding: 0.3rem 0.3rem 0.3rem 0.2rem;
-  font-weight: 500;
+  font-weight: 600;
   border: 2px solid var(--nav-border);
   border-radius: 4px;
   background-color: var(--box-color);
@@ -665,10 +655,6 @@ a:has(kbd:hover) {
 
 .playthrough-wrapper {
   min-height: 200px;
-}
-
-.nav {
-  height: 60px;
 }
 
 .lead {
@@ -755,7 +741,7 @@ ul li ul {
   border: 2px solid;
   border-radius: 4px;
   padding: 0.1em 0.4em;
-  font-weight: 500;
+  font-weight: 600;
   margin-left: 0.2em;
   vertical-align: middle;
   font-size: 0.9em;
@@ -797,7 +783,7 @@ ul li ul {
   background-color: var(--calculate-color);
   color: var(--text-color);
   border: 2px solid var(--nav-border);
-  max-width: 22.5rem;
+  max-width: 22rem;
 }
 
 .searchBar::placeholder {
@@ -859,16 +845,6 @@ ul li ul {
   border: 2px solid var(--link-color-active);
 }
 
-.legend-item span:not(.color-box) {
-  line-height: 1.063rem;
-}
-
-.btn:focus,
-.btn.active:focus {
-  outline: none;
-  outline: 0;
-}
-
 .btn-primary {
   background-color: var(--collapse-btn);
   color: var(--box-color-text);
@@ -878,11 +854,6 @@ ul li ul {
 
 .btn-primary:hover {
   background-color: var(--btn-hover);
-  border: 2px solid var(--nav-border);
-}
-
-.btn-primary:active {
-  background-color: var(--btn-hover-click);
   border: 2px solid var(--nav-border);
 }
 
@@ -947,6 +918,7 @@ li ul li .checkbox {
   cursor: pointer;
 }
 
+/* Pointer next to checkboxes */
 label {
   position: relative;
 }
@@ -965,6 +937,7 @@ label:hover:before {
   opacity: 1;
 }
 
+/* Align nested li's with parent */
 li ul li .checkbox-custom {
   left: 0;
 }
@@ -1036,7 +1009,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 .table tbody th,
 .table a {
   color: var(--title-color);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .table a:active {
@@ -1059,7 +1032,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 }
 
 .rune {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .bi-check2-circle {
@@ -1083,7 +1056,7 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
 }
 
 .compass ul {
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
 }
 
 .compass ul li {
