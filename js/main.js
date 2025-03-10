@@ -17,14 +17,6 @@ var profilesKey = "er_profiles";
     },
   };
 
-  const themes = ['notebook', 'light', 'dark'];
-  const icons = {
-    'notebook': '<svg class="theme-icon" role="img" aria-label="Notebook theme"><use href="assets/icons/notebook.svg#icon"/></svg>',
-    'light': '<svg class="theme-icon" role="img" aria-label="Light theme"><use href="assets/icons/sun.svg#icon"/></svg>',
-    'dark': '<svg class="theme-icon" role="img" aria-label="Dark theme"><use href="assets/icons/moon.svg#icon"/></svg>'
-  };
-  const SCROLL_POSITION_KEY = "er_scroll_position";
-
   var profiles = $.jStorage.get(profilesKey, defaultProfiles);
 
   if (!profiles[profilesKey]["Default"]) {
@@ -83,44 +75,9 @@ var profilesKey = "er_profiles";
     calculateTotals();
   }
 
-  function setTheme(themeName) {
-    document.documentElement.setAttribute('data-theme', themeName);
-    localStorage.setItem('theme', themeName);
-
-    const icon = icons[themeName];
-    $('#themeToggleCollapsed, #themeToggleExpanded').html(icon);
-    $('#themeToggleCollapsed, #themeToggleExpanded').attr('aria-label', `Switch theme, currently ${themeName}`);
-  }
-
   $(document).ready(function () {
     initializeUI();
     calculateTotals();
-
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-
-    $('#themeToggleCollapsed, #themeToggleExpanded').click(function () {
-      const currentTheme = localStorage.getItem('theme') || 'light';
-      const nextThemeIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
-      setTheme(themes[nextThemeIndex]);
-    });
-
-    const savedScrollPos = localStorage.getItem(SCROLL_POSITION_KEY) || 0;
-    setTimeout(() => {
-      window.scrollTo({
-        top: parseInt(savedScrollPos),
-        behavior: 'auto'
-      });
-    }, 100);
-
-    let scrollTimeout;
-    $(window).scroll(function () {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(function () {
-        const scrollPos = $(window).scrollTop();
-        localStorage.setItem(SCROLL_POSITION_KEY, scrollPos.toString());
-      }, 100);
-    });
 
     $("a[href^='http']").attr("target", "_blank");
 
