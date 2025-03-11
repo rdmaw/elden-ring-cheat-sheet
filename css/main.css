@@ -288,7 +288,7 @@ nav {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  /* -webkit-tap-highlight-color: transparent; */
 }
 
 .theme-btn::after {
@@ -299,7 +299,7 @@ nav {
   background-size: 26px 26px;
   background-position: center;
   background-repeat: no-repeat;
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
 }
 
 .dark-mode .theme-btn::after {
@@ -670,25 +670,24 @@ li ul li .checkbox label {
 }
 
 .back-to-top {
-  -webkit-appearance: none;
-  appearance: none;
+  /* -webkit-appearance: none;
+  appearance: none; */
   position: fixed;
   bottom: 1.25rem;
   right: 1.25rem;
   background-color: var(--nav-bg);
   color: var(--btn-text);
   border: 2px solid var(--nav-border);
-  border-radius: 1.2rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
   display: flex;
   opacity: 0;
   visibility: hidden;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 1000;
-  font-size: 1.8rem;
+  /* z-index: 1000; */
   transform: translateY(100px);
   pointer-events: none;
   transition: all 0.2s ease-in-out;
@@ -710,9 +709,9 @@ li ul li .checkbox label {
 .back-to-top svg {
     width: 24px;
     height: 24px;
-    min-width: 24px;
-    min-height: 24px;
-    flex-shrink: 0;
+    /* min-width: 24px;
+    min-height: 24px; */
+    /* flex-shrink: 0; */
 }
 
 textarea {
