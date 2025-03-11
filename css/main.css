@@ -2,13 +2,13 @@
   --bg: #fff5e1;
   --text: #2c1810;
   --title: #4a3728;
-  --title-active: #33251a;
-  --nav-bg: #a39073;
+  --title-active: #221911;
+  --nav-bg: #9A8765;
   --nav-text: #4a3728;
   --nav-border: #4a3728;
-  --progress: #d35f5f;
-  --done: #247e60;
-  --btn: #a39073;
+  --progress: #ca3f3f;
+  --done: #1f7a5c;
+  --btn: #9A8765;
   --btn-text: #fff9f0;
   --btn-hover: #6c5c49;
   --box: #fff9f0;
@@ -21,9 +21,9 @@
   --key-item-active: #723a95;
   --achievement: #e6873d;
   --achievement-active: #bf6f31;
-  --link: #4a72bf;
-  --link-active: #385799;
-  --check: #44b596;
+  --link: #1F61DB;
+  --link-active: #000085;
+  --check: #399D83;
   --border-checked: #4a3728;
   --striped-bg: #e9dcc8;
   --toggler-icon: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
@@ -32,11 +32,11 @@
 }
 
 .dark-mode {
-  --bg: #1a1f25;
+  --bg: #030712;
   --text: #e0e0e0;
   --title: #f8f7f7;
   --title-active: #ffffff;
-  --nav-bg: #272d36;
+  --nav-bg: #030712;
   --nav-text: #999999;
   --nav-border: #808080;
   --progress: #d1495b;
@@ -491,6 +491,7 @@ ul li ul {
 }
 
 .btn-primary {
+  font-weight: 600;
   color: var(--btn-text);
   background-color: var(--btn);
   border: 2px solid var(--nav-border);
@@ -508,27 +509,24 @@ ul li ul {
 }
 
 .btn-collapse {
-  padding: 5px 8px;
+  padding: 3px 9px;
   margin-right: 0.25rem;
   position: relative;
   top: -2px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 22px;
+  text-decoration: none !important;
 }
 
 .btn-collapse:after {
-  content: '';
-  width: 16px;
-  height: 16px;
-  background-image: url('../assets/icons/minus.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  fill: white;
+  content: '−';
+  display: flex;
+  position: relative;
+  top: -2px;
+  line-height: 1;
 }
 
 .btn-collapse.collapsed:after {
-  background-image: url('../assets/icons/plus.svg');
+  content: '+';
 }
 
 .checkbox label {
@@ -571,7 +569,7 @@ label:before {
   content: '';
   position: absolute;
   left: -1.5rem;
-  top: 0.2rem;
+  top: 0.1rem;
   opacity: 0;
   width: 20px;
   height: 20px;
