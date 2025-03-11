@@ -8,9 +8,7 @@ var profilesKey = "er_profiles";
   defaultProfiles[profilesKey] = {
     "Default": {
       checklistData: {},
-      collapsed: {
-        "navbarNavDropdown": true,
-      },
+      collapsed: {},
       isDefault: true,
       lastActiveTab: '#tabPlaythrough',
       activeFilter: 'all',
@@ -42,6 +40,7 @@ var profilesKey = "er_profiles";
 
     $('.collapse').each(function () {
       const collapseId = $(this).attr('id');
+      if (collapseId === 'navbarNavDropdown') return;
       const isCollapsed = profiles[profilesKey][profiles.current].collapsed[collapseId];
 
       if (isCollapsed) {
@@ -78,6 +77,11 @@ var profilesKey = "er_profiles";
   $(document).ready(function () {
     initializeUI();
     calculateTotals();
+
+    $('.theme-btn').click(function () {
+      const isDark = document.documentElement.classList.toggle('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark-mode' : '');
+    });
 
     $("a[href^='http']").attr("target", "_blank");
 
