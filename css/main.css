@@ -517,17 +517,21 @@ ul li ul {
 }
 
 .btn-collapse:after {
-  content: '\2212';
+  content: '−';
   display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  /* top: -2px; */
+  top: -2px;
   line-height: 1;
 }
 
 .btn-collapse.collapsed:after {
-  content: '\002B';
+  content: '+';
+}
+
+@supports (-webkit-touch-callout: none) {
+  .btn-collapse {
+    top: 0;
+  }
 }
 
 .checkbox label {
