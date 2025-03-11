@@ -288,7 +288,6 @@ nav {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  /* -webkit-tap-highlight-color: transparent; */
 }
 
 .theme-btn::after {
@@ -299,7 +298,7 @@ nav {
   background-size: 26px 26px;
   background-position: center;
   background-repeat: no-repeat;
-  /* flex-shrink: 0; */
+  flex-shrink: 0;
 }
 
 .dark-mode .theme-btn::after {
@@ -520,6 +519,8 @@ ul li ul {
 .btn-collapse:after {
   content: '−';
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   top: -2px;
   line-height: 1;
@@ -697,8 +698,9 @@ li ul li .checkbox label {
 }
 
 .back-to-top svg {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 textarea {
