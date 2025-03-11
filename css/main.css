@@ -664,11 +664,6 @@ li ul li .checkbox label {
   margin-left: 0.5rem;
 }
 
-.compass>li {
-  font-weight: 600;
-  margin-top: 0.8rem;
-}
-
 .back-to-top {
   position: fixed;
   bottom: 1.25rem;
