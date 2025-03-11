@@ -73,7 +73,7 @@ body,kbd {
   background-color: var(--bg);
 }
 
-h1,h2,h3,.table_of_contents a,h3 a {
+h1,h2,h3,h3 a,.table_of_contents a {
   color: var(--title);
 }
 
@@ -273,35 +273,37 @@ nav {
   outline: 0;
 }
 
-.theme-btn {
-  background: none;
-  border: none;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.theme-btn::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-image: url('../assets/icons/moon.svg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.dark-mode .theme-btn::after {
-  background-image: url('../assets/icons/sun.svg');
-}
-
 @media (max-width: 1199.98px) {
   .profile.ms-auto {
     justify-content: center;
   }
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-btn::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url('../assets/icons/moon.svg');
+  background-size: 26px 26px;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.dark-mode .theme-btn::after {
+  background-image: url('../assets/icons/sun.svg');
 }
 
 .header,.container {
@@ -568,15 +570,20 @@ label {
 label:before {
   content: '';
   position: absolute;
-  left: -1.7rem;
+  left: -1.5rem;
+  top: 0.2rem;
   opacity: 0;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   background-image: url('../assets/icons/hover.svg');
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
   filter: var(--hover);
+}
+
+li ul li label:before {
+  left: -1.4rem;
 }
 
 label:hover:before {
@@ -608,8 +615,7 @@ li ul li .checkbox label {
   border-color: var(--border-checked);
 }
 
-.checkbox input[type="checkbox"]:checked~label .checkbox-custom::after,
-li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after {
+.checkbox input[type="checkbox"]:checked~label .checkbox-custom::after,li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after {
   content: '';
   position: absolute;
   left: 4px;
@@ -699,6 +705,14 @@ li ul li .checkbox input[type="checkbox"]:checked~label .checkbox-custom::after 
   background-color: var(--btn-hover);
   opacity: 1;
   transition: none;
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    flex-shrink: 0;
 }
 
 textarea {
