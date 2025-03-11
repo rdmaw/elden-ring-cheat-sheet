@@ -670,8 +670,6 @@ li ul li .checkbox label {
 }
 
 .back-to-top {
-  /* -webkit-appearance: none;
-  appearance: none; */
   position: fixed;
   bottom: 1.25rem;
   right: 1.25rem;
@@ -687,7 +685,6 @@ li ul li .checkbox label {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  /* z-index: 1000; */
   transform: translateY(100px);
   pointer-events: none;
   transition: all 0.2s ease-in-out;
@@ -709,9 +706,6 @@ li ul li .checkbox label {
 .back-to-top svg {
     width: 24px;
     height: 24px;
-    /* min-width: 24px;
-    min-height: 24px; */
-    /* flex-shrink: 0; */
 }
 
 textarea {
