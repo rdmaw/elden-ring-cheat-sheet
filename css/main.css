@@ -2,24 +2,24 @@
   --bg: #fff5e1;
   --text: #2c1810;
   --title: #4a3728;
-  --title-active: #221911;
-  --nav-bg: #9A8765;
-  --nav-text: #4a3728;
+  --title-active: #2c1810;
+  --nav-bg: #887359;
+  --nav-text: #381f14;
   --nav-border: #4a3728;
   --progress: #ca3f3f;
   --done: #1f7a5c;
-  --btn: #9A8765;
-  --btn-text: #fff9f0;
-  --btn-hover: #6c5c49;
+  --btn: #887359;
+  --btn-text: #fff5e1;
+  --btn-hover: #4a3728;
   --box: #fff9f0;
-  --a-active: #201717;
+  --a-active: #000000;
   --boss: #d32727;
   --boss-active: #880101;
   --npc: #008048;
   --npc-active: #004227;
   --key-item: #7a00cc;
   --key-item-active: #4c0080;
-  --achievement: #d97212;
+  --achievement: #B35600;
   --achievement-active: #7a3b00;
   --link: #1F61DB;
   --link-active: #000085;
@@ -500,11 +500,13 @@ ul li ul {
 }
 
 .btn-primary:hover {
+  color: var(--btn-text);
   background-color: var(--btn-hover);
   border: 2px solid var(--nav-border);
 }
 
 .btn-primary.active,.btn-primary:not(:disabled):active {
+  color: var(--btn-text);
   background-color: var(--btn-hover);
   border-color: var(--nav-border);
 }
