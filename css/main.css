@@ -29,6 +29,7 @@
   --toggler-icon: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
   --toggler-icon-hover: invert(100%) sepia(13%) saturate(356%) hue-rotate(307deg) brightness(116%) contrast(92%);
   --hover: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
+  --collapse: invert(96%) sepia(30%) saturate(585%) hue-rotate(302deg) brightness(104%) contrast(103%);
 }
 
 .dark-mode {
@@ -62,6 +63,7 @@
   --toggler-icon: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
   --toggler-icon-hover: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
   --hover: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  --collapse: invert(100%) sepia(0%) saturate(5839%) hue-rotate(178deg) brightness(107%) contrast(76%);
 }
 
 html {
@@ -502,35 +504,33 @@ ul li ul {
   border: 2px solid var(--nav-border);
 }
 
-.btn-primary:focus:active,.btn-primary.active {
+.btn-primary.active,.btn-primary:not(:disabled):active {
   background-color: var(--btn-hover);
   border-color: var(--nav-border);
 }
 
 .btn-collapse {
-  padding: 3px 9px;
+  padding: 6px 9px;
   margin-right: 0.25rem;
   position: relative;
-  font-size: 22px;
-  text-decoration: none !important;
+  top: -2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-collapse:after {
-  content: '−';
-  display: flex;
-  position: relative;
-  top: -2px;
-  line-height: 1;
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url('../assets/icons/minus.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: var(--collapse);
 }
 
 .btn-collapse.collapsed:after {
-  content: '+';
-}
-
-@supports (-webkit-touch-callout: none) {
-  .btn-collapse:after {
-    top: 0;
-  }
+  background-image: url('../assets/icons/plus.svg');
 }
 
 .checkbox label {
@@ -564,7 +564,6 @@ ul li ul {
   cursor: pointer;
 }
 
-/* Pointer next to checkboxes */
 label {
   position: relative;
 }
@@ -573,11 +572,11 @@ label:before {
   content: '';
   position: absolute;
   left: -1.5rem;
-  top: 0.1rem;
+  top: 0.16rem;
   opacity: 0;
-  width: 20px;
-  height: 20px;
-  background-image: url('../assets/icons/hover.svg');
+  width: 16px;
+  height: 16px;
+  background-image: url('../assets/icons/caret.svg');
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
