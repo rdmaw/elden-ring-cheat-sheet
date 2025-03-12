@@ -321,7 +321,6 @@ var profilesKey = "er_profiles";
       calculateTotals();
     });
     calculateTotals();
-    lazyLoadChecklistItems();
   });
 
   function addCheckbox(el) {
@@ -714,20 +713,5 @@ var profilesKey = "er_profiles";
   createSearchHandler('Armaments', '.checkbox .item_content');
   createSearchHandler('Armor', '.checkbox .item_content');
   createSearchHandler('Misc', '.checkbox .item_content');
-
-  function lazyLoadChecklistItems() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('loaded');
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-
-    document.querySelectorAll('.collapse').forEach(section => {
-      observer.observe(section);
-    });
-  }
 
 })(jQuery);
