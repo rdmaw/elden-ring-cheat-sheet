@@ -1,1 +1,0 @@
-"dark-mode"===localStorage.getItem("theme")&&document.documentElement.classList.add("dark-mode");

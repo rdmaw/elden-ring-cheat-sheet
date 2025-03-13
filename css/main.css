@@ -703,7 +703,7 @@ textarea {
   display: none;
 }
 
-footer {
+footer p {
   text-align: center;
   margin: 0.75rem 0 0.6rem 0;
   font-size: 0.9rem;
