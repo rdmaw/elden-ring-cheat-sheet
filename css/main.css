@@ -23,13 +23,13 @@
   --achievement-active: #8f4500;
   --link: #1d5bcd;
   --link-active: #000085;
-  --check: #399d83;
+  --check: #379a80;
   --border-checked: #4a3728;
   --striped-bg: #e0d3bd;
   --toggler-icon: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
   --toggler-icon-hover: invert(100%) sepia(13%) saturate(356%) hue-rotate(307deg) brightness(116%) contrast(92%);
   --hover: invert(25%) sepia(19%) saturate(768%) hue-rotate(341deg) brightness(94%) contrast(89%);
-  --collapse: invert(96%) sepia(30%) saturate(585%) hue-rotate(302deg) brightness(104%) contrast(103%);
+  --collapse: invert(98%) sepia(64%) saturate(502%) hue-rotate(296deg) brightness(106%) contrast(101%);
 }
 
 .dark-mode {
@@ -528,20 +528,22 @@ ul li ul {
 }
 
 .checkbox {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1em auto;
   align-items: first baseline;
   position: relative;
 }
 
 .checkbox input[type="checkbox"] {
   accent-color: var(--check);
-  scale: 1.3;
+  scale: 1.2;
   cursor: pointer;
 }
 
 .checkbox label {
-  padding-left: 0.8rem;
+  padding-left: 0.6rem;
   cursor: pointer;
+  width: fit-content;
 }
 
 .checkbox label.completed .item_content {
@@ -550,22 +552,28 @@ ul li ul {
 }
 
 .checkbox label:before {
-  content: '';
-  position: absolute;
-  left: -1.5rem;
-  top: 0.23rem;
-  width: 17px;
-  height: 17px;
-  opacity: 0;
-  background-image: url('../assets/icons/caret.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  filter: var(--hover);
+  content: none;
 }
 
-.checkbox:hover label:before {
-  opacity: 1;
+@media (hover: hover) {
+  .checkbox label:before {
+    content: '';
+    position: absolute;
+    left: -1.55rem;
+    top: 0.2em;
+    width: 17px;
+    height: 17px;
+    opacity: 0;
+    background-image: url('../assets/icons/caret.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    filter: var(--hover);
+  }
+
+  .checkbox :is(.item_content:hover,input[type="checkbox"]:hover) ~ label:before {
+    opacity: 1;
+  }
 }
 
 .item_content {
