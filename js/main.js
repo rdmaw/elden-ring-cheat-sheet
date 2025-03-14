@@ -333,7 +333,6 @@ var profilesKey = "er_profiles";
       '<div class="checkbox">' +
       '<input type="checkbox" id="' + checkboxId + '">' +
       '<label for="' + checkboxId + '">' +
-      '<span class="checkbox-custom"></span>' +
       '<span class="item_content">' + content + '</span>' +
       '</label>' +
       '</div>';
