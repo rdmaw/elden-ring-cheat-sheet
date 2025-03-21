@@ -45,10 +45,10 @@ var profilesKey = "er_profiles";
 
       if (isCollapsed) {
         $(this).removeClass('show');
-        $(this).prev().find('.btn-collapse').addClass('collapsed');
+        $(this).prev().find('.btn-collapse').addClass('collapsed').attr('aria-expanded', 'false');
       } else {
         $(this).addClass('show');
-        $(this).prev().find('.btn-collapse').removeClass('collapsed');
+        $(this).prev().find('.btn-collapse').removeClass('collapsed').attr('aria-expanded', 'true');
       }
     });
 
@@ -82,6 +82,15 @@ var profilesKey = "er_profiles";
       const isDark = document.documentElement.classList.toggle('dark-mode');
       localStorage.setItem('theme', isDark ? 'dark-mode' : '');
     });
+    
+    $('#colorBlindnessToggle').on('change', function() {
+    setColorBlindnessMode(this.value);
+    });
+
+    const savedColorBlindness = localStorage.getItem('colorBlindness');
+    if (savedColorBlindness) {
+      $('#colorBlindnessToggle').val(savedColorBlindness);
+    }
 
     $("a[href^='http']").attr("target", "_blank");
 
@@ -254,6 +263,9 @@ var profilesKey = "er_profiles";
       const collapseId = $(this).attr('id');
       const isCollapsed = !$(this).hasClass('show');
 
+      $(this).prev().find('.btn-collapse').attr('aria-expanded', !isCollapsed);
+      $(this).attr('aria-hidden', isCollapsed);
+
       profiles[profilesKey][profiles.current].collapsed[collapseId] = isCollapsed;
       $.jStorage.set(profilesKey, profiles);
     });
@@ -262,8 +274,8 @@ var profilesKey = "er_profiles";
       const $section = $(this).closest('.tab-pane');
       const $collapseElements = $section.find('.collapse');
 
-      $collapseElements.removeClass('show');
-      $collapseElements.prev().find('.btn-collapse').addClass('collapsed');
+      $collapseElements.removeClass('show').attr('aria-hidden', 'true');
+      $collapseElements.prev().find('.btn-collapse').addClass('collapsed').attr('aria-expanded', 'false');
 
       const collapseStates = {};
       $collapseElements.each(function () {
@@ -279,8 +291,8 @@ var profilesKey = "er_profiles";
       const $section = $(this).closest('.tab-pane');
       const $collapseElements = $section.find('.collapse');
 
-      $collapseElements.addClass('show');
-      $collapseElements.prev().find('.btn-collapse').removeClass('collapsed');
+      $collapseElements.addClass('show').attr('aria-hidden', 'false');
+      $collapseElements.prev().find('.btn-collapse').removeClass('collapsed').attr('aria-expanded', 'true');
 
       const collapseStates = {};
       $collapseElements.each(function () {
@@ -443,6 +455,7 @@ var profilesKey = "er_profiles";
         $(this).removeClass("done").addClass("in_progress");
       }
     });
+    updateNavLinkStates();
   }
 
   function clearUI() {
@@ -501,10 +514,10 @@ var profilesKey = "er_profiles";
 
       if (isCollapsed) {
         $(this).removeClass('show');
-        $(this).prev().find('.btn-collapse').addClass('collapsed');
+        $(this).prev().find('.btn-collapse').addClass('collapsed').attr('aria-expanded', 'false');
       } else {
         $(this).addClass('show');
-        $(this).prev().find('.btn-collapse').removeClass('collapsed');
+        $(this).prev().find('.btn-collapse').removeClass('collapsed').attr('aria-expanded', 'true');
       }
     });
 
@@ -712,5 +725,127 @@ var profilesKey = "er_profiles";
   createSearchHandler('Armaments', '.checkbox .item_content');
   createSearchHandler('Armor', '.checkbox .item_content');
   createSearchHandler('Misc', '.checkbox .item_content');
+
+  document.addEventListener('keydown', function(e) {
+    if (e.target.matches('input[type="search"], textarea')) return;
+
+    if (e.key.toLowerCase() === 'q' && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      const offcanvasElement = document.getElementById("offcanvasNavbar");
+      const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement) || new bootstrap.Offcanvas(offcanvasElement);
+
+      bsOffcanvas[offcanvasElement.classList.contains('show') ? 'hide' : 'show']();
+      return;
+    }
+
+    switch (e.key.toLowerCase()) {
+      case '1':
+        document.querySelector('#playthrough-tab').click();
+        break;
+      case '2':
+        document.querySelector('#achievements-tab').click();
+        break;
+      case '3':
+        document.querySelector('#armaments-tab').click();
+        break;
+      case '4':
+        document.querySelector('#armor-tab').click();
+        break;
+      case '5':
+        document.querySelector('#ashes-tab').click();
+        break;
+      case '6':
+        document.querySelector('#spells-tab').click();
+        break;
+      case '7':
+        document.querySelector('#misc-tab').click();
+        break;
+      case '8':
+        document.querySelector('#resources-tab').click();
+        break;
+      case '9':
+        document.querySelector('#faq-tab').click();
+        break;
+      case 's':
+        document.querySelector('[data-filter="all"]').click();
+        break;
+      case 'b':
+        document.querySelector('[data-filter="boss"]').click();
+        break;
+      case 'n':
+        document.querySelector('[data-filter="npc"]').click();
+        break;
+      case 'k':
+        document.querySelector('[data-filter="key-item"]').click();
+        break;
+      case 'a':
+        document.querySelector('[data-filter="achievement"]').click();
+        break;
+      case 'm':
+        document.querySelector('[data-filter="merchant"]').click();
+        break;
+      case 'e':
+        document.querySelector('.tab-pane.active .btn-expand-all').click();
+        break;
+      case 'c':
+        document.querySelector('.tab-pane.active .btn-collapse-all').click();
+        break;
+      case 'u':
+        window.scrollTo({
+          top: 0,
+          behavior: 'auto'
+        });
+        break;
+      case 'd':
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: 'auto'
+        });
+        break;
+    }
+  });
+
+  function updateNavLinkStates() {
+    const tabIds = ['Playthrough', 'Achievements', 'Armaments', 'Armor', 'Ashes', 'Spells', 'Misc'];
+    
+    tabIds.forEach(tabId => {
+      const navLink = document.querySelector(`#${tabId.toLowerCase()}-tab`);
+      const section = document.querySelector(`#tab${tabId}`);
+      const totalSpan = section.querySelector(`[id$="_overall_total"]`);
+      
+      if (totalSpan && totalSpan.textContent === 'DONE') {
+        navLink.classList.add('section-done');
+      } else {
+        navLink.classList.remove('section-done');
+      }
+    });
+  }
+
+  function setColorBlindnessMode(mode) {
+    document.documentElement.classList.remove(
+      "protanopia",
+      "deuteranopia", 
+      "tritanopia",
+      "achromatopsia"
+    );
+  
+    if (mode) {
+      document.documentElement.classList.add(mode);
+      localStorage.setItem('colorBlindness', mode);
+    } else {
+      localStorage.removeItem('colorBlindness');
+    }
+  }
+
+  const savedColorBlindness = localStorage.getItem('colorBlindness');
+  if (savedColorBlindness) {
+    setColorBlindnessMode(savedColorBlindness);
+  }
+
+const totalSize = Object.keys(localStorage).reduce((total, key) => {
+  return total + (localStorage[key].length + key.length) * 2;
+}, 0) / 1024 / 1024;
+
+console.log(`Total localStorage usage: ${totalSize.toFixed(2)} MB`);
 
 })(jQuery);
