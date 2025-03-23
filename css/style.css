@@ -67,6 +67,21 @@ label {
   text-decoration: line-through;
 }
 
+/* TODO: build as project expands */
+@media print {
+  body, a{
+    color: black;
+  }
+
+  .checkbox, footer {
+    display: none;
+  }
+
+  label {
+    padding: 0;
+  }
+}
+
 /* Force Firefox to include state. Temp workaround for #1 */
 textarea {
   display: none;
