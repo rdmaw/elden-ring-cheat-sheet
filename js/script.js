@@ -1,129 +1,83 @@
-// Declare profile and store the data using localStorage
+// Declare profile key and default
 const PROFILE_KEY = 'eldenring_profiles';
-const DEFAULT_PROFILE_NAME = 'Default';
+const DEFAULT_PROFILE = 'Default';
 
+// Initialize default profile with checks if doesn't exist
 function initializeProfiles() {
-  let profiles;
+  const defaultProfile = {
+    [DEFAULT_PROFILE]: {
+      checklistData: {}
+      // TODO: Future data to be stored
+    }
+  };
+
   try {
-    profiles = JSON.parse(localStorage.getItem(PROFILE_KEY)) || {};
-  } catch {
-    profiles = {};
-  }
+    const profiles = JSON.parse(localStorage.getItem(PROFILE_KEY));
+    if (!profiles) return defaultProfile;
 
-  if (!profiles[DEFAULT_PROFILE_NAME]?.checklistData) {
-    profiles[DEFAULT_PROFILE_NAME] = {
-      checklistData: {},
-      // ? Keep in case of future use
-      // collapsed: {},
-      // isDefault: true,
-      // lastActiveTab: '#tabPlaythrough',
-      // activeFilter: 'all'
+    if (profiles[DEFAULT_PROFILE]?.checklistData &&
+      !Object.keys(defaultProfile[DEFAULT_PROFILE])
+        .some(key => !(key in profiles[DEFAULT_PROFILE]))) {
+      return profiles;
+    }
+
+    profiles[DEFAULT_PROFILE] = {
+      ...defaultProfile[DEFAULT_PROFILE],
+      ...profiles[DEFAULT_PROFILE]
     };
-    localStorage.setItem(PROFILE_KEY, JSON.stringify(profiles));
-  }
 
-  return profiles;
+    localStorage.setItem(PROFILE_KEY, JSON.stringify(profiles));
+    return profiles;
+
+  } catch {
+    return defaultProfile;
+  }
 }
 
 const profileManager = {
   getCurrentProfile() {
-    const profiles = initializeProfiles();
-    return profiles[DEFAULT_PROFILE_NAME];
+    return initializeProfiles()[DEFAULT_PROFILE];
   },
 
-  updateChecklistState(dataId, checked) {
-    if (!dataId) return;
-
+  updateChecklistState(id, checked) {
+    if (!id) return;
     const profiles = initializeProfiles();
-    const profile = profiles[DEFAULT_PROFILE_NAME];
 
-    if (checked) {
-      profile.checklistData[dataId] = true;
-    } else {
-      delete profile.checklistData[dataId];
-    }
+    checked ?
+      profiles[DEFAULT_PROFILE].checklistData[id] = true :
+      delete profiles[DEFAULT_PROFILE].checklistData[id];
 
     localStorage.setItem(PROFILE_KEY, JSON.stringify(profiles));
   }
 };
 
-// Generate checkboxes for each <li> with a data-id attribute
-function generateCheckboxes() {
-  const listItems = document.querySelectorAll('li[data-id]');
-
-  listItems.forEach(li => {
-    const dataId = li.getAttribute('data-id');
-
-    if (!li.querySelector('.checkbox')) {
-      const container = document.createElement('div');
-      container.className = 'checklist';
-
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.className = 'checkbox';
-      checkbox.id = `check_${dataId}`;
-
-      const label = document.createElement('label');
-      label.htmlFor = checkbox.id;
-
-      const content = li.cloneNode(true);
-      const sublists = Array.from(content.querySelectorAll('ul'));
-      sublists.forEach(ul => ul.remove());
-
-      label.append(...content.childNodes);
-      container.append(checkbox, label);
-
-      const originalSublists = Array.from(li.querySelectorAll('ul'));
-      originalSublists.forEach(ul => container.append(ul));
-
-      li.textContent = '';
-      li.append(container);
-    }
-  });
-}
-
-// Update storage when checkbox state updates
+// Handle storage updates when checkbox is interacted with
 document.addEventListener('change', e => {
-  if (e.target.matches('.checkbox')) {
-    const checkbox = e.target;
-    const dataId = checkbox.id.replace('check_', '');
-    profileManager.updateChecklistState(dataId, checkbox.checked);
+  if (e.target.matches('input[type="checkbox"]')) {
+    profileManager.updateChecklistState(e.target.id, e.target.checked);
   }
 });
 
-// Handle checked state when restoring checkboxes
+// Handle checkbox checked state restoration
 function restoreCheckboxes() {
   const { checklistData } = profileManager.getCurrentProfile();
-  const checkboxes = document.querySelectorAll('.checkbox');
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-  const updates = [];
   checkboxes.forEach(checkbox => {
-    const dataId = checkbox.id.replace('check_', '');
-    updates.push({ checkbox, state: !!checklistData[dataId] });
-  });
-
-  updates.forEach(({ checkbox, state }) => {
-    checkbox.checked = state;
+    checkbox.checked = !!checklistData[checkbox.id];
   });
 }
 
-// Run code on pageshow instead of after DOM load
-window.addEventListener('pageshow', () => {
-  initializeProfiles();
-  generateCheckboxes();
-  restoreCheckboxes();
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Loop for better _blank handling, added noopener
+  restoreCheckboxes();
+
+  // Open links in new tab, loops through all links
   const links = document.querySelectorAll('a[href^="http"]');
   const len = links.length;
 
   for (let i = 0; i < len; i++) {
     const link = links[i];
-    if (link.href.startsWith('http')) {
-      link.target = '_blank';
-      link.rel = 'noopener';
-    }
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
   }
 });

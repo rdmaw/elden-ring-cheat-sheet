@@ -18,10 +18,12 @@
 }
 
 /* Defaults */
-* {
+*, *::before, *::after {
   box-sizing: border-box;
+}
+
+* {
   margin: 0;
-  padding: 0;
 }
 
 html {
@@ -31,10 +33,27 @@ html {
 
 body {
   background-color: light-dark(var(--light-bg), var(--dark-bg));
+  line-height: 1.5;
+  --webkit-font-smoothing: antialiased;
 }
+
+/* ! Experimental */
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* ! */
 
 ul {
   list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 /* Navbar */
@@ -44,26 +63,35 @@ nav {
   margin-bottom: var(--spacing4);
 }
 
+main {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: var(--spacing4);
+}
+
 /* Checklists */
 .checklist {
   margin-left: var(--spacing4);
+
+  & ul {
+   margin-left: var(--spacing4);
+  }
 }
 
-.checkbox, label {
+input[type="checkbox"], label {
   cursor: pointer;
 }
 
 label {
-  padding-left: var(--spacing3);
+  padding-left: var(--spacing1);
 }
 
-.checkbox {
+input[type="checkbox"] {
   accent-color: green;
   scale: 1.2;
 }
 
-.checkbox:checked ~ label {
-  font-style: italic;
+input[type="checkbox"]:checked ~ label {
   text-decoration: line-through;
 }
 
@@ -73,7 +101,7 @@ label {
     color: black;
   }
 
-  .checkbox, footer {
+  input[type="checkbox"], footer {
     display: none;
   }
 
