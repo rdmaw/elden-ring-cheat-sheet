@@ -43,6 +43,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
   text-wrap: balance;
 }
 
@@ -71,7 +72,7 @@ svg {
 nav {
   min-height: 3.75rem;
   background-color: light-dark(var(--light-primary), var(--dark-primary));
-  /* margin-bottom: var(--spacing4); */
+  text-align: center;
 }
 
 /* Main container */
@@ -106,6 +107,15 @@ input[type="checkbox"] {
   position: absolute;
   left: 0;
   top: 3px;
+}
+
+input[type="checkbox"]:hover, label:hover ~ input[type="checkbox"] {
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+input[type="checkbox"]:active, label:active ~ input[type="checkbox"] {
+  box-shadow: 0 0 0 10px green;
+  transition: 0.2s ease;
 }
 
 input[type="checkbox"]:checked ~ label {
