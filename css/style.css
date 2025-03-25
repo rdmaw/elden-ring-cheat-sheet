@@ -4,12 +4,12 @@
   --light-bg: #fff5e1;
   --light-primary: #9a8765;
   --light-link: #1d5bcd;
-  --light-link-a: #000085;
+  /* --light-link-a: #000085; */
 
   --dark-bg: #222426;;
   --dark-primary: #303030;
   --dark-link: #65a0d7;
-  --dark-link-a: #135696;
+  /* --dark-link-a: #135696; */
 
   --spacing1: .25rem;
   --spacing2: .5rem;
@@ -65,10 +65,10 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
 
-  &:active {
-    color: light-dark(var(--light-link-a), var(--dark-link-a));
-  }
+ul {
+  list-style-type: none;
 }
 
 input, button, kbd, textarea, samp, select  {
@@ -112,18 +112,33 @@ footer p {
   margin: var(--spacing4) 0;
 }
 
-/* ALL - Checklists */
-.checklist {
-  list-style-type: none;
-
-  & ul {
-    list-style-type: none;
-  }
+.omitted li::before {
+  content: "✗";
+  color: red;
+  margin-left: var(--spacing4);
+  padding-right: var(--spacing2);
 }
 
+.included li::before {
+  content: "✔";
+  color: green;
+  margin-left: var(--spacing4);
+  padding-right: var(--spacing2);
+}
+
+/* ALL - Checklists */
 li {
   position: relative;
+}
+
+ul li ul {
   padding-left: 1.75rem;
+}
+
+label {
+  display: inline-block;
+  padding-left: 1.75rem;
+  padding-top: 0.3rem;
 }
 
 input[type="checkbox"], label {
@@ -133,20 +148,15 @@ input[type="checkbox"], label {
 input[type="checkbox"] {
   accent-color: green;
   /* transform: scale(1.2); */
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 18px;
+  height: 18px;
   position: absolute;
   left: 0;
-  top: 3px;
+  top: 8px;
 }
 
 input[type="checkbox"]:hover, label:hover ~ input[type="checkbox"] {
   box-shadow: 0 0 0 2px currentColor;
-}
-
-input[type="checkbox"]:active, label:active ~ input[type="checkbox"] {
-  box-shadow: 0 0 0 10px green;
-  transition: 0.2s ease;
 }
 
 input[type="checkbox"]:checked ~ label {
