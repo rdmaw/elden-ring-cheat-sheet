@@ -71,7 +71,7 @@ function restoreCheckboxes() {
 document.addEventListener('DOMContentLoaded', () => {
   restoreCheckboxes();
 
-  // Open links in new tab, loops through all links
+  // Open links in new tab, loop through all links
   const links = document.querySelectorAll('a[href^="http"]');
   const len = links.length;
 
@@ -81,11 +81,3 @@ document.addEventListener('DOMContentLoaded', () => {
     link.rel = 'noopener noreferrer';
   }
 });
-
-if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
-  window.history.replaceState(
-    null,
-    '',
-    window.location.pathname.slice(0, -1) + window.location.search + window.location.hash
-  );
-}

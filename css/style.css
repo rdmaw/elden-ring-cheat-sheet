@@ -109,8 +109,7 @@ footer p {
 
 /* FAQ */
 .faq-title {
-  text-align: center; /* Might remove */
-  margin-top: var(--spacing5);
+  margin: var(--spacing4) 0;
 }
 
 /* ALL - Checklists */
