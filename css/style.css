@@ -1,15 +1,12 @@
 /* VARIABLES */
 :root {
-  color-scheme: light dark;
-  --light-bg: #fff5e1;
-  --light-primary: #9a8765;
-  --light-link: #1d5bcd;
-  /* --light-link-a: #000085; */
-
-  --dark-bg: #222426;;
-  --dark-primary: #303030;
-  --dark-link: #65a0d7;
-  /* --dark-link-a: #135696; */
+  --bg: #fff5e1;
+  --text: #2c1810;
+  --title: #4a3728;
+  --primary: #9a8765;
+  --link: #1d5bcd;
+  --progress: #ca3f3f;
+  --check: #379a80;
 
   --spacing1: .25rem;
   --spacing2: .5rem;
@@ -21,6 +18,16 @@
 
   --radius1: 2px;
   --radius2: 4px;
+}
+
+.dark {
+  --bg: #222426;
+  --text: #e0e0e0;
+  --title: #f8f7f7;
+  --primary: #303030;
+  --link: #65a0d7;
+  --progress: #e9586b;
+  --check: #17b598;
 }
 
 /* DEFAULTS */
@@ -41,7 +48,8 @@ html {
 }
 
 body {
-  background-color: light-dark(var(--light-bg), var(--dark-bg));
+  color: var(--text);
+  background-color: var(--bg);
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -58,7 +66,7 @@ p {
 }
 
 a {
-  color: light-dark(var(--light-link), var(--dark-link));
+  color: var(--link);
   font-weight: 600;
   text-decoration: none;
 
@@ -89,8 +97,39 @@ svg {
 /* NAVIGATION */
 nav {
   height: 3.75rem;
-  background-color: light-dark(var(--light-primary), var(--dark-primary));
+  background-color: var(--primary);
   text-align: center;
+}
+
+/* TOGGLE THEME */
+#toggle-theme {
+  width: 45px;
+  height: 45px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+
+  &:hover {
+    background-color: var(--bg);
+  }
+}
+
+#toggle-theme svg {
+  fill: currentColor;
+}
+
+.sun, .dark .moon {
+  display: none;
+}
+
+.dark .sun {
+  display: block;
 }
 
 /* CONTAINERS */
@@ -114,16 +153,25 @@ footer p {
 
 .omitted li::before {
   content: "✗";
-  color: red;
+  color: var(--progress);
   margin-left: var(--spacing4);
   padding-right: var(--spacing2);
 }
 
 .included li::before {
   content: "✔";
-  color: green;
+  color: var(--check);
   margin-left: var(--spacing4);
   padding-right: var(--spacing2);
+}
+
+ol {
+  list-style-position: inside;
+  padding-left: var(--spacing5);
+
+  & ul {
+    padding-left: var(--spacing5);
+  }
 }
 
 /* ALL - Checklists */
@@ -141,12 +189,12 @@ label {
   padding-top: 0.3rem;
 }
 
-input[type="checkbox"], label {
+button, input[type="checkbox"], label {
   cursor: pointer;
 }
 
 input[type="checkbox"] {
-  accent-color: green;
+  accent-color: var(--check);
   /* transform: scale(1.2); */
   width: 18px;
   height: 18px;

@@ -1,12 +1,16 @@
+// Set root and theme toggle
+const root = document.documentElement;
+const themeToggle = document.getElementById('toggle-theme');
+
 // Declare profile key and default
-const PROFILE_KEY = 'eldenring_profiles';
-const DEFAULT_PROFILE = 'Default';
+const PROFILE_KEY = 'er_profiles';
+const DEFAULT_PROFILE = 'default';
 
 // Initialize default profile with checks if doesn't exist
 function initializeProfiles() {
   const defaultProfile = {
     [DEFAULT_PROFILE]: {
-      checklistData: {}
+      data: {}
       // TODO: Future data to be stored
     }
   };
@@ -15,7 +19,7 @@ function initializeProfiles() {
     const profiles = JSON.parse(localStorage.getItem(PROFILE_KEY));
     if (!profiles) return defaultProfile;
 
-    if (profiles[DEFAULT_PROFILE]?.checklistData &&
+    if (profiles[DEFAULT_PROFILE]?.data &&
       !Object.keys(defaultProfile[DEFAULT_PROFILE])
         .some(key => !(key in profiles[DEFAULT_PROFILE]))) {
       return profiles;
@@ -43,9 +47,10 @@ const profileManager = {
     if (!id) return;
     const profiles = initializeProfiles();
 
+    // Replaced true with 1 for smaller storage
     checked ?
-      profiles[DEFAULT_PROFILE].checklistData[id] = true :
-      delete profiles[DEFAULT_PROFILE].checklistData[id];
+      profiles[DEFAULT_PROFILE].data[id] = 1 :
+      delete profiles[DEFAULT_PROFILE].data[id];
 
     localStorage.setItem(PROFILE_KEY, JSON.stringify(profiles));
   }
@@ -60,15 +65,23 @@ document.addEventListener('change', e => {
 
 // Handle checkbox checked state restoration
 function restoreCheckboxes() {
-  const { checklistData } = profileManager.getCurrentProfile();
+  const { data } = profileManager.getCurrentProfile();
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
   checkboxes.forEach(checkbox => {
-    checkbox.checked = !!checklistData[checkbox.id];
+    checkbox.checked = !!data[checkbox.id];
   });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Handle color theme while updating ARIA
+  themeToggle?.addEventListener('click', () => {
+    const dark = root.classList.toggle('dark');
+    localStorage.theme = dark ? 'dark' : 'light';
+
+    themeToggle.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} mode`);
+  });
+
   restoreCheckboxes();
 
   // Open links in new tab, loop through all links
