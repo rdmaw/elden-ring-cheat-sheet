@@ -1,8 +1,6 @@
-// Set root and theme toggle
+// Cache root and declare defaults
 const root = document.documentElement;
-const themeToggle = document.getElementById('toggle-theme');
-
-// Declare profile key and default
+const theme = document.getElementById('theme');
 const PROFILE_KEY = 'er_profiles';
 const DEFAULT_PROFILE = 'default';
 
@@ -47,7 +45,6 @@ const profileManager = {
     if (!id) return;
     const profiles = initializeProfiles();
 
-    // Replaced true with 1 for smaller storage
     checked ?
       profiles[DEFAULT_PROFILE].data[id] = 1 :
       delete profiles[DEFAULT_PROFILE].data[id];
@@ -74,13 +71,16 @@ function restoreCheckboxes() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Handle color theme while updating ARIA
-  themeToggle?.addEventListener('click', () => {
-    const dark = root.classList.toggle('dark');
-    localStorage.theme = dark ? 'dark' : 'light';
+  // Handle theme switching
+  if (theme) {
+    theme.value = localStorage.theme || 'light';
 
-    themeToggle.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} mode`);
-  });
+    theme.addEventListener('change', () => {
+      const dark = theme.value === 'dark';
+      root.classList.toggle('dark', dark);
+      localStorage.theme = theme.value;
+    });
+  }
 
   restoreCheckboxes();
 

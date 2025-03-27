@@ -27,6 +27,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Links -->
   <script>
     const d = document.documentElement; d.classList.toggle("dark", "dark" === localStorage.getItem("theme"));
   </script>
@@ -36,70 +37,92 @@
 </head>
 <body>
   <!-- TODO: Navbar -->
-  <nav class="navbar" style="text-align: center;">Take me to <a href="/sheets/walkthrough.html">Walkthrough</a>.
-    <button id="toggle-theme" aria-label="Toggle color theme">
-      <div class="moon" aria-hidden="true">🌙</div>
-      <div class="sun" aria-hidden="true">☀️</div>
-    </button>
+  <nav class="flex" aria-label="Homepage navigation">
+    <div class="nav flex center">
+      <button type="button" id="menu" aria-controls="sidebar" aria-label="Toggle navigation sidebar">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M3 12h18M3 6h18M3 18h18" />
+      </svg> -->
+        <svg aria-hidden="true">
+          <use xlink:href="/assets/icons/sprite.svg#menu"></use>
+        </svg>
+      </button>
+      <ul class="flex">
+        <li class="home"><a href="/">FAQ</a></li>
+        <li><a href="/options.html">⚙ Options</a></li>
+      </ul>
+    </div>
   </nav>
   <!-- TODO: Sidebar -->
+  <!-- <nav aria-label="Sidebar navigation">
+    <h2>Sheets</h2>
+    <ul>
+      <li><a href="/sheets/resources.html">Resources</a></li>
+      <li><a href="/sheets/walkthrough.html">Walkthrough</a></li>
+      <li><a href="/sheets/questlines.html">Questlines</a></li>
+      <li><a href="/sheets/bosses.html">Bosses</a></li>
+      <li><a href="/sheets/achievements.html">Achievements</a></li>
+      <li><a href="/sheets/armaments.html">Armaments</a></li>
+      <li><a href="/sheets/armor.html">Armor</a></li>
+      <li><a href="/sheets/ashes.html">Ashes</a></li>
+      <li><a href="/sheets/spells.html">Spells</a></li>
+      <li><a href="/sheets/key-items.html">Key Items</a></li>
+      <li><a href="/sheets/miscellaneous.html">Miscellaneous</a></li>
+      <li><a href="/sheets/new-game-plus.html">New Game Plus</a></li>
+    </ul>
+  </nav> -->
   <main>
-    <!-- Header -->
     <header>
       <h1>Elden Ring Cheat Sheet</h1>
-      <p>Comprehensive cheat sheets for 100% completion in Elden Ring, including the Shadow of the Erdtree DLC.</p>
-      <p>If you notice any mistakes, or want to contribute during the early phase, please open an issue on <a href="https://github.com/rdmaw/elden-ring-cheat-sheet/issues">Github</a>.</p>
-      <p><em>WARNING: Contains spoilers!</em></p>
-      <p>🚧 The project is under heavy development. Content will change! 🚧</p>
+      <p class="lead">Comprehensive cheat sheets for achieving 100% completion in Elden Ring.</p>
+      <p>🚧 The project is still under heavy construction. Content will change! 🚧<br>If you notice any mistakes, or want to contribute during development, please open an issue on <a href="https://github.com/rdmaw/elden-ring-cheat-sheet">Github</a>.</p>
     </header>
     <h2>Credits</h2>
-    <p>I'd like to thank <a href="https://github.com/zkjellberg">Zachary Kjellberg</a> and <a href="https://github.com/smcnabb">Stephen McNabb</a>, the creators of the original cheat sheets that inspired this project. The guide uses <a href="https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki">Fextralife</a> and <a href="https://eldenring.wiki.gg/wiki/Eldenpedia">Eldenpedia</a> for most of its information, along with Map Genie's fantastic <a href="https://mapgenie.io/elden-ring/maps/the-lands-between">Elden Ring Map</a> to visualize item locations, ensuring everything is included. The beginning walkthrough sections loosely follow Cowboy's <a href="https://www.youtube.com/playlist?list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh">walkthrough</a> for a head start to make your experience much more approachable, and lastly thanks to <a href="#">Rin</a> for designing the website's favicon and open graph image.</p>
-    <h2 class="faq-title">FAQ</h2>
+    <p>I'd like to thank <a href="https://github.com/zkjellberg">ZKjellberg</a> and <a href="https://github.com/smcnabb">smcnabb</a>, whose original cheat sheets inspired this project. <a href="https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki">Fextralife</a> and <a href="https://eldenring.wiki.gg/wiki/Eldenpedia">Eldenpedia</a> are the primary sources used for most of the information here, along with Map Genie's fantastic <a href="https://mapgenie.io/elden-ring/maps/the-lands-between">Elden Ring Map</a> for visualizing item locations. The initial walkthrough sections draw inspiration from FightinCowboy's <a href="https://www.youtube.com/playlist?list=PL7RtZMiaOk8gdRf130w4gFYyhstL-5VRh">walkthrough</a> for a head start, making the playthrough much more approachable. Thanks to <a href="https://smalllittleartist.carrd.co">Rin</a> for designing the website's favicon and Open Graph image.</p>
+    <h2>FAQ</h2>
     <h3>How do I use the cheat sheet?</h3>
-    <p>This project is a lightweight collection of checklist sheets, covering everything from single item pickups, NPCs, questlines, bosses, achievements and much more. <span class="strong">If this is your first playthrough, I highly recommend that you complete the game on your own first, then use the cheat sheets for your second playthrough instead.</span></p>
-    <p>In the <a href="/sheets/resources.html">Resources</a> sheet, you can find helpful info about soft caps, upgrade tables, rune item values and more.</p>
-    <p>In the main <a href="/sheets/walkthrough.html">Walkthrough</a> sheet, you have a step-by-step checklist guide through the entire game, covering as much as possible in just one playthrough.
-    <p>If you're not interested in a guided approach, but still want to make sure you don't miss any important questlines or bosses, try the <a href="/sheets/questlines.html">Questlines</a> or <a href="/sheets/bosses.html">Bosses</a> sheets instead.</p>
-    <p>The <a href="/sheets/achievements.html">Achievements</a> sheet can be used to track what achievements and legendary items you're missing.</p>
-    <p>Similarly, the <a href="/sheets/armaments.html">Armaments</a>, <a href="/sheets/armor.html">Armor</a>, <a href="/sheets/ashes.html">Ashes</a>, and <a href="/sheets/spells.html">Spells</a> sheets can be used to track items in their respective categories.</p>
+    <p>This project is a lightweight collection of checklist sheets, covering everything from single item pickups, NPCs, questlines, bosses, achievements and much more. If this is your first playthrough, <strong>I recommend that you complete the game on your own first, then use the cheat sheets for your later playthroughs instead.</strong></p>
+    <p>Helpful info about soft caps, upgrade tables, rune item values and more can be found in the <a href="/sheets/resources.html">Resources</a> sheet.</p>
+    <p>In the <a href="/sheets/walkthrough.html">Walkthrough</a> sheet, you'll find a step-by-step checklist guide through the entire game, covering as much as possible in a single playthrough. If you're not interested in a guided approach, but still want to make sure you don't miss any important questlines or bosses, try the <a href="/sheets/questlines.html">Questlines</a> or <a href="/sheets/bosses.html">Bosses</a> sheets instead.</p>
+    <p>The <a href="/sheets/achievements.html">Achievements</a> sheet can be used to track what achievements and legendary items you have. Similarly, the <a href="/sheets/armaments.html">Armaments</a>, <a href="/sheets/armor.html">Armor</a>, <a href="/sheets/ashes.html">Ashes</a>, and <a href="/sheets/spells.html">Spells</a> sheets can be used to track items in their respective categories.</p>
     <p>For checklists on miscellaneous items, such as gestures, talismans, crystal tears, cookbooks etc., use the <a href="/sheets/key-items.html">Key Items</a> and <a href="/sheets/miscellaneous.html">Miscellaneous</a> sheets.</p>
-    <p>If you're considering starting New Game Plus, make sure to check out the <a href="/sheets/new-game-plus.html">New Game Plus</a> sheet to check if you've got everything first.</p>
-    <p>You can filter any checklist by using the searchbar to only show display items matching your search.</p>
-    <p>The website automatically assigns a color mode based on your system preference, but you can manually swap between themes by clicking the sun/moon icons.</p>
+    <p>If you're considering starting New Game Plus, make sure to check out the <a href="/sheets/new-game-plus.html">New Game Plus</a> sheet first to see if you've got everything you need.</p>
+    <p>Any checklist can be filtered by using the searchbar to only display items matching your search. You can also toggle between color themes by clicking the sun or moon icon in the navigation bar, if you're not a fan of the default notebook/sheet theme.</p>
     <h3>What's included in the walkthrough?</h3>
-    <p><span class="strong">The walkthrough <span class="red">DOES NOT INCLUDE</span>:</span></p>
+    <h4>The walkthrough <span class="r">DOES NOT INCLUDE</span>:</h4>
     <ul class="omitted">
-      <li>Any items that require farming, and respawning plants/crafting materials collected from the environment (e.g., <a href="https://eldenring.wiki.fextralife.com/Rowa+Fruit">Rowa Fruit</a>, <a href="https://eldenring.wiki.fextralife.com/Arteria+Leaf">Arteria Leafs</a> etc.).</li>
+      <li>Any items that require farming, or respawning plants and crafting materials collected from the environment (e.g., <a href="https://eldenring.wiki.fextralife.com/Rowa+Fruit">Rowa Fruit</a>, <a href="https://eldenring.wiki.fextralife.com/Arteria+Leaf">Arteria Leafs</a> etc.).</li>
       <li>Any Scarabs that respawn, such as Crimson and Cerulean <a href="https://eldenring.wiki.gg/wiki/Scarab">Teardrop Scarabs</a> that refill your flask charges.</li>
-      <li>Any <a href="https://eldenring.wiki.gg/wiki/Stranded_Souls">Stranded Souls/Ghosts</a> or <a href="https://eldenring.wiki.gg/wiki/Sword_Monuments">Sword Monuments</a> that players can interact with for lore.</li>
+      <li>Any <a href="https://eldenring.wiki.gg/wiki/Stranded_Souls">Spirits</a> or <a href="https://eldenring.wiki.gg/wiki/Sword_Monuments">Sword Monuments</a> that players can interact with for small lore tidbits.</li>
       <li>Any <a href="https://eldenring.wiki.gg/wiki/Usher_of_Death,_Rosus">Gatekeeper Statues</a>, <a href="https://eldenring.wiki.gg/wiki/Mechanics#Birdseye_Telescope">Birdseye Telescopes</a>, or <a href="https://eldenring.wiki.gg/wiki/Stakes_of_Marika">Stakes of Marika</a>.</li>
       <li>Any <a href="https://eldenring.wiki.fextralife.com/Effigies+of+the+Martyr">Martyr Effigies</a> that players can interact with to activate Co-op summon signs for that area.</li>
     </ul>
-    <p><span class="strong">The walkthrough <span class="green">INCLUDES</span>:</span></p>
+    <h4>The walkthrough <span class="g">COVERS</span>:</h4>
     <ul class="included">
-      <li>Every single item in the game.</li>
+      <li>Every single item pickup in the game.</li>
       <li>All achievements, NPCs, questlines, bosses and invasions.</li>
       <li>All sites of grace, gestures, ashes, talismans, and paintings.</li>
       <li>All Ash of War, Glintstone, Incantation, and Somber <a href="https://eldenring.wiki.gg/wiki/Scarab">Scarabs</a>.</li>
-      <li>All <a href="https://eldenring.wiki.fextralife.com/Scadutree+Fragment">Scadutree fragments</a> and <a href="https://eldenring.wiki.fextralife.com/Revered+Spirit+Ash">Revered Spirit Ashes</a> <span class="strong">(DLC)</span>.</li>
-      <li>Although the guide does not include materials collected from the environment, all <a href="https://eldenring.wiki.fextralife.com/Upgrade+Materials">Smithing Stones</a> and <a href="https://eldenring.wiki.fextralife.com/Upgrade+Materials">Gloveworts</a> are included.</li>
+      <li>All <a href="https://eldenring.wiki.fextralife.com/Scadutree+Fragment">Scadutree fragments</a> and <a href="https://eldenring.wiki.fextralife.com/Revered+Spirit+Ash">Revered Spirit Ashes</a> (DLC).</li>
+      <li>Although the walkthrough does not cover materials collected from the environment, all <a href="https://eldenring.wiki.fextralife.com/Upgrade+Materials">Smithing Stones</a> and <a href="https://eldenring.wiki.fextralife.com/Upgrade+Materials">Gloveworts</a> are included.</li>
     </ul>
     <h3>Do I have to follow every step in order?</h3>
-    <p>Not at all, this project was primarily intended for my cousin and me. Since I am a completionist, I like to make sure that I don't miss a single detail the game has to offer. The <a href="/sheets/walkthrough.html">Walkthrough</a> represents how I prefer to complete the game, reducing as much backtracking as possible and approaching the game in a natural, but efficient order. Elden Ring is a vast open world game, so if you'd rather play at your own pace, but still don't wanna miss any important questlines, try the <a href="/sheets/questlines.html">Questlines</a> sheet instead. You can always go back and forth, checking off tasks in different order.</p>
+    <p>Not at all, this project was primarily intended for my cousin and me. Since I am a completionist, I like to make sure that I don't miss a single detail the game has to offer. The <a href="/sheets/walkthrough.html">Walkthrough</a> represents how I prefer to complete the game, reducing as much backtracking as possible and approaching the game in a natural, but efficient order.</p>
+    <p>Elden Ring is a vast open world game, so if you'd rather play at your own pace, but still don't wanna miss any questlines, try the <a href="/sheets/questlines.html">Questlines</a> sheet instead. You can always jump back and forth, checking off tasks in different order, just be mindful that doing <a href="#missable">some things</a> too early might cancel certain questlines.</p>
     <h3>Will I get all achievements if I follow the guide?</h3>
-    <p>Yes, all achievements will be naturally achieved during your playthrough if you're following the <a href="/sheets/walkthrough.html">Walkthrough</a>. No planning needed! If you want to see what achievements you're missing, I recommend checking out the <a href="/sheets/achievements.html">Achievements</a> sheet.</p>
-    <h3>Are there any missable things in Elden Ring?</h3>
-    <p>Yes, many things in Elden Ring are missable. While most of them are quest-related, some achievements can be <span class="red">permanently missed</span> until your next playthrough. In the <a href="/sheets/walkthrough.html">Walkthrough</a> and <a href="/sheets/questlines.html">Questlines</a> sheets, every missable entry is clearly labeled <span class="red">(Missable!)</span>, so you can easily these entries with the search bar. Missable entries that don't give any item or reward are labeled <span class="strong">(Optional)</span>. You won't miss anything if you're following the <a href="/sheets/walkthrough.html">Walkthrough</a>.</p>
+    <p>Yes, all achievements will be naturally achieved during your playthrough if you're following the <a href="/sheets/walkthrough.html">Walkthrough</a>. No planning needed! If you want to track your achievements and legendary items, I recommend checking out the <a href="/sheets/achievements.html">Achievements</a> sheet.</p>
+    <h3 id="missable">Are there any missable things in Elden Ring?</h3>
+    <p>Yes, many things in Elden Ring are missable. While most of them are quest-related, some achievements can be <strong class="r">permanently missed</strong> until your next playthrough. Every missable entry is clearly labeled <strong class="r">(Missable!)</strong>, so you can easily these entries with the search bar. Missable entries that don't give any item or reward are labeled <strong>(Optional)</strong>. You won't miss anything if you're following the <a href="/sheets/walkthrough.html">Walkthrough</a>.</p>
     <h3>How long does it take to 100% complete Elden Ring?</h3>
-    <p>A 100% completion playthrough of Elden Ring following this guide, assuming you get all three endings in a single playthrough, typically takes between <span class="strong">60-90 hours</span>, accounting for variables like differences in playstyles and player skill. The <a href="/sheets/walkthrough.html">Walkthrough</a> is optimized to avoid unnecessary backtracking where possible, while approaching the game in a natural order.</p>
+    <p>A 100% completion playthrough of Elden Ring following the walkthrough, assuming you get all three endings in a single playthrough, typically takes between <strong>60-90 hours</strong>. I personally dislike unnecessary backtracking, so the <a href="/sheets/walkthrough.html">Walkthrough</a> route is heavily optimized to avoid it, while still approaching the game in a natural order.</p>
     <h3>What level should I be for each area?</h3>
-    <p>The step-by-step checklists provide recommended level ranges for each area. These ranges do not represent the difficulty of an area, but rather the level you're likely to reach naturally when following the walkthroughs. These are suggestions based on typical progression from various of my own playthroughs, and could help you avoid being over- or under-leveled if you want a fair experience.</p>
+    <p>The step-by-step checklists provide recommended level ranges for each area. These ranges don't represent the difficulty of an area, but rather the level you're likely to reach naturally when following the walkthrough. They are suggestions based on my own playthroughs, and could help you avoid being over- or under-leveled if you want a fairer experience.</p>
     <h3>What do I do if I accidentally attacked an NPC?</h3>
-    <p>You should <span class="red">never attack or kill an NPC</span> unless it's specifically stated to do so. If you've attacked any NPCs and they've become hostile, then you'll need to travel to the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165501">Church of Vows</a> in Liurnia and absolve your sins in front of the statue there by using a <a href="https://eldenring.wiki.fextralife.com/Celestial+Dew" class="purple">Celestial Dew</a>. If you've already killed any NPCs, then their questlines are over until you start a new playthrough. Make sure to pick up their <a href="https://eldenring.wiki.fextralife.com/Bell+Bearings">Bell Bearing</a> if they were selling any items.</p>
-    <h3>How do I navigate in Elden Ring using compass directions?</h3>
-    <p>Elden Ring's compass uses <a href="https://en.wikipedia.org/wiki/Cardinal_direction#/media/File:Brosen_windrose.svg" aria-label="Visual reference to the cardinal directions">primary, intercardinal and secondary-intercardinal directions</a>. I strongly recommend keeping the compass HUD enabled as the guide uses it to provide accurate directions. Below are the tiers used to help provide directions:</p>
-    <ol>
-      <li>Primary Cardinal Directions:
+    <p>You should <strong>never attack or kill an NPC</strong> unless it's specifically stated to do so. If you've attacked an NPC and they've become hostile, then you'll need to travel to the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165501">Church of Vows</a> in Liurnia and absolve your sins in front of the statue inside by using a <a href="https://eldenring.wiki.fextralife.com/Celestial+Dew" class="p">Celestial Dew</a>. If you've already killed an NPC, then their questline is over until your next playthrough. Make sure to pick up their <a href="https://eldenring.wiki.fextralife.com/Bell+Bearings">Bell Bearing</a> if they were selling any items.</p>
+    <h3>How do I follow your compass directions?</h3>
+    <p>Elden Ring's compass uses <a href="https://en.wikipedia.org/wiki/Cardinal_direction">primary, intercardinal and secondary-intercardinal directions</a>. I strongly recommend keeping the compass HUD enabled as the walkthrough uses it to provide accurate directions. Below are the tiers used to help provide directions:</p>
+    <ol class="compass">
+      <li><strong>Primary Cardinal Directions:</strong>
         <ul>
           <li>North (N)</li>
           <li>East (E)</li>
@@ -107,7 +130,7 @@
           <li>West (W)</li>
         </ul>
       </li>
-      <li>Intercardinal Directions:
+      <li><strong>Intercardinal Directions:</strong>
         <ul>
           <li>Northeast (NE)</li>
           <li>Southeast (SE)</li>
@@ -115,7 +138,7 @@
           <li>Northwest (NW)</li>
         </ul>
       </li>
-      <li>Secondary Intercardinal Directions:
+      <li><strong>Secondary Intercardinal Directions:</strong>
         <ul>
           <li>North-Northeast (NNE)</li>
           <li>East-Northeast (ENE)</li>
@@ -128,18 +151,18 @@
         </ul>
       </li>
     </ol>
-    <p>For an in-game example, <span class="strong">northeast</span> refers to the midpoint between north and east. Similarly, <span class="strong">north-northeast</span> would then refer to the midpoint between north and northeast.</p>
+    <p>For an in-game example, <strong>northeast</strong> would refer to the midpoint between north and east. Similarly, <strong>north-northeast</strong> would refer to the middle point between north and northeast.</p>
     <h3>Can I use this for multiple characters?</h3>
-    <p>Yes! You can create, edit, and delete profiles using the buttons in the navigation bar. Any stored information is saved separately to your chosen profile.</p>
+    <p>Yes! You can create, edit, and delete profiles by using the buttons in the navigation bar. Any stored information is saved separately to your selected profile.</p>
     <h3>How are the checklists saved?</h3>
-    <p>The checklists are saved to your browser's local storage. This means that <span class="red">clearing your browser's cache, will destroy any saved progress</span>.</p>
+    <p>The checklists are stored locally in your browser. This means that <strong class="r">clearing your browser's cache, will destroy any saved progress you have</strong>.</p>
     <h3>I found an error in the cheat sheet! How can I contribute?</h3>
-    <p>It's simple! Just visit the project's repository on <a href="https://github.com/rdmaw/elden-ring-cheat-sheet/issues">GitHub</a>. Check if someone has already reported the same issue and if not, open a new issue detailing the error. If you want to contribute directly, I recommend you fork the project, make your suggested changes and open a pull request.</p>
+    <p>It's actually very easy! Just describe the issue <a href="https://github.com/rdmaw/elden-ring-cheat-sheet/issues/new">here</a>, and I'll get around to it as soon as I can. If you know your way around code, then you could fork the repo and open a pull request with your suggested changes.</p>
     <h3>What else do you have planned?</h3>
-    <p>Once I'm satisfied with all the sheets, and if there is enough interest, I might consider doing another in-depth one for Sekiro as well.</p>
+    <p>Once I'm satisfied with all the sheets, and if there is enough interest, I might consider creating an in-depth cheat sheet for Sekiro as well.</p>
     <h3>Similar projects</h3>
     <p>Here are some similar projects if this one isn't for you:</p>
-    <ul>
+    <ul class="list">
       <li><a href="https://roundtablehold.net/">Roundtable Guides</a></li>
       <li><a href="https://scripterswar.com/EldenRing/completion">Elden Ring 100% Checklist Tracker</a></li>
       <li><a href="https://zkjellberg.github.io/dark-souls-3-cheat-sheet/">Dark Souls 3 Cheat Sheet</a></li>

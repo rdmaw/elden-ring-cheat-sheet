@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#9a8765" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#303030" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="#">
+  <meta property="og:image:alt" content="#">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://eldenring.redmaw.dev">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary-large-image">
+  <meta property="twitter:title" content="">
+  <meta property="twitter:description" content="">
+  <meta property="twitter:image" content="#">
+  <meta property="twitter:image:alt" content="#">
+  <!-- Structured Data -->
+  <!-- TODO: Website Info, FAQ Info -->
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Links -->
+  <script>
+    const d = document.documentElement; d.classList.toggle("dark", "dark" === localStorage.getItem("theme"));
+  </script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="https://eldenring.redmaw.dev">
+  <title>Options | Elden Ring Cheat Sheet</title>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Options</h1>
+      <p class="lead">Comprehensive cheat sheets for achieving 100% completion in Elden Ring.</p>
+      <p>🚧 The project is still under heavy construction. Content will change! 🚧<br>If you notice any mistakes, or want to contribute during development, please open an issue on <a href="https://github.com/rdmaw/elden-ring-cheat-sheet">Github</a>.</p>
+    </header>
+    <label for="theme">Color Theme:</label>
+    <select id="theme" name="color-theme">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+    <label for="blindness"></label>
+    <select id="blindness" name="color-blindness"></select>
+  </main>
+  <script defer src="/js/script.js"></script>
+</body>
+</html>

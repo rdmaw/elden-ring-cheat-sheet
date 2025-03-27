@@ -1,46 +1,149 @@
-/* VARIABLES */
+/* VARIABLES 
+------------ */
 :root {
-  --bg: #fff5e1;
-  --text: #2c1810;
-  --title: #4a3728;
-  --primary: #9a8765;
-  --link: #1d5bcd;
-  --progress: #ca3f3f;
-  --check: #379a80;
+  /* COLORS 
+  --------- */
+  --b: #fff5e1;
+  --t: #2c1810;
+  --h: #4a3728;
+  --1: #9a8765;
+  --2: #4a3728;
+  --3: #e0d3bd;
+  --r: #d32727;
+  --g: #008048;
+  --p: #7a00cc;
+  --o: #d66800;
+  --a: #1d5bcd;
+  --x: #ca3f3f;
+  --c: #379a80;
 
-  --spacing1: .25rem;
-  --spacing2: .5rem;
-  --spacing3: 1rem;
-  --spacing4: 1.25rem;
-  --spacing5: 2.5rem;
-  --spacing6: 5rem;
-  --spacing7: 10rem;
+  /* FONT 
+  ------- */
+  --f1: 2.5rem;
+  --f2: 1.75rem;
+  --f3: 1.5rem;
+  --f4: 1.125rem;
+  --f5: 0.9rem;
 
-  --radius1: 2px;
-  --radius2: 4px;
+  /* WEIGHTS 
+  ---------- */
+  --w3: 300;
+  --w4: 400;
+  --w6: 600;
+  --w7: 700;
+
+  /* SPACING 
+  ---------- */
+  --r1: .25rem;
+  --r2: .5rem;
+  --r3: .75rem;
+  --r4: 1rem;
+  --r5: 1.25rem;
+  --r6: 1.75rem;
+  --r7: 2.5rem;
+  --e1: .125em;
+  --e2: .25em;
+  --e3: .5em;
+  --e4: .75em;
+  --e5: 1em;
+  --e6: 1.5em;
+
+  /* BORDER 
+  --------- */
+  --b1: 1px;
+  --b2: 2px;
+  --b3: 3px;
+  --b4: 4px;
 }
 
+/* DARK MODE
+------------  */
 .dark {
-  --bg: #222426;
-  --text: #e0e0e0;
-  --title: #f8f7f7;
-  --primary: #303030;
-  --link: #65a0d7;
-  --progress: #e9586b;
-  --check: #17b598;
+  --b: #222426;
+  --t: #e0e0e0;
+  --h: #f8f7f7;
+  --1: #303030;
+  --2: #808080;
+  --3: #404040;
+  --r: #e9586b;
+  --g: #29a36a;
+  --p: #b970d2;
+  --o: #dc8247;
+  --a: #65a0d7;
+  --x: #e9586b;
+  --c: #17b598;
 }
 
-/* DEFAULTS */
+/* COLOR BLINDNESS
+------------------ */
+.pro {
+  --r: #90855b;
+  --g: #ab9600;
+  --p: #004ab9;
+  --o: #7e6f00;
+  --a: #5282db;
+  --x: #908763;
+  --c: #0073e3;
+}
+
+.deu {
+  --r: #7a6d1a;
+  --g: #baa236;
+  --p: #0049cf;
+  --o: #9e872a;
+  --a: #528cff;
+  --x: #7d7556;
+  --c: #3e84e7;
+}
+
+.tri {
+  --r: #d7425d;
+  --g: #007f72;
+  --p: #a600ff;
+  --o: #ad7600;
+  --a: #0b3fec;
+  --x: #ad7600;
+  --c: #009977;
+  --s: #ff8e8d;
+}
+
+.ach {
+  --r: #595959;
+  --g: #888;
+  --p: #4d4d4d;
+  --o: #959595;
+  --a: #676767;
+  --x: #777;
+  --c: #808080;
+  --s: #777;
+  --st: #fff;
+}
+
+/* ANIMATIONS 
+----------------- */
+@media (prefers-reduced-motion: no-preference) {
+  /* TODO: Add animations */
+}
+
+/* DEFAULTS 
+----------- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+:focus-visible {
+  outline: 2px solid var(--2);
+  border-radius: var(--b1);
+  outline-offset: var(--r1);
+}
+
 html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  scrollbar-color: var(--1) var(--b);
   text-size-adjust: none;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -48,35 +151,97 @@ html {
 }
 
 body {
-  color: var(--text);
-  background-color: var(--bg);
+  color: var(--t);
+  background-color: var(--b);
 }
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .lead, .toc a {
   line-height: 1.1;
   text-wrap: balance;
+  color: var(--h);
+}
+
+header {
+  margin: var(--r7) 0;
+
+  & h1 {
+    font-size: var(--f1);
+    font-weight: var(--w7);
+    margin-bottom: var(--r4);
+  }
+  
+  .lead {
+    font-size: 22px;
+    font-weight: var(--w3);
+  }
+}
+
+h2 {
+  font-size: var(--f2);
+  font-weight: var(--w7);
+  margin: var(--r6) 0 var(--r2);
+}
+
+h2 + h3 {
+  margin-top: var(--r3);
+}
+
+h3 {
+  font-size: var(--f3);
+  font-weight: var(--w6);
+  margin: var(--r6) 0 var(--r2);
+}
+
+h4 {
+  font-size: var(--f4);
+  font-weight: var(--w6);
+  margin: var(--r5) 0 var(--r2);
 }
 
 p {
   text-wrap: pretty;
+  margin-top: var(--r3);
 }
 
 a {
-  color: var(--link);
-  font-weight: 600;
   text-decoration: none;
+  color: var(--a);
 
   &:hover {
     text-decoration: underline;
   }
 }
 
+/* FW: 600 
+------------ */
+a, samp, .h, .r, .g, .p, .o {
+  font-weight: var(--w6);
+}
+
+strong {
+  font-weight: var(--w7) !important;
+}
+
 ul {
   list-style-type: none;
+
+  & li ul {
+    padding-left: var(--r6);
+  }
+}
+
+ol {
+  font-size: var(--f5);
+  margin: var(--r3) 0 var(--r2) var(--r6);
+
+  & ul {
+    list-style-type: disc;
+    padding-left: var(--r6);
+  }
 }
 
 input, button, kbd, textarea, samp, select  {
@@ -94,34 +259,51 @@ svg {
   min-width: fit-content;
 }
 
-/* NAVIGATION */
+/* NAVIGATION 
+------------- */
 nav {
-  height: 3.75rem;
-  background-color: var(--primary);
-  text-align: center;
+  background-color: var(--1);
+  border-bottom: var(--b2) solid var(--2);
+  justify-content: space-between;
+  position: relative;
 }
 
-/* TOGGLE THEME */
-#toggle-theme {
-  width: 45px;
-  height: 45px;
-  background: none;
-  border: none;
-  border-radius: 50%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 20px;
-  right: 20px;
+.nav {
+  margin-inline: var(--r3);
+}
 
-  &:hover {
-    background-color: var(--bg);
+#menu {
+  width: 42px;
+  height: 38px;
+  background: var(--b);
+  padding: var(--e3);
+  border-radius: var(--b4);
+
+  & svg {
+    width: 20px;
+    height: 20px;
+    display: block;
   }
 }
 
-#toggle-theme svg {
-  fill: currentColor;
+/* COLOR THEME 
+--------------- */
+/* #theme {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  margin-left: auto;
+  flex-shrink: 0;
+
+  &:hover {
+    background-color: var(--3);
+  }
+
+  .sun, .moon {
+    font-size: 1.7rem;
+  }
 }
 
 .sun, .dark .moon {
@@ -130,57 +312,54 @@ nav {
 
 .dark .sun {
   display: block;
-}
+} */
 
-/* CONTAINERS */
+/* CONTAINERS 
+------------- */
 header, footer {
   text-align: center;
 }
 
 main {
-  width: min(100% - var(--spacing4), 1200px);
+  width: min(100% - var(--r5), 82.5rem);
   margin-inline: auto;
 }
 
 footer p {
-  font-size: 0.9rem;
+  font-size: var(--f5);
+  margin-bottom: var(--r2);
 }
 
-/* FAQ */
-.faq-title {
-  margin: var(--spacing4) 0;
-}
+/* FAQ 
+------ */
+.omitted, .included {
+  margin: var(--r4) 0 0 var(--r6);
 
-.omitted li::before {
-  content: "✗";
-  color: var(--progress);
-  margin-left: var(--spacing4);
-  padding-right: var(--spacing2);
-}
-
-.included li::before {
-  content: "✔";
-  color: var(--check);
-  margin-left: var(--spacing4);
-  padding-right: var(--spacing2);
-}
-
-ol {
-  list-style-position: inside;
-  padding-left: var(--spacing5);
-
-  & ul {
-    padding-left: var(--spacing5);
+  & li {
+    padding-left: var(--r2);
   }
 }
 
-/* ALL - Checklists */
-li {
-  position: relative;
+.omitted {
+  list-style-type: "✕";
+
+  & li::marker {
+    color: var(--r);
+  }
 }
 
-ul li ul {
-  padding-left: 1.75rem;
+.included {
+  list-style-type: "✔";
+
+  & li::marker {
+    color: var(--g);
+  }
+}
+
+/* Checklists
+------------- */
+li {
+  position: relative;
 }
 
 label {
@@ -194,23 +373,24 @@ button, input[type="checkbox"], label {
 }
 
 input[type="checkbox"] {
-  accent-color: var(--check);
-  /* transform: scale(1.2); */
-  width: 18px;
-  height: 18px;
+  accent-color: var(--c);
+  width: 1.125rem;
+  height: 1.125rem;
   position: absolute;
   left: 0;
-  top: 8px;
+  top: .5rem;
 }
 
 input[type="checkbox"]:hover, label:hover ~ input[type="checkbox"] {
-  box-shadow: 0 0 0 2px currentColor;
+  box-shadow: 0 0 0 2px var(--h);
 }
 
 input[type="checkbox"]:checked ~ label {
   text-decoration: line-through;
 }
 
+/* PRINT
+-------- */
 /* TODO: PRINT */
 @media print {
   body, a{
@@ -226,7 +406,14 @@ input[type="checkbox"]:checked ~ label {
   }
 }
 
-/* Force Firefox to include state. Temp workaround for #1 */
-textarea {
-  display: none;
-}
+/* UTILITY
+---------- */
+.flex { display: flex; gap: var(--r3); }
+.center { align-items: center; justify-content: center; }
+.list { list-style-type: disc; margin: var(--r2) 0 var(--r2) var(--r6); }
+textarea { display: none; }
+strong, footer a, .h { color: var(--h); }
+.r { color: var(--r); }
+.g { color: var(--g); }
+.p { color: var(--p); }
+.o { color: var(--o); }
