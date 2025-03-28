@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#9a8765" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#303030" media="(prefers-color-scheme: dark)">
   <meta name="description" content="">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -28,7 +26,7 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Links -->
-  <script>
+  <script defer>
     const d = document.documentElement, t = "d" === localStorage.getItem("t"), c = localStorage.getItem("cb"); t && d.classList.add("dark"), c && "0" !== c && d.classList.add(c);
   </script>
   <link rel="stylesheet" href="/css/style.css">
@@ -36,26 +34,55 @@
   <title>Options | Elden Ring Cheat Sheet</title>
 </head>
 <body>
+  <nav class="flex" aria-label="Homepage navigation">
+    <div class="nav flex ">
+      <button type="button" id="menu" aria-controls="sidebar" aria-label="Toggle navigation sidebar">
+        <!-- <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M3 12h18M3 6h18M3 18h18" />
+      </svg> -->
+        <svg aria-hidden="true">
+          <use xlink:href="/assets/icons/sprite.svg#menu"></use>
+        </svg>
+      </button>
+      <ul class="flex">
+        <li><a href="/">FAQ</a></li>
+        <li><a href="/options.html">⚙ Options</a></li>
+      </ul>
+    </div>
+  </nav>
   <main>
     <header>
       <h1>Options</h1>
-      <p class="lead">Manage color themes and profile options.</p>
+      <p class="lead">Set color themes and profile options.</p>
       <p>🚧 The project is still under heavy construction. Content will change! 🚧<br>If you notice any mistakes, or want to contribute during development, please open an issue on <a href="https://github.com/rdmaw/elden-ring-cheat-sheet">Github</a>.</p>
     </header>
-    <h2>Color Options:</h2>
-    <label for="theme">Color Theme:</label>
-    <select id="theme" name="color-theme">
-      <option value="l">Light</option>
-      <option value="d">Dark</option>
-    </select>
-    <label for="cb">Color Blindness:</label>
-    <select id="cb" name="color-blindness">
-      <option value="0">None (Default)</option>
-      <option value="pro">Protanopia</option>
-      <option value="deu">Deuteranopia</option>
-      <option value="tri">Tritanopia</option>
-      <option value="ach">Achromatopsia</option>
-    </select>
+    <section class="options">
+      <h2>Color Options:</h2>
+      <label for="theme">Color Theme:</label>
+      <select id="theme" name="color-theme">
+        <option value="l">Light</option>
+        <option value="d">Dark</option>
+      </select>
+      <label for="cb">Color Blindness:</label>
+      <select id="cb" name="color-blindness">
+        <option value="0">None (Default)</option>
+        <option value="pro">Protanopia</option>
+        <option value="deu">Deuteranopia</option>
+        <option value="tri">Tritanopia</option>
+        <option value="ach">Achromatopsia</option>
+      </select>
+      <h2>Profile Management:</h2>
+      <label for="profile">Select profile:</label>
+      <select name="profile" id="profile"></select>
+      <button class="btn" type="button" id="add">Create</button>
+      <button class="btn" type="button" id="edit">Edit</button>
+      <button class="btn" type="button" id="ngp">NG+</button>
+      <button class="btn" type="button" id="del">Delete</button>
+      <h2>Import/Export Data</h2>
+      <button class="btn" type="button">Import file</button>
+      <button class="btn" type="button">Export file</button>
+      <textarea name="data" id="data"></textarea>
+    </section>
     <p>
       <a href="/">Main</a>
       <a href="/sheets/walkthrough.html">Walkthrough</a>

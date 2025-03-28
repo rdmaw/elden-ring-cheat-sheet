@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Links -->
   <link rel="stylesheet" href="/css/style.css">
-  <script>
+  <script async>
     const d = document.documentElement, t = "d" === localStorage.getItem("t"), c = localStorage.getItem("cb"); t && d.classList.add("dark"), c && "0" !== c && d.classList.add(c);
   </script>
   <link rel="canonical" href="https://eldenring.redmaw.dev">
@@ -35,26 +35,28 @@
 </head>
 <body>
   <!-- TODO: Navbar -->
-  <nav class="flex" aria-label="Homepage navigation">
-    <div class="nav flex center">
-      <button type="button" id="menu" aria-controls="sidebar" aria-label="Toggle navigation sidebar">
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M3 12h18M3 6h18M3 18h18" />
-      </svg> -->
+  <nav class="flex" aria-label="Global navigation">
+    <div class="nav flex">
+      <button class="flex center" type="button" id="menu" aria-controls="sidebar" aria-label="Toggle navigation sidebar">
+        <!-- <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 12h18M3 6h18M3 18h18" />
+        </svg> -->
         <svg aria-hidden="true">
-          <use xlink:href="/assets/icons/sprite.svg#menu"></use>
+          <use href="/assets/icons/sprite.svg#menu"></use>
         </svg>
       </button>
       <ul class="flex">
-        <li class="home"><a href="/">FAQ</a></li>
-        <li><a href="/options.html">⚙ Options</a></li>
+        <li><a href="/">&#x1F6C8&nbsp;&nbsp;FAQ</a></li>
+        <li><a href="/options.html">⚙&nbsp;&nbsp;Options</a></li>
       </ul>
     </div>
   </nav>
   <!-- TODO: Sidebar -->
-  <!-- <nav aria-label="Sidebar navigation">
-    <h2>Sheets</h2>
-    <ul>
+  <nav id="sidebar" class="sidebar" aria-label="Navigation sidebar" aria-hidden="true">
+    <div class="sh flex">
+      <h2>Sheets</h2>
+    </div>
+    <ul class="sheets">
       <li><a href="/sheets/resources.html">Resources</a></li>
       <li><a href="/sheets/walkthrough.html">Walkthrough</a></li>
       <li><a href="/sheets/questlines.html">Questlines</a></li>
@@ -68,7 +70,15 @@
       <li><a href="/sheets/miscellaneous.html">Miscellaneous</a></li>
       <li><a href="/sheets/new-game-plus.html">New Game Plus</a></li>
     </ul>
-  </nav> -->
+    <button class="close btn flex center" type="button" aria-label="Close sidebar navigation">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+        <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+      </svg> -->
+      <svg>
+        <use href="/assets/icons/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </nav>
   <main>
     <header>
       <h1>Elden Ring Cheat Sheet</h1>
@@ -85,7 +95,7 @@
     <p>The <a href="/sheets/achievements.html">Achievements</a> sheet can be used to track what achievements and legendary items you have. Similarly, the <a href="/sheets/armaments.html">Armaments</a>, <a href="/sheets/armor.html">Armor</a>, <a href="/sheets/ashes.html">Ashes</a>, and <a href="/sheets/spells.html">Spells</a> sheets can be used to track items in their respective categories.</p>
     <p>For checklists on miscellaneous items, such as gestures, talismans, crystal tears, cookbooks etc., use the <a href="/sheets/key-items.html">Key Items</a> and <a href="/sheets/miscellaneous.html">Miscellaneous</a> sheets.</p>
     <p>If you're considering starting New Game Plus, make sure to check out the <a href="/sheets/new-game-plus.html">New Game Plus</a> sheet first to see if you've got everything you need.</p>
-    <p>Any checklist can be filtered by using the searchbar to only display items matching your search. You can also toggle between color themes by clicking the sun or moon icon in the navigation bar, if you're not a fan of the default notebook/sheet theme.</p>
+    <p>Now that you know how the sheets work, press "q" on your keyboard to open up the Sheet menu and get started. Any checklist can be filtered by using the searchbar to only display items matching your search. You can also swap color themes in the <a href="/options.html">Options</a> page, if you're not a fan of the default notebook/sheet theme.</p>
     <h3>What's included in the walkthrough?</h3>
     <h4>The walkthrough <span class="r">DOES NOT INCLUDE</span>:</h4>
     <ul class="omitted">
@@ -155,7 +165,7 @@
     <h3>How are the checklists saved?</h3>
     <p>The checklists are stored locally in your browser. This means that <strong class="r">clearing your browser's cache, will destroy any saved progress you have</strong>.</p>
     <h3>I found an error in the cheat sheet! How can I contribute?</h3>
-    <p>It's actually very easy! Just describe the issue <a href="https://github.com/rdmaw/elden-ring-cheat-sheet/issues/new">here</a>, and I'll get around to it as soon as I can. If you know your way around code, then you could fork the repo and open a pull request with your suggested changes.</p>
+    <p>It's actually very easy! Just <a href="https://github.com/rdmaw/elden-ring-cheat-sheet/issues/new">describe the issue here</a>, and I'll get around to it as soon as I can. If you know your way around code, then you could fork the repo and open a pull request with your suggested changes.</p>
     <h3>What else do you have planned?</h3>
     <p>Once I'm satisfied with all the sheets, and if there is enough interest, I might consider creating an in-depth cheat sheet for Sekiro as well.</p>
     <h3>Similar projects</h3>
@@ -171,8 +181,11 @@
       <li><a href="https://iforgottosave.github.io/bloodborne-cheat-sheet-complete-edition/">Bloodborne Cheat Sheet Complete Edition</a></li>
     </ul>
   </main>
-  <!-- TODO: Back to top functionality -->
-  <button></button>
+  <button id="up" class="btn" type="button" aria-label="Scroll to top of page">
+    <svg>
+      <use href="/assets/icons/sprite.svg#up"></use>
+    </svg>
+  </button>
   <footer>
     <p>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></p>
   </footer>

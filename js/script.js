@@ -117,3 +117,52 @@ document.addEventListener('DOMContentLoaded', () => {
     link.rel = 'noopener noreferrer';
   }
 });
+
+const menu = document.getElementById('menu');
+const sidebar = document.getElementById('sidebar');
+const close = sidebar.querySelector('.close');
+
+function toggleSidebar() {
+  const hidden = sidebar.getAttribute('aria-hidden') === 'true';
+
+  if (hidden) {
+    sidebar.setAttribute('aria-hidden', 'false');
+    menu.setAttribute('aria-expanded', 'true');
+    sidebar.removeAttribute('inert');
+  } else {
+    menu.focus({ preventScroll: true });
+    sidebar.setAttribute('aria-hidden', 'true');
+    menu.setAttribute('aria-expanded', 'false');
+    sidebar.setAttribute('inert', '');
+  }
+}
+
+menu.addEventListener('click', toggleSidebar);
+close.addEventListener('click', toggleSidebar);
+
+document.addEventListener('keydown', (e) => {
+  // Close sidebar with Esc
+  if (e.key === 'Escape' && sidebar.getAttribute('aria-hidden') === 'false') {
+    toggleSidebar();
+  }
+
+  // Toggle sidebar with 'q'
+  if (e.key.toLowerCase() === 'q' && !e.ctrlKey && !e.metaKey) {
+    const active = document.activeElement;
+    const isFormControl = active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.tagName === 'SELECT';
+
+    if (!isFormControl) {
+      e.preventDefault();
+      toggleSidebar();
+    }
+  }
+});
+
+const up = document.getElementById('up');
+
+up.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+});

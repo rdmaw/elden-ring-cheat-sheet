@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://eldenring.redmaw.dev</loc>
-    <lastmod>2025-03-26</lastmod>
+    <lastmod>2025-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://eldenring.redmaw.dev/options.html</loc>
+    <lastmod>2025-03-28</lastmod>
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/resources.html</loc>
@@ -10,7 +14,7 @@
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/walkthrough.html</loc>
-    <lastmod>2025-03-26</lastmod>
+    <lastmod>2025-03-28</lastmod>
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/questlines.html</loc>
@@ -22,7 +26,7 @@
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/achievements.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <lastmod>2025-03-28</lastmod>
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/armaments.html</loc>

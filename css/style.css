@@ -16,6 +16,9 @@
   --a: #1d5bcd;
   --x: #ca3f3f;
   --c: #379a80;
+  --k: #efefef;
+  --kt: #2c1810;
+  --kh: #d2d2d2;
 
   /* FONT 
   ------- */
@@ -73,6 +76,9 @@
   --a: #65a0d7;
   --x: #e9586b;
   --c: #17b598;
+  --k: #404040;
+  --kt: #f8f7f7;
+  --kh: #222426;
 }
 
 /* COLOR BLINDNESS
@@ -123,7 +129,9 @@
 /* ANIMATIONS 
 ----------------- */
 @media (prefers-reduced-motion: no-preference) {
-  /* TODO: Add animations */
+  .sidebar {
+    transition: transform 0.3s ease;
+  }
 }
 
 /* DEFAULTS 
@@ -135,7 +143,7 @@
 }
 
 :focus-visible {
-  outline: 2px solid var(--2);
+  outline: var(--b2) solid var(--2);
   border-radius: var(--b1);
   outline-offset: var(--r1);
 }
@@ -160,7 +168,7 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-h1, h2, h3, h4, h5, h6, .lead, .toc a {
+h1, h2, h3, h4, h5, h6, .lead, .toc a, nav a {
   line-height: 1.1;
   text-wrap: balance;
   color: var(--h);
@@ -209,8 +217,8 @@ p {
 }
 
 a {
-  text-decoration: none;
   color: var(--a);
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;
@@ -256,6 +264,29 @@ svg {
 
 .btn {
   min-width: fit-content;
+  padding: var(--r1) var(--r2);
+  color: var(--kt);
+  background-color: var(--k);
+  border: var(--b1) solid var(--2);
+  border-radius: var(--b3);
+
+  &:hover {
+    background-color: var(--kh);
+  }
+}
+
+#up {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  padding: var(--r2);
+  border: var(--b2) solid var(--2);
+  border-radius: 50%;
+
+  & svg {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 select {
@@ -268,56 +299,106 @@ select {
 nav {
   background-color: var(--1);
   border-bottom: var(--b2) solid var(--2);
-  justify-content: space-between;
   position: relative;
   min-height: 60px;
+
+  & a:hover {
+    text-decoration: none;
+  }
 }
 
 .nav {
+  width: 100%;
   margin-inline: var(--r3);
+  align-items: center;
+
+  & ul {
+    margin-left: auto;
+    gap: var(--r3);
+  }
 }
 
 #menu {
-  width: 42px;
-  height: 38px;
+  width: 46px;
+  height: 40px;
   background: var(--b);
   padding: var(--e3);
+  border: var(--b2) solid var(--2);
   border-radius: var(--b4);
 
   & svg {
-    width: 20px;
-    height: 20px;
-    display: block;
+    color: var(--h);
+    width: 38px;
+    height: 38px;
   }
 }
 
-/* COLOR THEME 
---------------- */
-/* #theme {
-  width: 50px;
-  height: 50px;
-  background: none;
-  border: none;
-  border-radius: 50%;
-  margin-left: auto;
-  flex-shrink: 0;
+/* SIDEBAR 
+---------- */
+.sidebar {
+  position: fixed;
+  top: 8px;
+  left: 0;
+  width: 280px;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--b);
+  border-top: 2px solid var(--2);
+  border-right: 2px solid var(--2);
+  border-bottom: 2px solid var(--2);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateX(-103%);
+  z-index: 1;
 
-  &:hover {
+  &[aria-hidden="false"] {
+    transform: translateX(0);
+  }
+}
+
+.sidebar .sh {
+  height: 60px;
+  align-items: end;
+  justify-content: center;
+  background-color: var(--1);
+  border-top-right-radius: 7px;
+  border-bottom: var(--b2) solid var(--2);
+}
+
+.close {
+  position: absolute;
+  top: 44px;
+  right: -10px;
+  width: 42px;
+  height: 38px;
+  padding: var(--e3);
+  border-width: var(--b2);
+
+  & svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.sheets {
+  padding: var(--r3);
+  overflow-y: auto;
+
+  & li {
+    border-bottom: var(--b1) dotted var(--2);
+  }
+  
+  & li:hover {
     background-color: var(--3);
+    border-radius: var(--b2);
   }
 
-  .sun, .moon {
-    font-size: 1.7rem;
+  & a {
+    display: block;
+    padding: var(--r3);
   }
 }
-
-.sun, .dark .moon {
-  display: none;
-}
-
-.dark .sun {
-  display: block;
-} */
 
 /* CONTAINERS 
 ------------- */
@@ -361,7 +442,13 @@ footer p {
   }
 }
 
-/* Checklists
+/* OPTIONS 
+---------- */
+.options label {
+  margin-top: var(--r4);
+}
+
+/* CHECKLISTS
 ------------- */
 li {
   position: relative;
@@ -413,10 +500,10 @@ input[type="checkbox"]:checked ~ label {
 
 /* UTILITY
 ---------- */
-.flex { display: flex; gap: var(--r3); }
+.flex { display: flex; }
 .center { align-items: center; justify-content: center; }
 .list { list-style-type: disc; margin: var(--r2) 0 var(--r2) var(--r6); }
-textarea { display: none; }
+/* textarea { display: none; } */
 strong, footer a, .h { color: var(--h); }
 .r { color: var(--r); }
 .g { color: var(--g); }
