@@ -59,6 +59,7 @@
 /* DARK MODE
 ------------  */
 .dark {
+  color-scheme: dark;
   --b: #222426;
   --t: #e0e0e0;
   --h: #f8f7f7;
@@ -144,10 +145,10 @@ html {
   font-size: 16px;
   line-height: 1.5;
   scrollbar-color: var(--1) var(--b);
-  text-size-adjust: none;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
 }
 
 body {
@@ -216,8 +217,6 @@ a {
   }
 }
 
-/* FW: 600 
------------- */
 a, samp, .h, .r, .g, .p, .o {
   font-weight: var(--w6);
 }
@@ -259,6 +258,11 @@ svg {
   min-width: fit-content;
 }
 
+select {
+  text-align-last: center;
+  padding: var(--e1);
+}
+
 /* NAVIGATION 
 ------------- */
 nav {
@@ -266,6 +270,7 @@ nav {
   border-bottom: var(--b2) solid var(--2);
   justify-content: space-between;
   position: relative;
+  min-height: 60px;
 }
 
 .nav {

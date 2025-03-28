@@ -1,7 +1,13 @@
+(function () {
+  const c = document.querySelectorAll('input[type="checkbox"]');
+  for (let i = 0, l = c.length; i < l; i++) c[i].autocomplete = 'off';
+})();
+
 // Cache root and declare defaults
 const root = document.documentElement;
 const theme = document.getElementById('theme');
-const PROFILE_KEY = 'er_profiles';
+const cb = document.getElementById('cb');
+const PROFILE_KEY = 'er';
 const DEFAULT_PROFILE = 'default';
 
 // Initialize default profile with checks if doesn't exist
@@ -71,24 +77,41 @@ function restoreCheckboxes() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Handle theme switching
+  restoreCheckboxes();
+
+  // Handle theme switching - t = theme, d = dark, l = light
   if (theme) {
-    theme.value = localStorage.theme || 'light';
+    theme.value = localStorage.getItem('t') || 'l';
 
     theme.addEventListener('change', () => {
-      const dark = theme.value === 'dark';
+      const dark = theme.value === 'd';
       root.classList.toggle('dark', dark);
-      localStorage.theme = theme.value;
+      localStorage.setItem('t', theme.value);
     });
   }
 
-  restoreCheckboxes();
+  // Handle color blindness
+  if (cb) {
+    const cbRemove = ['pro', 'deu', 'tri', 'ach'];
+
+    const cbUpdate = () => {
+      const value = cb.value;
+      root.classList.remove(...cbRemove);
+      if (value !== '0') {
+        root.classList.add(value);
+      }
+      localStorage.setItem('cb', value);
+    };
+
+    cb.value = localStorage.getItem('cb') || '0';
+    cbUpdate();
+    cb.addEventListener('change', cbUpdate);
+  }
 
   // Open links in new tab, loop through all links
   const links = document.querySelectorAll('a[href^="http"]');
-  const len = links.length;
 
-  for (let i = 0; i < len; i++) {
+  for (let i = 0, len = links.length; i < len; i++) {
     const link = links[i];
     link.target = '_blank';
     link.rel = 'noopener noreferrer';

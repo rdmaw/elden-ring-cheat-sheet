@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#9a8765" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#303030" media="(prefers-color-scheme: dark)">
   <meta name="description" content="The ultimate guide for Elden Ring + DLC with step-by-step checklists for 100% completion. Covers all items, achievements, NPCs, quests, bosses and more.">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -28,10 +26,10 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Links -->
-  <script>
-    const d = document.documentElement; d.classList.toggle("dark", "dark" === localStorage.getItem("theme"));
-  </script>
   <link rel="stylesheet" href="/css/style.css">
+  <script>
+    const d = document.documentElement, t = "d" === localStorage.getItem("t"), c = localStorage.getItem("cb"); t && d.classList.add("dark"), c && "0" !== c && d.classList.add(c);
+  </script>
   <link rel="canonical" href="https://eldenring.redmaw.dev">
   <title>Elden Ring Cheat Sheet: 100% Completion Guide & Checklists</title>
 </head>

@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#9a8765" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#303030" media="(prefers-color-scheme: dark)">
   <meta name="description" content="Complete checklist of all Achievements and Legendary Items in Elden Ring.">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -29,20 +27,53 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Links -->
   <script>
-    const d = document.documentElement; d.classList.toggle("dark", "dark" === localStorage.getItem("theme"));
+    const d = document.documentElement, t = "d" === localStorage.getItem("t"), c = localStorage.getItem("cb"); t && d.classList.add("dark"), c && "0" !== c && d.classList.add(c);
   </script>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="canonical" href="https://eldenring.redmaw.dev/sheets/achievements.html">
   <title>Achievements | Elden Ring Cheat Sheet</title>
 </head>
 <body>
-  <main>Back to <a href="/">Main</a>.</main>
+  <main>Back to <a href="/">Main</a>.
+    <!-- Misc -->
+    <h3 id="Misc">
+      <button type="button" data-bs-toggle="collapse" data-bs-target="#Tutorial_col" aria-expanded="true" aria-controls="Tutorial_col" aria-label="Toggle visibility of the Tutorial section"></button>
+      <a href="https://eldenring.wiki.fextralife.com/Chapel+of+Anticipation">Tutorial (Level 1-10)</a>
+      <span id="w_t_1"></span>
+    </h3>
+    <ul id="Misc_col" aria-label="List of tasks in the Tutorial section" aria-hidden="false">
+      <li><input type="checkbox" id="w1_1"><label for="w1_1"><strong>(Optional)</strong> Pick any starting class you want. If you're not sure, I recommend starting with either <a href="https://eldenring.wiki.fextralife.com/Vagabond">Vagabond</a> or <a href="https://eldenring.wiki.fextralife.com/Samurai">Samurai</a>, as they have good starting stats for most builds.</label></li>
+      <li><input type="checkbox" id="w1_2"><label for="w1_2"><strong>(Optional)</strong> For a completionist's run, I recommend starting with the <a href="https://eldenring.wiki.fextralife.com/Stonesword+Key" class="p">Stonesword Key x2</a> keepsake. They are necessary items for full completion and two of them costs at least 4,000 runes, meaning you won't need to buy an extra two for an expensive price in the early game. You could also pick the <a href="https://eldenring.wiki.fextralife.com/Lands+Between+Rune">Lands Between Rune</a> for 3,000 runes, but if you have to buy <a href="https://eldenring.wiki.fextralife.com/Stonesword+Key" class="p">Stonesword Keys</a> at any point, then I think picking those will give you greater value in the long run.</label>
+        <ul>
+          <li><input type="checkbox" id="w1_3"><label for="w1_3"><strong>Note:</strong> Don't pick the <a href="https://eldenring.wiki.fextralife.com/Golden+Seed">Golden Seed</a> if you're following this guide, as it will become obsolete almost immediately after the first few sections. No starting class equipment or keepsake is missable, so go with whichever one you like!</label></li>
+        </ul>
+      </li>
+      <li><input type="checkbox" id="w1_4"><label for="w1_4">Start your playthrough and watch the intro cutscene.</label></li>
+      <li><input type="checkbox" id="w1_5"><label for="w1_5"><a href="https://eldenring.wiki.gg/wiki/The_Ring">The Ring</a> gesture is aqcuired if you pre-ordered the game.</label></li>
+      <li><input type="checkbox" id="w1_6"><label for="w1_6">Similarly, the <a href="https://eldenring.wiki.gg/wiki/Ring_of_Miquella">Ring of Miquella</a> gesture is aqcuired if you pre-ordered the DLC.</label></li>
+      <li><input type="checkbox" id="w1_7"><label for="w1_7">Pick up <a href="https://eldenring.wiki.fextralife.com/Tarnished's+Wizened+Finger">Tarnished's Wizened Finger</a> from the deceased maiden.</label></li>
+      <li><input type="checkbox" id="w1_8"><label for="w1_8">Exit the chapel and confront the <a href="https://eldenring.wiki.fextralife.com/Grafted+Scion" class="r">Grafted Scion</a>.</label>
+        <ul>
+          <li><input type="checkbox" id="w1_9"><label for="w1_9">If you beat him, congratulations! Continue ahead and inspect the Nascent Butterfly at the edge of the cliff.</label></li>
+          <li><input type="checkbox" id="w1_10"><label for="w1_10">If you didn't beat him, don't worry; you're intended to face him again later.</label></li>
+        </ul>
+      </li>
+      <li><input type="checkbox" id="w1_11"><label for="w1_11">After respawning in the cave, take the plunge down to the <a href="https://eldenring.wiki.gg/wiki/Cave_of_Knowledge">Cave of Knowledge</a>.</label></li>
+      <li><input type="checkbox" id="w1_12"><label for="w1_12">Rest at the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=163932">Cave of Knowledge</a> site of grace and allocate your flask charges.</label></li>
+      <li><input type="checkbox" id="w1_13"><label for="w1_13">There are no items in this cave, so once you are done, kill <a href="https://eldenring.wiki.fextralife.com/Soldier+of+Godrick" class="r">Soldier of Godrick</a> for 400 runes.</label></li>
+      <li><input type="checkbox" id="w1_14"><label for="w1_14">Continue ahead and pick up the <a href="https://eldenring.wiki.gg/wiki/Strength!">Strength!</a> gesture before you drop down.</label></li>
+      <li><input type="checkbox" id="w1_15"><label for="w1_15">Drop down and activate the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=163933">Stranded Graveyard</a> site of grace.</label></li>
+      <li><input type="checkbox" id="w1_16"><label for="w1_16">There is an <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=164436">Imp Seal</a> statue here you can unlock with your <a href="https://eldenring.wiki.fextralife.com/Stonesword+Key" class="p">Stonesword Keys</a>, but ignore this for later when you're much stronger.</label></li>
+      <li><input type="checkbox" id="w1_17"><label for="w1_17">Pick up <a href="https://eldenring.wiki.fextralife.com/Finger+Severer">Finger Severer</a> and <a href="https://eldenring.wiki.fextralife.com/Tarnished's+Furled+Finger">Tarnished's Furled Finger</a> in one pickup, near the exit lift.</label></li>
+      <li><input type="checkbox" id="w1_18"><label for="w1_18">Take the lift up and enter the Lands Between!</label></li>
+    </ul>
+  </main>
   <!-- TODO: Back to top functionality -->
   <button></button>
   <footer>
     <p>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></p>
   </footer>
-  <textarea name="import" aria-hidden="true"></textarea>
+  <textarea name="ff" aria-hidden="true"></textarea>
   <script defer src="/js/script.js"></script>
 </body>
 </html>
