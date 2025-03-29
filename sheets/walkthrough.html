@@ -32,52 +32,8 @@
   <title>Walkthrough | Elden Ring Cheat Sheet</title>
 </head>
 <body>
-  <!-- TODO: Navbar -->
-  <nav aria-label="Global navigation">
-    <div class="nav">
-      <ul>
-        <li><a href="/options.html">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z" />
-            </svg>
-            FAQ</a></li>
-        <li><a href="/options.html">
-            <svg>
-              <use href="/assets/icons/sprite.svg#options"></use>
-            </svg>
-            Options</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- TODO: Sidebar -->
-  <nav id="sidebar" class="sidebar" aria-label="Navigation sidebar" aria-hidden="true">
-    <div class="sh flex">
-      <h2>Sheets</h2>
-    </div>
-    <button class="close" type="button" aria-label="Close sidebar navigation">
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
-        <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
-      </svg> -->
-      <svg>
-        <use href="/assets/icons/sprite.svg#close"></use>
-      </svg>
-    </button>
-    <ul class="sheets">
-      <li><a href="/sheets/resources.html">Resources</a></li>
-      <li><a href="/sheets/walkthrough.html">Walkthrough</a></li>
-      <li><a href="/sheets/questlines.html">Questlines</a></li>
-      <li><a href="/sheets/bosses.html">Bosses</a></li>
-      <li><a href="/sheets/achievements.html">Achievements</a></li>
-      <li><a href="/sheets/armaments.html">Armaments</a></li>
-      <li><a href="/sheets/armor.html">Armor</a></li>
-      <li><a href="/sheets/ashes.html">Ashes</a></li>
-      <li><a href="/sheets/spells.html">Spells</a></li>
-      <li><a href="/sheets/key-items.html">Key Items</a></li>
-      <li><a href="/sheets/miscellaneous.html">Miscellaneous</a></li>
-      <li><a href="/sheets/new-game-plus.html">New Game Plus</a></li>
-    </ul>
-  </nav>
   <main>
+    <nav>To <a href="/">main</a></nav>
     <!-- Header -->
     <header>
       <h1>Walkthrough</h1>
@@ -119,8 +75,11 @@
       <li><input type="checkbox" id="w1_18"><label for="w1_18">Take the lift up and enter the Lands Between!</label></li>
     </ul>
   </main>
-  <!-- TODO: Back to top functionality -->
-  <button></button>
+  <button id="up" class="btn" type="button" aria-label="Scroll to top of page">
+    <svg aria-hidden="true">
+      <use href="/assets/icons/sprite.svg#top"></use>
+    </svg>
+  </button>
   <footer>
     <p>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></p>
   </footer>

@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Links -->
   <link rel="stylesheet" href="/css/style.css">
-  <script defer>
+  <script>
     const d = document.documentElement, t = "d" === localStorage.getItem("t"), c = localStorage.getItem("cb"); t && d.classList.add("dark"), c && "0" !== c && d.classList.add(c);
   </script>
   <link rel="canonical" href="https://eldenring.redmaw.dev/sheets/achievements.html">
@@ -68,8 +68,11 @@
       <li><input type="checkbox" id="w1_18"><label for="w1_18">Take the lift up and enter the Lands Between!</label></li>
     </ul>
   </main>
-  <!-- TODO: Back to top functionality -->
-  <button></button>
+  <button id="up" class="btn" type="button" aria-label="Scroll to top of page">
+    <svg aria-hidden="true">
+      <use href="/assets/icons/sprite.svg#top"></use>
+    </svg>
+  </button>
   <footer>
     <p>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></p>
   </footer>

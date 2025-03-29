@@ -1,3 +1,4 @@
+// TODO: Monitor autocomplete
 (function () {
   const c = document.querySelectorAll('input[type="checkbox"]');
   for (let i = 0, l = c.length; i < l; i++) c[i].autocomplete = 'off';
@@ -59,14 +60,14 @@ const profileManager = {
   }
 };
 
-// Handle storage updates when checkbox is interacted with
+// Store checkbox state when clicked
 document.addEventListener('change', e => {
   if (e.target.matches('input[type="checkbox"]')) {
     profileManager.updateChecklistState(e.target.id, e.target.checked);
   }
 });
 
-// Handle checkbox checked state restoration
+// Restore checked state from storage
 function restoreCheckboxes() {
   const { data } = profileManager.getCurrentProfile();
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -108,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cb.addEventListener('change', cbUpdate);
   }
 
-  // Open links in new tab, loop through all links
+  // Add blank and noopeners to all links
   const links = document.querySelectorAll('a[href^="http"]');
 
   for (let i = 0, len = links.length; i < len; i++) {
@@ -122,6 +123,7 @@ const menu = document.getElementById('menu');
 const sidebar = document.getElementById('sidebar');
 const close = sidebar.querySelector('.close');
 
+// Toggle sidebar functionality
 function toggleSidebar() {
   const hidden = sidebar.getAttribute('aria-hidden') === 'true';
 
@@ -154,12 +156,14 @@ document.addEventListener('keydown', (e) => {
     if (!isFormControl) {
       e.preventDefault();
       toggleSidebar();
+      close.focus();
     }
   }
 });
 
 const up = document.getElementById('up');
 
+// Handle to-top button logic
 window.addEventListener('scroll', () => {
   if (window.scrollY < 500) {
     up.classList.remove('show');
@@ -174,10 +178,10 @@ up.addEventListener('click', () => {
     behavior: 'smooth'
   })
 
-  // TODO: Monitor focus with full playthrough page
+  // TODO: Monitor focus with all pages
   setTimeout(() => {
     if (menu) {
       menu.focus();
     }
-  }, 1000);
+  }, 700);
 });

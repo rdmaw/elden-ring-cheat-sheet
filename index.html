@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Links -->
   <link rel="stylesheet" href="/css/style.css">
-  <script async>
+  <script>
     const d = document.documentElement, t = "d" === localStorage.getItem("t"), c = localStorage.getItem("cb"); t && d.classList.add("dark"), c && "0" !== c && d.classList.add(c);
   </script>
   <link rel="canonical" href="https://eldenring.redmaw.dev">
@@ -44,15 +44,13 @@
       </button>
       <ul class="flex">
         <li><a href="/">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-              <path d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z" />
+            <svg>
+              <use href="/assets/icons/sprite.svg#faq"></use>
             </svg>
             &nbsp;FAQ</a></li>
-        <li><a href="/options.html">
-            <svg>
+        <li><a href="/options.html"><svg aria-hidden="true">
               <use href="/assets/icons/sprite.svg#options"></use>
-            </svg>
-            &nbsp;Options</a></li>
+            </svg>&nbsp;Options</a></li>
       </ul>
     </div>
   </nav>
@@ -60,6 +58,11 @@
   <nav id="sidebar" class="sidebar" aria-label="Navigation sidebar" aria-hidden="true" inert>
     <div class="sh flex">
       <h2>Sheets</h2>
+      <button class="close btn flex center" type="button" aria-controls="sidebar" aria-label="Close sidebar navigation">
+        <svg aria-hidden="true">
+          <use href="/assets/icons/sprite.svg#close"></use>
+        </svg>
+      </button>
     </div>
     <ul class="sheets">
       <li><a href="/sheets/resources.html">Resources</a></li>
@@ -75,14 +78,6 @@
       <li><a href="/sheets/miscellaneous.html">Miscellaneous</a></li>
       <li><a href="/sheets/new-game-plus.html">New Game Plus</a></li>
     </ul>
-    <button class="close btn flex center" type="button" aria-label="Close sidebar navigation">
-      <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
-        <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
-      </svg> -->
-      <svg>
-        <use href="/assets/icons/sprite.svg#close"></use>
-      </svg>
-    </button>
   </nav>
   <main>
     <header>
@@ -100,10 +95,10 @@
     <p>The <a href="/sheets/achievements.html">Achievements</a> sheet can be used to track what achievements and legendary items you have. Similarly, the <a href="/sheets/armaments.html">Armaments</a>, <a href="/sheets/armor.html">Armor</a>, <a href="/sheets/ashes.html">Ashes</a>, and <a href="/sheets/spells.html">Spells</a> sheets can be used to track items in their respective categories.</p>
     <p>For checklists on miscellaneous items, such as gestures, talismans, crystal tears, cookbooks etc., use the <a href="/sheets/key-items.html">Key Items</a> and <a href="/sheets/miscellaneous.html">Miscellaneous</a> sheets.</p>
     <p>If you're considering starting New Game Plus, make sure to check out the <a href="/sheets/new-game-plus.html">New Game Plus</a> sheet first to see if you've got everything you need.</p>
-    <p>Now that you know how the sheets work, press "q" on your keyboard to open up the Sheet menu and get started. Any checklist can be filtered by using the searchbar to only display items matching your search. You can also swap color themes in the <a href="/options.html">Options</a> page, if you're not a fan of the default notebook/sheet theme.</p>
+    <p>Now that you know how the sheets work, <strong>press "q" on your keyboard to open up the Sheet menu</strong> and get started. Any checklist can be filtered by using the searchbar to only display items matching your search. You can also swap color themes in the <a href="/options.html">Options</a> page, if you're not a fan of the notebook colors.</p>
     <h3>What's included in the walkthrough?</h3>
     <h4>The walkthrough <span class="r">DOES NOT INCLUDE</span>:</h4>
-    <ul class="omitted">
+    <ul class="no">
       <li>Any items that require farming, or respawning plants and crafting materials collected from the environment (e.g., <a href="https://eldenring.wiki.fextralife.com/Rowa+Fruit">Rowa Fruit</a>, <a href="https://eldenring.wiki.fextralife.com/Arteria+Leaf">Arteria Leafs</a> etc.).</li>
       <li>Any Scarabs that respawn, such as Crimson and Cerulean <a href="https://eldenring.wiki.gg/wiki/Scarab">Teardrop Scarabs</a> that refill your flask charges.</li>
       <li>Any <a href="https://eldenring.wiki.gg/wiki/Stranded_Souls">Spirits</a> or <a href="https://eldenring.wiki.gg/wiki/Sword_Monuments">Sword Monuments</a> that players can interact with for small lore tidbits.</li>
@@ -111,7 +106,7 @@
       <li>Any <a href="https://eldenring.wiki.fextralife.com/Effigies+of+the+Martyr">Martyr Effigies</a> that players can interact with to activate Co-op summon signs for that area.</li>
     </ul>
     <h4>The walkthrough <span class="g">COVERS</span>:</h4>
-    <ul class="included">
+    <ul class="yes">
       <li>Every single item pickup in the game.</li>
       <li>All achievements, NPCs, questlines, bosses and invasions.</li>
       <li>All sites of grace, gestures, ashes, talismans, and paintings.</li>
@@ -130,9 +125,9 @@
     <p>A 100% completion playthrough of Elden Ring following the walkthrough, assuming you get all three endings in a single playthrough, typically takes between <strong>60-90 hours</strong>. I personally dislike unnecessary backtracking, so the <a href="/sheets/walkthrough.html">Walkthrough</a> route is heavily optimized to avoid it, while still approaching the game in a natural order.</p>
     <h3>What level should I be for each area?</h3>
     <p>The step-by-step checklists provide recommended level ranges for each area. These ranges don't represent the difficulty of an area, but rather the level you're likely to reach naturally when following the walkthrough. They are suggestions based on my own playthroughs, and could help you avoid being over- or under-leveled if you want a fairer experience.</p>
-    <h3>What do I do if I accidentally attacked an NPC?</h3>
-    <p>You should <strong>never attack or kill an NPC</strong> unless it's specifically stated to do so. If you've attacked an NPC and they've become hostile, then you'll need to travel to the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165501">Church of Vows</a> in Liurnia and absolve your sins in front of the statue inside by using a <a href="https://eldenring.wiki.fextralife.com/Celestial+Dew" class="p">Celestial Dew</a>. If you've already killed an NPC, then their questline is over until your next playthrough. Make sure to pick up their <a href="https://eldenring.wiki.fextralife.com/Bell+Bearings">Bell Bearing</a> if they were selling any items.</p>
-    <h3>How do I follow your compass directions?</h3>
+    <h3>What to do if I accidentally attacked an NPC?</h3>
+    <p>You should <strong>never attack or kill NPCs</strong> unless it's specifically stated to do so. If you've attacked an NPC and they've become hostile, then you'll need to travel to the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165501">Church of Vows</a> in Liurnia and absolve your sins in front of the statue inside by using a <a href="https://eldenring.wiki.fextralife.com/Celestial+Dew" class="p">Celestial Dew</a>. If you've already killed an NPC, then their questline is over until your next playthrough. Make sure to pick up their <a href="https://eldenring.wiki.fextralife.com/Bell+Bearings">Bell Bearing</a> if they were selling any items.</p>
+    <h3>How do I follow your directions?</h3>
     <p>Elden Ring's compass uses <a href="https://en.wikipedia.org/wiki/Cardinal_direction">primary, intercardinal and secondary-intercardinal directions</a>. I strongly recommend keeping the compass HUD enabled as the walkthrough uses it to provide accurate directions. Below are the tiers used to help provide directions:</p>
     <ol class="compass">
       <li><strong>Primary Cardinal Directions:</strong>
@@ -166,7 +161,7 @@
     </ol>
     <p>For an in-game example, <strong>northeast</strong> would refer to the midpoint between north and east. Similarly, <strong>north-northeast</strong> would refer to the middle point between north and northeast.</p>
     <h3>Can I use this for multiple characters?</h3>
-    <p>Yes! You can create, edit, and delete profiles by using the buttons in the navigation bar. Any stored information is saved separately to your selected profile.</p>
+    <p>Yes! You can create, edit, and delete profiles by using the profile buttons in the <a href="/options.html">Options</a> page. Any stored information is saved separately to your selected profile.</p>
     <h3>How are the checklists saved?</h3>
     <p>The checklists are stored locally in your browser. This means that <strong class="r">clearing your browser's cache, will destroy any saved progress you have</strong>.</p>
     <h3>I found an error in the cheat sheet! How can I contribute?</h3>
@@ -187,12 +182,9 @@
     </ul>
   </main>
   <button id="up" class="btn" type="button" aria-label="Scroll to top of page">
-    <svg>
+    <svg aria-hidden="true">
       <use href="/assets/icons/sprite.svg#top"></use>
     </svg>
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-arrow-up">
-      <path d="M12 19V5M5 12l7-7 7 7" />
-    </svg> -->
   </button>
   <footer>
     <p>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></p>
