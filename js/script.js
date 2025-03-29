@@ -160,9 +160,24 @@ document.addEventListener('keydown', (e) => {
 
 const up = document.getElementById('up');
 
+window.addEventListener('scroll', () => {
+  if (window.scrollY < 500) {
+    up.classList.remove('show');
+  } else {
+    up.classList.add('show');
+  }
+}, { passive: true });
+
 up.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
   })
+
+  // TODO: Monitor focus with full playthrough page
+  setTimeout(() => {
+    if (menu) {
+      menu.focus();
+    }
+  }, 1000);
 });

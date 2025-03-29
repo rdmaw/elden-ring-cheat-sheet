@@ -38,21 +38,26 @@
   <nav class="flex" aria-label="Global navigation">
     <div class="nav flex">
       <button class="flex center" type="button" id="menu" aria-controls="sidebar" aria-label="Toggle navigation sidebar">
-        <!-- <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M3 12h18M3 6h18M3 18h18" />
-        </svg> -->
         <svg aria-hidden="true">
           <use href="/assets/icons/sprite.svg#menu"></use>
         </svg>
       </button>
       <ul class="flex">
-        <li><a href="/">&#x1F6C8&nbsp;&nbsp;FAQ</a></li>
-        <li><a href="/options.html">⚙&nbsp;&nbsp;Options</a></li>
+        <li><a href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z" />
+            </svg>
+            &nbsp;FAQ</a></li>
+        <li><a href="/options.html">
+            <svg>
+              <use href="/assets/icons/sprite.svg#options"></use>
+            </svg>
+            &nbsp;Options</a></li>
       </ul>
     </div>
   </nav>
   <!-- TODO: Sidebar -->
-  <nav id="sidebar" class="sidebar" aria-label="Navigation sidebar" aria-hidden="true">
+  <nav id="sidebar" class="sidebar" aria-label="Navigation sidebar" aria-hidden="true" inert>
     <div class="sh flex">
       <h2>Sheets</h2>
     </div>
@@ -183,8 +188,11 @@
   </main>
   <button id="up" class="btn" type="button" aria-label="Scroll to top of page">
     <svg>
-      <use href="/assets/icons/sprite.svg#up"></use>
+      <use href="/assets/icons/sprite.svg#top"></use>
     </svg>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-arrow-up">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg> -->
   </button>
   <footer>
     <p>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></p>
