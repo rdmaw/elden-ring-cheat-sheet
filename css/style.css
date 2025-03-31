@@ -333,7 +333,7 @@ nav {
 
 .close {
   position: absolute;
-  top: .75rem;
+  top: var(--r3);
   right: .3125rem;
   width: 2.375rem;
   height: 2.125rem;
@@ -402,9 +402,18 @@ footer {
 
 /* CHECKLISTS
 ------------- */
+.toc {
+  background: none;
+  border-bottom: none;
+
+  & a:hover {
+    text-decoration: underline;
+  }
+}
+
 label {
   display: inline-block;
-  padding-left: 1.75rem;
+  padding-left: var(--r7);
   padding-top: 0.3rem;
 }
 
@@ -449,12 +458,12 @@ header, footer { text-align: center; }
 .g, .yes li::marker { color: var(--g); }
 .p { color: var(--p); }
 .o { color: var(--o); }
-.h, h1, h2, h3, h4, strong, nav a, footer a, .lead, .toc a, #menu svg, .close svg { color: var(--h); }
+.h, h1, h2, h3, h3 a, h4, strong, nav a, footer a, .lead, .toc a, #menu svg, .close svg { color: var(--h); }
 
 /* REPETITION 
 ------------- */
 html, .sh h2 { line-height: 1.5; }
-h1, h2, h3, h4, nav a, input, button, kbd, samp, select, .lead, .toc a { line-height: 1.1; }
+h1, h2, h3, h4, nav a, input, button, kbd, samp, select, .lead { line-height: 1.1; }
 h1, h2, h3, h4, p, a { overflow-wrap: break-word; }
 h1, h2, h3, h4, nav a, .lead, .toc a { text-wrap: balance; }
 header h1, h2, strong { font-weight: 700; }

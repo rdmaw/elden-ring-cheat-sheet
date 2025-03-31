@@ -125,16 +125,16 @@ const close = sidebar.querySelector('.close');
 
 // Toggle sidebar functionality
 function toggleSidebar() {
-  const hidden = sidebar.getAttribute('aria-hidden') === 'true';
+  const hidden = sidebar.ariaHidden === 'true';
 
   if (hidden) {
-    sidebar.setAttribute('aria-hidden', 'false');
-    menu.setAttribute('aria-expanded', 'true');
+    sidebar.ariaHidden = 'false';
+    menu.ariaExpanded = 'true';
     sidebar.removeAttribute('inert');
   } else {
     menu.focus({ preventScroll: true });
-    sidebar.setAttribute('aria-hidden', 'true');
-    menu.setAttribute('aria-expanded', 'false');
+    sidebar.ariaHidden = 'true';
+    menu.ariaExpanded = 'false';
     sidebar.setAttribute('inert', '');
   }
 }
@@ -144,7 +144,7 @@ close.addEventListener('click', toggleSidebar);
 
 document.addEventListener('keydown', (e) => {
   // Close sidebar with Esc
-  if (e.key === 'Escape' && sidebar.getAttribute('aria-hidden') === 'false') {
+  if (e.key === 'Escape' && sidebar.ariaHidden === 'false') {
     toggleSidebar();
   }
 

@@ -15,17 +15,17 @@
 <body>
   <nav class="flex" aria-label="Global navigation">
     <div class="nav flex">
-      <button id="menu" class="flex ac jc" type="button" aria-label="Toggle navigation sidebar" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#menu"></use></svg></button>
+      <button type="button" id="menu" class="flex ac jc" aria-label="Open sidebar" aria-controls="sidebar" aria-expanded="false"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#menu"></use></svg></button>
       <ul class="flex">
         <li><a href="/"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#faq"></use></svg>&nbsp;FAQ</a></li>
         <li><a href="/options.html"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#options"></use></svg>&nbsp;Options</a></li>
       </ul>
     </div>
   </nav>
-  <nav id="sidebar" class="sidebar flex" aria-label="Navigation sidebar" aria-hidden="true" inert>
+  <nav id="sidebar" class="sidebar flex" aria-labelledby="sh2" aria-hidden="true" inert>
     <div class="sh flex jc ac">
-      <h2>Sheets</h2>
-      <button class="close btn flex ac" type="button" aria-label="Close sidebar navigation" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#close"></use></svg></button>
+      <h2 id="sh2">Sheets</h2>
+      <button type="button" class="close btn flex ac" aria-label="Close sidebar" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#close"></use></svg></button>
     </div>
     <ul class="sheets">
       <li><a href="/sheets/resources.html">Resources</a></li>
@@ -66,13 +66,13 @@
       <h2>Profile Management:</h2>
       <label for="profile">Select profile:</label>
       <select id="profile" name="profile"></select>
-      <button id="add" class="btn" type="button">Create</button>
-      <button id="edit" class="btn" type="button">Edit</button>
-      <button id="ngp" class="btn" type="button">NG+</button>
-      <button id="del" class="btn" type="button">Delete</button>
+      <button type="button" id="add" class="btn">Create</button>
+      <button type="button" id="edit" class="btn">Edit</button>
+      <button type="button" id="ngp" class="btn">NG+</button>
+      <button type="button" id="del" class="btn">Delete</button>
       <h2>Import/Export Data</h2>
-      <button class="btn" type="button">Import file</button>
-      <button class="btn" type="button">Export file</button>
+      <button type="button" class="btn">Import file</button>
+      <button type="button" class="btn">Export file</button>
       <textarea id="data" name="data"></textarea>
     </section>
   </main>

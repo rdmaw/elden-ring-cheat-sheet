@@ -25,17 +25,17 @@
 <body>
   <nav class="flex" aria-label="Global navigation">
     <div class="nav flex">
-      <button id="menu" class="flex ac jc" type="button" aria-label="Toggle navigation sidebar" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#menu"></use></svg></button>
+      <button type="button" id="menu" class="flex ac jc" aria-label="Open sidebar" aria-controls="sidebar" aria-expanded="false"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#menu"></use></svg></button>
       <ul class="flex">
         <li><a href="/"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#faq"></use></svg>&nbsp;FAQ</a></li>
         <li><a href="/options.html"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#options"></use></svg>&nbsp;Options</a></li>
       </ul>
     </div>
   </nav>
-  <nav id="sidebar" class="sidebar flex" aria-label="Navigation sidebar" aria-hidden="true" inert>
+  <nav id="sidebar" class="sidebar flex" aria-labelledby="sh2" aria-hidden="true" inert>
     <div class="sh flex jc ac">
-      <h2>Sheets</h2>
-      <button class="close btn flex ac" type="button" aria-label="Close sidebar navigation" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#close"></use></svg></button>
+      <h2 id="sh2">Sheets</h2>
+      <button type="button" class="close btn flex ac" aria-label="Close sidebar" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#close"></use></svg></button>
     </div>
     <ul class="sheets">
       <li><a href="/sheets/resources.html">Resources</a></li>
@@ -154,7 +154,7 @@
       <li><a href="https://iforgottosave.github.io/bloodborne-cheat-sheet-complete-edition/">Bloodborne Cheat Sheet Complete Edition</a></li>
     </ul>
   </main>
-  <button id="up" class="btn" type="button" aria-label="Scroll to top of page"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#top"></use></svg></button>
+  <button type="button" id="up" class="btn" aria-label="Scroll to top of page"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#top"></use></svg></button>
   <footer>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></footer>
   <script defer src="/js/script.js"></script>
 </body>
