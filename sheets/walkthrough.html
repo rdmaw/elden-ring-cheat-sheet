@@ -2,39 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ultimate step-by-step checklist guide for Elden Ring. Covers everything needed for 100% completion and all achievements in one playthrough.">
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eldenring.redmaw.dev/sheets/walkthrough.html">
   <meta property="og:title" content="Walkthrough | Elden Ring Cheat Sheet">
   <meta property="og:description" content="Ultimate step-by-step checklist guide for Elden Ring. Covers everything needed for 100% completion and all achievements in one playthrough.">
   <meta property="og:image" content="#">
   <meta property="og:image:alt" content="#">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://eldenring.redmaw.dev/sheets/walkthrough.html">
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary-large-image">
-  <meta property="twitter:title" content="Walkthrough | Elden Ring Cheat Sheet">
-  <meta property="twitter:description" content="Ultimate step-by-step checklist guide for Elden Ring. Covers everything needed for 100% completion and all achievements in one playthrough.">
-  <meta property="twitter:image" content="#">
-  <meta property="twitter:image:alt" content="#">
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <!-- Links -->
   <link rel="stylesheet" href="/css/style.css">
-  <script>
-    const d = document.documentElement, t = "d" === localStorage.getItem("t"), c = localStorage.getItem("cb"); t && d.classList.add("dark"), c && "0" !== c && d.classList.add(c);
-  </script>
+  <script>const d=document.documentElement,t="d"===localStorage.getItem("t"),c=localStorage.getItem("cb");t&&d.classList.add("dark"),c&&"0"!==c&&d.classList.add(c);</script>
   <link rel="canonical" href="https://eldenring.redmaw.dev/sheets/walkthrough.html">
   <title>Walkthrough | Elden Ring Cheat Sheet</title>
 </head>
 <body>
+  <nav class="flex" aria-label="Global navigation">
+    <div class="nav flex">
+      <button id="menu" class="flex ac jc" type="button" aria-label="Toggle navigation sidebar" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#menu"></use></svg></button>
+      <ul class="flex">
+        <li><a href="/"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#faq"></use></svg>&nbsp;FAQ</a></li>
+        <li><a href="/options.html"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#options"></use></svg>&nbsp;Options</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="sidebar" class="sidebar flex" aria-label="Navigation sidebar" aria-hidden="true" inert>
+    <div class="sh flex jc ac">
+      <h2>Sheets</h2>
+      <button class="close btn flex ac" type="button" aria-label="Close sidebar navigation" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#close"></use></svg></button>
+    </div>
+    <ul class="sheets">
+      <li><a href="/sheets/resources.html">Resources</a></li>
+      <li><a href="/sheets/walkthrough.html">Walkthrough</a></li>
+      <li><a href="/sheets/questlines.html">Questlines</a></li>
+      <li><a href="/sheets/bosses.html">Bosses</a></li>
+      <li><a href="/sheets/achievements.html">Achievements</a></li>
+      <li><a href="/sheets/armaments.html">Armaments</a></li>
+      <li><a href="/sheets/armor.html">Armor</a></li>
+      <li><a href="/sheets/ashes.html">Ashes</a></li>
+      <li><a href="/sheets/spells.html">Spells</a></li>
+      <li><a href="/sheets/key-items.html">Key Items</a></li>
+      <li><a href="/sheets/miscellaneous.html">Miscellaneous</a></li>
+      <li><a href="/sheets/new-game-plus.html">New Game Plus</a></li>
+    </ul>
+  </nav>
   <main>
-    <nav>To <a href="/">main</a></nav>
-    <!-- Header -->
     <header>
       <h1>Walkthrough</h1>
       <p class="lead">A complete walkthrough of Elden Ring, covering everything in one playthrough.</p>
@@ -42,7 +59,6 @@
       <p><strong>WARNING: Contains spoilers!</strong></p>
       <p>🚧 The project is still under heavy construction. Content will change! 🚧<br>If you notice any mistakes, or want to contribute during development, please open an issue on <a href="https://github.com/rdmaw/elden-ring-cheat-sheet">Github</a>.</p>
     </header>
-    <!-- Tutorial -->
     <h3 id="tutorial">
       <button type="button" data-bs-toggle="collapse" data-bs-target="#tutorial_col" aria-expanded="true" aria-controls="Tutorial_col" aria-label="Toggle visibility of the Tutorial section"></button>
       <a href="https://eldenring.wiki.fextralife.com/Chapel+of+Anticipation">Tutorial (Level 1-10)</a>
@@ -75,15 +91,9 @@
       <li><input type="checkbox" id="w1_18"><label for="w1_18">Take the lift up and enter the Lands Between!</label></li>
     </ul>
   </main>
-  <button id="up" class="btn" type="button" aria-label="Scroll to top of page">
-    <svg aria-hidden="true">
-      <use href="/assets/icons/sprite.svg#top"></use>
-    </svg>
-  </button>
-  <footer>
-    <p>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></p>
-  </footer>
-  <textarea name="ff" tabindex="-1" aria-hidden="true"></textarea>
+  <button id="up" class="btn" type="button" aria-label="Scroll to top of page"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#top"></use></svg></button>
+  <footer>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></footer>
+  <textarea name="ff" aria-hidden="true" tabindex="-1"></textarea>
   <script defer src="/js/script.js"></script>
 </body>
 </html>

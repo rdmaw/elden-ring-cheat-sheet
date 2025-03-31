@@ -2,67 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The ultimate guide for Elden Ring + DLC with step-by-step checklists for 100% completion. Covers all items, achievements, NPCs, quests, bosses and more.">
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eldenring.redmaw.dev">
   <meta property="og:title" content="Elden Ring Cheat Sheet: 100% Completion Guide & Checklists">
   <meta property="og:description" content="The ultimate guide for Elden Ring + DLC with step-by-step checklists for 100% completion. Covers all items, achievements, NPCs, quests, bosses and more.">
   <meta property="og:image" content="#">
   <meta property="og:image:alt" content="#">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://eldenring.redmaw.dev">
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary-large-image">
-  <meta property="twitter:title" content="Elden Ring Cheat Sheet: 100% Completion Guide & Checklists">
-  <meta property="twitter:description" content="The ultimate guide for Elden Ring + DLC with step-by-step checklists for 100% completion. Covers all items, achievements, NPCs, quests, bosses and more.">
-  <meta property="twitter:image" content="#">
-  <meta property="twitter:image:alt" content="#">
-  <!-- Structured Data -->
   <!-- TODO: Website Info, FAQ Info -->
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <!-- Links -->
   <link rel="stylesheet" href="/css/style.css">
-  <script>
-    const d = document.documentElement, t = "d" === localStorage.getItem("t"), c = localStorage.getItem("cb"); t && d.classList.add("dark"), c && "0" !== c && d.classList.add(c);
-  </script>
+  <script>const d=document.documentElement,t="d"===localStorage.getItem("t"),c=localStorage.getItem("cb");t&&d.classList.add("dark"),c&&"0"!==c&&d.classList.add(c);</script>
   <link rel="canonical" href="https://eldenring.redmaw.dev">
   <title>Elden Ring Cheat Sheet: 100% Completion Guide & Checklists</title>
 </head>
 <body>
-  <!-- TODO: Navbar -->
   <nav class="flex" aria-label="Global navigation">
     <div class="nav flex">
-      <button class="flex center" type="button" id="menu" aria-controls="sidebar" aria-label="Toggle navigation sidebar">
-        <svg aria-hidden="true">
-          <use href="/assets/icons/sprite.svg#menu"></use>
-        </svg>
-      </button>
+      <button id="menu" class="flex ac jc" type="button" aria-label="Toggle navigation sidebar" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#menu"></use></svg></button>
       <ul class="flex">
-        <li><a href="/">
-            <svg>
-              <use href="/assets/icons/sprite.svg#faq"></use>
-            </svg>
-            &nbsp;FAQ</a></li>
-        <li><a href="/options.html"><svg aria-hidden="true">
-              <use href="/assets/icons/sprite.svg#options"></use>
-            </svg>&nbsp;Options</a></li>
+        <li><a href="/"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#faq"></use></svg>&nbsp;FAQ</a></li>
+        <li><a href="/options.html"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#options"></use></svg>&nbsp;Options</a></li>
       </ul>
     </div>
   </nav>
-  <!-- TODO: Sidebar -->
-  <nav id="sidebar" class="sidebar" aria-label="Navigation sidebar" aria-hidden="true" inert>
-    <div class="sh flex">
+  <nav id="sidebar" class="sidebar flex" aria-label="Navigation sidebar" aria-hidden="true" inert>
+    <div class="sh flex jc ac">
       <h2>Sheets</h2>
-      <button class="close btn flex center" type="button" aria-controls="sidebar" aria-label="Close sidebar navigation">
-        <svg aria-hidden="true">
-          <use href="/assets/icons/sprite.svg#close"></use>
-        </svg>
-      </button>
+      <button class="close btn flex ac" type="button" aria-label="Close sidebar navigation" aria-controls="sidebar"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#close"></use></svg></button>
     </div>
     <ul class="sheets">
       <li><a href="/sheets/resources.html">Resources</a></li>
@@ -95,7 +68,7 @@
     <p>The <a href="/sheets/achievements.html">Achievements</a> sheet can be used to track what achievements and legendary items you have. Similarly, the <a href="/sheets/armaments.html">Armaments</a>, <a href="/sheets/armor.html">Armor</a>, <a href="/sheets/ashes.html">Ashes</a>, and <a href="/sheets/spells.html">Spells</a> sheets can be used to track items in their respective categories.</p>
     <p>For checklists on miscellaneous items, such as gestures, talismans, crystal tears, cookbooks etc., use the <a href="/sheets/key-items.html">Key Items</a> and <a href="/sheets/miscellaneous.html">Miscellaneous</a> sheets.</p>
     <p>If you're considering starting New Game Plus, make sure to check out the <a href="/sheets/new-game-plus.html">New Game Plus</a> sheet first to see if you've got everything you need.</p>
-    <p>Now that you know how the sheets work, <strong>press "q" on your keyboard to open up the Sheet menu</strong> and get started. Any checklist can be filtered by using the searchbar to only display items matching your search. You can also swap color themes in the <a href="/options.html">Options</a> page, if you're not a fan of the notebook colors.</p>
+    <p>Now that you know how the sheets work, <strong>press "q" on your keyboard to open up the Sheet menu</strong> and get started. Any checklist can be filtered by using the search bar to only display items matching your search. You can also swap color themes in the <a href="/options.html">Options</a> page, if you're not a fan of the notebook colors.</p>
     <h3>What's included in the walkthrough?</h3>
     <h4>The walkthrough <span class="r">DOES NOT INCLUDE</span>:</h4>
     <ul class="no">
@@ -120,7 +93,7 @@
     <h3>Will I get all achievements if I follow the guide?</h3>
     <p>Yes, all achievements will be naturally achieved during your playthrough if you're following the <a href="/sheets/walkthrough.html">Walkthrough</a>. No planning needed! If you want to track your achievements and legendary items, I recommend checking out the <a href="/sheets/achievements.html">Achievements</a> sheet.</p>
     <h3 id="missable">Are there any missable things in Elden Ring?</h3>
-    <p>Yes, many things in Elden Ring are missable. While most of them are quest-related, some achievements can be <strong class="r">permanently missed</strong> until your next playthrough. Every missable entry is clearly labeled <strong class="r">(Missable!)</strong>, so you can easily these entries with the search bar. Missable entries that don't give any item or reward are labeled <strong>(Optional)</strong>. You won't miss anything if you're following the <a href="/sheets/walkthrough.html">Walkthrough</a>.</p>
+    <p>Yes, many things in Elden Ring are missable. While most of them are quest-related, some achievements can be <strong class="r">permanently missed</strong> until your next playthrough. All missable entries are labeled <strong class="r">(Missable!)</strong>, so you can easily filter these with the search bar. Missable entries that don't give any item or reward are labeled <strong>(Optional)</strong>. You won't miss anything if you're following the <a href="/sheets/walkthrough.html">Walkthrough</a>.</p>
     <h3>How long does it take to 100% complete Elden Ring?</h3>
     <p>A 100% completion playthrough of Elden Ring following the walkthrough, assuming you get all three endings in a single playthrough, typically takes between <strong>60-90 hours</strong>. I personally dislike unnecessary backtracking, so the <a href="/sheets/walkthrough.html">Walkthrough</a> route is heavily optimized to avoid it, while still approaching the game in a natural order.</p>
     <h3>What level should I be for each area?</h3>
@@ -131,7 +104,7 @@
     <p>Elden Ring's compass uses <a href="https://en.wikipedia.org/wiki/Cardinal_direction">primary, intercardinal and secondary-intercardinal directions</a>. I strongly recommend keeping the compass HUD enabled as the walkthrough uses it to provide accurate directions. Below are the tiers used to help provide directions:</p>
     <ol class="compass">
       <li><strong>Primary Cardinal Directions:</strong>
-        <ul>
+        <ul class="list">
           <li>North (N)</li>
           <li>East (E)</li>
           <li>South (S)</li>
@@ -139,7 +112,7 @@
         </ul>
       </li>
       <li><strong>Intercardinal Directions:</strong>
-        <ul>
+        <ul class="list">
           <li>Northeast (NE)</li>
           <li>Southeast (SE)</li>
           <li>Southwest (SW)</li>
@@ -147,7 +120,7 @@
         </ul>
       </li>
       <li><strong>Secondary Intercardinal Directions:</strong>
-        <ul>
+        <ul class="list">
           <li>North-Northeast (NNE)</li>
           <li>East-Northeast (ENE)</li>
           <li>East-Southeast (ESE)</li>
@@ -181,14 +154,8 @@
       <li><a href="https://iforgottosave.github.io/bloodborne-cheat-sheet-complete-edition/">Bloodborne Cheat Sheet Complete Edition</a></li>
     </ul>
   </main>
-  <button id="up" class="btn" type="button" aria-label="Scroll to top of page">
-    <svg aria-hidden="true">
-      <use href="/assets/icons/sprite.svg#top"></use>
-    </svg>
-  </button>
-  <footer>
-    <p>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></p>
-  </footer>
+  <button id="up" class="btn" type="button" aria-label="Scroll to top of page"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#top"></use></svg></button>
+  <footer>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></footer>
   <script defer src="/js/script.js"></script>
 </body>
 </html>
