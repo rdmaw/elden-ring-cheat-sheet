@@ -1,10 +1,4 @@
-// TODO: Monitor autocomplete
-(function () {
-  const c = document.querySelectorAll('input[type="checkbox"]');
-  for (let i = 0, l = c.length; i < l; i++) c[i].autocomplete = 'off';
-})();
-
-// Cache root and declare defaults
+// Cache root and declare constants
 const root = document.documentElement;
 const theme = document.getElementById('theme');
 const cb = document.getElementById('cb');
@@ -60,13 +54,6 @@ const profileManager = {
   }
 };
 
-// Store checkbox state when clicked
-document.addEventListener('change', e => {
-  if (e.target.matches('input[type="checkbox"]')) {
-    profileManager.updateChecklistState(e.target.id, e.target.checked);
-  }
-});
-
 // Restore checked state from storage
 function restoreCheckboxes() {
   const { data } = profileManager.getCurrentProfile();
@@ -77,8 +64,31 @@ function restoreCheckboxes() {
   });
 }
 
+// TODO: Monitor autocomplete
+(function () {
+  const c = document.querySelectorAll('input[type="checkbox"]');
+  for (let i = 0, l = c.length; i < l; i++) c[i].autocomplete = 'off';
+})();
+
+
+// Store checkbox state when clicked
+document.addEventListener('change', e => {
+  if (e.target.matches('input[type="checkbox"]')) {
+    profileManager.updateChecklistState(e.target.id, e.target.checked);
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   restoreCheckboxes();
+
+  // Add blank and noopeners to all links
+  const links = document.querySelectorAll('a[href^="http"]');
+
+  for (let i = 0, len = links.length; i < len; i++) {
+    const link = links[i];
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  }
 
   // Handle theme switching - t = theme, d = dark, l = light
   if (theme) {
@@ -98,9 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const cbUpdate = () => {
       const value = cb.value;
       root.classList.remove(...cbRemove);
+
       if (value !== '0') {
         root.classList.add(value);
       }
+
       localStorage.setItem('cb', value);
     };
 
@@ -109,81 +121,106 @@ document.addEventListener('DOMContentLoaded', () => {
     cb.addEventListener('change', cbUpdate);
   }
 
-  // Add blank and noopeners to all links
-  const links = document.querySelectorAll('a[href^="http"]');
+  const menu = document.getElementById('menu');
+  const sidebar = document.getElementById('sidebar');
+  const close = sidebar.querySelector('.close');
 
-  for (let i = 0, len = links.length; i < len; i++) {
-    const link = links[i];
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-  }
-});
+  // Toggle sidebar functionality
+  function toggleSidebar() {
+    const hidden = sidebar.ariaHidden === 'true';
 
-const menu = document.getElementById('menu');
-const sidebar = document.getElementById('sidebar');
-const close = sidebar.querySelector('.close');
-
-// Toggle sidebar functionality
-function toggleSidebar() {
-  const hidden = sidebar.ariaHidden === 'true';
-
-  if (hidden) {
-    sidebar.ariaHidden = 'false';
-    menu.ariaExpanded = 'true';
-    sidebar.removeAttribute('inert');
-  } else {
-    menu.focus({ preventScroll: true });
-    sidebar.ariaHidden = 'true';
-    menu.ariaExpanded = 'false';
-    sidebar.setAttribute('inert', '');
-  }
-}
-
-menu.addEventListener('click', toggleSidebar);
-close.addEventListener('click', toggleSidebar);
-
-document.addEventListener('keydown', (e) => {
-  // Close sidebar with Esc
-  if (e.key === 'Escape' && sidebar.ariaHidden === 'false') {
-    toggleSidebar();
-  }
-
-  // Toggle sidebar with 'q'
-  if (e.key.toLowerCase() === 'q' && !e.ctrlKey && !e.metaKey) {
-    const active = document.activeElement;
-    const isFormControl = active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.tagName === 'SELECT';
-
-    if (!isFormControl) {
-      e.preventDefault();
-      toggleSidebar();
-      close.focus();
-    }
-  }
-});
-
-const up = document.getElementById('up');
-
-// Handle to-top button logic
-if (up) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY < 500) {
-      up.classList.remove('show');
+    if (hidden) {
+      sidebar.ariaHidden = 'false';
+      menu.ariaExpanded = 'true';
+      sidebar.removeAttribute('inert');
     } else {
-      up.classList.add('show');
+      menu.focus({ preventScroll: true });
+      sidebar.ariaHidden = 'true';
+      menu.ariaExpanded = 'false';
+      sidebar.setAttribute('inert', '');
     }
-  }, { passive: true });
+  }
 
-  up.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
+  menu.addEventListener('click', toggleSidebar);
+  close.addEventListener('click', toggleSidebar);
 
-    // TODO: Monitor focus with all pages
-    setTimeout(() => {
-      if (menu) {
-        menu.focus();
+  document.addEventListener('keydown', (e) => {
+    // Close sidebar with Esc
+    if (e.key === 'Escape' && sidebar.ariaHidden === 'false') {
+      toggleSidebar();
+    }
+
+    // Toggle sidebar with 'q'
+    if (e.key.toLowerCase() === 'q' && !e.ctrlKey && !e.metaKey) {
+      const active = document.activeElement;
+      const isFormControl = active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.tagName === 'SELECT';
+
+      if (!isFormControl) {
+        e.preventDefault();
+        toggleSidebar();
+        close.focus();
       }
-    }, 700);
+    }
   });
-}
+
+  const up = document.getElementById('up');
+
+  // Handle to-top button logic
+  if (up) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < 500) {
+        up.classList.remove('show');
+      } else {
+        up.classList.add('show');
+      }
+    }, { passive: true });
+
+    up.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+
+      // TODO: Monitor focus with all pages
+      setTimeout(() => {
+        if (menu) {
+          menu.focus();
+        }
+      }, 700);
+    });
+  }
+
+  // Handle collapse toggle
+  const col = document.querySelectorAll('.col');
+  const cl = document.querySelectorAll('.cl');
+  const colA = document.getElementById('col-a');
+  const expA = document.getElementById('exp-a');
+
+  col.forEach((button, i) => {
+    const ul = cl[i];
+
+    if (ul) {
+      ul.classList.toggle('z', button.ariaExpanded === 'false');
+      
+      button.addEventListener('click', () => {
+        button.ariaExpanded = button.ariaExpanded !== 'true';
+        ul.classList.toggle('z', button.ariaExpanded === 'false');
+      });
+    }
+  });
+
+  expA?.addEventListener('click',  () => {
+    col.forEach((button, i) => {
+      button.ariaExpanded = 'true';
+      cl[i].classList.remove('z');
+    });
+  });
+
+  colA?.addEventListener('click', () => {
+    col.forEach((button, i) => {
+      button.ariaExpanded = 'false';
+      cl[i].classList.add('z');
+    });
+  });
+
+});

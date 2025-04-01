@@ -160,6 +160,8 @@ h2, h3 {
 
 h3 {
   font-size: 1.5rem;
+  display: flex;
+  gap: var(--r3);
 }
 
 h4 {
@@ -181,10 +183,6 @@ ol {
 
 ul {
   list-style-type: none;
-
-  & li ul {
-    padding-left: var(--r7);
-  }
 }
 
 a {
@@ -373,7 +371,7 @@ main {
 }
 
 footer {
-  margin-bottom: var(--r2);
+  padding: var(--r5) 0 var(--r2);
 }
 
 /* FAQ 
@@ -411,18 +409,51 @@ footer {
   }
 }
 
+#search {
+  width: 100%;
+  padding: var(--r2) var(--r2);
+}
+
+.col {
+  position: relative;
+  width: 2.375rem;
+  height: 1.875rem;
+  flex-shrink: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border: solid var(--h);
+    border-width: 0 3px 3px 0;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform .1s ease;
+  }
+
+  &[aria-expanded="true"]::before {
+    transform: translateY(2px) rotate(-135deg);
+  }
+}
+
+.cl li ul {
+  padding-left: var(--r7);
+}
+
 label {
   display: inline-block;
-  padding-left: var(--r7);
+  padding-left: 3rem;
   padding-top: 0.3rem;
 }
 
 input[type="checkbox"] {
+  position: absolute;
+  left: var(--r5);
+  top: .5rem;
   width: 1.125rem;
   height: 1.125rem;
-  position: absolute;
-  left: 0;
-  top: .5rem;
   accent-color: var(--c);
 }
 
@@ -453,12 +484,12 @@ input[type="checkbox"]:hover {
 .ac { align-items: center; }
 .jc { justify-content: center; }
 header, footer { text-align: center; }
-.list { list-style-type: disc; margin: var(--r2) 0 var(--r2) var(--r7); }
+.disc { list-style-type: disc; margin: var(--r2) 0 var(--r2) var(--r7); }
 .r, .no li::marker { color: var(--r); }
 .g, .yes li::marker { color: var(--g); }
 .p { color: var(--p); }
 .o { color: var(--o); }
-.h, h1, h2, h3, h3 a, h4, strong, nav a, footer a, .lead, .toc a, #menu svg, .close svg { color: var(--h); }
+.h, h1, h2, h3, h3 a, h4, h4 a, strong, nav a, footer a, .lead, .toc a, #menu svg, .close svg { color: var(--h); }
 
 /* REPETITION 
 ------------- */
@@ -467,7 +498,7 @@ h1, h2, h3, h4, nav a, input, button, kbd, samp, select, .lead { line-height: 1.
 h1, h2, h3, h4, p, a { overflow-wrap: break-word; }
 h1, h2, h3, h4, nav a, .lead, .toc a { text-wrap: balance; }
 header h1, h2, strong { font-weight: 700; }
-.sh h2, h3, h4, a, samp { font-weight: 600; }
+.sh h2, .toc h2, h3, h4, a, samp { font-weight: 600; }
 select, button, input[type="checkbox"], label { cursor: pointer; }
 li { position: relative;}
-textarea[name="ff"]{ display: none; }
+textarea[name="ff"], .z { display: none; }
