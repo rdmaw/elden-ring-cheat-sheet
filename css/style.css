@@ -185,6 +185,10 @@ ul {
   list-style-type: none;
 }
 
+li ul {
+  padding-left: var(--r7);
+}
+
 a {
   color: var(--a);
   text-decoration: none;
@@ -438,10 +442,6 @@ footer {
   }
 }
 
-.cl li ul {
-  padding-left: var(--r7);
-}
-
 label {
   display: inline-block;
   padding-left: 3rem;
@@ -501,4 +501,4 @@ header h1, h2, strong { font-weight: 700; }
 .sh h2, .toc h2, h3, h4, a, samp { font-weight: 600; }
 select, button, input[type="checkbox"], label { cursor: pointer; }
 li { position: relative;}
-textarea[name="ff"], .z { display: none; }
+textarea[name="ff"], .z { display: none !important; }

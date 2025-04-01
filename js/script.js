@@ -1,7 +1,5 @@
-// Cache root and declare constants
+// Profile keys and cache root
 const root = document.documentElement;
-const theme = document.getElementById('theme');
-const cb = document.getElementById('cb');
 const PROFILE_KEY = 'er';
 const DEFAULT_PROFILE = 'default';
 
@@ -9,8 +7,8 @@ const DEFAULT_PROFILE = 'default';
 function initializeProfiles() {
   const defaultProfile = {
     [DEFAULT_PROFILE]: {
-      data: {}
-      // TODO: Future data to be stored
+      data: {},
+      col: {}
     }
   };
 
@@ -19,6 +17,7 @@ function initializeProfiles() {
     if (!profiles) return defaultProfile;
 
     if (profiles[DEFAULT_PROFILE]?.data &&
+      profiles[DEFAULT_PROFILE]?.col &&
       !Object.keys(defaultProfile[DEFAULT_PROFILE])
         .some(key => !(key in profiles[DEFAULT_PROFILE]))) {
       return profiles;
@@ -51,6 +50,22 @@ const profileManager = {
       delete profiles[DEFAULT_PROFILE].data[id];
 
     localStorage.setItem(PROFILE_KEY, JSON.stringify(profiles));
+  },
+
+  updateExpanded(id, expanded) {
+    if (!id) return;
+    const profiles = initializeProfiles();
+
+    if (!profiles[DEFAULT_PROFILE].col) profiles[DEFAULT_PROFILE].col = {};
+    
+    expanded ? delete profiles[DEFAULT_PROFILE].col[id] : profiles[DEFAULT_PROFILE].col[id] = 1;
+
+    localStorage.setItem(PROFILE_KEY, JSON.stringify(profiles));
+  },
+
+  getExpanded() {
+    const profile = this.getCurrentProfile();
+    return profile.col || {};
   }
 };
 
@@ -73,15 +88,13 @@ function restoreCheckboxes() {
 
 // Store checkbox state when clicked
 document.addEventListener('change', e => {
-  if (e.target.matches('input[type="checkbox"]')) {
-    profileManager.updateChecklistState(e.target.id, e.target.checked);
-  }
+  if (e.target.matches('input[type="checkbox"]')) profileManager.updateChecklistState(e.target.id, e.target.checked);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   restoreCheckboxes();
 
-  // Add blank and noopeners to all links
+  // Open every external link in new tab
   const links = document.querySelectorAll('a[href^="http"]');
 
   for (let i = 0, len = links.length; i < len; i++) {
@@ -90,7 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
     link.rel = 'noopener noreferrer';
   }
 
-  // Handle theme switching - t = theme, d = dark, l = light
+  // Handle color theme switching - t = theme, d = dark, l = light, cb = colorblind
+  const theme = document.getElementById('theme');
+  const cb = document.getElementById('cb');
+
   if (theme) {
     theme.value = localStorage.getItem('t') || 'l';
 
@@ -101,18 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle color blindness
   if (cb) {
     const cbRemove = ['pro', 'deu', 'tri', 'ach'];
 
     const cbUpdate = () => {
       const value = cb.value;
       root.classList.remove(...cbRemove);
-
-      if (value !== '0') {
-        root.classList.add(value);
-      }
-
+      if (value !== '0') root.classList.add(value);
       localStorage.setItem('cb', value);
     };
 
@@ -121,11 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
     cb.addEventListener('change', cbUpdate);
   }
 
+  // Toggle sidebar functionality
   const menu = document.getElementById('menu');
   const sidebar = document.getElementById('sidebar');
   const close = sidebar.querySelector('.close');
 
-  // Toggle sidebar functionality
   function toggleSidebar() {
     const hidden = sidebar.ariaHidden === 'true';
 
@@ -146,9 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (e) => {
     // Close sidebar with Esc
-    if (e.key === 'Escape' && sidebar.ariaHidden === 'false') {
-      toggleSidebar();
-    }
+    if (e.key === 'Escape' && sidebar.ariaHidden === 'false') toggleSidebar();
 
     // Toggle sidebar with 'q'
     if (e.key.toLowerCase() === 'q' && !e.ctrlKey && !e.metaKey) {
@@ -163,64 +172,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Handle to-top button logic
   const up = document.getElementById('up');
 
-  // Handle to-top button logic
   if (up) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY < 500) {
-        up.classList.remove('show');
-      } else {
-        up.classList.add('show');
-      }
-    }, { passive: true });
+    const scroll = () => up.classList.toggle('show', window.scrollY > 500);
+    window.addEventListener('scroll', scroll, { passive: true });
+    scroll();
 
     up.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      })
-
-      // TODO: Monitor focus with all pages
-      setTimeout(() => {
-        if (menu) {
-          menu.focus();
-        }
-      }, 700);
+      window.scrollTo({ top: 0, behavior: 'smooth'});
+      setTimeout(() => menu?.focus(), 700);
     });
   }
 
-  // Handle collapse toggle
+  // Handle collapse/expand functionality
   const col = document.querySelectorAll('.col');
-  const cl = document.querySelectorAll('.cl');
-  const colA = document.getElementById('col-a');
   const expA = document.getElementById('exp-a');
+  const colA = document.getElementById('col-a');
+  const ulMap = new Map();
 
-  col.forEach((button, i) => {
-    const ul = cl[i];
+  for (const btn of col) {
+    const ulId = btn.getAttribute('aria-controls');
+    const ul = document.getElementById(ulId);
+    if (!ul) continue;
+    ulMap.set(btn, ul);
 
-    if (ul) {
-      ul.classList.toggle('z', button.ariaExpanded === 'false');
-      
-      button.addEventListener('click', () => {
-        button.ariaExpanded = button.ariaExpanded !== 'true';
-        ul.classList.toggle('z', button.ariaExpanded === 'false');
-      });
-    }
-  });
+    const isCollapsed = !!profileManager.getExpanded()[ulId];
+    btn.ariaExpanded = String(!isCollapsed);
+    ul.classList.toggle('z', isCollapsed);
 
-  expA?.addEventListener('click',  () => {
-    col.forEach((button, i) => {
-      button.ariaExpanded = 'true';
-      cl[i].classList.remove('z');
+    btn.addEventListener('click', () => {
+      const shouldExpand = btn.ariaExpanded !== 'true';
+      btn.ariaExpanded = String(shouldExpand);
+      ul.classList.toggle('z', !shouldExpand);
+      profileManager.updateExpanded(ulId, shouldExpand);
     });
-  });
+  }
 
-  colA?.addEventListener('click', () => {
-    col.forEach((button, i) => {
-      button.ariaExpanded = 'false';
-      cl[i].classList.add('z');
+  document.querySelector('style[data-c]')?.remove();
+
+  const toggleAll = (expand) => {
+    ulMap.forEach((ul, btn) => {
+      const ulId = btn.getAttribute('aria-controls');
+      btn.ariaExpanded = String(expand);
+      ul.classList.toggle('z', !expand);
+      profileManager.updateExpanded(ulId, expand);
     });
-  });
+  };
+
+  expA?.addEventListener('click', () => toggleAll(true));
+  colA?.addEventListener('click', () => toggleAll(false));
 
 });
