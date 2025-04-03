@@ -77,8 +77,56 @@ function restoreCheckboxes() {
   checkboxes.forEach(checkbox => {
     const checked = !!data[checkbox.id];
     checkbox.checked = checked;
-    checkbox.closest('li').classList.toggle('q', checked);
+    checkbox.closest('li').classList.toggle('c', checked);
   });
+}
+
+// Calculate totals
+function calculateTotals() {
+  const firstCheckbox = document.querySelector('input[type="checkbox"]');
+  if (!firstCheckbox) return;
+  const prefix = firstCheckbox.id.charAt(0);
+  const totalAll = document.getElementById(`${prefix}-ot`);
+  if (!totalAll) return;
+  const sectionSpans = document.querySelectorAll(`span[id^="${prefix}-t"]`);
+  const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+
+  const sectionMap = allCheckboxes.reduce((map, checkbox) => {
+    const section = checkbox.id.slice(prefix.length).split('-')[0];
+    if (!map.has(section)) map.set(section, []);
+    map.get(section).push(checkbox);
+    return map;
+  }, new Map());
+
+  let overallChecked = 0;
+  let overallTotal = 0;
+
+  sectionSpans.forEach(span => {
+    const section = span.id.split('-t')[1];
+    const checkboxes = sectionMap.get(section) || [];
+    const checked = checkboxes.filter(cb => cb.checked).length;
+    const total = checkboxes.length;
+
+    span.classList.remove('d', 'x');
+
+    if (total > 0) {
+      span.textContent = checked === total ? 'DONE' : `${checked}/${total}`;
+      span.classList.add(checked === total ? 'd' : 'x');
+    } else {
+      span.textContent = '0/0';
+      span.classList.add('x');
+    }
+    overallChecked += checked;
+    overallTotal += total;
+  });
+  totalAll.classList.remove('d', 'x');
+  if (overallTotal > 0) {
+    totalAll.textContent = overallChecked === overallTotal ? 'DONE' : `${overallChecked}/${overallTotal}`;
+    totalAll.classList.add(overallChecked === overallTotal ? 'd' : 'x');
+  } else {
+    totalAll.textContent = '0/0';
+    totalAll.classList.add('x');
+  }
 }
 
 // TODO: Monitor autocomplete
@@ -91,13 +139,15 @@ function restoreCheckboxes() {
 // Store checkbox state when clicked
 document.addEventListener('change', e => {
   if (e.target.matches('input[type="checkbox"]')) {
-    e.target.closest('li').classList.toggle('q', e.target.checked);
+    e.target.closest('li').classList.toggle('c', e.target.checked);
     profileManager.updateChecklistState(e.target.id, e.target.checked);
+    calculateTotals();
   }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   restoreCheckboxes();
+  calculateTotals();
 
   // Open every external link in new tab
   const links = document.querySelectorAll('a[href^="http"]');
@@ -205,12 +255,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isCollapsed = !!profileManager.getExpanded()[ulId];
     btn.ariaExpanded = String(!isCollapsed);
-    ul.classList.toggle('z', isCollapsed);
+    ul.classList.toggle('f', isCollapsed);
 
     btn.addEventListener('click', () => {
       const shouldExpand = btn.ariaExpanded !== 'true';
       btn.ariaExpanded = String(shouldExpand);
-      ul.classList.toggle('z', !shouldExpand);
+      ul.classList.toggle('f', !shouldExpand);
       profileManager.updateExpanded(ulId, shouldExpand);
     });
   }
@@ -221,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ulMap.forEach((ul, btn) => {
       const ulId = btn.getAttribute('aria-controls');
       btn.ariaExpanded = String(expand);
-      ul.classList.toggle('z', !expand);
+      ul.classList.toggle('f', !expand);
       profileManager.updateExpanded(ulId, expand);
     });
   };
