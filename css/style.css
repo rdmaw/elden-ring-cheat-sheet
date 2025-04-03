@@ -173,7 +173,7 @@ p {
   text-wrap: pretty;
 }
 
-ol, footer {
+ol, footer, #hide {
   font-size: .9rem;
 }
 
@@ -315,7 +315,7 @@ nav {
   border-left-width: 0;
   border-radius: 0 10px 10px 0;
   transform: translateX(-103%);
-  z-index: 1;
+  z-index: 2;
 
   &[aria-hidden="false"] {
     transform: translateX(0);
@@ -418,6 +418,28 @@ footer {
   padding: var(--r2) var(--r2);
 }
 
+#hide {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  /* gap: var(--r1); */
+  z-index: 1;
+}
+
+#showSvg, .hide #hideSvg {
+  display: block;
+}
+
+#hideSvg, .hide #showSvg {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  #hide span {
+   display: none; 
+  }
+}
+
 .col {
   position: relative;
   width: 2.375rem;
@@ -445,7 +467,7 @@ footer {
 label {
   display: inline-block;
   padding-left: 3rem;
-  padding-top: 0.3rem;
+  padding-top: .3rem;
 }
 
 input[type="checkbox"] {
@@ -501,4 +523,4 @@ header h1, h2, strong { font-weight: 700; }
 .sh h2, .toc h2, h3, h4, a, samp { font-weight: 600; }
 select, button, input[type="checkbox"], label { cursor: pointer; }
 li { position: relative;}
-textarea[name="ff"], .z { display: none !important; }
+textarea[name="ff"], .z, .hide .q > label, .hide .q > input[type="checkbox"] { display: none !important; }

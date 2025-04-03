@@ -75,7 +75,9 @@ function restoreCheckboxes() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
   checkboxes.forEach(checkbox => {
-    checkbox.checked = !!data[checkbox.id];
+    const checked = !!data[checkbox.id];
+    checkbox.checked = checked;
+    checkbox.closest('li').classList.toggle('q', checked);
   });
 }
 
@@ -88,7 +90,10 @@ function restoreCheckboxes() {
 
 // Store checkbox state when clicked
 document.addEventListener('change', e => {
-  if (e.target.matches('input[type="checkbox"]')) profileManager.updateChecklistState(e.target.id, e.target.checked);
+  if (e.target.matches('input[type="checkbox"]')) {
+    e.target.closest('li').classList.toggle('q', e.target.checked);
+    profileManager.updateChecklistState(e.target.id, e.target.checked);
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -223,5 +228,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   expA?.addEventListener('click', () => toggleAll(true));
   colA?.addEventListener('click', () => toggleAll(false));
+
+  // Hide completed checkboxes
+  const hide = document.getElementById('hide');
+
+  if (hide) {
+    const hideTxt = hide.querySelector('span');
+    const isHidden = localStorage.getItem('hide') === '1';
+    root.classList.toggle('hide', isHidden);
+    hideTxt.textContent = isHidden ? 'Show Completed' : 'Hide Completed';
+
+    hide.addEventListener('click', () => {
+      const shouldHide = !root.classList.contains('hide');
+      root.classList.toggle('hide', shouldHide);
+      hideTxt.textContent = shouldHide ? 'Show Completed' : 'Hide Completed';
+      localStorage.setItem('hide', shouldHide ? '1' : '0');
+    });
+  }
 
 });
