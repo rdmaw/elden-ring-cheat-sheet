@@ -1,77 +1,59 @@
 // Profile keys and cache root
-const PROFILE_KEY = 'er';
-const DEFAULT_PROFILE = 'default';
+const key = 'er';
+const D = 'default';
 const root = document.documentElement;
 
-// Initialize default profile with checks if doesn't exist
-function initializeProfiles() {
-  const defaultProfile = {
-    [DEFAULT_PROFILE]: {
-      data: {},
-      col: {}
-    }
-  };
+// Initialize default profile, p = profile, def = default
+function initProfile() {
+  const def = { [D]: { data: {}, col: {} } };
 
   try {
-    const profiles = JSON.parse(localStorage.getItem(PROFILE_KEY));
-    if (!profiles) return defaultProfile;
+    const p = JSON.parse(localStorage.getItem(key)) ?? def;
 
-    if (profiles[DEFAULT_PROFILE]?.data &&
-      profiles[DEFAULT_PROFILE]?.col &&
-      !Object.keys(defaultProfile[DEFAULT_PROFILE])
-        .some(key => !(key in profiles[DEFAULT_PROFILE]))) {
-      return profiles;
+    if (p[D]?.data &&
+      p[D]?.col &&
+      typeof p[D] === 'object' &&
+      !Object.keys(def[D]).some(key => !(key in p[D]))) {
+      return p;
     }
 
-    profiles[DEFAULT_PROFILE] = {
-      ...defaultProfile[DEFAULT_PROFILE],
-      ...profiles[DEFAULT_PROFILE]
-    };
-
-    localStorage.setItem(PROFILE_KEY, JSON.stringify(profiles));
-    return profiles;
-
-  } catch {
-    return defaultProfile;
+    localStorage.setItem(key, JSON.stringify({ ...p, [D]: { ...def[D], ...p[D] } }));
+    return { ...p, [D]: { ...def[D], ...p[D] } };
+  } catch (e) {
+    console.error('Error initializing profile:', e);
+    return def;
   }
 }
 
-const profileManager = {
-  getCurrentProfile() {
-    return initializeProfiles()[DEFAULT_PROFILE];
+// Manage profile data
+const mgr = {
+  get() {
+    return initProfile()[D];
   },
 
-  updateChecklistState(id, checked) {
+  setCl(id, checked) {
     if (!id) return;
-    const profiles = initializeProfiles();
-
-    checked ?
-      profiles[DEFAULT_PROFILE].data[id] = 1 :
-      delete profiles[DEFAULT_PROFILE].data[id];
-
-    localStorage.setItem(PROFILE_KEY, JSON.stringify(profiles));
+    const p = initProfile();
+    checked ? p[D].data[id] = 1 : delete p[D].data[id];
+    localStorage.setItem(key, JSON.stringify(p));
   },
 
-  updateExpanded(id, expanded) {
+  setCol(id, expanded) {
     if (!id) return;
-    const profiles = initializeProfiles();
-
-    if (!profiles[DEFAULT_PROFILE].col) profiles[DEFAULT_PROFILE].col = {};
-    
-    expanded ? delete profiles[DEFAULT_PROFILE].col[id] : profiles[DEFAULT_PROFILE].col[id] = 1;
-
-    localStorage.setItem(PROFILE_KEY, JSON.stringify(profiles));
+    const p = initProfile();
+    if (!p[D].col) p[D].col = {};
+    expanded ? delete p[D].col[id] : p[D].col[id] = 1;
+    localStorage.setItem(key, JSON.stringify(p));
   },
 
-  getExpanded() {
-    const profile = this.getCurrentProfile();
-    return profile.col || {};
+  col() {
+    return this.get().col || {};
   }
 };
 
 // Restore checked state from storage
 function restoreCheckboxes() {
-  const { data } = profileManager.getCurrentProfile();
+  const { data } = mgr.get();
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
   checkboxes.forEach(checkbox => {
@@ -122,16 +104,16 @@ function calculateTotals() {
   for (let i = 0, l = c.length; i < l; i++) c[i].autocomplete = 'off';
 })();
 
-
 // Store checkbox state when clicked
 document.addEventListener('change', e => {
   if (e.target.matches('input[type="checkbox"]')) {
     e.target.closest('li').classList.toggle('c', e.target.checked);
-    profileManager.updateChecklistState(e.target.id, e.target.checked);
+    mgr.setCl(e.target.id, e.target.checked);
     calculateTotals();
   }
 });
 
+// After DOM load
 document.addEventListener('DOMContentLoaded', () => {
   restoreCheckboxes();
   calculateTotals();
@@ -240,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!ul) continue;
     ulMap.set(btn, ul);
 
-    const isCollapsed = !!profileManager.getExpanded()[ulId];
+    const isCollapsed = !!mgr.col()[ulId];
     btn.ariaExpanded = String(!isCollapsed);
     ul.classList.toggle('f', isCollapsed);
 
@@ -248,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const shouldExpand = btn.ariaExpanded !== 'true';
       btn.ariaExpanded = String(shouldExpand);
       ul.classList.toggle('f', !shouldExpand);
-      profileManager.updateExpanded(ulId, shouldExpand);
+      mgr.setCol(ulId, shouldExpand);
     });
   }
 
@@ -259,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const ulId = btn.getAttribute('aria-controls');
       btn.ariaExpanded = String(expand);
       ul.classList.toggle('f', !expand);
-      profileManager.updateExpanded(ulId, expand);
+      mgr.setCol(ulId, expand);
     });
   };
 
@@ -280,6 +262,31 @@ document.addEventListener('DOMContentLoaded', () => {
       root.classList.toggle('hide', shouldHide);
       hideTxt.textContent = shouldHide ? 'Show Completed' : 'Hide Completed';
       localStorage.setItem('hide', shouldHide ? '1' : '0');
+    });
+  }
+
+  // NG+ Reset
+
+  // Delete profile
+  const delBtn = document.getElementById('del');
+
+  if (delBtn) {
+    delBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to delete this profile? This cannot be undone.')) {
+        const p = initProfile();
+        const current = document.getElementById('profile').value || D;
+
+        if (current === D) {
+          p[D] = {
+            data: {},
+            col: {}
+          };
+        } else {
+          delete p[current];
+        }
+        localStorage.setItem(key, JSON.stringify(p));
+        window.location.reload();
+      }
     });
   }
 
