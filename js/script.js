@@ -1,7 +1,7 @@
 // Profile keys and cache root
-const root = document.documentElement;
 const PROFILE_KEY = 'er';
 const DEFAULT_PROFILE = 'default';
+const root = document.documentElement;
 
 // Initialize default profile with checks if doesn't exist
 function initializeProfiles() {
@@ -93,13 +93,11 @@ function calculateTotals() {
 
   const sectionMap = allCheckboxes.reduce((map, checkbox) => {
     const section = checkbox.id.slice(prefix.length).split('-')[0];
-    if (!map.has(section)) map.set(section, []);
-    map.get(section).push(checkbox);
+    map.has(section) ? map.get(section).push(checkbox) : map.set(section, [checkbox]);
     return map;
   }, new Map());
 
-  let overallChecked = 0;
-  let overallTotal = 0;
+  let overallChecked = 0, overallTotal = 0;
 
   sectionSpans.forEach(span => {
     const section = span.id.split('-t')[1];
@@ -107,26 +105,15 @@ function calculateTotals() {
     const checked = checkboxes.filter(cb => cb.checked).length;
     const total = checkboxes.length;
 
-    span.classList.remove('d', 'x');
-
-    if (total > 0) {
-      span.textContent = checked === total ? 'DONE' : `${checked}/${total}`;
-      span.classList.add(checked === total ? 'd' : 'x');
-    } else {
-      span.textContent = '0/0';
-      span.classList.add('x');
-    }
+    span.classList.remove('d');
+    span.textContent = total ? `${checked === total ? 'DONE' : `${checked}/${total}`}` : '0/0';
+    if (checked === total && total > 0) span.classList.add('d');
     overallChecked += checked;
     overallTotal += total;
   });
-  totalAll.classList.remove('d', 'x');
-  if (overallTotal > 0) {
-    totalAll.textContent = overallChecked === overallTotal ? 'DONE' : `${overallChecked}/${overallTotal}`;
-    totalAll.classList.add(overallChecked === overallTotal ? 'd' : 'x');
-  } else {
-    totalAll.textContent = '0/0';
-    totalAll.classList.add('x');
-  }
+  totalAll.classList.remove('d');
+  totalAll.textContent = overallTotal ? `${overallChecked === overallTotal ? 'DONE' : `${overallChecked}/${overallTotal}`}` : '0/0';
+  if (overallChecked === overallTotal && overallTotal > 0) totalAll.classList.add('d');
 }
 
 // TODO: Monitor autocomplete
