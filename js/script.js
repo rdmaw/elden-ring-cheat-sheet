@@ -2,23 +2,17 @@
 const key = 'er';
 const D = 'default';
 const root = document.documentElement;
+let A = localStorage.getItem('current') || D;
 
-// Initialize default profile, p = profile, def = default
+// Initialize default profile, p = profile, def = default, A = active
 function initProfile() {
   const def = { [D]: { data: {}, col: {} } };
 
   try {
     const p = JSON.parse(localStorage.getItem(key)) ?? def;
-
-    if (p[D]?.data &&
-      p[D]?.col &&
-      typeof p[D] === 'object' &&
-      !Object.keys(def[D]).some(key => !(key in p[D]))) {
-      return p;
-    }
-
-    localStorage.setItem(key, JSON.stringify({ ...p, [D]: { ...def[D], ...p[D] } }));
-    return { ...p, [D]: { ...def[D], ...p[D] } };
+    p[D] = {...def[D], ...p[D]};
+    localStorage.setItem(key, JSON.stringify(p));
+    return p;
   } catch (e) {
     console.error('Error initializing profile:', e);
     return def;
@@ -28,21 +22,23 @@ function initProfile() {
 // Manage profile data
 const mgr = {
   get() {
-    return initProfile()[D];
+    return initProfile()[A] || initProfile()[D];
   },
 
   setCl(id, checked) {
     if (!id) return;
     const p = initProfile();
-    checked ? p[D].data[id] = 1 : delete p[D].data[id];
+    if (!p[A]) p[A] = { data: {}, col: {} };
+    checked ? p[A].data[id] = 1 : delete p[A].data[id];
     localStorage.setItem(key, JSON.stringify(p));
   },
 
   setCol(id, expanded) {
     if (!id) return;
     const p = initProfile();
-    if (!p[D].col) p[D].col = {};
-    expanded ? delete p[D].col[id] : p[D].col[id] = 1;
+    if (!p[A]) p[A] = { data: {}, col: {} };
+    if (!p[A].col) p[A].col = {};
+    expanded ? delete p[A].col[id] : p[A].col[id] = 1;
     localStorage.setItem(key, JSON.stringify(p));
   },
 
@@ -156,6 +152,62 @@ document.addEventListener('DOMContentLoaded', () => {
     cb.addEventListener('change', cbUpdate);
   }
 
+  // Profile management
+  const select = document.getElementById('profile');
+  const add = document.getElementById('add');
+  const p = initProfile();
+
+  // Populate profiles
+  function populateProfiles() {
+    if (!select) return;
+    select.innerHTML = '';
+    select.add(new Option('Default', D));
+
+    Object.keys(p).sort().filter(name => name !== D).forEach(name => select.add(new Option(name, name)));
+    select.value = A;
+  }
+  populateProfiles();
+
+  // Switch profile
+  if (select) {
+    select.addEventListener('change', () => {
+      const selected = select.value || D;
+      A = selected;
+
+      if (selected === D) {
+        localStorage.removeItem('current');
+      } else {
+        localStorage.setItem('current', selected);
+      }
+      if (!p[selected]) {
+        p[selected] = { data: {}, col: {} };
+      }
+    });
+  }
+
+  // Create profile
+  if (add) {
+    add.addEventListener('click', () => {
+      const name = prompt('Enter profile name:');
+      if (!name) return;
+      if (name.toLowerCase() === D.toLowerCase()) {
+        alert('Profile name cannot be default.');
+        return;
+      }
+      if (p[name]) {
+        alert('Profile already exists.');
+        return;
+      }
+
+      p[name] = { data: {}, col: {} };
+      localStorage.setItem(key, JSON.stringify(p));
+      populateProfiles();
+      select.value = name;
+      A = name;
+      localStorage.setItem('current', name);
+    });
+  }
+
   // Toggle sidebar functionality
   const menu = document.getElementById('menu');
   const sidebar = document.getElementById('sidebar');
@@ -223,12 +275,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ulMap.set(btn, ul);
 
     const isCollapsed = !!mgr.col()[ulId];
-    btn.ariaExpanded = String(!isCollapsed);
+    btn.ariaExpanded = !isCollapsed;
     ul.classList.toggle('f', isCollapsed);
 
     btn.addEventListener('click', () => {
       const shouldExpand = btn.ariaExpanded !== 'true';
-      btn.ariaExpanded = String(shouldExpand);
+      btn.ariaExpanded = shouldExpand;
       ul.classList.toggle('f', !shouldExpand);
       mgr.setCol(ulId, shouldExpand);
     });
@@ -239,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleAll = (expand) => {
     ulMap.forEach((ul, btn) => {
       const ulId = btn.getAttribute('aria-controls');
-      btn.ariaExpanded = String(expand);
+      btn.ariaExpanded = expand;
       ul.classList.toggle('f', !expand);
       mgr.setCol(ulId, expand);
     });
@@ -262,31 +314,6 @@ document.addEventListener('DOMContentLoaded', () => {
       root.classList.toggle('hide', shouldHide);
       hideTxt.textContent = shouldHide ? 'Show Completed' : 'Hide Completed';
       localStorage.setItem('hide', shouldHide ? '1' : '0');
-    });
-  }
-
-  // NG+ Reset
-
-  // Delete profile
-  const delBtn = document.getElementById('del');
-
-  if (delBtn) {
-    delBtn.addEventListener('click', () => {
-      if (confirm('Are you sure you want to delete this profile? This cannot be undone.')) {
-        const p = initProfile();
-        const current = document.getElementById('profile').value || D;
-
-        if (current === D) {
-          p[D] = {
-            data: {},
-            col: {}
-          };
-        } else {
-          delete p[current];
-        }
-        localStorage.setItem(key, JSON.stringify(p));
-        window.location.reload();
-      }
     });
   }
 
