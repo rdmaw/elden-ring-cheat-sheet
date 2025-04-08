@@ -152,61 +152,69 @@ document.addEventListener('DOMContentLoaded', () => {
     cb.addEventListener('change', cbUpdate);
   }
 
-  // Profile management
+  // Populate profiles
   const select = document.getElementById('profile');
   const add = document.getElementById('add');
+  const edit = document.getElementById('edit');
   const p = initProfile();
 
-  // Populate profiles
   function populateProfiles() {
     if (!select) return;
     select.innerHTML = '';
     select.add(new Option('Default', D));
-
     Object.keys(p).sort().filter(name => name !== D).forEach(name => select.add(new Option(name, name)));
     select.value = A;
   }
   populateProfiles();
 
   // Switch profile
-  if (select) {
-    select.addEventListener('change', () => {
-      const selected = select.value || D;
-      A = selected;
-
-      if (selected === D) {
-        localStorage.removeItem('current');
-      } else {
-        localStorage.setItem('current', selected);
-      }
-      if (!p[selected]) {
-        p[selected] = { data: {}, col: {} };
-      }
-    });
-  }
+  select?.addEventListener('change', () => {
+    const selected = select.value || D;
+    A = selected;
+    selected === D ? localStorage.removeItem('current') : localStorage.setItem('current', selected);
+    if (!p[selected]) p[selected] = { data: {}, col: {} };
+  });
 
   // Create profile
-  if (add) {
-    add.addEventListener('click', () => {
-      const name = prompt('Enter profile name:');
-      if (!name) return;
-      if (name.toLowerCase() === D.toLowerCase()) {
-        alert('Profile name cannot be default.');
-        return;
-      }
-      if (p[name]) {
-        alert('Profile already exists.');
-        return;
-      }
+  add?.addEventListener('click', () => {
+    const name = prompt('Enter profile name:')?.trim();
+    if (!name) return;
+    if (name.toLowerCase() === 'default' || p[name]) {
+      alert(name.toLowerCase() === 'default' ? 'Profile name cannot be default.' : 'Profile already exists.');
+      return;
+    }
 
-      p[name] = { data: {}, col: {} };
-      localStorage.setItem(key, JSON.stringify(p));
-      populateProfiles();
-      select.value = name;
-      A = name;
-      localStorage.setItem('current', name);
-    });
-  }
+    p[name] = { data: {}, col: {} };
+    A = name;
+    localStorage.setItem(key, JSON.stringify(p));
+    localStorage.setItem('current', name);
+    select.value = name;
+    populateProfiles();
+  });
+
+  // Edit profile
+  edit?.addEventListener('click', () => {
+    const current = select.value;
+    if (current === D) {
+      alert('Cannot edit default profile.');
+      return;
+    }
+
+    const name = prompt('Enter new profile name:', current)?.trim();
+    if (!name || name === current) return;
+    if (name.toLowerCase() === 'default' || p[name]) {
+      alert(name.toLowerCase() === 'default' ? 'Cannot use default as profile name.' : 'Profile already exists.');
+      return;
+    }
+
+    const data = p[current];
+    delete p[current];
+    p[name] = data;
+    A = name;
+    localStorage.setItem(key, JSON.stringify(p));
+    localStorage.setItem('current', name);
+    populateProfiles();
+  });
 
   // Toggle sidebar functionality
   const menu = document.getElementById('menu');
@@ -316,5 +324,4 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('hide', shouldHide ? '1' : '0');
     });
   }
-
 });
