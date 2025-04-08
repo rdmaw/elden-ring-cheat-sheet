@@ -257,6 +257,99 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Import/Export profiles
+  const impF = document.getElementById('imp-f');
+  const expF = document.getElementById('exp-f');
+  const impC = document.getElementById('imp-c');
+  const expC = document.getElementById('exp-c');
+
+  function getData() {
+    return {
+      current: A,
+      [key]: initProfile()
+    };
+  }
+
+  function validate(data) {
+    if (!data?.[key]?.[D]) throw new Error('Invalid save data.');
+    if (!confirm('Importing will overwrite all current data.')) return;
+    localStorage.setItem(key, JSON.stringify(data[key]));
+    if (data.current) {
+      A = data.current;
+      localStorage.setItem('current', A);
+    }
+    const profiles = initProfile();
+    Object.assign(p, profiles);
+    populateProfiles();
+    alert('Successfully imported save data.');
+  }
+
+  // Import file
+  if (impF) {
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = '.json';
+    fileInput.style.display = 'none';
+    impF.after(fileInput);
+    impF.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', async e => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      try {
+        const text = await file.text();
+        const data = JSON.parse(text);
+        validate(data);
+      } catch (e) {
+        alert('Invalid save data.');
+        console.error(e);
+      }
+      fileInput.value = '';
+    });
+  }
+
+  // Export file
+  expF?.addEventListener('click', () => {
+    try {
+      const blob = new Blob([JSON.stringify(getData(), null, 2)], {
+        type: 'application/json'
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'elden-ring-cheat-sheet.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      alert('Error exporting file.');
+      console.error(e);
+    }
+  });
+
+  // Import clipboard
+  impC?.addEventListener('click', async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      const data = JSON.parse(text);
+      validate(data);
+    } catch (e) {
+      alert('Invalid clipboard data.');
+      console.error(e);
+    }
+  });
+
+  // Export clipboard
+  expC?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(getData(), null, 2));
+      alert('Profile data copied to clipboard.');
+    } catch (e) {
+      alert('Error copying to clipboard.');
+      console.error(e);
+    }
+  });
+
   // Toggle sidebar functionality
   const menu = document.getElementById('menu');
   const sidebar = document.getElementById('sidebar');
