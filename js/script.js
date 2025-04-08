@@ -156,6 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const select = document.getElementById('profile');
   const add = document.getElementById('add');
   const edit = document.getElementById('edit');
+  const ngp = document.getElementById('ngp');
+  const del = document.getElementById('del');
   const p = initProfile();
 
   function populateProfiles() {
@@ -177,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create profile
   add?.addEventListener('click', () => {
-    const name = prompt('Enter profile name:')?.trim();
+    const name = prompt('Enter a name for your profile:')?.trim();
     if (!name) return;
     if (name.toLowerCase() === 'default' || p[name]) {
       alert(name.toLowerCase() === 'default' ? 'Profile name cannot be default.' : 'Profile already exists.');
@@ -200,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const name = prompt('Enter new profile name:', current)?.trim();
+    const name = prompt(`Enter a new name for "${current}":`, current)?.trim();
     if (!name || name === current) return;
     if (name.toLowerCase() === 'default' || p[name]) {
       alert(name.toLowerCase() === 'default' ? 'Cannot use default as profile name.' : 'Profile already exists.');
@@ -214,6 +216,45 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem(key, JSON.stringify(p));
     localStorage.setItem('current', name);
     populateProfiles();
+  });
+
+  // NG+ Reset
+  ngp?.addEventListener('click',  () => {
+    const current = select.value;
+    if (!confirm('Starting NG+ will reset all current progress in the Walkthrough, Questlines, Bosses and New Game+ sheets.')) return;
+    const p = initProfile();
+    const prefixes = ['w', 'q', 'b', 'n'];
+    const filterData = Object.entries(p[current].data).reduce((acc, [id, value]) => {
+      if (!prefixes.includes(id.charAt(0))) {
+        acc[id] = value;
+      }
+      return acc;
+    }, {});
+
+    p[current].data = filterData;
+    localStorage.setItem(key, JSON.stringify(p));
+  });
+
+  // Delete profile
+  del?.addEventListener('click', () => {
+    const current = select.value;
+    if (!confirm(`Are you sure you want to ${current === D ? 'reset the default profile' : `delete "${current}"`}?`)) return;
+    const p = initProfile();
+
+    if (current === D) {
+      p[D] = { data: {}, col: {} };
+      localStorage.setItem(key, JSON.stringify(p));
+    } else {
+      delete p[current];
+      localStorage.setItem(key, JSON.stringify(p));
+      if (current === A) {
+        A = D;
+        localStorage.removeItem('current');
+      }
+      const option = select.querySelector(`option[value="${current}"]`);
+      option?.remove();
+      select.value = A;
+    }
   });
 
   // Toggle sidebar functionality
