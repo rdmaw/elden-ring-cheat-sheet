@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = JSON.parse(text);
         validate(data);
       } catch (e) {
-        alert('Invalid save data.');
+        alert('Invalid profile data.');
         console.error(e);
       }
       fileInput.value = '';

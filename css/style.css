@@ -223,6 +223,7 @@ svg {
   right: var(--r5);
   bottom: var(--r5);
   padding: var(--r2);
+  height: auto;
   border: 2px solid var(--2);
   border-radius: 50%;
   opacity: 0;
