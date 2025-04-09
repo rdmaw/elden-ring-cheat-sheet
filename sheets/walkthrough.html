@@ -17,7 +17,7 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/style.css">
-  <script>(()=>{try{const t=document,e=t.documentElement,a=localStorage,c=a.getItem("t"),s=a.getItem("cb");"d"===c&&e.classList.add("dark"),s&&"0"!==s&&e.classList.add(s);const d=a.getItem("er"),n=JSON.parse(d||"{}").default?.col;if(n&&(k=Object.keys(n)).length){const e=k.map((t=>`#${t}`)).join(",")+"{display:none!important}";t.head.insertAdjacentHTML("beforeend",`<style data-c>${e}</style>`)}}catch{}})();</script>
+  <script>(()=>{try{let e=document.documentElement,t=localStorage,a=t.getItem("t"),d=t.getItem("cb"),c=t.getItem("current")||"default",n=JSON.parse(t.getItem("er")||"{}")[c]?.col;"d"==a&&e.classList.add("dark"),d&&"0"!=d&&e.classList.add(d),n&&(n=Object.keys(n))[0]&&document.head.insertAdjacentHTML("beforeend","<style data-c>#"+n.join(",#")+"{display:none!important}</style>")}catch{}})();</script>
   <link rel="canonical" href="https://eldenring.redmaw.dev/sheets/walkthrough.html">
   <title>Walkthrough | Elden Ring Cheat Sheet</title>
 </head>

@@ -269,8 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function validate(data) {
-    if (!data?.[key]?.[D]) throw new Error('Invalid save data.');
-    if (!confirm('Importing will overwrite all current data.')) return;
+    if (!data?.[key]?.[D]) throw new Error('Invalid profile data.');
+    if (!confirm('Importing a new profile will overwrite all current data.')) return;
     localStorage.setItem(key, JSON.stringify(data[key]));
     p = data[key];
     if (data.current) {
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('current', A);
     }
     populateProfiles();
-    alert('Successfully imported save data.');
+    alert('Successfully imported profile data.');
   }
 
   // Import file

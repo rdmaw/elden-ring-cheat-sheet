@@ -207,6 +207,7 @@ svg {
 
 .btn {
   padding: var(--r1) var(--r2);
+  height: 2rem;
   color: var(--kt);
   background-color: var(--k);
   border: 1px solid var(--2);
@@ -240,9 +241,14 @@ svg {
   }
 }
 
-select {
-  text-align-last: center;
-  padding: .125em;
+#search, select {
+  width: 100%;
+  height: 2.375rem;
+  padding-inline: .5em;
+}
+
+#search, .options h2, select {
+  margin-bottom: var(--r3);
 }
 
 /* NAVIGATION 
@@ -378,7 +384,7 @@ footer {
 
 /* FAQ 
 ------ */
-.no, .yes {
+.not, .incl {
   margin: var(--r4) 0 0 var(--r7);
 
   & li {
@@ -386,18 +392,26 @@ footer {
   }
 }
 
-.no {
+.not {
   list-style-type: "✕";
 }
 
-.yes {
+.incl {
   list-style-type: "✔";
 }
 
 /* OPTIONS 
 ---------- */
+.options button {
+  margin-right: var(--r1);
+}
+
 .options label {
-  margin-top: var(--r4);
+  padding: .3rem 0 var(--r2) 0;
+}
+
+.imp-g {
+  margin-bottom: var(--r7);
 }
 
 /* CHECKLISTS
@@ -426,11 +440,6 @@ h1 span, h3 span {
   border: none;
 }
 
-#search {
-  width: 100%;
-  padding: var(--r2) var(--r2);
-}
-
 #hide {
   position: fixed;
   bottom: 0;
@@ -445,12 +454,6 @@ h1 span, h3 span {
 
 #hideSvg, .hide #showSvg {
   display: none;
-}
-
-@media (max-width: 1050px) {
-  #hide span {
-   display: none; 
-  }
 }
 
 .col {
@@ -480,8 +483,7 @@ h1 span, h3 span {
 
 label {
   display: inline-block;
-  padding-left: 3rem;
-  padding-top: .3rem;
+  padding: .3rem 0 0 3rem;
 }
 
 input[type="checkbox"] {
@@ -514,6 +516,14 @@ input[type="checkbox"]:hover {
   }
 }
 
+/* MEDIA 
+-------- */
+@media (max-width: 1050px) {
+  #hide span {
+   display: none; 
+  }
+}
+
 /* UTILITY
 ---------- */
 .flex { display: flex; }
@@ -521,8 +531,8 @@ input[type="checkbox"]:hover {
 .jc { justify-content: center; }
 header, footer { text-align: center; }
 .disc { list-style-type: disc; margin: var(--r2) 0 var(--r2) var(--r7); }
-.r, .no li::marker { color: var(--r); }
-.g, .yes li::marker { color: var(--g); }
+.r, .not li::marker { color: var(--r); }
+.g, .incl li::marker { color: var(--g); }
 .p { color: var(--p); }
 .o { color: var(--o); }
 .h, h1, h2, h3, h3 a, h4, h4 a, strong, nav a, footer a, .lead, .toc a, #menu svg, .close svg { color: var(--h); }
@@ -538,4 +548,4 @@ header h1, h2, strong { font-weight: 700; }
 .sh h2, .toc h2, h3, h4, a, samp, h1 span { font-weight: 600; }
 select, button, input[type="checkbox"], label { cursor: pointer; }
 li { position: relative;}
-textarea[name="ff"], .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: none !important; }
+textarea, .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: none !important; }

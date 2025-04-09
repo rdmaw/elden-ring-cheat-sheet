@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Set color themes and profile options.">
+  <meta name="description" content="Manage profile data and color options.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -45,8 +45,7 @@
   <main>
     <header>
       <h1>Options</h1>
-      <p class="lead">Set color themes and profile options.</p>
-      <p>🚧 The project is still under heavy construction. Content will change! 🚧<br>If you notice any mistakes, or want to contribute during development, please open an issue on <a href="https://github.com/rdmaw/elden-ring-cheat-sheet">Github</a>.</p>
+      <p class="lead">Manage profile data and color options.</p>
     </header>
     <section class="options">
       <h2>Color Options:</h2>
@@ -63,17 +62,25 @@
         <option value="tri">Tritanopia</option>
         <option value="ach">Achromatopsia</option>
       </select>
-      <h2>Profile Management:</h2>
+      <h2 id="prof-h">Profile Management:</h2>
       <label for="profile">Select profile:</label>
       <select id="profile" name="profile"></select>
-      <button type="button" id="add" class="btn">Create</button>
-      <button type="button" id="edit" class="btn">Edit</button>
-      <button type="button" id="ngp" class="btn">NG+</button>
-      <button type="button" id="del" class="btn">Delete</button>
-      <h2>Import/Export Data</h2>
-      <button type="button" class="btn">Import file</button>
-      <button type="button" class="btn">Export file</button>
-      <textarea id="data" name="data"></textarea>
+      <div class="prof-g" role="group" aria-labelledby="prof-h">
+        <button type="button" id="add" class="btn">Create</button>
+        <button type="button" id="edit" class="btn">Edit</button>
+        <button type="button" id="ngp" class="btn" aria-label="New Game Plus">NG+</button>
+        <button type="button" id="del" class="btn">Delete</button>
+      </div>
+      <h2 id="exp-h">Export Data</h2>
+      <div class="exp-g" role="group" aria-labelledby="exp-h">
+        <button type="button" id="exp-f" class="btn">Export as file</button>
+        <button type="button" id="exp-c" class="btn">Copy to clipboard</button>
+      </div>
+      <h2 id="imp-h">Import Data</h2>
+      <div class="imp-g" role="group" aria-labelledby="imp-h">
+        <button type="button" id="imp-f" class="btn">Import from file</button>
+        <button type="button" id="imp-c" class="btn">Paste from clipboard</button>
+      </div>
     </section>
   </main>
   <script defer src="/js/script.js"></script>
