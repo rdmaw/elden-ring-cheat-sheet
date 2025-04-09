@@ -3,6 +3,7 @@ const key = 'er';
 const D = 'default';
 const root = document.documentElement;
 let A = localStorage.getItem('current') || D;
+let p = initProfile();
 
 // Initialize default profile, p = profile, def = default, A = active
 function initProfile() {
@@ -27,7 +28,7 @@ const mgr = {
 
   setCl(id, checked) {
     if (!id) return;
-    const p = initProfile();
+    // const p = initProfile();
     if (!p[A]) p[A] = { data: {}, col: {} };
     checked ? p[A].data[id] = 1 : delete p[A].data[id];
     localStorage.setItem(key, JSON.stringify(p));
@@ -35,7 +36,7 @@ const mgr = {
 
   setCol(id, expanded) {
     if (!id) return;
-    const p = initProfile();
+    // const p = initProfile();
     if (!p[A]) p[A] = { data: {}, col: {} };
     if (!p[A].col) p[A].col = {};
     expanded ? delete p[A].col[id] : p[A].col[id] = 1;
@@ -158,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const edit = document.getElementById('edit');
   const ngp = document.getElementById('ngp');
   const del = document.getElementById('del');
-  const p = initProfile();
 
   function populateProfiles() {
     if (!select) return;
@@ -222,7 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ngp?.addEventListener('click',  () => {
     const current = select.value;
     if (!confirm('Starting NG+ will reset all current progress in the Walkthrough, Questlines, Bosses and New Game+ sheets.')) return;
-    const p = initProfile();
     const prefixes = ['w', 'q', 'b', 'n'];
     const filterData = Object.entries(p[current].data).reduce((acc, [id, value]) => {
       if (!prefixes.includes(id.charAt(0))) {
@@ -239,7 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
   del?.addEventListener('click', () => {
     const current = select.value;
     if (!confirm(`Are you sure you want to ${current === D ? 'reset the default profile' : `delete "${current}"`}?`)) return;
-    const p = initProfile();
 
     if (current === D) {
       p[D] = { data: {}, col: {} };
@@ -274,12 +272,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!data?.[key]?.[D]) throw new Error('Invalid save data.');
     if (!confirm('Importing will overwrite all current data.')) return;
     localStorage.setItem(key, JSON.stringify(data[key]));
+    p = data[key];
     if (data.current) {
       A = data.current;
       localStorage.setItem('current', A);
     }
-    const profiles = initProfile();
-    Object.assign(p, profiles);
     populateProfiles();
     alert('Successfully imported save data.');
   }
