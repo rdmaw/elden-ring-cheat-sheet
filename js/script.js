@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (hide) {
     const hideTxt = hide.querySelector('span');
-    const isHidden = localStorage.getItem('hide') === '1';
+    const isHidden = localStorage.getItem('h') === '1';
     root.classList.toggle('hide', isHidden);
     hideTxt.textContent = isHidden ? 'Show Completed' : 'Hide Completed';
 
@@ -452,7 +452,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const shouldHide = !root.classList.contains('hide');
       root.classList.toggle('hide', shouldHide);
       hideTxt.textContent = shouldHide ? 'Show Completed' : 'Hide Completed';
-      localStorage.setItem('hide', shouldHide ? '1' : '0');
+      localStorage.setItem('h', shouldHide ? '1' : '0');
+    });
+  }
+
+  // Filter merchants
+  const mBtn = document.getElementById('fil-m');
+
+  if (mBtn) {
+    const filtered = localStorage.getItem('m') === '1';
+    mBtn.setAttribute('aria-pressed', filtered);
+    root.classList.toggle('show-m', filtered);
+
+    mBtn.addEventListener('click', () => {
+      const pressed = mBtn.getAttribute('aria-pressed') === 'true';
+      mBtn.setAttribute('aria-pressed', !pressed);
+      root.classList.toggle('show-m', !pressed);
+      localStorage.setItem('m', !pressed ? '1' : '0');
     });
   }
 });

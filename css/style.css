@@ -403,7 +403,7 @@ footer {
 
 /* OPTIONS 
 ---------- */
-.options button {
+.filter button, .options button {
   margin-right: var(--r1);
 }
 
@@ -413,6 +413,17 @@ footer {
 
 .imp-g {
   margin-bottom: var(--r7);
+}
+
+/* WALKTHROUGH
+-------------- */
+.show-m main li:has(input[type="checkbox"]):not(:has(.m)) {
+  display: none;
+}
+
+#fil-m[aria-pressed="true"] {
+  background-color: var(--kh);
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
 }
 
 /* CHECKLISTS
