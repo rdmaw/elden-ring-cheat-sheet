@@ -1,4 +1,3 @@
-// Profile keys and cache root
 const key = 'er';
 const D = 'default';
 const root = document.documentElement;

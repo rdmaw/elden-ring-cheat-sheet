@@ -2,62 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://eldenring.redmaw.dev</loc>
-    <lastmod>2025-03-28</lastmod>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/options.html</loc>
-    <lastmod>2025-03-28</lastmod>
+    <loc>https://eldenring.redmaw.dev/options</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/resources.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/resources</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/walkthrough.html</loc>
-    <lastmod>2025-03-28</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/walkthrough</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/questlines.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/npc-walkthrough</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/merchants.html</loc>
-    <lastmod>2025-04-10</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/questlines</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/bosses.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/merchants</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/achievements.html</loc>
-    <lastmod>2025-03-28</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/bosses</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/armaments.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/achievements</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/armor.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/armaments</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/ashes.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/armor</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/spells.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/ashes</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/key-items.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/spells</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/miscellaneous.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/key-items</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/new-game-plus.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <loc>https://eldenring.redmaw.dev/sheets/miscellaneous</loc>
+    <lastmod>2025-04-11</lastmod>
+  </url>
+  <url>
+    <loc>https://eldenring.redmaw.dev/sheets/new-game-plus</loc>
+    <lastmod>2025-04-11</lastmod>
   </url>
 </urlset>
