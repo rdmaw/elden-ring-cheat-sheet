@@ -69,9 +69,10 @@ function calculateTotals() {
   if (!totalAll) return;
   const sectionSpans = document.querySelectorAll(`span[id^="${prefix}-t"]`);
   const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+  // const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(checkbox => /^[wqmbaerhskxn]\d+-\d+$/.test(checkbox.id));
 
   const sectionMap = allCheckboxes.reduce((map, checkbox) => {
-    const section = checkbox.id.slice(prefix.length).split('-')[0];
+    const section = checkbox.id.match(/^[wqmbaerhskxn](\d+)-/)[1];
     map.has(section) ? map.get(section).push(checkbox) : map.set(section, [checkbox]);
     return map;
   }, new Map());
@@ -79,19 +80,26 @@ function calculateTotals() {
   let overallChecked = 0, overallTotal = 0;
 
   sectionSpans.forEach(span => {
-    const section = span.id.split('-t')[1];
+    const section = span.id.match(/t(\d+)$/)[1];
+    const tocSpan = document.getElementById(`${prefix}-nt${section}`);
     const checkboxes = sectionMap.get(section) || [];
     const checked = checkboxes.filter(cb => cb.checked).length;
     const total = checkboxes.length;
+    const text = total ? (checked === total ? 'DONE' : `${checked}/${total}`) : '0/0';
+    const done = checked === total && total > 0;
 
-    span.classList.remove('d');
-    span.textContent = total ? `${checked === total ? 'DONE' : `${checked}/${total}`}` : '0/0';
-    if (checked === total && total > 0) span.classList.add('d');
+    [span, tocSpan].forEach(el => {
+      if (!el) return;
+      el.classList.remove('d');
+      el.textContent = text;
+      if (done) el.classList.add('d');
+    });
+
     overallChecked += checked;
     overallTotal += total;
   });
   totalAll.classList.remove('d');
-  totalAll.textContent = overallTotal ? `${overallChecked === overallTotal ? 'DONE' : `${overallChecked}/${overallTotal}`}` : '0/0';
+  totalAll.textContent = overallTotal ? (overallChecked === overallTotal ? 'DONE' : `${overallChecked}/${overallTotal}`) : '0/0';
   if (overallChecked === overallTotal && overallTotal > 0) totalAll.classList.add('d');
 }
 
@@ -453,22 +461,6 @@ document.addEventListener('DOMContentLoaded', () => {
       root.classList.toggle('hide', shouldHide);
       hideTxt.textContent = shouldHide ? 'Show Completed' : 'Hide Completed';
       localStorage.setItem('h', shouldHide ? '1' : '0');
-    });
-  }
-
-  // Filter merchants
-  const mBtn = document.getElementById('fil-m');
-
-  if (mBtn) {
-    const filtered = localStorage.getItem('m') === '1';
-    mBtn.setAttribute('aria-pressed', filtered);
-    root.classList.toggle('show-m', filtered);
-
-    mBtn.addEventListener('click', () => {
-      const pressed = mBtn.getAttribute('aria-pressed') === 'true';
-      mBtn.setAttribute('aria-pressed', !pressed);
-      root.classList.toggle('show-m', !pressed);
-      localStorage.setItem('m', !pressed ? '1' : '0');
     });
   }
 });
