@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ngp?.addEventListener('click',  () => {
     const current = select.value;
     if (!confirm('Starting NG+ will reset all current progress in the Walkthrough, Questlines, Bosses and New Game+ sheets.')) return;
-    const prefixes = ['w', 'q', 'b', 'n'];
+    const prefixes = ['w', 'n', 'q', 'b', 'p'];
     const filterData = Object.entries(p[current].data).reduce((acc, [id, value]) => {
       if (!prefixes.includes(id.charAt(0))) {
         acc[id] = value;
