@@ -555,7 +555,7 @@ header, footer { text-align: center; }
 html, .sh h2 { line-height: 1.5; }
 h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.1; }
 h1, h2, h3, h4, p, a { overflow-wrap: break-word; }
-h1, h2, h3, h4, nav a, .lead, .toc a { text-wrap: balance; }
+/* h1, h2, h3, h4, nav a, .lead, .toc a { text-wrap: balance; } */
 h3 button, h3 a, h3 span { vertical-align: middle; }
 header h1, h2, strong { font-weight: 700; }
 .sh h2, .toc h2, h3, h4, a, q, nav span { font-weight: 600; }
@@ -576,7 +576,7 @@ textarea, .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: non
   color: var(--x);
   background-color: var(--b);
   border: 4px dashed var(--x);
-  border-radius: 5px;
+  border-radius: 10px;
 
   & h2 {
     margin-top: 0;
