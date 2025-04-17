@@ -494,6 +494,10 @@ label {
   padding: .3rem 0 0 3rem;
 }
 
+.inv {
+  padding: .3rem 0 .2rem 1.2rem;
+}
+
 input[type="checkbox"] {
   position: absolute;
   left: var(--r5);
