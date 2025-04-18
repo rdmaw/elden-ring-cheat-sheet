@@ -27,7 +27,6 @@ const mgr = {
 
   setCl(id, checked) {
     if (!id) return;
-    // const p = initProfile();
     if (!p[A]) p[A] = { data: {}, col: {} };
     checked ? p[A].data[id] = 1 : delete p[A].data[id];
     localStorage.setItem(key, JSON.stringify(p));
@@ -35,7 +34,6 @@ const mgr = {
 
   setCol(id, expanded) {
     if (!id) return;
-    // const p = initProfile();
     if (!p[A]) p[A] = { data: {}, col: {} };
     if (!p[A].col) p[A].col = {};
     expanded ? delete p[A].col[id] : p[A].col[id] = 1;
@@ -121,6 +119,24 @@ document.addEventListener('change', e => {
 document.addEventListener('DOMContentLoaded', () => {
   restoreCheckboxes();
   calculateTotals();
+
+  // Sync storage between tabs
+  window.addEventListener('storage', (e) => {
+    if (e.key === key || e.key === 'current') {
+      try {
+        if (e.key === key) {
+          p = JSON.parse(e.newValue);
+        } else if (e.key === 'current') {
+          A = e.newValue || D;
+          populateProfiles?.();
+        }
+        restoreCheckboxes();
+        calculateTotals();
+      } catch (e) {
+        console.error('Error syncing profile:', e);
+      }
+    }
+  });
 
   // Open every external link in new tab
   const links = document.querySelectorAll('a[href^="http"]');
