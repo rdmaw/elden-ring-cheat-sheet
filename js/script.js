@@ -135,6 +135,13 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (e) {
         console.error('Error syncing profile:', e);
       }
+    } else if (e.key === 'h') {
+      const isHidden = e.newValue === '1';
+      root.classList.toggle('hide', isHidden);
+      if (hide) {
+        const hideTxt = hide.querySelector('span');
+        hideTxt.textContent = isHidden ? 'Show Completed' : 'Hide Completed';
+      }
     }
   });
 
