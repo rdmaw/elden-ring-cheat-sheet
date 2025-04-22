@@ -494,8 +494,15 @@ label {
   padding: .3rem 0 0 3rem;
 }
 
-.inv {
-  padding: .3rem 0 .2rem 1.2rem;
+.loc {
+  display: inline-block;
+  padding-top: .3rem;
+  padding-bottom: .2rem;
+  padding-right: .2rem;
+}
+
+.loc:first-child {
+  padding-left: 1.2rem;
 }
 
 input[type="checkbox"] {
