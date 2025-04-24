@@ -496,9 +496,7 @@ label {
 
 .loc {
   display: inline-block;
-  padding-top: .3rem;
-  padding-bottom: .2rem;
-  padding-right: .2rem;
+  padding: 0.3rem 0.2rem 0.2rem 0;
 }
 
 .loc:first-child {
