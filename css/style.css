@@ -127,6 +127,11 @@ html {
   scrollbar-color: var(--1) var(--b);
 }
 
+input, button, kbd, q, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 body {
   color: var(--t);
   background-color: var(--b);
@@ -171,10 +176,6 @@ p {
   text-wrap: pretty;
 }
 
-ol, footer, #hide {
-  font-size: .9rem;
-}
-
 ol {
   margin: var(--r3) 0 var(--r2) var(--r7);
 }
@@ -196,15 +197,19 @@ a {
   }
 }
 
-input, button, kbd, q, select {
-  font-family: inherit;
-  font-size: inherit;
-}
-
 q {
   padding: .0625rem .1875rem;
   background-color: var(--3);
   border-radius: 3px;
+}
+
+kbd {
+  padding: .125em .375em;
+  color: var(--kt);
+  background-color: var(--k);
+  border: 1px solid var(--2);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 var(--2);
 }
 
 svg {
@@ -560,6 +565,7 @@ header, footer { text-align: center; }
 
 /* REPETITION 
 ------------- */
+ol, footer, #hide, kbd {font-size: .9rem;}
 .toc { line-height: 1.8; }
 html, .sh h2 { line-height: 1.5; }
 h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.1; }
