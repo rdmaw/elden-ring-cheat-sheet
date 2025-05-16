@@ -556,7 +556,7 @@ input[type="checkbox"]:checked ~ label {
 .ac { align-items: center; }
 .jc { justify-content: center; }
 header, footer { text-align: center; }
-.disc { list-style-type: disc; margin: var(--r2) 0 var(--r2) var(--r7); }
+.disc { list-style-type: disc; margin: var(--r3) 0 var(--r2) var(--r7); }
 .r, .not li::marker { color: var(--r); }
 .g, .incl li::marker { color: var(--g); }
 .p { color: var(--p); }
@@ -565,7 +565,7 @@ header, footer { text-align: center; }
 
 /* REPETITION 
 ------------- */
-ol, footer, #hide, kbd {font-size: .9rem;}
+ol, footer, #hide, kbd { font-size: .9rem; }
 .toc { line-height: 1.8; }
 html, .sh h2 { line-height: 1.5; }
 h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.1; }

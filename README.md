@@ -1,10 +1,64 @@
-## Elden Ring Cheat Sheet
+# Elden Ring Cheat Sheet
 
-An Elden Ring cheat sheet and guide for 100% completion, including all items, achievements, NPCs, quests, bosses and more, including the Shadow of the Erdtree DLC.
-Inspired by the previous cheat sheets made by [Zachary Kjellberg](https://github.com/zkjellberg) and [Stephen McNabb](https://github.com/smcnabb).
+A collection of comprehensive checklists (cheat sheets) for achieving 100% completion in Elden Ring.
+[The walkthrough](https://eldenring.redmaw.dev/sheets/walkthrough) is a step by step checklist through every area in a natural order, getting every single item, achievement, questline, boss and much more in the process. For a full list of what's included, check the [FAQ](https://eldenring.redmaw.dev/#included).
 
-The guide does not include common plants and crafting materials picked directly off the ground. However, upgrade materials, such as Smithing Stones and Gloveworts are included.
+## Features
 
-[Click here to view the Cheat Sheet](https://eldenring.redmaw.dev)
+- Step-by-step walkthrough covering everything in the game
+- NPC walkthrough covering only NPC related steps
+- Saves your progress to browser
+- Create and import profiles from backup
+- Search checklists
+- Helpful resources for your playthrough in one place
+- Support for color blindness
+- Several interactive checklists for tracking:
+  - Achievements
+  - Bosses and Questlines
+  - Merchant inventories
+  - New Game+ preparation
+  - Equipment, key items, and much more!
 
-NOTE: The project is still in development.
+Visit the project at: [eldenring.redmaw.dev](https://eldenring.redmaw.dev)
+
+## Status
+
+> [!NOTE]
+> This project is under development. While most of the core functionality is complete, some sections are missing.
+> For now, I recommend following the [legacy walkthrough](https://rdmaw.github.io/temp-er-cheat-sheet/) until the live site is fully updated.
+
+Found a bug? Open an issue or contact me on discord: `redmaw`
+
+## Todo
+
+- [x] Tutorial 
+- [x] First steps in Limgrave 
+- [x] Early Liurnia and Caelid
+- [ ] West Limgrave
+- [ ] North Limgrave
+- [ ] Weeping Peninsula
+- [ ] Castle Morne
+- [ ] Stormveil Castle
+- [ ] Fringefolk Hero's Grave
+- [ ] Implement search functionality
+- [ ] Experiment with search highlighting
+- [ ] South Liurnia
+- [ ] West Liurnia
+- [ ] Central Liurnia
+- [ ] Academy of Raya Lucaria
+- [ ] East Liurnia
+- [ ] Caria manor
+- [ ] Ruin-Strewn Precipice
+- [ ] Ainsel River
+- [ ] Siofra River
+- [ ] Caelid
+- [ ] Sellia, Town of Sorcery
+- [ ] Redmane Castle
+- [ ] Nokron, Eternal City
+- [ ] Carian Study Hall
+
+## Special Thanks
+
+- [@ZKjellberg](https://github.com/zkjellberg) for using dark souls 3 cheat sheet as inspiration
+- [@smcnabb](https://github.com/smcnabb) for creating the original cheat sheets
+- [@small_little_artist](https://smalllittleartist.carrd.co) for designing the favicon and open graph images
