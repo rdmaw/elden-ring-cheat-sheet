@@ -59,6 +59,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## Special Thanks
 
-- [@ZKjellberg](https://github.com/zkjellberg) for using dark souls 3 cheat sheet as inspiration
+- [@ZKjellberg](https://github.com/zkjellberg) dark souls 3 cheat sheet used as inspiration
 - [@smcnabb](https://github.com/smcnabb) for creating the original cheat sheets
 - [@small_little_artist](https://smalllittleartist.carrd.co) for designing the favicon and open graph images
