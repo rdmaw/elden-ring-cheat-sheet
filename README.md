@@ -34,12 +34,13 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Tutorial 
 - [x] First steps in Limgrave 
 - [x] Early Liurnia and Caelid
-- [ ] West Limgrave
+- [x] West Limgrave
 - [ ] North Limgrave
 - [ ] Weeping Peninsula
 - [ ] Castle Morne
 - [ ] Stormveil Castle
 - [ ] Fringefolk Hero's Grave
+- [ ] Resources
 - [ ] Implement search functionality
 - [ ] Experiment with search highlighting
 - [ ] South Liurnia
@@ -59,6 +60,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## Special Thanks
 
-- [@ZKjellberg](https://github.com/zkjellberg) dark souls 3 cheat sheet used as inspiration
+- [@zkjellberg](https://github.com/zkjellberg) dark souls 3 cheat sheet used as inspiration
 - [@smcnabb](https://github.com/smcnabb) for creating the original cheat sheets
 - [@small_little_artist](https://smalllittleartist.carrd.co) for designing the favicon and open graph images
