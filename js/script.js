@@ -40,6 +40,18 @@ const mgr = {
     localStorage.setItem(key, JSON.stringify(p));
   },
 
+  setBatch(updates) {
+    if (!updates?.length) return;
+    if (!p[A]) p[A] = { data: {}, col: {} };
+    if (!p[A].col) p[A].col = {};
+
+    updates.forEach(({id, expanded}) => {
+      if (!id) return;
+      expanded ? delete p[A].col[id] : p[A].col[id] = 1;
+    });
+    localStorage.setItem(key, JSON.stringify(p));
+  },
+
   col() {
     return this.get().col || {};
   }
@@ -99,12 +111,6 @@ function calculateTotals() {
   totalAll.textContent = overallTotal ? (overallChecked === overallTotal ? 'DONE' : `${overallChecked}/${overallTotal}`) : '0/0';
   if (overallChecked === overallTotal && overallTotal > 0) totalAll.classList.add('d');
 }
-
-// TODO: Monitor autocomplete
-(function () {
-  const c = document.querySelectorAll('input[type="checkbox"]');
-  for (let i = 0, l = c.length; i < l; i++) c[i].autocomplete = 'off';
-})();
 
 // Store checkbox state when clicked
 document.addEventListener('change', e => {
@@ -458,12 +464,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('style[data-c]')?.remove();
 
   const toggleAll = (expand) => {
+    const updates = [];
+
     ulMap.forEach((ul, btn) => {
       const ulId = btn.getAttribute('aria-controls');
       btn.ariaExpanded = expand;
       ul.classList.toggle('f', !expand);
-      mgr.setCol(ulId, expand);
+      updates.push({id: ulId, expanded: expand});
     });
+    mgr.setBatch(updates);
   };
 
   expA?.addEventListener('click', () => toggleAll(true));

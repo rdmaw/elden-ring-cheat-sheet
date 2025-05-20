@@ -21,8 +21,6 @@ A collection of comprehensive checklists (cheat sheets) for achieving 100% compl
 
 Visit the project at: [eldenring.redmaw.dev](https://eldenring.redmaw.dev)
 
-## Status
-
 > [!NOTE]
 > This project is under development. While most of the core functionality is complete, some sections are missing.
 > For now, I recommend following the [legacy walkthrough](https://rdmaw.github.io/temp-er-cheat-sheet/) until the live site is fully updated.
