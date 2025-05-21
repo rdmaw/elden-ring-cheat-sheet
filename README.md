@@ -42,6 +42,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [ ] Implement search functionality
 - [ ] Experiment with search highlighting
 - [ ] South Liurnia
+- [ ] Sort NPC Walkthrough and Merchant sections
 - [ ] West Liurnia
 - [ ] Central Liurnia
 - [ ] Academy of Raya Lucaria
