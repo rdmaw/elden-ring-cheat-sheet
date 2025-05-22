@@ -33,7 +33,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] First steps in Limgrave 
 - [x] Early Liurnia and Caelid
 - [x] West Limgrave
-- [ ] North Limgrave
+- [x] North Limgrave
 - [ ] Weeping Peninsula
 - [ ] Castle Morne
 - [ ] Stormveil Castle
