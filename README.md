@@ -34,7 +34,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Early Liurnia and Caelid
 - [x] West Limgrave
 - [x] North Limgrave
-- [ ] Weeping Peninsula
+- [x] Weeping Peninsula
 - [ ] Castle Morne
 - [ ] Stormveil Castle
 - [ ] Fringefolk Hero's Grave
