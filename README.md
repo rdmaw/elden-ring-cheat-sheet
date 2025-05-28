@@ -35,7 +35,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] West Limgrave
 - [x] North Limgrave
 - [x] Weeping Peninsula
-- [ ] Castle Morne
+- [x] Castle Morne
 - [ ] Stormveil Castle
 - [ ] Fringefolk Hero's Grave
 - [ ] Resources
@@ -44,6 +44,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [ ] South Liurnia
 - [ ] Sort NPC Walkthrough and Merchant sections
 - [ ] West Liurnia
+- [ ] Testu's Rise images
 - [ ] Central Liurnia
 - [ ] Academy of Raya Lucaria
 - [ ] East Liurnia
