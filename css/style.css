@@ -556,6 +556,10 @@ input[type="checkbox"]:checked ~ label {
   #hide span {
    display: none; 
   }
+
+  h3 {
+    font-size: 1.3rem;
+  }
 }
 
 /* UTILITY
