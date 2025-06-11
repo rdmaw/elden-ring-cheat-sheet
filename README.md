@@ -36,7 +36,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] North Limgrave
 - [x] Weeping Peninsula
 - [x] Castle Morne
-- [ ] Stormveil Castle
+- [x] Stormveil Castle
 - [ ] Fringefolk Hero's Grave
 - [ ] Resources
 - [ ] Implement search functionality
