@@ -54,11 +54,61 @@
   <main>
     <header>
       <h1>New Game Plus</h1>
-      <p class="lead">Coming soon...</p>
+      <p class="lead">Collection of checklists to do before starting New Game+</p>
+      <p>Items that carry over:</p>
+      <p>Items that do not carry over:</p>
+      <div class="alert">
+        <h2>🚧 This page is under development 🚧</h2>
+        <ul>
+          <li>Content and sections may change frequently</li>
+          <li>Your checked items may become mismatched if sections are reordered</li>
+          <li>If you notice any mistakes, or want to contribute, please <a href="https://github.com/rdmaw/elden-ring-cheat-sheet/issues">open an issue on Github</a></li>
+        </ul>
+      </div>
     </header>
+    <nav class="toc">
+      <h2>Current Progress<span id="p-ot"></span></h2>
+      <ul>
+        <li><a href="#mausoleums">Mausoleums</a><span id="p-nt1"></span></li>
+        <li><a href="#enia">Finger Reader Enia</a><span id="p-nt2"></span></li>
+      </ul>
+    </nav>
+    <search><input type="search" id="search" aria-label="Search new game plus" placeholder="Start typing to filter new game plus..."></search>
+    <div class="filter">
+      <button type="button" id="exp-a" class="btn">Expand all</button>
+      <button type="button" id="col-a" class="btn">Collapse all</button>
+      <button type="button" id="hide" class="btn flex ac jc">
+        <svg id="hideSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828"></path> <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"></path> <path d="M3 3l18 18"></path></svg>
+        <svg id="showSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path> <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path> </svg> 
+        <span></span>
+      </button>
+    </div>
+    <form autocomplete="off">
+      <h3 id="mausoleums"><button type="button" class="col btn" aria-label="Toggle Mausoleums section" aria-controls="p1" aria-expanded="true"></button><a href="https://eldenring.wiki.fextralife.com/Walking+Mausoleum">Wandering Mausoleums</a><span id="p-t1"></span></h3>
+      <ul id="p1" aria-labelledby="mausoleums">
+        <li><input type="checkbox" id="p1-1"><label for="p1-1"><strong>Note:</strong> Only Mausoleums with a bell can duplicate all remembrances. Those without a bell specifically cannot duplicate remembrances of <a href="https://eldenring.wiki.gg/wiki/Remembrances">Shardbearers</a>.</label></li>
+        <li><input type="checkbox" id="p1-2"><label for="p1-2">Used the Mausoleum in <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165336">Weeping Peninsula</a> to duplicate any remembrance.</label></li>
+        <li><input type="checkbox" id="p1-3"><label for="p1-3">Used the Mausoleum in <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=166708">North Liurnia</a> to duplicate any remembrance.</label></li>
+        <li><input type="checkbox" id="p1-4"><label for="p1-4">Used the Mausoleum near the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=166472">Ruined Labyrinth</a> to duplicate any remembrance. (No bell)</label></li>
+        <li><input type="checkbox" id="p1-5"><label for="p1-5">Used the Mausoleum near the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=166213">Mausoleum Compound</a> to duplicate any remembrance. (No bell)</label></li>
+        <li><input type="checkbox" id="p1-6"><label for="p1-6">Used the Mausoleum in <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=168419">Deeproot Depths</a> to duplicate any remembrance.</label></li>
+        <li><input type="checkbox" id="p1-7"><label for="p1-7">Used the Mausoleum in <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167696">Mountaintops of the Giants</a> to duplicate any remembrance.</label></li>
+        <li><input type="checkbox" id="p1-8"><label for="p1-8">Used the Mausoleum in <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167157">Consecrated Snowfield</a> to duplicate any remembrance.</label></li>
+      </ul>
+      <h3 id="enia"><button type="button" class="col btn" aria-label="Toggle Finger Reader Enia section" aria-controls="p2" aria-expanded="true"></button><a href="https://eldenring.wiki.fextralife.com/Enia">Finger Reader Enia</a><span id="p-t2"></span></h3>
+      <ul id="p2" aria-labelledby="enia">
+        <li><input type="checkbox" id="p2-1"><label for="p2-1"><strong>Note:</strong> Remembrances can only be exchanged once per item, so only duplicate if you want both items. There are many more remembrances (25) than there are <a href="#mausoleums">Mausoleums</a> and <a href="https://eldenring.wiki.fextralife.com/Remembrance+Duplication+Coffin">Coffins</a> (10), so choose wisely.</label></li>
+        <li><input type="checkbox" id="p2-2"><label for="p2-2">After killing <a href="https://eldenring.wiki.fextralife.com/Godrick+the+Grafted" class="r">Godrick</a>, you can exchange his remembrance for the following power:</label>
+          <ul>
+            <li><input type="checkbox" id="p2-3"><label for="p2-3"><a href="https://eldenring.wiki.fextralife.com/Axe+of+Godrick">Axe of Godrick</a>: 1 Remembrance of the Grafted</label></li>
+            <li><input type="checkbox" id="p2-4"><label for="p2-4"><a href="https://eldenring.wiki.fextralife.com/Grafted+Dragon">Grafted Dragon</a>: 1 Remembrance of the Grafted and 2,000 runes</label></li>
+          </ul>
+        </li>
+      </ul>
+    </form>
   </main>
   <button type="button" id="up" class="btn" aria-label="Scroll to top of page"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#top"></use></svg></button>
-  <!-- <footer>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></footer> -->
+  <footer>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></footer>
   <textarea name="ff" aria-hidden="true" tabindex="-1"></textarea>
   <script defer src="/js/script.js"></script>
 </body>
