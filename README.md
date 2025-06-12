@@ -37,7 +37,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Weeping Peninsula
 - [x] Castle Morne
 - [x] Stormveil Castle
-- [ ] Fringefolk Hero's Grave
+- [x] Fringefolk Hero's Grave
 - [ ] Resources
 - [ ] Implement search functionality
 - [ ] Experiment with search highlighting
