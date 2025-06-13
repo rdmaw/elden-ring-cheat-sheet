@@ -78,10 +78,10 @@ function calculateTotals() {
   if (!totalAll) return;
   const sectionSpans = document.querySelectorAll(`span[id^="${prefix}-t"]`);
   const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
-  // const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(checkbox => /^[wnqmbaerhskxp]\d+-\d+$/.test(checkbox.id));
+  // const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(checkbox => /^[wnqmbaerhskcp]\d+-\d+$/.test(checkbox.id));
 
   const sectionMap = allCheckboxes.reduce((map, checkbox) => {
-    const section = checkbox.id.match(/^[wnqmbaerhskxp](\d+)-/)[1];
+    const section = checkbox.id.match(/^[wnqmbaerhskcp](\d+)-/)[1];
     map.has(section) ? map.get(section).push(checkbox) : map.set(section, [checkbox]);
     return map;
   }, new Map());

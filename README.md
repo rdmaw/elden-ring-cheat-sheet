@@ -27,7 +27,7 @@ Visit the project at: [eldenring.redmaw.dev](https://eldenring.redmaw.dev)
 
 Found a bug? Open an issue or contact me on discord: `redmaw`
 
-## Todo
+## TODO
 
 - [x] Tutorial 
 - [x] First steps in Limgrave 
@@ -38,11 +38,12 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Castle Morne
 - [x] Stormveil Castle
 - [x] Fringefolk Hero's Grave
-- [ ] Resources
+- [x] Resources
 - [ ] Implement search functionality
 - [ ] Experiment with search highlighting
 - [ ] South Liurnia
-- [ ] Sort NPC Walkthrough and Merchant sections
+- [ ] Sort NPC Walkthrough and Merchants
+- [ ] Finalize FAQ
 - [ ] West Liurnia
 - [ ] Testu's Rise images
 - [ ] Central Liurnia
