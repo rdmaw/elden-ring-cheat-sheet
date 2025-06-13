@@ -407,19 +407,32 @@ document.addEventListener('DOMContentLoaded', () => {
   close.addEventListener('click', toggleSidebar);
 
   document.addEventListener('keydown', (e) => {
-    // Close sidebar with Esc
-    if (e.key === 'Escape' && sidebar.ariaHidden === 'false') toggleSidebar();
+    const active = document.activeElement;
+    const formControl = active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.tagName === 'SELECT';
+    if (formControl) return;
 
-    // Toggle sidebar with 'q'
-    if (e.key.toLowerCase() === 'q' && !e.ctrlKey && !e.metaKey) {
-      const active = document.activeElement;
-      const isFormControl = active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.tagName === 'SELECT';
+    switch (e.key.toLowerCase()) {
+      case 'escape':
+        if (sidebar.ariaHidden === 'false') {
+          toggleSidebar();
+        }
+        break;
 
-      if (!isFormControl) {
-        e.preventDefault();
-        toggleSidebar();
-        close.focus();
-      }
+      case 'q':
+        if (!e.ctrlKey && !e.metaKey) {
+          e.preventDefault();
+          toggleSidebar();
+          close.focus();
+        }
+        break;
+
+      case '/':
+        if (!e.ctrlKey && !e.metaKey) {
+          e.preventDefault();
+          const search = document.getElementById('search');
+          if (search) search.focus();
+        }
+        break;
     }
   });
 
