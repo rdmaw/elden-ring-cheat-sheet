@@ -494,4 +494,64 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('h', shouldHide ? '1' : '0');
     });
   }
+
+  // Search checklists
+  function filterChecklist(searchTerm) {
+    const sections = [...document.querySelectorAll('main h3')];
+    const cleanTerm = searchTerm.toLowerCase().trim();
+    
+    if (!cleanTerm) {
+      const allElements = document.querySelectorAll('main h3, main li');
+      allElements.forEach(el => el.style.display = '');
+      return;
+    }
+  
+    const terms = cleanTerm.split(/\s+/);
+    const matchCache = new Map();
+    const matches = text => {
+      if (!matchCache.has(text)) {
+        matchCache.set(text, terms.every(term => text.includes(term)));
+      }
+      return matchCache.get(text);
+    };
+  
+    for (const section of sections) {
+      const list = section.nextElementSibling;
+      if (!list) continue;
+  
+      let sectionVisible = false;
+      const mainItems = list.children;
+  
+      for (const item of mainItems) {
+        const mainText = item.textContent.toLowerCase();
+        let showItem = matches(mainText);
+  
+        if (!showItem) {
+          const nestedItems = item.querySelectorAll('ul li');
+          for (const nested of nestedItems) {
+            const nestedText = nested.textContent.toLowerCase();
+            if (matches(nestedText)) {
+              nested.style.display = '';
+              showItem = true;
+            } else {
+              nested.style.display = 'none';
+            }
+          }
+        } else {
+          item.querySelectorAll('ul li').forEach(nested => {
+            nested.style.display = '';
+          });
+        }
+  
+        item.style.display = showItem ? '' : 'none';
+        sectionVisible ||= showItem;
+      }
+      section.style.display = sectionVisible ? '' : 'none';
+    }
+  }
+  
+  const search = document.getElementById('search');
+  if (search) {
+    search.addEventListener('input', e => filterChecklist(e.target.value));
+  }
 });

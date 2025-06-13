@@ -39,8 +39,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Stormveil Castle
 - [x] Fringefolk Hero's Grave
 - [x] Resources
-- [ ] Implement search functionality
-- [ ] Experiment with search highlighting
+- [x] Implement search functionality
 - [ ] South Liurnia
 - [ ] Sort NPC Walkthrough and Merchants
 - [ ] Finalize FAQ
