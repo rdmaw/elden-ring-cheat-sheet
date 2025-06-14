@@ -42,7 +42,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Implement search functionality
 - [ ] South Liurnia
 - [ ] Sort NPC Walkthrough and Merchants
-- [ ] Finalize FAQ
 - [ ] West Liurnia
 - [ ] Testu's Rise images
 - [ ] Central Liurnia
@@ -57,6 +56,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [ ] Redmane Castle
 - [ ] Nokron, Eternal City
 - [ ] Carian Study Hall
+- [ ] Finalize FAQ
 
 ## Special Thanks
 
