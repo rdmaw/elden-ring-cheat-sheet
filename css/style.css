@@ -548,26 +548,16 @@ table {
 }
 
 caption {
-  text-align: left;
   margin-bottom: var(--r3);
-  color: var(--h);
 }
 
 th, td {
   padding: var(--r3);
-  text-align: center;
   border: 1px solid var(--2);
 }
 
-th {
-  &[scope="col"] {
-    background-color: var(--1);
-    color: var(--h);
-  }
-
-  &[scope="row"] {
-    text-align: left;
-  }
+th[scope="col"] {
+  background-color: var(--1);
 }
 
 tr:nth-child(even) {
@@ -618,13 +608,14 @@ tr:hover {
 .flex { display: flex; }
 .ac { align-items: center; }
 .jc { justify-content: center; }
-header, footer { text-align: center; }
+header, footer, th, td { text-align: center; }
+caption, th[scope="row"] { text-align: left; }
 .disc { list-style-type: disc; margin: var(--r3) 0 var(--r2) var(--r7); }
 .r, .not li::marker { color: var(--r); }
 .g, .incl li::marker { color: var(--g); }
 .p { color: var(--p); }
 .o { color: var(--o); }
-.h, h1, h2, h3, h3 a, h4, h4 a, strong, nav a, footer a, .lead, .toc a, #menu svg, .close svg { color: var(--h); }
+.h, h1, h2, h3, h3 a, h4, h4 a, strong, nav a, footer a, caption, th[scope="col"], .lead, .toc a, #menu svg, .close svg { color: var(--h); }
 
 /* REPETITION 
 ------------- */

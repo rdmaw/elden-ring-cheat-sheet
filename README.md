@@ -40,7 +40,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Fringefolk Hero's Grave
 - [x] Resources
 - [x] Implement search functionality
-- [ ] South Liurnia
+- [x] South Liurnia
 - [ ] Sort NPC Walkthrough and Merchants
 - [ ] West Liurnia
 - [ ] Testu's Rise images
