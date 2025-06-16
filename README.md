@@ -41,7 +41,8 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Resources
 - [x] Implement search functionality
 - [x] South Liurnia
-- [ ] Sort NPC Walkthrough and Merchants
+- [x] Sort NPC Walkthrough
+- [ ] Sort Merchants
 - [ ] West Liurnia
 - [ ] Testu's Rise images
 - [ ] Central Liurnia
@@ -49,6 +50,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [ ] East Liurnia
 - [ ] Caria manor
 - [ ] Ruin-Strewn Precipice
+- [ ] Sort NPC Walkthrough - Liurnia
 - [ ] Ainsel River
 - [ ] Siofra River
 - [ ] Caelid
@@ -56,6 +58,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [ ] Redmane Castle
 - [ ] Nokron, Eternal City
 - [ ] Carian Study Hall
+- [ ] Finalize NPC Walkthrough
 - [ ] Finalize FAQ
 
 ## Special Thanks
