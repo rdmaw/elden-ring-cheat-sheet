@@ -45,7 +45,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Sort Merchants
 - [x] Testu's Rise images
 - [x] West Liurnia
-- [ ] Central Liurnia
+- [x] Central Liurnia
 - [ ] Academy of Raya Lucaria
 - [ ] East Liurnia
 - [ ] Caria manor
