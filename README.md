@@ -43,8 +43,8 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] South Liurnia
 - [x] Sort NPC Walkthrough
 - [x] Sort Merchants
-- [ ] West Liurnia
-- [ ] Testu's Rise images
+- [x] Testu's Rise images
+- [x] West Liurnia
 - [ ] Central Liurnia
 - [ ] Academy of Raya Lucaria
 - [ ] East Liurnia
