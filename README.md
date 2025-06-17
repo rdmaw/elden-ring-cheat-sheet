@@ -42,7 +42,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Implement search functionality
 - [x] South Liurnia
 - [x] Sort NPC Walkthrough
-- [ ] Sort Merchants
+- [x] Sort Merchants
 - [ ] West Liurnia
 - [ ] Testu's Rise images
 - [ ] Central Liurnia
@@ -60,6 +60,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [ ] Carian Study Hall
 - [ ] Finalize NPC Walkthrough
 - [ ] Finalize FAQ
+- [ ] Finalize Styles
 
 ## Special Thanks
 
