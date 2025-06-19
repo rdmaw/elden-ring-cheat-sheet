@@ -46,7 +46,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Testu's Rise images
 - [x] West Liurnia
 - [x] Central Liurnia
-- [ ] Academy of Raya Lucaria
+- [x] Academy of Raya Lucaria
 - [ ] East Liurnia
 - [ ] Caria manor
 - [ ] Ruin-Strewn Precipice
