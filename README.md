@@ -47,7 +47,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] West Liurnia
 - [x] Central Liurnia
 - [x] Academy of Raya Lucaria
-- [ ] East Liurnia
+- [x] East Liurnia
 - [ ] Caria manor
 - [ ] Ruin-Strewn Precipice
 - [ ] Sort NPC Walkthrough - Liurnia
