@@ -126,6 +126,14 @@ document.addEventListener('DOMContentLoaded', () => {
   restoreCheckboxes();
   calculateTotals();
 
+  // FIX? Load from storage if served from memory cache
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      restoreCheckboxes();
+      calculateTotals();
+    }
+  });
+
   // Sync storage between tabs
   window.addEventListener('storage', (e) => {
     if (e.key === key || e.key === 'current') {
