@@ -115,8 +115,10 @@ function calculateTotals() {
 // Store checkbox state when clicked
 document.addEventListener('change', e => {
   if (e.target.matches('input[type="checkbox"]')) {
-    e.target.closest('li').classList.toggle('c', e.target.checked);
-    mgr.setCl(e.target.id, e.target.checked);
+    const checkbox = e.target;
+    const checked = checkbox.checked;
+    checkbox.closest('li').classList.toggle('c', checked);
+    mgr.setCl(checkbox.id, checkbox.checked);
     calculateTotals();
   }
 });
@@ -126,9 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
   restoreCheckboxes();
   calculateTotals();
 
-  // FIX? Load from storage if served from memory cache
+  // Test fix for mobile bf-cache
   window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
+      p = initProfile();
+      A = localStorage.getItem('current') || D;
       restoreCheckboxes();
       calculateTotals();
     }
