@@ -14,11 +14,11 @@
   <link rel="icon" href="https://eldenring.redmaw.dev/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="https://eldenring.redmaw.dev/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/style.css">
+  <script>(()=>{try{let e=document.documentElement,t=localStorage,a=t.getItem("t"),d=t.getItem("cb"),c=t.getItem("current")||"default",n=JSON.parse(t.getItem("er")||"{}")[c]?.col;"d"==a&&e.classList.add("dark"),d&&"0"!=d&&e.classList.add(d),n&&(n=Object.keys(n))[0]&&document.head.insertAdjacentHTML("beforeend","<style data-c>#"+n.join(",#")+"{display:none!important}</style>")}catch{}})();</script>
   <link rel="canonical" href="https://eldenring.redmaw.dev/sheets/questlines">
   <title>Questlines | Elden Ring Cheat Sheet</title>
 </head>
 <body>
-  <script>(()=>{try{let e=document.documentElement,t=localStorage,a=t.getItem("t"),d=t.getItem("cb"),c=t.getItem("current")||"default",n=JSON.parse(t.getItem("er")||"{}")[c]?.col;"d"==a&&e.classList.add("dark"),d&&"0"!=d&&e.classList.add(d),n&&(n=Object.keys(n))[0]&&document.head.insertAdjacentHTML("beforeend","<style data-c>#"+n.join(",#")+"{display:none!important}</style>")}catch{}})();</script>
   <nav class="flex" aria-label="Global navigation">
     <div class="nav flex">
       <button type="button" id="menu" class="flex ac jc" aria-label="Open sidebar" aria-controls="sidebar" aria-expanded="false"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#menu"></use></svg></button>
@@ -155,10 +155,10 @@
         </li>
         <li><input type="checkbox" id="q4-10"><label for="q4-10">At this point, you'll have two options:</label>
           <ul>
-            <li><input type="checkbox" id="q4-11"><label for="q4-11">Give her <a href="https://eldenring.wiki.fextralife.com/Seluvis's+Potion" class="p">Seluvis's Potion</a>:</label>
+            <li><input type="checkbox" id="q4-11"><label for="q4-11">Give her <a href="https://eldenring.wiki.fextralife.com/Seluvis's+Potion" class="p">Seluvis's Potion</a> (received upon starting <a href="#seluvis" class="g">Seluvis</a>'s questline):</label>
               <ul>
-                <li><input type="checkbox" id="q4-12"><label for="q4-12"><strong class="r">MISSABLE:</strong> Immediately fails both <a href="#nepheli-loux" class="g">Nepheli</a> and <a href="#gatekeeper-gostoc" class="g">Gostoc</a>'s questlines. You can then loot the <a href="https://eldenring.wiki.fextralife.com/Nepheli+Loux+Puppet">Nepheli Loux Puppet</a> upon <a href="#pidia" class="g">Pidia</a>'s death.</label></li>
-                <li><input type="checkbox" id="q4-13"><label for="q4-13"><strong>Note:</strong> The potion required is received upon starting <a href="#seluvis" class="g">Seluvis</a>'s questline and accepting his task.</label></li>
+                <li><input type="checkbox" id="q4-12"><label for="q4-12"><strong class="r">WARNING:</strong> Immediately fails both <a href="#nepheli-loux" class="g">Nepheli</a> and <a href="#gatekeeper-gostoc" class="g">Gostoc</a>'s questlines.</label></li>
+                <li><input type="checkbox" id="q4-13"><label for="q4-13">Give <a href="#ranni-the-witch" class="g">Ranni</a> the <a href="https://eldenring.wiki.fextralife.com/Fingerslayer+Blade" class="p">Fingerslayer Blade</a>, then loot the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=176104">Nepheli Loux Puppet</a> from <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167407" class="g">Pidia</a>'s body.</label></li>
               </ul>
             </li>
             <li><input type="checkbox" id="q4-14"><label for="q4-14">Give her <a href="https://eldenring.wiki.fextralife.com/The+Stormhawk+King" class="p">The Stormhawk King</a>:</label>
@@ -410,9 +410,9 @@
         <li><input type="checkbox" id="q23-3"><label for="q23-3">Talk to <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165877" class="g">Seluvis</a> in <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165495">Seluvis's Rise</a> and select <q>Accept the task</q> to receive <a href="https://eldenring.wiki.fextralife.com/Seluvis's+Potion" class="p">Seluvis's Potion</a>.</label></li>
         <li><input type="checkbox" id="q23-4"><label for="q23-4">At this point, you'll have three options:</label>
           <ul>
-            <li><input type="checkbox" id="q23-5"><label for="q23-5">Give the potion to <a href="#nepheli-loux" class="g">Nepheli</a>.</label></li>
-            <li><input type="checkbox" id="q23-6"><label for="q23-6">Give the potion to <a href="#dung-eater" class="g">Dung Eater</a>.</label></li>
-            <li><input type="checkbox" id="q23-7"><label for="q23-7">Give the potion to <a href="#gideon-ofnir" class="g">Gideon</a>.</label></li>
+            <li><input type="checkbox" id="q23-5"><label for="q23-5"><strong class="r">MISSABLE:</strong> Give the potion to <a href="#nepheli-loux" class="g">Nepheli</a>.</label></li>
+            <li><input type="checkbox" id="q23-6"><label for="q23-6"><strong class="r">MISSABLE:</strong> Give the potion to <a href="#dung-eater" class="g">Dung Eater</a>.</label></li>
+            <li><input type="checkbox" id="q23-7"><label for="q23-7"><strong>Recommended:</strong> Give the potion to <a href="#gideon-ofnir" class="g">Gideon</a>.</label></li>
           </ul>
         </li>
       </ul>
@@ -430,7 +430,7 @@
       </ul>
       <h3 id="dung-eater"><button type="button" class="col btn" aria-label="Toggle Dung Eater section" aria-controls="q30" aria-expanded="true"></button><a href="https://eldenring.wiki.fextralife.com/Dung+Eater">Dung Eater</a><span id="q-t30"></span></h3>
       <ul id="q30" aria-labelledby="dung-eater">
-        <li><input type="checkbox" id="q30-1"><label for="q30-1"><strong class="r">WARNING:</strong> If you plan to give him <a href="https://eldenring.wiki.fextralife.com/Seluvis's+Potion" class="p">Seluvis's Potion</a>, keep in mind that <a href="#seluvis" class="g">Seluvis</a> must remain alive during this questline.</label></li>
+        <li><input type="checkbox" id="q30-1"><label for="q30-1"><strong class="r">WARNING:</strong> If you plan to give him <a href="https://eldenring.wiki.fextralife.com/Seluvis's+Potion" class="p">Seluvis's Potion</a>, <a href="#seluvis" class="g">Seluvis</a> must remain alive during this questline.</label></li>
         <li><input type="checkbox" id="q30-2"><label for="q30-2"><strong>Note:</strong> Although there are 6 <a href="https://eldenring.wiki.fextralife.com/Seedbed+Curse" class="p">Seedbed Curses</a> available in the game, only 5 are needed to complete his quest:</label>
           <ul>
             <li><input type="checkbox" id="q30-3"><label for="q30-3"><a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167017">#1</a>: In the top floor of a building in Leyndell. TBD.</label></li>
@@ -459,8 +459,8 @@
             </li>
             <li><input type="checkbox" id="q30-18"><label for="q30-18">Administer <a href="https://eldenring.wiki.fextralife.com/Seluvis's+Potion" class="p">Seluvis's Potion</a>:</label>
               <ul>
-                <li><input type="checkbox" id="q30-19"><label for="q30-19"><strong class="r">WARNING:</strong> Ends his questline and prevents <a href="https://eldenring.wiki.fextralife.com/Endings#blessingofdespair">The Blessing of Despair</a> ending (not required for all achievements).</label></li>
-                <li><input type="checkbox" id="q30-20"><label for="q30-20"><strong>Note:</strong> You can get both his armor and the puppet without failing <a href="#seluvis" class="g">Seluvis</a>'s request by killing him after he stops screaming. However, be aware that reloading the area at any time will despawn him. (I have not tested this yet, so try at your own risk.)</label></li>
+                <li><input type="checkbox" id="q30-19"><label for="q30-19"><strong class="r">WARNING:</strong> Prevents <a href="https://eldenring.wiki.fextralife.com/Endings#blessingofdespair">The Blessing of Despair</a> ending (not required for all achievements).</label></li>
+                <li><input type="checkbox" id="q30-20"><label for="q30-20"><strong>Note:</strong> You can get both his armor and the puppet without failing <a href="#seluvis" class="g">Seluvis</a> by killing him after he stops screaming. However, be aware that reloading the area at any time will despawn him. (I have not tested this yet, so try at your own risk.)</label></li>
                 <li><input type="checkbox" id="q30-21"><label for="q30-21">Progress <a href="#seluvis" class="g">Seluvis</a>'s questline up until you can select <q>I want a new puppet</q>, then buy the <a href="https://eldenring.wiki.fextralife.com/Dung+Eater+Puppet">Dung Eater Puppet</a> for 5 <a href="https://eldenring.wiki.fextralife.com/Starlight+Shards">Starlight Shards</a>.</label></li>
               </ul>
             </li>
