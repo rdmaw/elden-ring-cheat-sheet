@@ -543,9 +543,18 @@ document.addEventListener('DOMContentLoaded', () => {
     for (const section of sections) {
       const list = section.nextElementSibling;
       if (!list) continue;
+
+      const sectionText = section.textContent.toLowerCase();
+      const sectionMatches = matches(sectionText);
   
-      let sectionVisible = false;
+      let sectionVisible = sectionMatches;
       const mainItems = list.children;
+
+      if (sectionMatches) {
+        section.style.display = '';
+        list.querySelectorAll('li').forEach(li => li.style.display = '');
+        continue;
+      }
   
       for (const item of mainItems) {
         const mainText = item.textContent.toLowerCase();
