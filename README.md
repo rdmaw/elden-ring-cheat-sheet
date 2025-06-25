@@ -48,7 +48,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Central Liurnia
 - [x] Academy of Raya Lucaria
 - [x] East Liurnia
-- [ ] Caria manor
+- [x] Caria manor
 - [ ] Ruin-Strewn Precipice
 - [ ] Sort NPC Walkthrough - Liurnia
 - [ ] Ainsel River
