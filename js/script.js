@@ -117,8 +117,16 @@ window.addEventListener('pageshow', (event) => {
     alert('Event persisted');
     p = JSON.parse(localStorage.getItem(key) || JSON.stringify(def));
     A = localStorage.getItem('current') || D;
-    restoreCheckboxes();
-    calculateTotals();
+
+    if (document.readyState === 'complete') {
+      restoreCheckboxes();
+      calculateTotals();
+    } else {
+      document.addEventListener('DOMContentLoaded', () => {
+        restoreCheckboxes();
+        calculateTotals();
+      });
+    }
   }
 });
 
