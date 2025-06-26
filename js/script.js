@@ -1,13 +1,12 @@
 const key = 'er';
 const D = 'default';
 const root = document.documentElement;
+const def = { [D]: { data: {}, col: {} } };
 let A = localStorage.getItem('current') || D;
 let p = initProfile();
 
 // Initialize default profile, p = profile, def = default, A = active
 function initProfile() {
-  const def = { [D]: { data: {}, col: {} } };
-
   try {
     const p = JSON.parse(localStorage.getItem(key)) ?? def;
     p[D] = {...def[D], ...p[D]};
@@ -22,7 +21,7 @@ function initProfile() {
 // Manage profile data
 const mgr = {
   get() {
-    return initProfile()[A] || initProfile()[D];
+    return p[A] || p[D];
   },
 
   setCl(id, checked) {
@@ -69,15 +68,6 @@ function restoreCheckboxes() {
   });
 }
 
-// Test fix for mobile bf-cache
-window.addEventListener('pageshow', (event) => {
-  if (event.persisted) {
-    p = initProfile();
-    A = localStorage.getItem('current') || D;
-    restoreCheckboxes();
-  }
-});
-
 // Calculate totals
 function calculateTotals() {
   const firstCheckbox = document.querySelector('input[type="checkbox"]');
@@ -120,6 +110,16 @@ function calculateTotals() {
   totalAll.textContent = overallTotal ? (overallChecked === overallTotal ? 'DONE' : `${overallChecked}/${overallTotal}`) : '0/0';
   if (overallChecked === overallTotal && overallTotal > 0) totalAll.classList.add('d');
 }
+
+// Test fix for mobile bf-cache
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    p = JSON.parse(localStorage.getItem(key) || JSON.stringify(def));
+    A = localStorage.getItem('current') || D;
+    restoreCheckboxes();
+    calculateTotals();
+  }
+});
 
 // Store checkbox state when clicked
 document.addEventListener('change', e => {
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function getData() {
     return {
       current: A,
-      [key]: initProfile()
+      [key]: p
     };
   }
 
