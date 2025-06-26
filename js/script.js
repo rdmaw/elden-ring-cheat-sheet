@@ -69,6 +69,15 @@ function restoreCheckboxes() {
   });
 }
 
+// Test fix for mobile bf-cache
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    p = initProfile();
+    A = localStorage.getItem('current') || D;
+    restoreCheckboxes();
+  }
+});
+
 // Calculate totals
 function calculateTotals() {
   const firstCheckbox = document.querySelector('input[type="checkbox"]');
@@ -127,16 +136,6 @@ document.addEventListener('change', e => {
 document.addEventListener('DOMContentLoaded', () => {
   restoreCheckboxes();
   calculateTotals();
-
-  // Test fix for mobile bf-cache
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      p = initProfile();
-      A = localStorage.getItem('current') || D;
-      restoreCheckboxes();
-      calculateTotals();
-    }
-  });
 
   // Sync storage between tabs
   window.addEventListener('storage', (e) => {
