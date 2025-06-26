@@ -113,8 +113,7 @@ function calculateTotals() {
 
 // Test fix for mobile bf-cache
 window.addEventListener('pageshow', (event) => {
-  if (event.persisted) {
-    alert('Event persisted');
+    alert('Test persisted');
     p = JSON.parse(localStorage.getItem(key) || JSON.stringify(def));
     A = localStorage.getItem('current') || D;
 
@@ -127,7 +126,6 @@ window.addEventListener('pageshow', (event) => {
         calculateTotals();
       });
     }
-  }
 });
 
 // Store checkbox state when clicked
