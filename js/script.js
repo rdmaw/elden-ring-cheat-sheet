@@ -111,23 +111,6 @@ function calculateTotals() {
   if (overallChecked === overallTotal && overallTotal > 0) totalAll.classList.add('d');
 }
 
-// Test fix for mobile bf-cache
-window.addEventListener('pageshow', (event) => {
-    alert('Test persisted');
-    p = JSON.parse(localStorage.getItem(key) || JSON.stringify(def));
-    A = localStorage.getItem('current') || D;
-
-    if (document.readyState === 'complete') {
-      restoreCheckboxes();
-      calculateTotals();
-    } else {
-      document.addEventListener('DOMContentLoaded', () => {
-        restoreCheckboxes();
-        calculateTotals();
-      });
-    }
-});
-
 // Store checkbox state when clicked
 document.addEventListener('change', e => {
   if (e.target.matches('input[type="checkbox"]')) {
@@ -136,6 +119,12 @@ document.addEventListener('change', e => {
     checkbox.closest('li').classList.toggle('c', checked);
     mgr.setCl(checkbox.id, checkbox.checked);
     calculateTotals();
+  }
+});
+
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    window.location.reload();
   }
 });
 
