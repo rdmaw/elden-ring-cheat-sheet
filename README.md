@@ -52,7 +52,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Ruin-Strewn Precipice
 - [x] Sort NPC Walkthrough - Liurnia
 - [x] Ainsel River
-- [ ] Siofra River
+- [x] Siofra River
 - [ ] Caelid
 - [ ] Sellia, Town of Sorcery
 - [ ] Redmane Castle
