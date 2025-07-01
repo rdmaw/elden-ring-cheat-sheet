@@ -53,7 +53,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Sort NPC Walkthrough - Liurnia
 - [x] Ainsel River
 - [x] Siofra River
-- [ ] Caelid
+- [x] Caelid
 - [ ] Sellia, Town of Sorcery
 - [ ] Redmane Castle
 - [ ] Nokron, Eternal City
