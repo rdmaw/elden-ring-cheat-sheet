@@ -1,7 +1,7 @@
 /* VARIABLES 
 ------------ */
 :root {
-  /* COLORS - b:background, t:text, h:heading, 1:primary, 2:secondary, 3:tertiary, r:red, g:green, p:purple, o:orange, a:anchor/link, x:not-checked, d:done, k:btn, kt:btn-text, kh:btn-hover
+  /* COLORS - b:background, t:text, h:heading, 1:primary, 2:secondary, 3:tertiary, 4:hover-tablerow r:red, g:green, p:purple, o:orange, a:anchor/link, x:not-checked, d:done, s:select, k:btn, kt:btn-text, kh:btn-hover
   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
   --b: #fff5e1;
   --t: #2c1810;
@@ -17,6 +17,7 @@
   --a: #1d5bcd;
   --x: #ca3f3f;
   --d: #379a80;
+  --s: #ffffff;
   --k: #efefef;
   --kt: #2c1810;
   --kh: #d2d2d2;
@@ -51,6 +52,7 @@
   --a: #65a0d7;
   --x: #e9586b;
   --d: #17b598;
+  --s: #3b3b3b;
   --k: #404040;
   --kt: #f8f7f7;
   --kh: #222426;
@@ -124,8 +126,8 @@
 }
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 15px;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -214,7 +216,7 @@ q {
 }
 
 kbd {
-  padding: .125em .375em;
+  padding: .15em .4em;
   color: var(--kt);
   background-color: var(--k);
   border: 1px solid var(--2);
@@ -267,6 +269,9 @@ svg {
   width: 100%;
   height: 2.375rem;
   padding-inline: .5em;
+  background-color: var(--s);
+  border: 1px solid grey;
+  border-radius: 3px;
 }
 
 #search, .options h2, select {
@@ -396,7 +401,7 @@ nav {
 /* CONTAINERS 
 ------------- */
 main {
-  width: min(100% - var(--r5), 82.5rem);
+  width: min(100% - var(--r5), 87rem);
   margin-inline: auto;
 }
 
@@ -412,14 +417,6 @@ footer {
   & li {
     padding-left: var(--r2);
   }
-}
-
-.not {
-  list-style-type: "✕";
-}
-
-.incl {
-  list-style-type: "✔";
 }
 
 /* OPTIONS 
@@ -521,14 +518,14 @@ label {
 input[type="checkbox"] {
   position: absolute;
   left: var(--r5);
-  top: .5rem;
-  width: 1.125rem;
-  height: 1.125rem;
+  top: .46rem;
+  width: 1.2rem;
+  height: 1.2rem;
   accent-color: var(--d);
 }
 
 input[type="checkbox"]:hover {
-  transform: scale(1.2);
+  transform: scale(1.12);
 }
 
 input[type="checkbox"]:checked ~ label {
@@ -587,22 +584,6 @@ tr:hover {
   }
 }
 
-/* MEDIA 
--------- */
-@media (max-width: 1050px) {
-  #hide span {
-   display: none; 
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
-
-  table {
-    font-size: .9rem;
-  }
-}
-
 /* UTILITY
 ---------- */
 .flex { display: flex; }
@@ -610,7 +591,7 @@ tr:hover {
 .jc { justify-content: center; }
 header, footer, th, td { text-align: center; }
 caption, th[scope="row"] { text-align: left; }
-.disc { list-style-type: disc; margin: var(--r3) 0 var(--r2) var(--r7); }
+.list { list-style-type: disc; margin: var(--r3) 0 var(--r2) var(--r7); }
 .r, .not li::marker { color: var(--r); }
 .g, .incl li::marker { color: var(--g); }
 .p { color: var(--p); }
@@ -620,6 +601,7 @@ caption, th[scope="row"] { text-align: left; }
 /* REPETITION 
 ------------- */
 ol, footer, #hide, kbd { font-size: .9rem; }
+label, .loc { font-size: 15px; }
 .toc { line-height: 1.8; }
 html, .sh h2 { line-height: 1.5; }
 h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.1; }
@@ -653,5 +635,25 @@ textarea, .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: non
 
   & a {
     font-weight: 700;
+  }
+}
+
+/* MEDIA 
+-------- */
+@media (max-width: 1050px) {
+  label, .loc {
+    font-size: 14px;
+  }
+
+  #hide span {
+   display: none; 
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  table {
+    font-size: .9rem;
   }
 }

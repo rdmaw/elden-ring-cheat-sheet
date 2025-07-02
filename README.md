@@ -21,10 +21,6 @@ A collection of comprehensive checklists (cheat sheets) for achieving 100% compl
 
 Visit the project at: [eldenring.redmaw.dev](https://eldenring.redmaw.dev)
 
-> [!NOTE]
-> This project is under development. While most of the core functionality is complete, some sections are missing.
-> For now, I recommend following the [legacy walkthrough](https://rdmaw.github.io/temp-er-cheat-sheet/) until the live site is fully updated.
-
 Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
@@ -54,13 +50,13 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Ainsel River
 - [x] Siofra River
 - [x] Caelid
+- [x] Finalize FAQ
+- [ ] Finalize Styles
 - [ ] Sellia, Town of Sorcery
 - [ ] Redmane Castle
 - [ ] Nokron, Eternal City
 - [ ] Carian Study Hall
 - [ ] Finalize NPC Walkthrough
-- [ ] Finalize FAQ
-- [ ] Finalize Styles
 
 ## Special Thanks
 

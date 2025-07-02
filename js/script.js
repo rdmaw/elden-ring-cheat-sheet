@@ -124,6 +124,7 @@ document.addEventListener('change', e => {
 
 window.addEventListener('pageshow', (event) => {
   if (event.persisted) {
+    console.log('Event persisted');
     window.location.reload();
   }
 });
