@@ -134,12 +134,13 @@ html {
   scrollbar-color: var(--1) var(--b);
 }
 
-input, button, kbd, q, select {
+input, button, q, select {
   font-family: inherit;
   font-size: inherit;
 }
 
 body {
+  overflow-wrap: break-word;
   color: var(--t);
   background-color: var(--b);
 }
@@ -217,6 +218,7 @@ q {
 }
 
 kbd {
+  font-family: inherit;
   padding: .15em .4em;
   color: var(--kt);
   background-color: var(--k);
@@ -270,6 +272,7 @@ svg {
   width: 100%;
   height: 2.375rem;
   padding-inline: .5em;
+  color: var(--t);
   background-color: var(--s);
   border: 1px solid grey;
   border-radius: 3px;
@@ -560,8 +563,8 @@ tr:hover {
 header, footer, th, td { text-align: center; }
 caption, th[scope="row"] { text-align: left; }
 .list { list-style-type: disc; margin: var(--r3) 0 var(--r2) var(--r7); }
-.r, .not li::marker { color: var(--r); }
-.g, .incl li::marker { color: var(--g); }
+.r { color: var(--r); }
+.g { color: var(--g); }
 .p { color: var(--p); }
 .o { color: var(--o); }
 .h, h1, h2, h3, h3 a, h4, h4 a, strong, nav a, footer a, caption, th[scope="col"], .lead, .toc a, #menu svg, .close svg { color: var(--h); }
@@ -569,10 +572,9 @@ caption, th[scope="row"] { text-align: left; }
 /* REPEATED 
 ------------- */
 ol, footer, #hide, kbd { font-size: .9rem; }
-.toc { line-height: 1.8; }
+.toc { line-height: 1.6; }
 html, .sh h2 { line-height: 1.5; }
 h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.1; }
-h1, h2, h3, h4, p, a { overflow-wrap: break-word; }
 h3 button, h3 a, h3 span { vertical-align: middle; }
 header h1, h2, strong { font-weight: 700; }
 .sh h2, .toc h2, h3, h4, a, q, nav span, caption { font-weight: 600; }
@@ -643,11 +645,6 @@ textarea, .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: non
     --a: #000;
     --k: #fff;
     --kt: #000;
-  }
-
-  * {
-    box-shadow: none;
-    border-color: #000;
   }
 
   nav, .toc h2, .toc span, input[type="checkbox"], footer, search, .filter, h3 button, h3 span, #up, .alert {
