@@ -51,7 +51,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Siofra River
 - [x] Caelid
 - [x] Finalize FAQ
-- [ ] Finalize Styles
+- [x] Finalize Styles
 - [ ] Sellia, Town of Sorcery
 - [ ] Redmane Castle
 - [ ] Nokron, Eternal City
