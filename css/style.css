@@ -218,8 +218,8 @@ q {
 }
 
 kbd {
-  font-family: inherit;
-  padding: .15em .4em;
+  font-family: monospace;
+  padding: .2em .5em;
   color: var(--kt);
   background-color: var(--k);
   border: 1px solid var(--2);
@@ -272,7 +272,7 @@ svg {
   width: 100%;
   height: 2.375rem;
   padding-inline: .5em;
-  color: var(--t);
+  color: var(--kt);
   background-color: var(--s);
   border: 1px solid grey;
   border-radius: 3px;
@@ -308,7 +308,7 @@ nav {
     display: inline-flex;
     padding-inline: var(--r2);
     align-items: center;
-    height: 2.8rem;
+    height: 2.7rem;
 
     &:hover {
       background-color: var(--3);
@@ -560,8 +560,6 @@ tr:hover {
 .flex { display: flex; }
 .ac { align-items: center; }
 .jc { justify-content: center; }
-header, footer, th, td { text-align: center; }
-caption, th[scope="row"] { text-align: left; }
 .list { list-style-type: disc; margin: var(--r3) 0 var(--r2) var(--r7); }
 .r { color: var(--r); }
 .g { color: var(--g); }
@@ -571,6 +569,8 @@ caption, th[scope="row"] { text-align: left; }
 
 /* REPEATED 
 ------------- */
+header, footer, th, td { text-align: center; }
+caption, th[scope="row"] { text-align: left; }
 ol, footer, #hide, kbd { font-size: .9rem; }
 .toc { line-height: 1.6; }
 html, .sh h2 { line-height: 1.5; }
@@ -651,17 +651,17 @@ textarea, .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: non
     display: none !important;
   }
 
-  .toc {
-    display: block !important;
+  label {
+    padding: 0;
+    text-decoration: none !important;
   }
 
   a {
     text-decoration: underline;
   }
 
-  label {
-    padding: 0;
-    text-decoration: none !important;
+  .toc {
+    display: block !important;
   }
 
   .l {
