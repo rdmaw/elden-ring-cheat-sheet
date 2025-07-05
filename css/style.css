@@ -511,10 +511,6 @@ input[type="checkbox"] {
   accent-color: var(--d);
 }
 
-input[type="checkbox"]:hover {
-  transform: scale(1.12);
-}
-
 input[type="checkbox"]:checked ~ label {
   text-decoration: line-through;
 }
