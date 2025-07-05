@@ -105,11 +105,7 @@
     <div class="filter">
       <button type="button" id="exp-a" class="btn">Expand all</button>
       <button type="button" id="col-a" class="btn">Collapse all</button>
-      <button type="button" id="hide" class="btn flex ac jc">
-        <svg id="hideSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828"></path> <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"></path> <path d="M3 3l18 18"></path></svg>
-        <svg id="showSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path> <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path> </svg> 
-        <span></span>
-      </button>
+      <button type="button" id="hide" class="btn flex ac jc" aria-label="Hide completed steps" aria-pressed="false"><svg id="hideSvg" aria-hidden="true"><use href="/assets/icons/sprite.svg#hideSvg"></use></svg><svg id="showSvg" aria-hidden="true"><use href="/assets/icons/sprite.svg#showSvg"></use></svg></button>
     </div>
     <form role="none" autocomplete="off">
       <h3 id="melina"><button type="button" class="col btn" aria-label="Toggle Melina section" aria-controls="q1" aria-expanded="true"></button><a href="https://eldenring.wiki.fextralife.com/Melina">Melina</a><span id="q-t1"></span></h3>
@@ -568,7 +564,6 @@
   </main>
   <button type="button" id="up" class="btn" aria-label="Scroll to top of page"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#top"></use></svg></button>
   <footer>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></footer>
-  <textarea name="ff" aria-hidden="true" tabindex="-1"></textarea>
   <script defer src="/js/script.min.js"></script>
 </body>
 </html>

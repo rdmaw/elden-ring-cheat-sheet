@@ -15,7 +15,7 @@
   --p: #7a00cc;
   --o: #d66800;
   --a: #1d5bcd;
-  --x: #cf6747;
+  --x: #ce6140;
   --d: #379a80;
   --s: #ffffff;
   --k: #efefef;
@@ -414,16 +414,18 @@ footer {
 
 /* OPTIONS 
 ---------- */
-.filter button, .options button {
-  margin-right: var(--r1);
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--r2);
 }
 
 .options label {
   padding: .3rem 0 var(--r2) 0;
 }
 
-.imp-g {
-  margin-bottom: var(--r7);
+.mgm {
+  margin-bottom: var(--r4);
 }
 
 /* CHECKLISTS
@@ -450,12 +452,9 @@ nav span, h2 span, h3 span {
   background-color: var(--d);
 }
 
-#hide {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  gap: var(--r1);
-  z-index: 1;
+#hide svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 #showSvg, .hide #hideSvg {
@@ -571,7 +570,7 @@ tr:hover {
 ------------- */
 header, footer, th, td { text-align: center; }
 caption, th[scope="row"] { text-align: left; }
-ol, footer, #hide, kbd { font-size: .9rem; }
+ol, footer, kbd { font-size: .9rem; }
 .toc { line-height: 1.6; }
 html, .sh h2 { line-height: 1.5; }
 h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.1; }
@@ -580,7 +579,7 @@ header h1, h2, strong { font-weight: 700; }
 .sh h2, .toc h2, h3, h4, a, q, nav span, caption { font-weight: 600; }
 select, button, input[type="checkbox"], label { cursor: pointer; }
 li { position: relative; }
-textarea, .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: none !important; }
+.f, .hide .c > label, .hide .c > input[type="checkbox"] { display: none !important; }
 
 /* TEMPORARY STYLES
 ------------------- */
@@ -612,10 +611,6 @@ textarea, .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: non
 @media (max-width: 1050px) {
   label, .l {
     font-size: 14px;
-  }
-
-  #hide span {
-   display: none; 
   }
 
   h3 {

@@ -13,7 +13,7 @@
   <link rel="icon" href="https://eldenring.redmaw.dev/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="https://eldenring.redmaw.dev/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="https://eldenring.redmaw.dev/apple-touch-icon.png">
-  <script>const d=document.documentElement,t="d"===localStorage.getItem("t"),c=localStorage.getItem("cb");t&&d.classList.add("dark"),c&&"0"!==c&&d.classList.add(c);</script>
+  <script>(()=>{try{let e=document.documentElement,t=localStorage,a=t.getItem("t"),d=t.getItem("cb"),c=t.getItem("current")||"default",n=JSON.parse(t.getItem("er")||"{}")[c]?.col;"d"==a&&e.classList.add("dark"),d&&"0"!=d&&e.classList.add(d),n&&(n=Object.keys(n))[0]&&document.head.insertAdjacentHTML("beforeend","<style data-c>#"+n.join(",#")+"{display:none!important}</style>")}catch{}})();</script>
   <link rel="stylesheet" href="/css/style.min.css">
   <link rel="canonical" href="https://eldenring.redmaw.dev/sheets/walkthrough">
   <title>Walkthrough | Elden Ring Cheat Sheet</title>
@@ -57,6 +57,7 @@
       <p></p>
       <p>Trouble following directions? Read the <a href="/#directions">explanation of directions</a> in the FAQ.<br>Assume that the starting point is from the end of the previous step, unless stated otherwise.</p>
       <p>If you'd rather explore on your own, check out the <a href="/sheets/npc-walkthrough">NPC Walkthrough</a> instead.</p>
+      <p class="temp">For the time being, I recommend using the <a href="https://rdmaw.github.io/temp-er-cheat-sheet/">old walkthrough </a> until this one catches up.</p>
       <div class="alert">
         <h2>🚧 This page is under development 🚧</h2>
         <ul>
@@ -65,7 +66,6 @@
           <li>If you notice any mistakes, or want to contribute, please <a href="https://github.com/rdmaw/elden-ring-cheat-sheet/issues">open an issue on Github</a></li>
         </ul>
       </div>
-      <p class="temp">For the time being, I recommend using the <a href="https://rdmaw.github.io/temp-er-cheat-sheet/">old walkthrough </a> until this one catches up.</p>
     </header>
     <nav class="toc">
       <h2>Current Progress<span id="w-ot"></span></h2>
@@ -96,11 +96,7 @@
     <div class="filter">
       <button type="button" id="exp-a" class="btn">Expand all</button>
       <button type="button" id="col-a" class="btn">Collapse all</button>
-      <button type="button" id="hide" class="btn flex ac jc">
-        <svg id="hideSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828"></path> <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"></path> <path d="M3 3l18 18"></path></svg>
-        <svg id="showSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path> <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path> </svg> 
-        <span></span>
-      </button>
+      <button type="button" id="hide" class="btn flex ac jc" aria-label="Hide completed steps" aria-pressed="false"><svg id="hideSvg" aria-hidden="true"><use href="/assets/icons/sprite.svg#hideSvg"></use></svg><svg id="showSvg" aria-hidden="true"><use href="/assets/icons/sprite.svg#showSvg"></use></svg></button>
     </div>
     <form role="none" autocomplete="off">
       <h3 id="tutorial"><button type="button" class="col btn" aria-label="Toggle Tutorial section" aria-controls="w1" aria-expanded="true"></button><a href="https://eldenring.wiki.fextralife.com/Chapel+of+Anticipation">Tutorial (Levels 1-10)</a><span id="w-t1"></span></h3>
@@ -345,7 +341,7 @@
         <li><input type="checkbox" id="w3-29"><label for="w3-29">Return to the map pillar, then head north-northeast through <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=164178">Kingsrealm Ruins</a>. Hit or roll through the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=175472">illusory wall</a> at the end to discover the <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=164164">Road to the Manor</a> site of grace behind it.</label></li>
         <li><input type="checkbox" id="w3-30"><label for="w3-30"><strong>(Optional)</strong> Talk to <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165592" class="g">Iji</a> multiple times and select <q>Please take care</q> and <q>Talk</q> to learn about the enchanted snare protecting <a href="https://eldenring.wiki.fextralife.com/Caria+Manor">Caria Manor</a>. [<a href="/sheets/questlines#war-counselor-iji">See quest</a>] [<a href="/sheets/merchants#smithing-master-iji">See inventory</a>]</label>
           <ul>
-            <li><input type="checkbox" id="w3-31"><label for="w3-31"> If you exhausted <a href="https://eldenring.wiki.fextralife.com/Blaidd" class="g">Blaidd</a>'s dialogue earlier, the option <q>Blaidd sent me</q> will appear, unlocking the <a href="https://eldenring.wiki.fextralife.com/Carian+Filigreed+Crest">Carian Filigreed Crest</a> in <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165592" class="g">Iji</a>'s inventory. (If missed, it will be available after entering <a href="https://eldenring.wiki.fextralife.com/Ranni+the+Witch" class="g">Ranni</a>'s service during <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165491">Caria Manor</a>.)</label></li>
+            <li><input type="checkbox" id="w3-31"><label for="w3-31"> If you exhausted <a href="https://eldenring.wiki.fextralife.com/Blaidd" class="g">Blaidd</a>'s dialogue earlier, the option <q>Blaidd sent me</q> will appear, unlocking the <a href="https://eldenring.wiki.fextralife.com/Carian+Filigreed+Crest">Carian Filigreed Crest</a> in <a href="https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165592" class="g">Iji</a>'s inventory. (If missed, it will be available after entering <a href="https://eldenring.wiki.fextralife.com/Ranni+the+Witch" class="g">Ranni</a>'s service during <a href="#caria-manor">Caria Manor</a>.)</label></li>
             <li><input type="checkbox" id="w3-32"><label for="w3-32"><strong>Note:</strong> You can upgrade your weapons with him, but avoid buying any <a href="https://eldenring.wiki.fextralife.com/Somber+Smithing+Stones">Somber Smithing Stones</a>. You'll have one of each by the end of this section.</label></li>
           </ul>
         </li>
@@ -2238,7 +2234,7 @@
   </main>
   <button type="button" id="up" class="btn" aria-label="Scroll to top of page"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#top"></use></svg></button>
   <footer>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></footer>
-  <!-- <textarea name="ff" aria-hidden="true" tabindex="-1"></textarea> -->
-  <script defer src="/js/script.min.js"></script>
+  <!-- Test no defer -->
+  <script src="/js/script.min.js"></script>
 </body>
 </html>

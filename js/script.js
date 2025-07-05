@@ -153,8 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const isHidden = e.newValue === '1';
       root.classList.toggle('hide', isHidden);
       if (hide) {
-        const hideTxt = hide.querySelector('span');
-        hideTxt.textContent = isHidden ? 'Show Completed' : 'Hide Completed';
+        hide.setAttribute('aria-pressed', isHidden ? 'true' : 'false');
       }
     }
   });
@@ -503,16 +502,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const hide = document.getElementById('hide');
 
   if (hide) {
-    const hideTxt = hide.querySelector('span');
     const isHidden = localStorage.getItem('h') === '1';
     root.classList.toggle('hide', isHidden);
-    hideTxt.textContent = isHidden ? 'Show Completed' : 'Hide Completed';
+    hide.setAttribute('aria-pressed', isHidden ? 'true' : 'false');
 
     hide.addEventListener('click', () => {
       const shouldHide = !root.classList.contains('hide');
       root.classList.toggle('hide', shouldHide);
-      hideTxt.textContent = shouldHide ? 'Show Completed' : 'Hide Completed';
       localStorage.setItem('h', shouldHide ? '1' : '0');
+      hide.setAttribute('aria-pressed', shouldHide ? 'true' : 'false');
     });
   }
 
