@@ -52,7 +52,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Caelid
 - [x] Finalize FAQ
 - [x] Finalize Styles
-- [ ] Sellia, Town of Sorcery
+- [x] Sellia, Town of Sorcery
 - [ ] Redmane Castle
 - [ ] Nokron, Eternal City
 - [ ] Carian Study Hall

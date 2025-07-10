@@ -77,7 +77,6 @@ function calculateTotals() {
   if (!totalAll) return;
   const sectionSpans = document.querySelectorAll(`span[id^="${prefix}-t"]`);
   const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
-  // const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(checkbox => /^[wnqmbaerhskcp]\d+-\d+$/.test(checkbox.id));
 
   const sectionMap = allCheckboxes.reduce((map, checkbox) => {
     const section = checkbox.id.match(/^[wnqmbaerhskcp](\d+)-/)[1];
@@ -124,7 +123,6 @@ document.addEventListener('change', e => {
 
 window.addEventListener('pageshow', (event) => {
   if (event.persisted) {
-    console.log('Event persisted');
     window.location.reload();
   }
 });
@@ -438,6 +436,14 @@ document.addEventListener('DOMContentLoaded', () => {
           e.preventDefault();
           const search = document.getElementById('search');
           if (search) search.focus();
+        }
+        break;
+
+      case 'h':
+        if (!e.ctrlKey && !e.metaKey) {
+          e.preventDefault();
+          const hide = document.getElementById('hide');
+          if (hide) hide.click();
         }
         break;
     }
