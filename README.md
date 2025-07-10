@@ -25,20 +25,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] Tutorial 
-- [x] First steps in Limgrave 
-- [x] Early Liurnia and Caelid
-- [x] West Limgrave
-- [x] North Limgrave
-- [x] Weeping Peninsula
-- [x] Castle Morne
-- [x] Stormveil Castle
-- [x] Fringefolk Hero's Grave
-- [x] Resources
-- [x] Implement search functionality
-- [x] South Liurnia
-- [x] Sort NPC Walkthrough
-- [x] Sort Merchants
 - [x] Testu's Rise images
 - [x] West Liurnia
 - [x] Central Liurnia
@@ -57,6 +43,8 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [ ] Nokron, Eternal City
 - [ ] Carian Study Hall
 - [ ] Finalize NPC Walkthrough
+- [ ] Route Mt. Gelmir/Altus map
+- [ ] Write Carian Study Hall
 
 ## Special Thanks
 
