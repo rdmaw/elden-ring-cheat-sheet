@@ -512,7 +512,7 @@ input[type="checkbox"] {
   accent-color: var(--d);
 }
 
-.c label {
+.c > label {
   text-decoration: line-through;
 }
 
