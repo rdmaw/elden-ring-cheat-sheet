@@ -162,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0, len = links.length; i < len; i++) {
     const link = links[i];
     link.target = '_blank';
-    link.rel = 'noopener noreferrer';
   }
 
   // Handle color theme switching - t = theme, d = dark, l = light, cb = colorblind
