@@ -25,8 +25,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] Central Liurnia
-- [x] Academy of Raya Lucaria
 - [x] East Liurnia
 - [x] Caria manor
 - [x] Ruin-Strewn Precipice
@@ -38,12 +36,14 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Finalize Styles
 - [x] Sellia, Town of Sorcery
 - [x] Redmane Castle
-- [ ] Finish the Achievements sheet
-- [ ] Omit redundant links for improved clarity, and smaller DOM
+- [x] Finish the Achievements sheet
+- [ ] Omit redundant links for improved link clarity and smaller DOM size
+- [ ] Finish the Resources sheet
+- [ ] Omit redundant links, but for the walkthrough
 - [ ] Nokron, Eternal City
 - [ ] Carian Study Hall
 - [ ] Finalize NPC Walkthrough
-- [ ] Route Mt. Gelmir/Altus map
+- [ ] Route Mt. Gelmir/Altus for map and Amber Starlight
 - [ ] Write Carian Study Hall
 
 ## Special Thanks
