@@ -25,7 +25,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] West Liurnia
 - [x] Central Liurnia
 - [x] Academy of Raya Lucaria
 - [x] East Liurnia
@@ -39,6 +38,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Finalize Styles
 - [x] Sellia, Town of Sorcery
 - [x] Redmane Castle
+- [ ] Finish the Achievements sheet
 - [ ] Omit redundant links for improved clarity, and smaller DOM
 - [ ] Nokron, Eternal City
 - [ ] Carian Study Hall

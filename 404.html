@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script>const d=document.documentElement,t="d"===localStorage.getItem("t"),c=localStorage.getItem("cb");t&&d.classList.add("dark"),c&&"0"!==c&&d.classList.add(c);</script>
   <link rel="stylesheet" href="/css/style.min.css">
+  <style>main{flex:1;}header h1{font-size:3rem;margin:0;}kbd{font-size:1rem;}.err{font-size:1.1rem;}</style>
   <title>404 - Sheet Not Found</title>
 </head>
 <body class="flex" style="height:100svh;flex-direction:column;">
-  <script>const d=document.documentElement,t="d"===localStorage.getItem("t"),c=localStorage.getItem("cb");t&&d.classList.add("dark"),c&&"0"!==c&&d.classList.add(c);</script>
   <nav class="flex" aria-label="Global navigation">
     <div class="nav flex">
       <button type="button" id="menu" class="flex ac jc" aria-label="Open sidebar" aria-controls="sidebar" aria-expanded="false"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#menu"></use></svg></button>
@@ -42,12 +44,12 @@
       <li><a href="/sheets/new-game-plus">New Game+</a></li>
     </ul>
   </nav>
-  <main class="flex ac jc" style="flex:1;">
+  <main class="flex ac jc">
     <header>
-      <h1 style="font-size:3rem;margin:0;">404</h1>
-      <p style="font-size:1.5rem;">The sheet you're looking for doesn't exist.</p>
+      <h1>404</h1>
+      <p class="err">The sheet you're looking for doesn't exist.</p>
       <p>You may have mistyped the URI or the sheet may have been moved.</p>
-      <p>Open the menu with <kbd style="font-size:1rem;">Q</kbd> and try another sheet.</p>
+      <p>Open the menu with <kbd>Q</kbd> and try another sheet.</p>
     </header>
   </main>
   <script defer src="/js/script.min.js"></script>
