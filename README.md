@@ -3,6 +3,9 @@
 A collection of comprehensive checklists (cheat sheets) for achieving 100% completion in Elden Ring.
 [The walkthrough](https://eldenring.redmaw.dev/sheets/walkthrough) is a step by step checklist through every area in a natural order, getting every single item, achievement, questline, boss and much more in the process. For a full list of what's included, check the [FAQ](https://eldenring.redmaw.dev/#included).
 
+> [!CAUTION]
+> Website is currently undergoing brief maintenance :)
+
 ## Features
 
 - Step-by-step walkthrough covering everything in the game
