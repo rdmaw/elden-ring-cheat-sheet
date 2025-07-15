@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest an idea for this project.
+title: "feature: "
+labels: [enhancement]
+body:
+  - type: markdown 
+    attributes:
+      value: |
+        Thanks for helping improve the Elden Ring Cheat Sheet!
+        
+        Please fill out the form below to request a feature.
+  - type: textarea
+    attributes:
+      label: Is your feature related to a problem?
+      description: A short description of what the problem is.
+      placeholder: Describe if the feature you're requesting is a fix to a problem or annoyance you're experiencing...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Describe your solution
+      description: A clear and concise description of your solution.
+      placeholder: Describe your solution/feature...
+    validations:
+      required: true
