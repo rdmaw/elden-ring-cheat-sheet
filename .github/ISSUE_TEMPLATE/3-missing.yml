@@ -1,18 +1,16 @@
 name: Missing content
-description: Report items or content missing from the website.
+description: Missing items or content.
 title: "missing: "
 labels: [missing]
 body:
   - type: markdown 
     attributes:
       value: |
-        **Thanks** for helping improve the Elden Ring Cheat Sheet!
-        
+        **Thanks for helping improve the Elden Ring Cheat Sheet!**
         Please fill out the form below.
   - type: dropdown
     attributes:
-      label: Which sheets are missing content?
-      multiple: true
+      label: Which sheet does this relate to?
       options:
         - Resources
         - Walkthrough
@@ -28,9 +26,11 @@ body:
         - Key Items
         - Miscellaneous
         - New Game+
+    validations:
+      required: true
   - type: input
     attributes:
-      label: Which section is missing content?
+      label: Which section is the content missing from?
       description: Name the section missing content.
       placeholder: E.g. Limgrave, Stormveil Castle...
     validations:

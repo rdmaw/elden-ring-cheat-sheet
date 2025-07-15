@@ -1,8 +1,13 @@
 name: Inaccurate content
-description: Report inaccurate directions or information.
-title: "inaccurate: "
-labels: [inaccurate]
+description: Inaccurate directions or information.
+title: "inaccuracy: "
+labels: [inaccuracy]
 body:
+  - type: markdown 
+    attributes:
+      value: |
+        **Thanks for helping improve the Elden Ring Cheat Sheet!**
+        Please fill out the form below.
   - type: dropdown
     attributes:
       label: Which sheet does this relate to?
@@ -25,7 +30,7 @@ body:
       required: true
   - type: input
     attributes:
-      label: Which section is the inaccurate text part of?
+      label: Which section contains the inaccurate text?
       description: Name the section.
       placeholder: E.g. Limgrave, Stormveil Castle...
     validations:
@@ -40,10 +45,12 @@ body:
   - type: textarea
     attributes:
       label: What's inaccurate?
-      description: Describe what's inaccurate.
+      description: Describe what part of the text is inaccurate.
       placeholder: Describe what's inaccurate...
+    validations:
+      required: true
   - type: textarea
     attributes:
-      label: Suggest correction
-      description: Suggest your correction.
-      placeholder: Suggest your correction...
+      label: Suggest a correction
+      description: Suggest your corrected version.
+      placeholder: Suggest corrected text...

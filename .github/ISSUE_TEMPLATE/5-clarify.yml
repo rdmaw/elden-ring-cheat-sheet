@@ -1,8 +1,13 @@
 name: Clarify description
-description: Suggest a rewrite for unclear, confusing or hard-to-follow descriptions.
+description: Unclear, confusing or hard-to-follow descriptions.
 title: "clarify: "
 labels: [clarify]
 body:
+  - type: markdown 
+    attributes:
+      value: |
+        **Thanks for helping improve the Elden Ring Cheat Sheet!**
+        Please fill out the form below.
   - type: dropdown
     attributes:
       label: Which sheet does this relate to?
@@ -25,7 +30,7 @@ body:
       required: true
   - type: input
     attributes:
-      label: Which section is the unclear text part of?
+      label: Which section contains the unclear text?
       description: Name the section.
       placeholder: E.g. Limgrave, Stormveil Castle...
     validations:
