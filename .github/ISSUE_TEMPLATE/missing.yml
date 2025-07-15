@@ -31,7 +31,7 @@ body:
   - type: input
     attributes:
       label: Which section is missing content?
-      description: Name the sections missing content.
+      description: Name the section missing content.
       placeholder: E.g. Limgrave, Stormveil Castle...
     validations:
       required: true
@@ -45,5 +45,5 @@ body:
   - type: textarea
     attributes:
       label: Describe the location (if applicable)
-      description: A short description of where the missing item is located.
+      description: A short description of the location.
       placeholder: Describe the location of what's missing...

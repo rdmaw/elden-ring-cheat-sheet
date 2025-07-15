@@ -1,0 +1,44 @@
+name: Clarify confusing content
+description: Suggest a rewrite for vague, confusing or hard-to-follow descriptions.
+title: "clarify: "
+labels: [clarify]
+body:
+  - type: dropdown
+    attributes:
+      label: Which sheet does this relate to?
+      options:
+        - Resources
+        - Walkthrough
+        - NPC Walkthrough
+        - Questlines
+        - Merchants
+        - Bosses
+        - Achievements
+        - Armaments
+        - Armor
+        - Ashes
+        - Spells
+        - Key Items
+        - Miscellaneous
+        - New Game+
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Which section does this relate to?
+      description: Name the section.
+      placeholder: E.g. Limgrave, Stormveil Castle...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Current unclear text
+      description: Paste the sentence or paragraph that is unclear or confusing.
+      placeholder: Paste the unclear text...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Suggestion clarification
+      description: Suggest a rewrite, or explain what could be improved.
+      placeholder: Suggest a clearer version, or explain what's unclear...
