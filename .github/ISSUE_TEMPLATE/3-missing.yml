@@ -26,6 +26,7 @@ body:
         - Key Items
         - Miscellaneous
         - New Game+
+      default: 0
     validations:
       required: true
   - type: input

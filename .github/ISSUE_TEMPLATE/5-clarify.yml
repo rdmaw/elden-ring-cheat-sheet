@@ -26,6 +26,7 @@ body:
         - Key Items
         - Miscellaneous
         - New Game+
+      default: 0
     validations:
       required: true
   - type: input
@@ -44,6 +45,6 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Suggest rewrite
+      label: Suggest a rewrite
       description: Suggest a rewrite, or explain what could be improved.
       placeholder: Suggest a clearer version, or explain what's unclear...

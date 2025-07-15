@@ -36,7 +36,6 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: browsers
     attributes:
       label: What browsers are you experiencing the issue on?
       multiple: true

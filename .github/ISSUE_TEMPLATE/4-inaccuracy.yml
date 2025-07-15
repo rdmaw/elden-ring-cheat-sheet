@@ -26,6 +26,7 @@ body:
         - Key Items
         - Miscellaneous
         - New Game+
+      default: 0
     validations:
       required: true
   - type: input
@@ -53,4 +54,4 @@ body:
     attributes:
       label: Suggest a correction
       description: Suggest your corrected version.
-      placeholder: Suggest corrected text...
+      placeholder: Suggest your corrected text...
