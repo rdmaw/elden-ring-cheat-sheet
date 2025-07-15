@@ -1,7 +1,8 @@
 # Elden Ring Cheat Sheet
 
 A collection of comprehensive checklists (cheat sheets) for achieving 100% completion in Elden Ring.
-[The walkthrough](https://eldenring.redmaw.dev/sheets/walkthrough) is a step by step checklist through every area in a natural order, getting every single item, achievement, questline, boss and much more in the process. For a full list of what's included, check the [FAQ](https://eldenring.redmaw.dev/#included).
+
+The [walkthrough](https://eldenring.redmaw.dev/sheets/walkthrough) is a step by step checklist through every area in a natural order, getting every single item, achievement, questline, boss and much more in the process. For a full list of what's included, check the [FAQ](https://eldenring.redmaw.dev/#included).
 
 ## Features
 
@@ -37,14 +38,14 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Sellia, Town of Sorcery
 - [x] Redmane Castle
 - [x] Finish the Achievements sheet
-- [ ] Omit redundant links for improved link clarity and smaller DOM size
+- [ ] Reduce number of redundant links
 - [ ] Finish the Resources sheet
-- [ ] Omit redundant links, but for the walkthrough
-- [ ] Nokron, Eternal City
-- [ ] Carian Study Hall
+- [ ] Reduce links, but for walkthrough
+- [ ] Import Nokron, Eternal City
+- [ ] Import Carian Study Hall
 - [ ] Finalize NPC Walkthrough
 - [ ] Route Mt. Gelmir/Altus for map and Amber Starlight
-- [ ] Write Carian Study Hall
+- [ ] Route and write Carian Study Hall
 
 ## Special Thanks
 
