@@ -1,5 +1,5 @@
-name: Clarify description
-description: Unclear, confusing or hard-to-follow descriptions.
+name: Unclear descriptions
+description: Report unclear, confusing or hard-to-follow descriptions.
 title: "clarify: "
 labels: [clarify]
 body:
@@ -26,13 +26,13 @@ body:
         - Key Items
         - Miscellaneous
         - New Game+
-      default: 1
+      multiple: true
     validations:
       required: true
   - type: input
     attributes:
       label: Which section contains the unclear text?
-      description: Name the section.
+      description: Name one or multiple sections.
       placeholder: E.g. Limgrave, Stormveil Castle...
     validations:
       required: true

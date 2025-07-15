@@ -1,5 +1,5 @@
-name: Inaccurate content
-description: Inaccurate directions or information.
+name: Inaccurate directions/content
+description: Report inaccurate directions or information.
 title: "inaccuracy: "
 labels: [inaccuracy]
 body:
@@ -32,7 +32,7 @@ body:
   - type: input
     attributes:
       label: Which section contains the inaccurate text?
-      description: Name the section.
+      description: Name one or multiple sections.
       placeholder: E.g. Limgrave, Stormveil Castle...
     validations:
       required: true
