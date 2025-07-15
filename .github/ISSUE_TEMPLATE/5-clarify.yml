@@ -1,5 +1,5 @@
-name: Clarify confusing content
-description: Suggest a rewrite for vague, confusing or hard-to-follow descriptions.
+name: Clarify description
+description: Suggest a rewrite for unclear, confusing or hard-to-follow descriptions.
 title: "clarify: "
 labels: [clarify]
 body:
@@ -25,7 +25,7 @@ body:
       required: true
   - type: input
     attributes:
-      label: Which section does this relate to?
+      label: Which section is the unclear text part of?
       description: Name the section.
       placeholder: E.g. Limgrave, Stormveil Castle...
     validations:
@@ -39,6 +39,6 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Suggestion clarification
+      label: Suggest rewrite
       description: Suggest a rewrite, or explain what could be improved.
       placeholder: Suggest a clearer version, or explain what's unclear...

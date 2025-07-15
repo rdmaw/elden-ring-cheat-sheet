@@ -1,0 +1,49 @@
+name: Inaccurate content
+description: Report inaccurate directions or information.
+title: "inaccurate: "
+labels: [inaccurate]
+body:
+  - type: dropdown
+    attributes:
+      label: Which sheet does this relate to?
+      options:
+        - Resources
+        - Walkthrough
+        - NPC Walkthrough
+        - Questlines
+        - Merchants
+        - Bosses
+        - Achievements
+        - Armaments
+        - Armor
+        - Ashes
+        - Spells
+        - Key Items
+        - Miscellaneous
+        - New Game+
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Which section is the inaccurate text part of?
+      description: Name the section.
+      placeholder: E.g. Limgrave, Stormveil Castle...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Current inaccurate text
+      description: Paste the sentence or paragraph that is inaccurate.
+      placeholder: Paste the inaccurate text...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What's inaccurate?
+      description: Describe what's inaccurate.
+      placeholder: Describe what's inaccurate...
+  - type: textarea
+    attributes:
+      label: Suggest correction
+      description: Suggest your correction.
+      placeholder: Suggest your correction...
