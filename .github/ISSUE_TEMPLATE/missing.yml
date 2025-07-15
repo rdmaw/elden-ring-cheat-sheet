@@ -1,0 +1,49 @@
+name: Missing content
+description: Report items or content missing from the website.
+title: "missing: "
+labels: [missing]
+body:
+  - type: markdown 
+    attributes:
+      value: |
+        **Thanks** for helping improve the Elden Ring Cheat Sheet!
+        
+        Please fill out the form below.
+  - type: dropdown
+    attributes:
+      label: Which sheets are missing content?
+      multiple: true
+      options:
+        - Resources
+        - Walkthrough
+        - NPC Walkthrough
+        - Questlines
+        - Merchants
+        - Bosses
+        - Achievements
+        - Armaments
+        - Armor
+        - Ashes
+        - Spells
+        - Key Items
+        - Miscellaneous
+        - New Game+
+  - type: input
+    attributes:
+      label: Which section is missing content?
+      description: Name the sections missing content.
+      placeholder: E.g. Limgrave, Stormveil Castle...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What's missing?
+      description: A short description of what's missing.
+      placeholder: Describe what's missing...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Describe the location (if applicable)
+      description: A short description of where the missing item is located.
+      placeholder: Describe the location of what's missing...

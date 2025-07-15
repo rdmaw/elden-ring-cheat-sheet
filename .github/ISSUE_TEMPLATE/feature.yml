@@ -19,7 +19,7 @@ body:
   - type: textarea
     attributes:
       label: Describe your solution
-      description: A clear and concise description of your solution.
-      placeholder: Describe your solution/feature...
+      description: A clear and concise description of your feature.
+      placeholder: Describe your feature...
     validations:
       required: true
