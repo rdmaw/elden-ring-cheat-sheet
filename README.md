@@ -1,4 +1,4 @@
-# Elden Ring Cheat Sheet
+# <img src="/favicon.svg" width="30"> Elden Ring Cheat Sheet
 
 A collection of comprehensive checklists (cheat sheets) for achieving 100% completion in Elden Ring.
 
