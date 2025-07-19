@@ -452,13 +452,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const up = document.getElementById('up');
 
   if (up) {
-    const scroll = () => up.classList.toggle('show', window.scrollY > 500);
+    const scroll = () => {
+      const show = window.scrollY > 500;
+      up.classList.toggle('show', show);
+      up.setAttribute('aria-hidden', show ? 'false' : 'true');
+    };
+
     window.addEventListener('scroll', scroll, { passive: true });
     scroll();
 
     up.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth'});
-      setTimeout(() => menu?.focus(), 700);
+      window.scrollTo({ top: 0 });
+      menu?.focus();
     });
   }
 
