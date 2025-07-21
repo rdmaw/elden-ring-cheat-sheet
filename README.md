@@ -38,8 +38,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Sellia, Town of Sorcery
 - [x] Redmane Castle
 - [x] Finish the Achievements sheet
-- [ ] Reduce number of redundant links
-- [ ] Finish the Resources sheet
+- [x] Reduce number of redundant links
 - [ ] Reduce links, but for walkthrough
 - [ ] Import Nokron, Eternal City
 - [ ] Import Carian Study Hall

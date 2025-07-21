@@ -160,20 +160,13 @@ header {
   }
 }
 
-h2 {
-  font-size: 1.7rem;
-}
-
 h2 + h3, p {
   margin-top: var(--r3);
 }
 
 h2, h3 {
-  margin: var(--r7) 0 var(--r2);
-}
-
-h3 {
   font-size: 1.5rem;
+  margin: var(--r7) 0 var(--r2);
 }
 
 h4 {
@@ -489,7 +482,7 @@ nav span, h2 span, h3 span {
 
 label {
   display: inline-block;
-  padding: .3rem 0 0 2.7rem;
+  padding: .3rem 0 0 2.75rem;
 }
 
 .l { 
@@ -503,7 +496,7 @@ label {
 input[type="checkbox"] {
   position: absolute;
   left: var(--r4);
-  top: .46rem;
+  top: .5rem;
   width: 1.2rem;
   height: 1.2rem;
   margin-right: .5rem;
@@ -566,8 +559,7 @@ tr:hover {
 header, footer, th, td { text-align: center; }
 caption, th[scope="row"] { text-align: left; }
 ol, footer, kbd { font-size: .9rem; }
-.toc { line-height: 1.6; }
-html, .sh h2 { line-height: 1.5; }
+html, .sh h2, .toc { line-height: 1.6; }
 h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.1; }
 h3 button, h3 a, h3 span { vertical-align: middle; }
 header h1, h2, strong { font-weight: 700; }
