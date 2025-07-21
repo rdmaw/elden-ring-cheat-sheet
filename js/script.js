@@ -456,6 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const show = window.scrollY > 500;
       up.classList.toggle('show', show);
       up.setAttribute('aria-hidden', show ? 'false' : 'true');
+      up.setAttribute('tabindex', show ? '0' : '-1');
     };
 
     window.addEventListener('scroll', scroll, { passive: true });
