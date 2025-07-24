@@ -39,12 +39,13 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Redmane Castle
 - [x] Finish the Achievements sheet
 - [x] Reduce number of redundant links
-- [ ] Reduce links, but for walkthrough
-- [ ] Import Nokron, Eternal City
-- [ ] Import Carian Study Hall
-- [ ] Finalize NPC Walkthrough
+- [x] Import Nokron, Eternal City
+- [x] Import Carian Study Hall
+- [x] Finalize NPC Walkthrough
 - [ ] Route Mt. Gelmir/Altus for map and Amber Starlight
-- [ ] Route and write Carian Study Hall
+- [ ] Write Carian Study Hall
+- [ ] Reduce links for walkthrough, migrate to Eldenpedia
+- [ ] Route Deeproot Depths
 
 ## Special Thanks
 
