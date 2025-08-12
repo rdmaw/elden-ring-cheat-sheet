@@ -26,7 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] East Liurnia
 - [x] Caria manor
 - [x] Ruin-Strewn Precipice
 - [x] Sort NPC Walkthrough - Liurnia
@@ -43,9 +42,10 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Import Carian Study Hall
 - [x] Finalize NPC Walkthrough
 - [x] Route Mt. Gelmir/Altus for map and Amber Starlight
-- [ ] Write Carian Study Hall
+- [x] Write Carian Study Hall
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 - [ ] Route Deeproot Depths
+- [ ] Write Deeproot Depths
 
 ## Special Thanks
 
