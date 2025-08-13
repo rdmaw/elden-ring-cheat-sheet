@@ -42,7 +42,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Route Mt. Gelmir/Altus for map and Amber Starlight
 - [x] Write Carian Study Hall
 - [x] Route Deeproot Depths
-- [ ] Write Deeproot Depths
+- [x] Write Deeproot Depths
 - [ ] Write Ainsel River Main
 - [ ] Write Nokstella
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
