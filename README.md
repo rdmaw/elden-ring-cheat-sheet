@@ -26,8 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] Caria manor
-- [x] Ruin-Strewn Precipice
 - [x] Sort NPC Walkthrough - Liurnia
 - [x] Ainsel River
 - [x] Siofra River
@@ -43,9 +41,11 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Finalize NPC Walkthrough
 - [x] Route Mt. Gelmir/Altus for map and Amber Starlight
 - [x] Write Carian Study Hall
-- [ ] Reduce links for walkthrough, migrate to Eldenpedia
-- [ ] Route Deeproot Depths
+- [x] Route Deeproot Depths
 - [ ] Write Deeproot Depths
+- [ ] Write Ainsel River Main
+- [ ] Write Nokstella
+- [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
 
