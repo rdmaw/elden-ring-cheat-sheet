@@ -26,8 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] Sort NPC Walkthrough - Liurnia
-- [x] Ainsel River
 - [x] Siofra River
 - [x] Caelid
 - [x] Finalize FAQ
@@ -43,8 +41,10 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write Carian Study Hall
 - [x] Route Deeproot Depths
 - [x] Write Deeproot Depths
-- [ ] Write Ainsel River Main
-- [ ] Write Nokstella
+- [x] Write Ainsel River Main
+- [x] Write Nokstella
+- [ ] Write Lake of Rot
+- [ ] Moonlight Altar
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
