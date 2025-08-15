@@ -26,8 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] Siofra River
-- [x] Caelid
 - [x] Finalize FAQ
 - [x] Finalize Styles
 - [x] Sellia, Town of Sorcery
@@ -43,8 +41,10 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write Deeproot Depths
 - [x] Write Ainsel River Main
 - [x] Write Nokstella
-- [ ] Write Lake of Rot
+- [x] Write Lake of Rot
 - [ ] Moonlight Altar
+- [ ] Plan and route West Altus
+- [ ] Write West Altus
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
