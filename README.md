@@ -42,7 +42,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write Ainsel River Main
 - [x] Write Nokstella
 - [x] Write Lake of Rot
-- [ ] Moonlight Altar
+- [x] Moonlight Altar
 - [ ] Plan and route West Altus
 - [ ] Write West Altus
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
