@@ -26,8 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] Finalize FAQ
-- [x] Finalize Styles
 - [x] Sellia, Town of Sorcery
 - [x] Redmane Castle
 - [x] Finish the Achievements sheet
@@ -44,7 +42,9 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write Lake of Rot
 - [x] Moonlight Altar
 - [x] Plan and route West Altus
-- [ ] Write West Altus
+- [x] Write West Altus
+- [ ] Write Shaded Castle
+- [ ] Route Central Altus
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
