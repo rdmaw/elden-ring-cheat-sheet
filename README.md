@@ -43,7 +43,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write Nokstella
 - [x] Write Lake of Rot
 - [x] Moonlight Altar
-- [ ] Plan and route West Altus
+- [x] Plan and route West Altus
 - [ ] Write West Altus
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
