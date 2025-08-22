@@ -26,7 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] Sellia, Town of Sorcery
 - [x] Redmane Castle
 - [x] Finish the Achievements sheet
 - [x] Reduce number of redundant links
@@ -43,8 +42,9 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Moonlight Altar
 - [x] Plan and route West Altus
 - [x] Write West Altus
-- [ ] Write Shaded Castle
+- [x] Write Shaded Castle
 - [ ] Route Central Altus
+- [ ] Write Central Altus
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
