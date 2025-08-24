@@ -26,9 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## TODO
 
-- [x] Redmane Castle
-- [x] Finish the Achievements sheet
-- [x] Reduce number of redundant links
 - [x] Import Nokron, Eternal City
 - [x] Import Carian Study Hall
 - [x] Finalize NPC Walkthrough
@@ -43,8 +40,11 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Plan and route West Altus
 - [x] Write West Altus
 - [x] Write Shaded Castle
-- [ ] Route Central Altus
+- [x] Route Central Altus
 - [ ] Write Central Altus
+- [ ] Write East Altus
+- [ ] Write Mt. Gelmir
+- [ ] Write Volcano Manor
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
