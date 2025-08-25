@@ -42,7 +42,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write Shaded Castle
 - [x] Route Central Altus
 - [x] Write Central Altus
-- [ ] Write East Altus
+- [x] Write East Altus
 - [ ] Write Mt. Gelmir
 - [ ] Write Volcano Manor
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
