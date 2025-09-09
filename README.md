@@ -44,7 +44,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write Central Altus
 - [x] Write East Altus
 - [x] Write Mt. Gelmir
-- [ ] Write Volcano Manor
+- [x] Write Volcano Manor
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
