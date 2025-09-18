@@ -24,13 +24,8 @@ Visit the project at: [eldenring.redmaw.dev](https://eldenring.redmaw.dev)
 
 Found a bug? Open an issue or contact me on discord: `redmaw`
 
-## TODO
+## To Do
 
-- [x] Import Nokron, Eternal City
-- [x] Import Carian Study Hall
-- [x] Finalize NPC Walkthrough
-- [x] Route Mt. Gelmir/Altus for map and Amber Starlight
-- [x] Write Carian Study Hall
 - [x] Route Deeproot Depths
 - [x] Write Deeproot Depths
 - [x] Write Ainsel River Main
@@ -45,6 +40,11 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write East Altus
 - [x] Write Mt. Gelmir
 - [x] Write Volcano Manor
+- [ ] Route Capital Outskirts
+- [ ] Capital Outskirts
+- [ ] Route Leyndell
+- [ ] Leyndell, Royal Capital
+- [ ] Subterranean Shunning-Grounds
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
