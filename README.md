@@ -40,8 +40,8 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write East Altus
 - [x] Write Mt. Gelmir
 - [x] Write Volcano Manor
-- [ ] Route Capital Outskirts
-- [ ] Capital Outskirts
+- [x] Route Capital Outskirts
+- [x] Capital Outskirts
 - [ ] Route Leyndell
 - [ ] Leyndell, Royal Capital
 - [ ] Subterranean Shunning-Grounds
