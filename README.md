@@ -42,7 +42,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Write Volcano Manor
 - [x] Route Capital Outskirts
 - [x] Capital Outskirts
-- [ ] Route Leyndell
+- [x] Route Leyndell
 - [ ] Leyndell, Royal Capital
 - [ ] Subterranean Shunning-Grounds
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
