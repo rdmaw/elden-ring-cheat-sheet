@@ -26,7 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## To Do
 
-- [x] Route Deeproot Depths
 - [x] Write Deeproot Depths
 - [x] Write Ainsel River Main
 - [x] Write Nokstella
@@ -43,8 +42,9 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Route Capital Outskirts
 - [x] Capital Outskirts
 - [x] Route Leyndell
-- [ ] Leyndell, Royal Capital
+- [x] Leyndell, Royal Capital
 - [ ] Subterranean Shunning-Grounds
+- [ ] Forbidden Lands
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
