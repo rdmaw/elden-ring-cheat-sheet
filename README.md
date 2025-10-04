@@ -26,10 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## To Do
 
-- [x] Write Deeproot Depths
-- [x] Write Ainsel River Main
-- [x] Write Nokstella
-- [x] Write Lake of Rot
 - [x] Moonlight Altar
 - [x] Plan and route West Altus
 - [x] Write West Altus
@@ -45,6 +41,10 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Leyndell, Royal Capital
 - [ ] Subterranean Shunning-Grounds
 - [ ] Forbidden Lands
+- [ ] find missables in Leyndell
+- [ ] Mountaintops of the Giants
+- [ ] Dragonbarrow
+- [ ] Consecrated Snowfield
 - [ ] Reduce links for walkthrough, migrate to Eldenpedia
 
 ## Special Thanks
