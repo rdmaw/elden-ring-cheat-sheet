@@ -39,13 +39,13 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Capital Outskirts
 - [x] Route Leyndell
 - [x] Leyndell, Royal Capital
-- [ ] Subterranean Shunning-Grounds
+- [x] Subterranean Shunning-Grounds
 - [ ] Forbidden Lands
 - [ ] find missables in Leyndell
 - [ ] Mountaintops of the Giants
 - [ ] Dragonbarrow
 - [ ] Consecrated Snowfield
-- [ ] Reduce links for walkthrough, migrate to Eldenpedia
+- [ ] Rewrite old sections
 
 ## Special Thanks
 
