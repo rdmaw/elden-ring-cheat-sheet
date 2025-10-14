@@ -40,7 +40,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Route Leyndell
 - [x] Leyndell, Royal Capital
 - [x] Subterranean Shunning-Grounds
-- [ ] Forbidden Lands
+- [x] Forbidden Lands
 - [ ] find missables in Leyndell
 - [ ] Mountaintops of the Giants
 - [ ] Dragonbarrow
