@@ -26,7 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## To Do
 
-- [x] Moonlight Altar
 - [x] Plan and route West Altus
 - [x] Write West Altus
 - [x] Write Shaded Castle
@@ -42,9 +41,10 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Subterranean Shunning-Grounds
 - [x] Forbidden Lands
 - [x] Mountaintops of the Giants
-- [ ] Dragonbarrow
-- [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
+- [x] Dragonbarrow
 - [ ] Consecrated Snowfield
+- [ ] Mohgwyn Palace
+- [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
 - [ ] Rewrite old sections
 
 ## Special Thanks
