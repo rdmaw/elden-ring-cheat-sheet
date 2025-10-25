@@ -41,9 +41,9 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Leyndell, Royal Capital
 - [x] Subterranean Shunning-Grounds
 - [x] Forbidden Lands
-- [ ] Mountaintops of the Giants
-- [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
+- [x] Mountaintops of the Giants
 - [ ] Dragonbarrow
+- [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
 - [ ] Consecrated Snowfield
 - [ ] Rewrite old sections
 
