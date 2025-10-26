@@ -26,9 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## To Do
 
-- [x] Plan and route West Altus
-- [x] Write West Altus
-- [x] Write Shaded Castle
 - [x] Route Central Altus
 - [x] Write Central Altus
 - [x] Write East Altus
@@ -44,6 +41,9 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Dragonbarrow
 - [ ] Consecrated Snowfield
 - [ ] Mohgwyn Palace
+- [ ] Haligtree
+- [ ] Farum Azula
+- [ ] Ashen Capital
 - [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
 - [ ] Rewrite old sections
 
