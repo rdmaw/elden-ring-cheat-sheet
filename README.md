@@ -39,7 +39,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Forbidden Lands
 - [x] Mountaintops of the Giants
 - [x] Dragonbarrow
-- [ ] Consecrated Snowfield
+- [x] Consecrated Snowfield
 - [ ] Mohgwyn Palace
 - [ ] Haligtree
 - [ ] Farum Azula
