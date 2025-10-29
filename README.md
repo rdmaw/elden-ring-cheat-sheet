@@ -26,7 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## To Do
 
-- [x] Route Central Altus
 - [x] Write Central Altus
 - [x] Write East Altus
 - [x] Write Mt. Gelmir
@@ -40,8 +39,9 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Mountaintops of the Giants
 - [x] Dragonbarrow
 - [x] Consecrated Snowfield
-- [ ] Mohgwyn Palace
+- [x] Mohgwyn Palace
 - [ ] Haligtree
+- [ ] Elphael
 - [ ] Farum Azula
 - [ ] Ashen Capital
 - [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
