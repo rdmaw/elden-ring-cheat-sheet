@@ -40,7 +40,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Dragonbarrow
 - [x] Consecrated Snowfield
 - [x] Mohgwyn Palace
-- [ ] Haligtree
+- [x] Haligtree
 - [ ] Elphael
 - [ ] Farum Azula
 - [ ] Ashen Capital
