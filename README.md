@@ -41,7 +41,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Consecrated Snowfield
 - [x] Mohgwyn Palace
 - [x] Haligtree
-- [ ] Elphael
+- [x] Elphael
 - [ ] Farum Azula
 - [ ] Ashen Capital
 - [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
