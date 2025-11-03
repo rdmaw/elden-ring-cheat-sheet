@@ -42,7 +42,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Mohgwyn Palace
 - [x] Haligtree
 - [x] Elphael
-- [ ] Farum Azula
+- [x] Farum Azula
 - [ ] Ashen Capital
 - [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
 - [ ] Rewrite old sections
