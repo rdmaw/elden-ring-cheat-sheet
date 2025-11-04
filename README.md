@@ -43,7 +43,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Haligtree
 - [x] Elphael
 - [x] Farum Azula
-- [ ] Ashen Capital
+- [x] Ashen Capital
 - [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
 - [ ] Rewrite old sections
 
