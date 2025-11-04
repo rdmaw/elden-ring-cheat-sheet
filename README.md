@@ -17,7 +17,7 @@ The [walkthrough](https://eldenring.redmaw.dev/sheets/walkthrough) is a step by 
   - Achievements
   - Bosses and Questlines
   - Merchant inventories
-  - New Game+ preparation
+  - New Game Plus preparation
   - Equipment, key items, and much more!
 
 Visit the project at: [eldenring.redmaw.dev](https://eldenring.redmaw.dev)
