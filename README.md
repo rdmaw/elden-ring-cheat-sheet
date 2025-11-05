@@ -26,13 +26,8 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## To Do
 
-- [x] Write Central Altus
-- [x] Write East Altus
-- [x] Write Mt. Gelmir
-- [x] Write Volcano Manor
-- [x] Route Capital Outskirts
+- [x] Volcano Manor
 - [x] Capital Outskirts
-- [x] Route Leyndell
 - [x] Leyndell, Royal Capital
 - [x] Subterranean Shunning-Grounds
 - [x] Forbidden Lands
@@ -44,8 +39,11 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Elphael
 - [x] Farum Azula
 - [x] Ashen Capital
-- [ ] Missables in Leyndell, Shunning Grounds & Forbidden Lands
+- [x] Endings
+- [x] New Game Plus Preparation
+- [x] Missables in Outskirts, Leyndell, Shunning Grounds & Forbidden Lands
 - [ ] Rewrite old sections
+- [ ] DLC Walkthrough
 
 ## Special Thanks
 
