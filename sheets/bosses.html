@@ -53,8 +53,33 @@
   <main>
     <header>
       <h1>Bosses</h1>
-      <p class="lead">Coming soon...</p>
+      <p class="lead">Checklist of all bosses in Elden Ring, sorted in natural progression order</p>
+      <div class="alert">
+        <h2>🚧 This page is under development 🚧</h2>
+        <ul>
+          <li>Content and sections may change frequently</li>
+          <li>Your checked items may become mismatched if sections are reordered</li>
+          <li>If you notice any mistakes, or want to contribute, please <a href="https://github.com/rdmaw/elden-ring-cheat-sheet/issues/new/choose">open an issue on Github</a></li>
+        </ul>
+      </div>
     </header>
+    <nav class="toc">
+      <h2>Current Progress<span id="b-ot"></span></h2>
+      <ul>
+        <li><a href="#limgrave">Limgrave</a> (Levels 1-25)<span id="b-nt1"></span></li>
+      </ul>
+    </nav>
+    <search><input type="search" id="search" aria-label="Search bosses" placeholder="Type [ / ] to search bosses..."></search>
+    <div class="filter">
+      <button type="button" id="exp-a" class="btn">Expand all</button>
+      <button type="button" id="col-a" class="btn">Collapse all</button>
+      <button type="button" id="hide" class="btn flex ac" aria-label="Hide completed steps" aria-pressed="false"><svg id="showSvg" aria-hidden="true"><use href="/assets/icons/sprite.svg#show"></use></svg><svg id="hideSvg" aria-hidden="true"><use href="/assets/icons/sprite.svg#hide"></use></svg></button>
+    </div>
+    <form role="none" autocomplete="off">
+      <h3 id="limgrave"><button type="button" class="col btn" aria-label="Toggle Limgrave section" aria-controls="b1" aria-expanded="true"></button><a href="https://eldenring.wiki.gg/wiki/Limgrave">Limgrave</a> (Levels 1-25)<span id="b-t1"></span></h3>
+      <ul id="b1" aria-labelledby="limgrave">
+        <li><label><input type="checkbox" id="b1-1"><a href="https://eldenring.wiki.gg/wiki/Godrick_Soldier#Bosses" class="r">Soldier of Godrick</a> - Cave of Knowledge. Drops 400 runes.</label></li>
+      </ul>
   </main>
   <button type="button" id="up" class="btn" aria-label="Scroll to top of page" aria-hidden="true"><svg aria-hidden="true"><use href="/assets/icons/sprite.svg#top"></use></svg></button>
   <!-- <footer>Made with ❤️ by <a href="https://contact.redmaw.dev">Redmaw</a></footer> -->
