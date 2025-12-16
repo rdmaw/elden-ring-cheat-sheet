@@ -487,14 +487,6 @@ label {
   padding: .3rem 0 0 2.75rem;
 }
 
-.l { 
-  margin: .6rem 0 0.2rem .9rem;
-
-  & a {
-    text-wrap: nowrap;
-  }
-}
-
 input[type="checkbox"] {
   position: absolute;
   left: var(--r4);
@@ -572,16 +564,8 @@ li { position: relative; }
 /* MEDIA 
 -------- */
 @media (max-width: 1050px) {
-  label, .l {
+  html {
     font-size: 14px;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
-
-  .btn {
-    height: 1.8rem;
   }
 
   table {
@@ -624,9 +608,5 @@ li { position: relative; }
 
   .toc {
     display: block !important;
-  }
-
-  .l {
-    margin: 0;
   }
 }
