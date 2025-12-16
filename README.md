@@ -42,8 +42,10 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Endings
 - [x] New Game Plus Preparation
 - [x] Missables in Outskirts, Leyndell, Shunning Grounds & Forbidden Lands
-- [ ] Rewrite old sections
-- [ ] DLC Walkthrough
+- [x] Rewrite old sections
+- [ ] Clean up CSS/JS
+- [ ] Begin DLC Walkthrough
+- [ ] Gravesite Plain
 
 ## Special Thanks
 
