@@ -126,8 +126,9 @@
 }
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 15px;
+  font-family: system-ui, sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.005em;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -561,33 +562,12 @@ header, footer, th, td { text-align: center; }
 caption, th[scope="row"] { text-align: left; }
 ol, footer, kbd { font-size: .9rem; }
 html, .sh h2, .toc { line-height: 1.6; }
-h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.1; }
+h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.15; }
 header h1, h2, strong { font-weight: 700; }
 .sh h2, .toc h2, h3, h4, a, q, nav span, caption, .b { font-weight: 600; }
 select, button, input[type="checkbox"], label { cursor: pointer; }
 .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: none !important; }
 li { position: relative; }
-
-/* TEMPORARY STYLES
-------------------- */
-.alert {
-  font-weight: 700;
-  margin: var(--r6) 0;
-  padding: var(--r3);
-  color: var(--x);
-  background-color: var(--b);
-  border: 3px solid var(--x);
-  border-radius: 10px;
-
-  & h2 {
-    margin-top: 0;
-    color: var(--x);
-  }
-
-  & a {
-    font-weight: 700;
-  }
-}
 
 /* MEDIA 
 -------- */
