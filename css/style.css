@@ -232,7 +232,7 @@ svg {
   color: var(--kt);
   background-color: var(--k);
   border: 1px solid var(--2);
-  border-radius: 3px;
+  border-radius: .2em;
 
   &:hover {
     background-color: var(--kh);
