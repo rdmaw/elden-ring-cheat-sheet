@@ -628,8 +628,8 @@ li { position: relative; }
   position: fixed;
   top: -10%;
   font-family: Arial, sans-serif;
-  font-size: .6em;
-  text-shadow: 0 0 4px #000;
+  font-size: .7em;
+  text-shadow: 0 0 5px #000;
   color: #fff;
   -webkit-user-select: none;
   user-select: none;
@@ -657,7 +657,7 @@ li { position: relative; }
 }
 
 .snowflake .inner {
-  animation-duration: 8s;
+  animation-duration: 7s;
   animation-name: fall;
   animation-timing-function: linear;
 }
