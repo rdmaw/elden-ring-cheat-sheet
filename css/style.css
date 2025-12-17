@@ -268,7 +268,7 @@ svg {
   color: var(--kt);
   background-color: var(--s);
   border: 1px solid grey;
-  border-radius: 3px;
+  border-radius: .2em;
 }
 
 #search, .options h2, select {
@@ -304,8 +304,8 @@ nav {
     height: 2.7rem;
 
     &:hover {
-      background-color: var(--3);
-      border-radius: 3px;
+      background-color: var(--b);
+      border-radius: .2em;
     }
   }
 
@@ -369,9 +369,13 @@ nav {
   background: none;
   border: none;
 
+  &:hover {
+    background-color: var(--b);
+  }
+
   & svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.4rem;
+    height: 1.4rem;
   }
 }
 
@@ -385,7 +389,7 @@ nav {
   
   & li:hover {
     background-color: var(--3);
-    border-radius: 3px;
+    border-radius: .2em;
   }
 
   & a {
