@@ -127,7 +127,7 @@
 
 html {
   font-family: system-ui, sans-serif;
-  font-size: 17.5px;
+  font-size: 17.2px;
   letter-spacing: 0.005em;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -439,7 +439,7 @@ footer {
 
 nav span, h2 span, h3 span {
   margin-left: var(--r2);
-  padding: 0 .3em .1em .3em;
+  padding: 0 .3em .05em .3em;
   color: var(--b);
   background-color: var(--x);
   border-radius: .2em;
