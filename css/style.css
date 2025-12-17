@@ -127,7 +127,7 @@
 
 html {
   font-family: system-ui, sans-serif;
-  font-size: 17px;
+  font-size: 17.5px;
   letter-spacing: 0.005em;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -580,6 +580,12 @@ li { position: relative; }
 
   th, td {
     padding: .6rem;
+  }
+}
+
+@media (hover: hover) {
+  input[type="checkbox"]:hover {
+    transform: scale(1.12);
   }
 }
 
