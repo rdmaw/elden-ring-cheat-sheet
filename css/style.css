@@ -149,16 +149,17 @@ body {
 header {
   margin: var(--r8) 0;
 
-  & h1 {
-    font-size: 2.3rem;
-    margin-bottom: var(--r7);
-  }
-  
-  .lead {
-    font-size: 1.375rem;
-    font-weight: 300;
-    margin-bottom: var(--r7);
-  }
+}
+
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: var(--r7);
+}
+
+.lead {
+  font-size: 1.375rem;
+  font-weight: 300;
+  margin-bottom: var(--r7);
 }
 
 h2 + h3, p {
@@ -434,10 +435,11 @@ footer {
 
 nav span, h2 span, h3 span {
   margin-left: var(--r2);
-  padding-inline: .3em;
+  padding: 0 .3em .1em .3em;
   color: var(--b);
   background-color: var(--x);
-  border-radius: 3px;
+  border-radius: .2em;
+  font-size: .9em;
 }
 
 .d {
@@ -460,8 +462,8 @@ nav span, h2 span, h3 span {
 .col {
   position: relative;
   margin-right: var(--r2);
-  width: 2.4rem;
-  height: 1.875rem;
+  width: 2.2rem;
+  height: 1.75rem;
   flex-shrink: 0;
   vertical-align: text-bottom;
 
