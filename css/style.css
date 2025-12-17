@@ -256,8 +256,8 @@ svg {
   }
 
   & svg {
-    width: var(--r6);
-    height: var(--r6);
+    width: var(--r7);
+    height: var(--r7);
   }
 }
 
