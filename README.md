@@ -26,7 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## To Do
 
-- [x] Volcano Manor
 - [x] Capital Outskirts
 - [x] Leyndell, Royal Capital
 - [x] Subterranean Shunning-Grounds
@@ -43,6 +42,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] New Game Plus Preparation
 - [x] Missables in Outskirts, Leyndell, Shunning Grounds & Forbidden Lands
 - [x] Rewrite old sections
+- [ ] Remove SVG sprite
 - [ ] Clean up CSS/JS
 - [ ] Begin DLC Walkthrough
 - [ ] Gravesite Plain
