@@ -629,7 +629,7 @@ li { position: relative; }
   top: -10%;
   font-family: Arial, sans-serif;
   font-size: .7em;
-  text-shadow: 0 0 5px #000;
+  text-shadow: 0 0 3px #000;
   color: #fff;
   -webkit-user-select: none;
   user-select: none;
@@ -715,5 +715,11 @@ li { position: relative; }
 
 @media (prefers-reduced-motion: reduce) {
   .snowflake, .snowflake .inner { animation: none !important; }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .snowflake {
+    display: none;
+  }
 }
 /* FESTIVE END */
