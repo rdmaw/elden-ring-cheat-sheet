@@ -43,8 +43,8 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Missables in Outskirts, Leyndell, Shunning Grounds & Forbidden Lands
 - [x] Rewrite old sections
 - [x] Remove SVG sprite
-- [ ] Clean up CSS/JS
-- [ ] Begin DLC Walkthrough
+- [x] Clean up CSS/JS
+- [x] Begin DLC Walkthrough
 - [ ] Gravesite Plain
 
 ## Special Thanks
