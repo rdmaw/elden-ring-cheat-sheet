@@ -26,7 +26,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## To Do
 
-- [x] Capital Outskirts
 - [x] Leyndell, Royal Capital
 - [x] Subterranean Shunning-Grounds
 - [x] Forbidden Lands
@@ -45,6 +44,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Remove SVG sprite
 - [x] Clean up CSS/JS
 - [x] Begin DLC Walkthrough
+- [ ] Create Steam guide
 - [ ] Gravesite Plain
 
 ## Special Thanks
