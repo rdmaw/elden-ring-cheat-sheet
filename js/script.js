@@ -79,7 +79,7 @@ function calculateTotals() {
   const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
 
   const sectionMap = allCheckboxes.reduce((map, checkbox) => {
-    const section = checkbox.id.match(/^[wnqmbaerhskcp](\d+)-/)[1];
+    const section = checkbox.id.match(/^[wdnqmbaerhskcp](\d+)-/)[1];
     map.has(section) ? map.get(section).push(checkbox) : map.set(section, [checkbox]);
     return map;
   }, new Map());
@@ -261,8 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // NG+ Reset
   ngp?.addEventListener('click',  () => {
     const current = select.value;
-    if (!confirm('Starting NG+ will reset all current progress in the Walkthrough, Questlines, Bosses and New Game+ sheets.')) return;
-    const prefixes = ['w', 'n', 'q', 'b', 'p'];
+    if (!confirm('Reset all progress in Walkthrough, DLC-Walkthrough, NPC-Walkthrough, Questlines, Bosses, and New Game+ for the selected profile?')) return;
+    const prefixes = ['w', 'd', 'n', 'q', 'b', 'p'];
     const filterData = Object.entries(p[current].data).reduce((acc, [id, value]) => {
       if (!prefixes.includes(id.charAt(0))) {
         acc[id] = value;
