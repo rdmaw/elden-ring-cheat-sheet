@@ -569,13 +569,19 @@ li { position: relative; }
 
 /* MEDIA 
 -------- */
-@media (max-width: 1100px) {
+@media (max-width: 1023px) and (hover: none) {
   html, table {
     font-size: .875rem;
   }
 
   th, td {
     padding: .6rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) and (hover: none) {
+  html {
+    font-size: 0.95rem;
   }
 }
 
