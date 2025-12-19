@@ -20,7 +20,7 @@ The [walkthrough](https://eldenring.redmaw.dev/sheets/walkthrough) contains a st
   - New Game Plus preparation
   - Equipment, key items, and much more!
 
-Visit the project at: [eldenring.redmaw.dev](https://eldenring.redmaw.dev)
+Visit the project at [eldenring.redmaw.dev](https://eldenring.redmaw.dev) or check out the [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3626235146).
 
 Found a bug? Open an issue or contact me on discord: `redmaw`
 
@@ -44,7 +44,7 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Remove SVG sprite
 - [x] Clean up CSS/JS
 - [x] Begin DLC Walkthrough
-- [ ] Create Steam guide
+- [x] Create Steam guide
 - [ ] Gravesite Plain
 
 ## Special Thanks
