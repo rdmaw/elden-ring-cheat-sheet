@@ -407,6 +407,7 @@ main {
 
 footer {
   padding: var(--r5) 0 var(--r2);
+  font-size: .8rem;
 }
 
 /* OPTIONS 
@@ -435,6 +436,32 @@ footer {
   & a:hover {
     text-decoration: underline;
   }
+}
+
+hr {
+  position: relative;
+  margin: .3rem 0;
+  width: 15rem;
+  border: 0;
+  text-align: center;
+}
+
+hr::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--h), transparent);
+}
+
+hr::after {
+  content: attr(data-content);
+  position: relative;
+  padding: 0 1rem;
+  color: var(--h);
+  background: var(--b);
 }
 
 nav span, h2 span, h3 span {
@@ -558,7 +585,7 @@ tr:hover {
 ------------- */
 header, footer, th, td { text-align: center; }
 caption, th[scope="row"] { text-align: left; }
-ol, footer, kbd { font-size: .9rem; }
+ol, kbd { font-size: .9rem; }
 html, .sh h2, .toc { line-height: 1.6; }
 h1, h2, h3, h4, nav a, input, button, kbd, q, select, .lead { line-height: 1.15; }
 header h1, h2, strong { font-weight: 700; }
