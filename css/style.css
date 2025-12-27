@@ -176,10 +176,6 @@ h4 {
   margin: var(--r6) 0 var(--r2);
 }
 
-p {
-  text-wrap: pretty;
-}
-
 ol {
   margin: var(--r3) 0 var(--r2) var(--r7);
 
@@ -517,13 +513,13 @@ nav span, h2 span, h3 span {
 
 label {
   display: inline-block;
-  padding: .3rem 0 0 2.75rem;
+  padding: .16rem 0 .16rem 2.75rem;
 }
 
 input[type="checkbox"] {
   position: absolute;
   left: var(--r4);
-  top: .5rem;
+  top: .35rem;
   width: 1.2rem;
   height: 1.2rem;
   margin-right: .5rem;
