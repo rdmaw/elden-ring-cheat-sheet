@@ -8,7 +8,7 @@ Dates follow the ISO 8601 standard (YYYY-MM-DD).
 ### Added
 - Gravesite Plain (DLC Walkthrough, NPC Walkthrough, Questlines, Bosses).
 - Moore's inventory (Merchants).
-- DLC divider in the Current Progress section.
+- DLC divider in each Current Progress section.
 
 ### Changed
 - Shortened URL fragments (e.g. /questlines#ranni-the-witch -> /questlines#ranni).
