@@ -519,9 +519,9 @@ label {
 input[type="checkbox"] {
   position: absolute;
   left: var(--r4);
-  top: .35rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  top: .4rem;
+  width: 1.18rem;
+  height: 1.18rem;
   margin-right: .5rem;
   accent-color: var(--d);
 }
@@ -610,7 +610,7 @@ li { position: relative; }
 
 @media (hover: hover) {
   input[type="checkbox"]:hover {
-    transform: scale(1.12);
+    transform: scale(1.1);
   }
 }
 
