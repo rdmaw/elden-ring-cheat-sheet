@@ -6,10 +6,9 @@ body:
   - type: markdown 
     attributes:
       value: |
-        **Thanks for helping improve the Elden Ring Cheat Sheet!**
-        Please fill out the form below to request a feature.
+        Thanks for helping improve the website! Please fill out the form below.
 
-        **Note:** A feature can be any enhancement to the website.
+        A feature can be any enhancement to the website.
   - type: textarea
     attributes:
       label: Is your feature related to a problem?

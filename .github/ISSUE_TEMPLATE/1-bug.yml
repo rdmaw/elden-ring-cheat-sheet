@@ -6,10 +6,9 @@ body:
   - type: markdown 
     attributes:
       value: |
-        **Thanks for helping improve the Elden Ring Cheat Sheet!**
-        Please fill out the form below.
+        Thanks for helping improve the website! Please fill out the form below.
 
-        **Note:** A bug can be as simple as an incorrect link.
+        A bug can be as simple as an incorrect link.
   - type: textarea
     attributes:
       label: Describe the bug

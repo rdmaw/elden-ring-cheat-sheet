@@ -6,8 +6,7 @@ body:
   - type: markdown 
     attributes:
       value: |
-        **Thanks for helping improve the Elden Ring Cheat Sheet!**
-        Please fill out the form below.
+        Thanks for helping improve the website! Please fill out the form below.
   - type: dropdown
     attributes:
       label: Which sheet does this relate to?
