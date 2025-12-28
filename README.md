@@ -4,6 +4,8 @@ A collection of comprehensive checklists (cheat sheets) for achieving 100% compl
 
 The [walkthrough](https://eldenring.redmaw.dev/sheets/walkthrough) contains a step-by-step checklist guide through every area in a natural order, getting every single item, achievement, questline, boss and much more in the process. For a full list of what's included, check the [FAQ](https://eldenring.redmaw.dev/#included).
 
+See the [Changelog](CHANGELOG.md) for a list of notable changes with each update.
+
 ## Features
 
 - Step-by-step walkthrough covering everything in the base game and DLC
@@ -26,8 +28,6 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 
 ## To Do
 
-- [x] Leyndell, Royal Capital
-- [x] Subterranean Shunning-Grounds
 - [x] Forbidden Lands
 - [x] Mountaintops of the Giants
 - [x] Dragonbarrow
@@ -45,7 +45,9 @@ Found a bug? Open an issue or contact me on discord: `redmaw`
 - [x] Clean up CSS/JS
 - [x] Begin DLC Walkthrough
 - [x] Create Steam guide
-- [ ] Gravesite Plain
+- [x] West Gravesite Plain
+- [ ] East Gravesite Plain
+- [ ] Belurat
 
 ## Special Thanks
 

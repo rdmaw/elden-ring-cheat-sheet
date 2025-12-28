@@ -1,7 +1,7 @@
 # Changelog
 
-This document lists notable changes to the site by deployment date.
-Dates are in ISO 8601 format (YYYY-MM-DD).
+This document lists notable changes to the site with each deployment.
+Dates follow the ISO 8601 standard (YYYY-MM-DD).
 
 ## 2025-12-28
 
