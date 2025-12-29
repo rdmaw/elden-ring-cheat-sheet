@@ -3,6 +3,11 @@
 This document lists notable changes to the site with each deployment.
 Dates follow the ISO 8601 standard (YYYY-MM-DD).
 
+## 2025-12-29
+
+### Added
+- Parenthesis behind every painting reward.
+
 ## 2025-12-28
 
 ### Added
