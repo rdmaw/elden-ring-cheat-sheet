@@ -9,10 +9,12 @@ Dates follow the ISO 8601 standard (YYYY-MM-DD).
 - Parenthesis behind every painting reward.
 
 ### Changed
-- Slightly increased space between steps
-- Slightly decreased sidebar width
+- Use stele as a more accurate term for the map pillars.
+- Slightly increased space between steps.
+- Slightly decreased sidebar width.
 
 ### Fixed
+- Missing reference to Seluvis in Nepheli's questline.
 - Blurry checkboxes.
 - Inconsistent text and header size depending on device.
 
