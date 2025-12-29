@@ -127,7 +127,7 @@
 
 html {
   font-family: system-ui, sans-serif;
-  font-size: 17.2px;
+  font-size: clamp(15.05px, calc(14.392px + 0.2056vw), 17.2px);
   letter-spacing: 0.005em;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -152,12 +152,12 @@ header {
 }
 
 h1 {
-  font-size: 2.3rem;
+  font-size: clamp(1.5rem, 1.6rem + 1vw, 2.3rem);
   margin-bottom: var(--r7);
 }
 
 .lead {
-  font-size: 1.375rem;
+  font-size: clamp(1rem, 1.1rem + .4vw, 1.4rem);
   font-weight: 300;
   margin-bottom: var(--r7);
 }
@@ -330,7 +330,7 @@ nav {
 .sidebar {
   position: fixed;
   top: .4375rem;
-  width: 17.5rem;
+  width: 17rem;
   max-height: 100vh;
   flex-direction: column;
   background-color: var(--b);
@@ -520,10 +520,16 @@ input[type="checkbox"] {
   position: absolute;
   left: var(--r4);
   top: .4rem;
-  width: 1.18rem;
-  height: 1.18rem;
+  width: 20px;
+  height: 20px;
   margin-right: .5rem;
   accent-color: var(--d);
+}
+
+@media (hover: hover) {
+  input[type="checkbox"]:hover {
+    transform: scale(1.1);
+  }
 }
 
 .c > label {
@@ -589,30 +595,6 @@ header h1, h2, strong { font-weight: 700; }
 select, button, input[type="checkbox"], label { cursor: pointer; }
 .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: none !important; }
 li { position: relative; }
-
-/* MEDIA 
--------- */
-@media (max-width: 1023px) and (hover: none) {
-  html, table {
-    font-size: .875rem;
-  }
-
-  th, td {
-    padding: .6rem;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1366px) and (hover: none) {
-  html {
-    font-size: 0.95rem;
-  }
-}
-
-@media (hover: hover) {
-  input[type="checkbox"]:hover {
-    transform: scale(1.1);
-  }
-}
 
 /* PRINT
 -------- */
