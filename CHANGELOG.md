@@ -3,6 +3,17 @@
 This document lists notable changes to the site with each deployment.
 Dates follow the ISO 8601 standard (YYYY-MM-DD).
 
+## 2026-01-01
+
+### Added
+<!-- - East Gravesite Plain (DLC Walkthrough, Bosses) -->
+
+### Changed
+- Site name (Elden Ring Cheat Sheet: 100% Completion Guide & Checklists -> Elden Ring Cheat Sheets).
+
+### Removed
+- Site name from each individual page (Walkthrough - Elden Ring Cheat Sheet -> Walkthrough).
+
 ## 2025-12-29
 
 ### Added
