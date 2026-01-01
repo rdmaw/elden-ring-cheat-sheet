@@ -5,11 +5,9 @@ Dates follow the ISO 8601 standard (YYYY-MM-DD).
 
 ## 2026-01-01
 
-### Added
-<!-- - East Gravesite Plain (DLC Walkthrough, Bosses) -->
-
 ### Changed
 - Site name (Elden Ring Cheat Sheet: 100% Completion Guide & Checklists -> Elden Ring Cheat Sheets).
+- Page descriptions and lead text below the title.
 
 ### Removed
 - Site name from each individual page (Walkthrough - Elden Ring Cheat Sheet -> Walkthrough).

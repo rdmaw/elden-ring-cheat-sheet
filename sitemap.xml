@@ -9,32 +9,28 @@
     <lastmod>2026-01-01</lastmod>
   </url>
   <url>
-    <loc>https://eldenring.redmaw.dev/sheets/resources</loc>
-    <lastmod>2025-12-18</lastmod>
-  </url>
-  <url>
     <loc>https://eldenring.redmaw.dev/sheets/walkthrough</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-01</lastmod>
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/dlc-walkthrough</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-01</lastmod>
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/npc-walkthrough</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-01</lastmod>
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/questlines</loc>
-    <lastmod>2025-12-28</lastmod>
-  </url>
-  <url>
-    <loc>https://eldenring.redmaw.dev/sheets/merchants</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-01</lastmod>
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/bosses</loc>
-    <lastmod>2025-12-28</lastmod>
+    <lastmod>2026-01-01</lastmod>
+  </url>
+  <url>
+    <loc>https://eldenring.redmaw.dev/sheets/merchants</loc>
+    <lastmod>2026-01-01</lastmod>
   </url>
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/achievements</loc>
@@ -67,5 +63,9 @@
   <url>
     <loc>https://eldenring.redmaw.dev/sheets/new-game-plus</loc>
     <lastmod>2025-12-18</lastmod>
+  </url>
+  <url>
+    <loc>https://eldenring.redmaw.dev/sheets/resources</loc>
+    <lastmod>2026-01-01</lastmod>
   </url>
 </urlset>
