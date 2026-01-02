@@ -24,7 +24,7 @@ See the [Changelog](CHANGELOG.md) for a list of notable changes with each update
 
 Visit the project at [eldenring.redmaw.dev](https://eldenring.redmaw.dev) or check out the [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3626235146).
 
-Found a bug? Open an issue or contact me on discord: `redmaw`
+Found a bug? Open an issue or leave a comment on the Steam guide.
 
 ## To Do
 
