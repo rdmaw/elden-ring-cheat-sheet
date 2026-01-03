@@ -7,6 +7,7 @@ Dates follow the ISO 8601 standard (YYYY-MM-DD).
 
 ### Changed
 - Armaments sheet renamed to Weapons.
+- Miscellaneous sheet renamed to Miscellaneous Items.
 
 ## 2026-01-01
 
