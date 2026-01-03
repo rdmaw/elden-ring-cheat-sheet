@@ -3,6 +3,11 @@
 This document lists notable changes to the site with each deployment.
 Dates follow the ISO 8601 standard (YYYY-MM-DD).
 
+## 2026-01-03
+
+### Changed
+- Armaments sheet renamed to Weapons.
+
 ## 2026-01-01
 
 ### Changed
