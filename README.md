@@ -10,17 +10,22 @@ See the [Changelog](CHANGELOG.md) for a list of notable changes with each update
 
 - Step-by-step walkthrough covering everything in the base game and DLC
 - NPC walkthrough covering only NPC-related steps
-- Saves your progress to browser
+- New Game Plus checklist to complete before starting NG+
+- Automatically saves your progress to the browser
 - Create and import profiles from backup
-- Search checklists
-- Helpful resources for your playthrough in one place
+- Search and filter checklists
+- Helpful resources for your playthrough kept in one place
 - Support for color blindness
-- Several interactive checklists for tracking:
+- Additional checklists for tracking all:
+  - Questlines
+  - Bosses
+  - Merchant items
   - Achievements
-  - Bosses and Questlines
-  - Merchant inventories
-  - New Game Plus preparation
-  - Equipment, key items, and much more!
+  - Weapons and Armor
+  - Spirit Ashes and Ashes of War
+  - Sorceries and Incantations
+  - Key Items (Great Runes, Crystal Tears, Containers, Memory Stones, Stonesword Keys, Keys and Medallions, Cookbooks, Whetblades, Maps)
+  - Miscellaneous Items (Tools, Golden Seeds, Sacred Tears, Scadutree Fragments, Revered Spirit Ashes, Talismans, Paintings, Gestures)
 
 Visit the project at [eldenring.redmaw.dev](https://eldenring.redmaw.dev) or check out the [Steam Guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3626235146).
 
