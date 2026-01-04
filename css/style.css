@@ -216,6 +216,10 @@ svg {
   display: block;
 }
 
+button, .btn {
+  touch-action: manipulation;
+}
+
 .btn {
   padding: var(--r1) var(--r2);
   height: 2rem;
@@ -372,6 +376,7 @@ nav {
 .sheets {
   padding: var(--r2);
   overflow-y: auto;
+  overscroll-behavior: contain;
 
   & li {
     border-bottom: 1px dotted var(--2);
@@ -587,7 +592,7 @@ header h1, h2, strong { font-weight: 700; }
 select, button, input[type="checkbox"], label { cursor: pointer; }
 .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: none !important; }
 li { position: relative; }
-form > ul, .sidebar, .toc, .tw { contain: layout style; }
+form > ul, .sidebar, .toc, .tw { contain: layout; }
 
 /* PRINT
 -------- */
