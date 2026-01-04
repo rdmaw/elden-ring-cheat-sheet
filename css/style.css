@@ -587,6 +587,7 @@ header h1, h2, strong { font-weight: 700; }
 select, button, input[type="checkbox"], label { cursor: pointer; }
 .f, .hide .c > label, .hide .c > input[type="checkbox"] { display: none !important; }
 li { position: relative; }
+form > ul, .sidebar, .toc, .tw { contain: layout style; }
 
 /* PRINT
 -------- */
